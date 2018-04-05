@@ -1,6 +1,6 @@
 <?php
   /* Autor: Vinicius
-     Data de criação: 03/04/18
+     Data de modificação: 05/04/18
      Controller: Ambientes
      Obs: Controller para realizar CRUD da pagina Informacoes e verifica login
    */
@@ -74,7 +74,7 @@ class controllerCmsAmbientes{
 
         $cabecalhoResultado = $cabecalho::SelectCabecalhoById($cabecalho);
 
-        require_once('views/cms/editarAmbientes_view.php');
+        require_once('views/cms/ambientes/editarAmbientes_view.php');
       }
 
       public function EditarCabecalho(){
@@ -202,7 +202,7 @@ class controllerCmsAmbientes{
 
           $conteudoResultado = $conteudo::SelectConteudoById($conteudo);
 
-          require_once('views/cms/editarAmbientes_view.php');
+          require_once('views/cms/ambientes/editarAmbientes_view.php');
         }
 
         public function EditarConteudo(){

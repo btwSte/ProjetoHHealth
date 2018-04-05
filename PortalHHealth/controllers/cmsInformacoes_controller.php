@@ -1,6 +1,6 @@
 <?php
   /* Autor: Stéphanie e Vinicius
-     Data de modificação: 01/04/18
+     Data de modificação: 05/04/18
      Controller: Informacoes
      Obs: Controller para realizar CRUD da pagina Informacoes e verifica login
    */
@@ -76,7 +76,7 @@
 
         $cabecalhoResultado = $cabecalho::SelectCabecalhoById($cabecalho);
 
-        require_once('views/cms/editarInformacoes_view.php');
+        require_once('views/cms/informacoes/editarInformacoes_view.php');
       }
 
       public function EditarCabecalho(){
@@ -205,7 +205,7 @@
 
         $conteudoResultado = $conteudo::SelectConteudoById($conteudo);
 
-        require_once('views/cms/editarInformacoes_view.php');
+        require_once('views/cms/informacoes/editarInformacoes_view.php');
       }
 
       public function EditarConteudo(){

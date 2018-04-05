@@ -18,7 +18,7 @@ class Ambientes
   public $fotoConteudoAmbiente;
   public $textoConteudoAmbiente;
 
-  //public $tituloPagina;
+  require_once("../variaveis.php");
 
   function __construct()
   {
@@ -43,7 +43,7 @@ class Ambientes
 
       //executa script no banco
       if ($PDOconex->query($sql))
-        header('location:../PortalHHealth/views/cms/cadastroAmbientes_view.php');
+        header('location:'.$voltaUm.'PortalHHealth/views/cms/ambientes/cadastroAmbientes_view.php');
       else
         echo "Erro no cadastro";
 
@@ -130,7 +130,7 @@ class Ambientes
     $PDOconex = $conex->Conectar();
 
     if ($PDOconex->query($sql)) {
-      header('location:../PortalHHealth/views/cms/visu_Ambientes_view.php');
+      header('location:'.$voltaUm.'PortalHHealth/views/cms/ambientes/visu_Ambientes_view.php');
     }else{
       echo "erro ao deletar";
     }
@@ -158,7 +158,7 @@ class Ambientes
     $PDOconex = $conex->Conectar();
 
     if ($PDOconex->query($sql)) {
-      header('location:../PortalHHealth/views/cms/visu_Ambientes_view.php');
+      header('location:'.$voltaUm.'PortalHHealth/views/cms/ambientes/visu_Ambientes_view.php');
     }else{
       echo "erro";
     }
@@ -175,7 +175,7 @@ class Ambientes
     $PDOconex = $conex->Conectar();
     $PDOconex->query($update);
     if ($PDOconex->query($sql)) {
-      header('location:../PortalHHealth/views/cms/visu_Ambientes_view.php');
+      header('location:'.$voltaUm.'PortalHHealth/views/cms/ambientes/visu_Ambientes_view.php');
     }else{
       echo "erro";
     }
@@ -191,7 +191,7 @@ class Ambientes
     $PDOconex = $conex->Conectar();
 
     if ($PDOconex->query($sql)) {
-      header('location:../PortalHHealth/views/cms/visu_Ambientes_view.php');
+      header('location:'.$voltaUm.'PortalHHealth/views/cms/ambientes/visu_Ambientes_view.php');
     }else{
       echo "erro";
     }
@@ -219,7 +219,7 @@ class Ambientes
 
       //executa script no banco
       if ($PDOconex->query($sql))
-        header('location:../PortalHHealth/views/cms/cadastroAmbientes_view.php');
+        header('location:'.$voltaUm.'PortalHHealth/views/cms/ambientes/cadastroAmbientes_view.php');
       else
         echo "Erro no cadastro";
 
@@ -303,7 +303,7 @@ class Ambientes
       $PDOconex = $conex->Conectar();
 
       if ($PDOconex->query($sql)) {
-        header('location:../PortalHHealth/views/cms/visu_Ambientes_view.php');
+        header('location:'.$voltaUm.'PortalHHealth/views/cms/ambientes/visu_Ambientes_view.php');
       }else{
         echo "erro ao deletar";
       }
@@ -329,7 +329,7 @@ class Ambientes
       $PDOconex = $conex->Conectar();
 
       if ($PDOconex->query($sql)) {
-        header('location:../PortalHHealth/views/cms/cadastroAmbientes_view.php');
+        header('location:'.$voltaUm.'PortalHHealth/views/cms/ambientes/cadastroAmbientes_view.php');
       }else{
         echo "erro";
       }
@@ -345,7 +345,7 @@ class Ambientes
       $PDOconex = $conex->Conectar();
 
       if ($PDOconex->query($sql)) {
-        header('location:../PortalHHealth/views/cms/visu_Ambientes_view.php');
+        header('location:'.$voltaUm.'PortalHHealth/views/cms/ambientes/visu_Ambientes_view.php');
       }else{
         echo "erro";
       }
@@ -361,7 +361,7 @@ class Ambientes
       $PDOconex = $conex->Conectar();
 
       if ($PDOconex->query($sql)) {
-        header('location:../PortalHHealth/views/cms/visu_Ambientes_view.php');
+        header('location:'.$voltaUm.'PortalHHealth/views/cms/ambientes/visu_Ambientes_view.php');
       }else{
         echo "erro";
       }

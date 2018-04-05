@@ -1,6 +1,6 @@
 <?php
   /* Autor: Stéphanie
-     Data de modificação: 01/04/18
+     Data de modificação: 05/04/18
      Controller: Procedimentos de Exames
      Obs: Controller para realizar CRUD da pagina Procedimento de Exames e verifica login
    */
@@ -76,7 +76,7 @@
 
         $cabecalhoResultado = $cabecalho::SelectCabecalhoById($cabecalho);
 
-        require_once('views/cms/editarProcedimentos_view.php');
+        require_once('views/cms/procedimentos/editarProcedimentos_view.php');
       }
 
       public function EditarCabecalho(){
@@ -202,7 +202,7 @@
 
         $conteudoResultado = $conteudo::SelectConteudoById($conteudo);
 
-        require_once('views/cms/editarProcedimentos_view.php');
+        require_once('views/cms/procedimentos/editarProcedimentos_view.php');
       }
 
       public function EditarConteudo(){

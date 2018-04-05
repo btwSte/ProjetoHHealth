@@ -16,8 +16,8 @@
 
     </div>
     <div  class="menu_segura" href="#">Sobre
-      <div class="categorias_ocultas">  <a href="cadastroSobre_view.php"> Cadastrar </a> </div>
-      <div class="categorias_ocultas"> <a href="visu_sobre_view.php"> Visualizar </a> </div>
+      <div class="categorias_ocultas">  Cadastrar</div>
+      <div class="categorias_ocultas">  Visualizar</div>
 
     </div>
       <div  class="menu_segura" href="#">Contatos
