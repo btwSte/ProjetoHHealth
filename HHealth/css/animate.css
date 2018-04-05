@@ -1,0 +1,66 @@
+@charset "UTF-8";
+
+/*!
+ * animate.css -http://daneden.me/animate
+ * Version - 3.5.2
+ * Licensed under the MIT license - http://opensource.org/licenses/MIT
+ *
+ * Copyright (c) 2017 Daniel Eden
+ */
+
+ .animated.flip {
+   -webkit-backface-visibility: visible;
+   backface-visibility: visible;
+   animation-name: flip;
+ }
+ .animated {
+   animation-duration: 2s;
+   animation-fill-mode: both;
+ }
+
+ .animated.infinite {
+   animation-iteration-count: infinite;
+ }
+
+ .animated.hinge {
+   animation-duration: 5s;
+ }
+
+ .animated.flipOutX,
+ .animated.flipOutY,
+ .animated.bounceIn,
+ .animated.bounceOut {
+   animation-duration: .85s;
+ }
+
+ @keyframes bounceInLeft {
+   from, 60%, 75%, 90%, to {
+     animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+   }
+
+   0% {
+     opacity: 0;
+     transform: translate3d(-3000px, 0, 0);
+   }
+
+   60% {
+     opacity: 1;
+     transform: translate3d(25px, 0, 0);
+   }
+
+   75% {
+     transform: translate3d(-10px, 0, 0);
+   }
+
+   90% {
+     transform: translate3d(5px, 0, 0);
+   }
+
+   to {
+     transform: none;
+   }
+ }
+
+ .bounceInLeft {
+   animation-name: bounceInLeft;
+ }

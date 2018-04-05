@@ -1,0 +1,456 @@
+
+body{
+    margin: 0;
+font-family: "Avenir", 'Helvetica Neue', 'Lato', 'Segoe UI', Helvetica, Arial, sans-serif;
+}
+header{
+  width:100%;
+  height: 110px;
+  background-color: #fff;
+  box-shadow: 0px 2px 2px #ccc;
+}
+
+
+
+main{
+    width: 1200px;
+    min-height:500px;
+    height: auto;
+
+    margin-right:auto;
+    margin-left:auto;
+}
+#segura{
+  margin-bottom: 20px;
+
+    box-shadow: 2px 2px 2px 2px #6bb27d;
+  padding: 20px;
+}
+footer{
+  width:100%;
+  min-height: 200px;
+  background-color: rgba(0,0,0, 0.9);
+
+
+}
+#logo {
+
+	height: 110px;
+    width: 150px;
+    margin-left: 100px;
+    float: left;
+
+
+}
+#logo img {
+    height: 110px;
+}
+
+.Titulo{
+  min-height: 20px;
+  height:auto;
+  min-width: 50px;
+  width:auto ;
+  margin-left: 210px;
+  margin-top:  40px;
+  float: left;
+  font-size: 2em;
+  color: #6db47f;
+}
+
+#logout{
+  min-height: 26px;
+  height:auto;
+  min-width: 70px;
+  width:auto ;
+  margin-right: 30px;
+  margin-top:  100px;
+  float: right;
+  background-color: #6db47f;
+  color: white;
+  padding: 12px 15px;
+  margin: 52px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+
+}
+
+#opcao span{
+  color:#6db47f;
+
+    margin-left: 10px;
+}
+
+#areaConteudo{
+    width: 1200px;
+    padding:0px 0px;
+    min-height:1000px;
+    background-color: rgba(0,0,0, 0.1);
+    overflow: hidden;
+
+
+}
+
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top:0;
+    left: 0;
+
+    background-color: #6db47fd9;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 0px;
+    z-index: 999;
+
+
+}
+
+
+.sidenav .linha_menu {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color:#fff;
+    display: block;
+    transition: 0.4s;
+
+}
+
+.linha_menu a{
+  text-decoration: none;
+  color: #fff;
+}
+.sidenav .linha_menu :hover{
+    color: #fff;
+}
+.categorias_ocultas{
+    height:0;
+    width: 0;
+    opacity: 0.0;
+    transition: 0.3s;
+    color:#888;
+    text-decoration: none;
+/*    display: none;*/
+}
+
+.categorias_ocultas a{
+  text-decoration: none;
+  color: #fff;
+}
+.sidenav .linha_menu:hover>.categorias_ocultas{
+    height:40px;
+    width: 270px;
+
+    transition: 1s;
+    opacity:0.9;
+     margin-bottom: 5px;
+}
+.categorias_ocultas:hover{
+    color: #fff;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+/* TRABALHE CONOSCO RESPONSIVO */
+   /* segura formulario */
+   .segura_form_tbc {
+     min-height: 250px;
+     height: auto;
+     width: auto;
+     min-width: 50px;
+     margin-left: auto;
+     margin-right: auto;
+     /* border: solid 2px #304f38; */
+     /* margin-top: 5px; */
+     margin: 40px;
+     /* margin-bottom: 60px; */
+    box-shadow: 2px 2px 2px 2px #6bb27d;
+    padding: 5%;
+   }
+
+
+
+
+   /* Titulo do formulario */
+     .tit {
+       margin-left: 10px;
+     }
+
+     .tit p {
+       font-size: 25px;
+       color: #304f38;
+     }
+
+   /*  Campos do formulario */
+     .text {
+       margin-top: 20px;
+       width: auto;
+     }
+
+.textAlt {
+       margin-top: 20px;
+       width: auto;
+     }
+   
+.textAlt input {
+       margin-left: 10px;
+       margin-right: 10px;
+       padding: 5px;
+       width: 90%;
+       border: solid 2px #6bb27d;
+       outline: none;
+       border-radius: 10px;
+       height: 100px;
+        background-color: #fff;
+     }
+
+/* Manipula input*/
+     .text input {
+       margin-left: 10px;
+       margin-right: 10px;
+       padding: 5px;
+       width: 90%;
+       border: solid 2px #6bb27d;
+       outline: none;
+       border-radius: 10px;
+       height: 25px;
+        background-color: #fff;
+     }
+
+   /* botao enviar */
+     #btn_tbc {
+       float: right;
+       margin-right: 100px;
+       margin-top: 20px;
+       /* margin-bottom: 20px; */
+     }
+
+     #btn_tbc input {
+       border: solid 2px #6bb27d;
+       border-radius: 10px;
+       height: 30px;
+       background-color: #fff;
+       width: 100px;
+       cursor: pointer;
+     }
+
+     #btn_tbc input:hover{
+       background-color: #6bb27d;
+       color: #fff;
+       border: solid 1px #6bb27d;
+     }
+
+   /* botao de escolher arquivo */
+     #arq_tbc {
+       float: left;
+       margin-top: 20px;
+       margin-left: 10px;
+     }
+
+     #arq_tbc input {
+       height: 25px;
+       border: solid 2px #6bb27d;
+       border-radius: 10px;
+       width: 100%;
+       padding: 5px;
+     }
+
+
+
+     /* TRABALHE CONOSCO DESKTOP */
+          #btn_tbc {
+            margin-right: 200px;
+          }
+
+          #imagem_titulo {
+            width: 100%;
+            height: auto;
+            min-height: 50px;
+            background-color: #ccc;
+
+          }
+
+          #imagem_titulo img {
+            display: block;
+            max-height: 300px;
+            width: 100%;
+
+          }
+
+          #imagem_titulo h1{
+            padding-top: 5%;
+            font-size: 2.5em;
+            margin-left: 100px;
+            color: #fff;
+
+            /* background-color: purple; */
+          }
+
+
+    /*  INFORMAÇÃO RESPONSIVO */
+
+
+
+
+      /* #texto_img{
+        position: absolute;
+
+
+        max-height: 300px;
+        width: 100%;
+        color: #fff;
+        background-color: #555;
+      } */
+
+      #imagem_titulo h1{
+        margin: auto;
+        width: auto;
+        max-width: 98%;
+        height: 23%;
+        text-align: left;
+        float: left;
+        position: absolute;
+        padding-top: 10%;
+        font-size: 2.5em;
+        margin-left: 30px;
+        color: #fff;
+        /* background-color: purple; */
+      }
+
+      #texto_info {
+        width: auto;
+        max-width: 1180px;
+        min-height: 50px;
+        height: auto;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: left;
+        padding: 10px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+      }
+
+      #texto_info h1 {
+        margin: 0;
+        padding: 0;
+      }
+
+      .segura_img_info {
+        display: flex;
+        width: auto;
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+        height: auto;
+
+        margin-top: 20px;
+        margin-bottom: 20px;
+      }
+
+      .img_info, .img_info img {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 390px;
+        max-height: 390px;
+        height: auto;
+        width: auto;
+      }
+
+      .info {
+        width: auto;
+        max-width: 950px;
+        height: auto;
+        max-height: 390px;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 10px;
+        text-align: justify;
+        }
+.Crud_Opc{
+  height: auto;
+  width: auto;
+  min-width: 100%;
+  min-height: 50px;
+
+}
+.Deletar_crud{
+  height: auto;
+  width: auto;
+  min-width: 100px;
+  margin-top: 5px;
+  min-height: 40px;
+
+  float: left;
+  margin-left: 10px;
+}
+.Editar_crud{
+  height: auto;
+  width: auto;
+  min-width: 100px;
+  margin-top: 5px;
+  min-height: 40px;
+
+  float: right;
+    margin-right:10px;
+}
+.status_crud{
+  height: auto;
+  width: auto;
+  min-width: 100px;
+  margin-top: 5px;
+  min-height: 40px;
+  float: right;
+  margin-right:10px;
+
+}
+
+.select {
+    width: 100%;
+    padding: 10px 15px;
+    margin: 0px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+
+ .submit {
+    width: 100%;
+    background-color: #EA423F;
+    color: white;
+    padding: 12px 15px;
+    margin: 0px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.edit{
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 15px;
+  margin: 0px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+
+.submit:hover {
+    background-color: #D34443;
+}
+.edit:hover {
+    background-color: #45a049;
+}
