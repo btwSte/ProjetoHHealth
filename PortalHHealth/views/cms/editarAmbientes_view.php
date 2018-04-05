@@ -7,8 +7,8 @@
   $tituloFoto = null;
   $tituloPagina = null;
   $idPaginaAmbiente = null;
-  $fotoAmbiente = null;
-  $textoProcedimento = null;
+  $fotoConteudoAmbiente = null;
+  $textoConteudoAmbiente = null;
 
   if (isset($cabecalhoResultado)) {
     $idAmbienteCabecalho = $cabecalhoResultado->idAmbienteCabecalho;
@@ -24,14 +24,14 @@
 
 
   if (isset($conteudoResultado)) {
-    $idPaginaProcedimento = $conteudoResultado->idPaginaProcedimento;
-    echo ($textoProcedimento);
-    $fotoProcedimento = $conteudoResultado->fotoProcedimento;
-    $textoProcedimento = $conteudoResultado->textoProcedimento;
+    $idPaginaAmbiente = $conteudoResultado->idPaginaAmbiente;
+    echo ($textoConteudoAmbiente);
+    $fotoConteudoAmbiente = $conteudoResultado->fotoConteudoAmbiente;
+    $textoConteudoAmbiente = $conteudoResultado->textoConteudoAmbiente;
     echo "<script>alert('Dentro do if do conteudo!');
           </script>";
 
-    $action2 = "modo=editarconteudo&id=".$idPaginaProcedimento;
+    $action2 = "modo=editarconteudo&id=".$idPaginaAmbiente;
   }
 ?>
 
@@ -147,7 +147,7 @@
              </div>
 
              <div  class="text">
-              <input type="text" required placeholder="Texto_conteudo:" name="txtConteudo" value="<?php echo($textoProcedimento); ?>" maxlength="1000">
+              <input type="text" required placeholder="Texto_conteudo:" name="txtConteudo" value="<?php echo($textoConteudoAmbiente); ?>" maxlength="1000">
              </div>
 
            <div id="btn_tbc">
@@ -155,7 +155,7 @@
            </div>
          </form>
          <div class="imagem_cabecalho">
-            <img src="<?php echo($fotoProcedimento); ?>" alt="" style="width:200px; height:200px;">
+            <img src="<?php echo($fotoConteudoAmbiente); ?>" alt="" style="width:200px; height:200px;">
          </div>
 
        </div>

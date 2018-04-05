@@ -15,7 +15,9 @@ class Ambientes
   public $tituloPagina;
   public $ativo;
   public $idPaginaAmbiente;
-  public $fotoPrincipal;
+  public $fotoConteudoAmbiente;
+  public $textoConteudoAmbiente;
+
   //public $tituloPagina;
 
   function __construct()
@@ -242,11 +244,11 @@ class Ambientes
 
       //guarda resultado
       while ($result = $select->fetch(PDO::FETCH_ASSOC)) {
-        $listConteudo[] = new Informacoes();
+        $listConteudo[] = new Ambientes();
 
-        $listConteudo[$cont]->idPaginaInfoUsuario = $result['idPaginaAmbiente'];
-        $listConteudo[$cont]->fotoAssunto = $result['fotoPrincipal'];
-        $listConteudo[$cont]->textoAssunto = $result['textoFoto'];
+        $listConteudo[$cont]->idPaginaAmbiente = $result['idPaginaAmbiente'];
+        $listConteudo[$cont]->fotoConteudoAmbiente = $result['fotoPrincipal'];
+        $listConteudo[$cont]->textoConteudoAmbiente = $result['textoFoto'];
         $listConteudo[$cont]->ativo = $result['ativo'];
 
         //incrementa o contador
@@ -272,11 +274,11 @@ class Ambientes
       $select = $PDOconex->query($sql);
 
       if($result = $select->fetch(PDO::FETCH_ASSOC)){
-      $conteudoResultado = new controllerCmsInformacoes();
+      $conteudoResultado = new Ambientes();
 
-      $conteudoResultado->idPaginaInfoUsuario = $result['idPaginaAmbiente'];
-      $conteudoResultado->fotoAssunto = $result['fotoPrincipal'];
-      $conteudoResultado->textoAssunto = $result['textoFoto'];
+      $conteudoResultado->idPaginaAmbiente = $result['idPaginaAmbiente'];
+      $conteudoResultado->fotoConteudoAmbiente = $result['fotoPrincipal'];
+      $conteudoResultado->textoConteudoAmbiente = $result['textoFoto'];
       $conteudoResultado->ativo = $result['ativo'];
 
       }else{

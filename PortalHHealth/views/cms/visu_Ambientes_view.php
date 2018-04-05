@@ -141,20 +141,20 @@
          <div id="segura">
            <div class="segura_img_info">
              <div class="img_info">
-               <img src="../../<?php echo($listConteudo[$contConteudo]->fotoProcedimento); ?>" alt="Procedimentos">
+               <img src="<?php echo("../../".$listConteudo[$contConteudo]->fotoConteudoAmbiente); ?>" alt="Procedimentos">
              </div>
              <div class="info">
-               <p><?php echo($listConteudo[$contConteudo]->textoProcedimento); ?></p>
+               <p><?php echo($listConteudo[$contConteudo]->textoConteudoAmbiente); ?></p>
              </div>
            </div>
            <div class="Crud_Opc">
 
                <div class="Deletar_crud">
-                 <a href="../../router.php?controller=cmsProcedimentos&modo=excluirconteudo&id=<?php echo($listConteudo[$contConteudo]->idPaginaProcedimento); ?>">DELETAR</a>
+                 <a href="../../router.php?controller=cmsAmbiente&modo=excluirconteudo&id=<?php echo($listConteudo[$contConteudo]->idPaginaAmbiente); ?>">DELETAR</a>
 
                </div>
                <div class="Editar_crud">
-                 <a href="../../router.php?controller=cmsProcedimentos&modo=buscarconteudo&id=<?php echo($listConteudo[$contConteudo]->idPaginaProcedimento); ?>">EDITAR</a>
+                 <a href="../../router.php?controller=cmsAmbiente&modo=buscarconteudo&id=<?php echo($listConteudo[$contConteudo]->idPaginaAmbiente); ?>">EDITAR</a>
                </div>
            </div>
            <!-- ABRE O IF -->
@@ -164,7 +164,7 @@
 
             ?>
              <div class="ativar_crud ">
-               <a href="../../router.php?controller=cmsProcedimentos&modo=desativarconteudo&id=<?php echo($listConteudo[$contConteudo]->idPaginaProcedimento); ?>">
+               <a href="../../router.php?controller=cmsAmbiente&modo=desativarconteudo&id=<?php echo($listConteudo[$contConteudo]->idPaginaAmbiente); ?>">
                  <img src="../../imagens/check.png" alt="Desativar" title="Desativar">
                </a>
              </div>
@@ -174,7 +174,7 @@
            } else {
               ?>
              <div class="desativar_crud ">
-               <a href="../../router.php?controller=cmsProcedimentos&modo=ativarconteudo&id=<?php echo($listConteudo[$contConteudo]->idPaginaProcedimento); ?>">
+               <a href="../../router.php?controller=cmsAmbiente&modo=ativarconteudo&id=<?php echo($listConteudo[$contConteudo]->idPaginaAmbiente); ?>">
                  <img src="../../imagens/no.png" alt="Ativar" title="Ativar">
                </a>
              </div>
