@@ -41,7 +41,7 @@ class Ambientes
 
       //executa script no banco
       if ($PDOconex->query($sql))
-        header('location:../PortalHHealth/views/cms/cadastroInformacoes_view.php');
+        header('location:../PortalHHealth/views/cms/cadastroAmbientes_view.php');
       else
         echo "Erro no cadastro";
 
@@ -71,7 +71,7 @@ class Ambientes
       $listCabecalho[$cont]->fotoCabecalho = $result['foto'];
       $listCabecalho[$cont]->tituloFoto = $result['tituloFoto'];
       $listCabecalho[$cont]->tituloPagina = $result['tituloPagina'];
-      $listCabecalho[$cont]->tivo = $result['ativo'];
+      $listCabecalho[$cont]->ativo = $result['ativo'];
 
       //incrementa o contador
       $cont += 1;
@@ -128,7 +128,7 @@ class Ambientes
     $PDOconex = $conex->Conectar();
 
     if ($PDOconex->query($sql)) {
-      header('location:../PortalHHealth/views/cms/visu_informacoes_view.php');
+      header('location:../PortalHHealth/views/cms/visu_Ambientes_view.php');
     }else{
       echo "erro ao deletar";
     }
@@ -142,13 +142,13 @@ class Ambientes
       $sql = "UPDATE tbl_ambiente_cabecalho SET
           tituloFoto='".$cabecalho->tituloFoto."',
           tituloPagina='".$cabecalho->tituloPagina."'
-          WHERE idAmbienteCabecalho=".$cabecalho->id;
+          WHERE idAmbienteCabecalho=".$cabecalho->idAmbienteCabecalho;
     } else {
       $sql = "UPDATE tbl_ambiente_cabecalho SET
         foto='".$cabecalho->foto."',
         tituloFoto='".$cabecalho->tituloFoto."',
         tituloPagina='".$cabecalho->tituloPagina."'
-        WHERE idAmbienteCabecalho=".$cabecalho->id;
+        WHERE idAmbienteCabecalho=".$cabecalho->idAmbienteCabecalho;
     }
     // echo $sql;
     $conex = new Mysql_db();
@@ -156,7 +156,7 @@ class Ambientes
     $PDOconex = $conex->Conectar();
 
     if ($PDOconex->query($sql)) {
-      header('location:../PortalHHealth/views/cms/cadastroInformacoes_view.php');
+      header('location:../PortalHHealth/views/cms/visu_Ambientes_view.php');
     }else{
       echo "erro";
     }
@@ -165,14 +165,15 @@ class Ambientes
   }
 
   public function ActivateCabecalho($ativarCabecalho){
+    $update = "UPDATE tbl_ambiente_cabecalho SET ativo='0' WHERE idAmbienteCabecalho > '0';";
     $sql = "UPDATE tbl_ambiente_cabecalho SET ativo= 1 WHERE idAmbienteCabecalho=".$ativarCabecalho->id;
 
     $conex = new Mysql_db();
 
     $PDOconex = $conex->Conectar();
-
+    $PDOconex->query($update);
     if ($PDOconex->query($sql)) {
-      header('location:../PortalHHealth/views/cms/visu_informacoes_view.php');
+      header('location:../PortalHHealth/views/cms/visu_Ambientes_view.php');
     }else{
       echo "erro";
     }
@@ -188,7 +189,7 @@ class Ambientes
     $PDOconex = $conex->Conectar();
 
     if ($PDOconex->query($sql)) {
-      header('location:../PortalHHealth/views/cms/visu_informacoes_view.php');
+      header('location:../PortalHHealth/views/cms/visu_Ambientes_view.php');
     }else{
       echo "erro";
     }
@@ -216,7 +217,7 @@ class Ambientes
 
       //executa script no banco
       if ($PDOconex->query($sql))
-        header('location:../PortalHHealth/views/cms/cadastroInformacoes_view.php');
+        header('location:../PortalHHealth/views/cms/cadastroAmbientes_view.php');
       else
         echo "Erro no cadastro";
 
@@ -300,7 +301,7 @@ class Ambientes
       $PDOconex = $conex->Conectar();
 
       if ($PDOconex->query($sql)) {
-        header('location:../PortalHHealth/views/cms/visu_informacoes_view.php');
+        header('location:../PortalHHealth/views/cms/visu_Ambientes_view.php');
       }else{
         echo "erro ao deletar";
       }
@@ -326,7 +327,7 @@ class Ambientes
       $PDOconex = $conex->Conectar();
 
       if ($PDOconex->query($sql)) {
-        header('location:../PortalHHealth/views/cms/cadastroInformacoes_view.php');
+        header('location:../PortalHHealth/views/cms/cadastroAmbientes_view.php');
       }else{
         echo "erro";
       }
@@ -342,7 +343,7 @@ class Ambientes
       $PDOconex = $conex->Conectar();
 
       if ($PDOconex->query($sql)) {
-        header('location:../PortalHHealth/views/cms/visu_informacoes_view.php');
+        header('location:../PortalHHealth/views/cms/visu_Ambientes_view.php');
       }else{
         echo "erro";
       }
@@ -358,7 +359,7 @@ class Ambientes
       $PDOconex = $conex->Conectar();
 
       if ($PDOconex->query($sql)) {
-        header('location:../PortalHHealth/views/cms/visu_informacoes_view.php');
+        header('location:../PortalHHealth/views/cms/visu_Ambientes_view.php');
       }else{
         echo "erro";
       }

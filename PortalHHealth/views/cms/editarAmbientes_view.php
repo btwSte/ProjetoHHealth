@@ -2,24 +2,24 @@
   $action2 = "modo=novoconteudo";
   $action = "modo=novocabecalho";
 
-  $idProcedimentoCabecalho = null;
-  $fotoCabecalho = null;
+  $idAmbienteCabecalho = null;
+  $foto = null;
   $tituloFoto = null;
-  $tituloCabecalho = null;
-  $idPaginaProcedimento = null;
-  $fotoProcedimento = null;
+  $tituloPagina = null;
+  $idPaginaAmbiente = null;
+  $fotoAmbiente = null;
   $textoProcedimento = null;
 
   if (isset($cabecalhoResultado)) {
-    $idProcedimentoCabecalho = $cabecalhoResultado->idProcedimentoCabecalho;
+    $idAmbienteCabecalho = $cabecalhoResultado->idAmbienteCabecalho;
     echo ($tituloFoto);
-    $fotoCabecalho = $cabecalhoResultado->fotoCabecalho;
+    $fotoCabecalho = $cabecalhoResultado->foto;
     $tituloFoto = $cabecalhoResultado->tituloFoto;
-    $tituloCabecalho = $cabecalhoResultado->tituloCabecalho;
+    $tituloCabecalho = $cabecalhoResultado->tituloPagina;
     echo "<script>alert('Dentro do if!');
           </script>";
 
-    $action = "modo=editarcabecalho&id=".$idProcedimentoCabecalho;
+    $action = "modo=editarcabecalho&id=".$idAmbienteCabecalho;
   }
 
 
@@ -112,9 +112,9 @@
 
 
        <div class="segura_form_tbc">
-         <form class="trabalhe_conosco" action="router.php?controller=cmsProcedimentos&<?php echo($action); ?>" method="post" enctype="multipart/form-data">
+         <form class="trabalhe_conosco" action="router.php?controller=cmsAmbiente&<?php echo($action); ?>" method="post" enctype="multipart/form-data">
            <div class="tit">
-             <p>Cadastro: Cabeçalho informações</p>
+             <p>Cadastro: Cabeçalho Ambientes</p>
            </div>
 
              <div  class="text">
@@ -124,10 +124,6 @@
              <div class="text">
                <input id="tel" placeholder="Texto da imagem:" type="text" name="txt1" value="<?php echo($tituloFoto); ?>"  maxlength="60">
              </div>
-             <div class="text">
-               <input id="cel" required placeholder="Titulo do conteudo" type="text" name="txtTitulo_conteudo" value="<?php echo($tituloCabecalho); ?>" maxlength="60">
-             </div>
-
 
              <div id="btn_tbc">
                <input type="submit" name="btnEnviar" value="Enviar">
@@ -141,7 +137,7 @@
 
 
        <div class="segura_form_tbc">
-         <form class="trabalhe_conosco" action="router.php?controller=cmsProcedimentos&<?php echo($action2); ?>" method="post" enctype="multipart/form-data">
+         <form class="trabalhe_conosco" action="router.php?controller=cmsAmbiente&<?php echo($action2); ?>" method="post" enctype="multipart/form-data">
            <div class="tit">
              <p>Cadastro De Informações:</p>
            </div>

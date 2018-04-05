@@ -88,11 +88,11 @@
          <div class="Crud_Opc">
 
              <div class="Deletar_crud">
-               <a href="../../router.php?controller=cmsProcedimentos&modo=excluircabecalho&id=<?php echo($list[$cont]->idProcedimentoCabecalho); ?>">DELETAR</a>
+               <a href="../../router.php?controller=cmsAmbiente&modo=excluircabecalho&id=<?php echo($list[$cont]->idAmbienteCabecalho); ?>">DELETAR</a>
 
              </div>
              <div class="Editar_crud">
-               <a href="../../router.php?controller=cmsProcedimentos&modo=buscarcabecalho&id=<?php echo($list[$cont]->idProcedimentoCabecalho); ?>">EDITAR</a>
+               <a href="../../router.php?controller=cmsAmbiente&modo=buscarcabecalho&id=<?php echo($list[$cont]->idAmbienteCabecalho); ?>">EDITAR</a>
              </div>
 
              </div>
@@ -103,7 +103,7 @@
 
               ?>
                <div class="ativar_crud ">
-                 <a href="../../router.php?controller=cmsProcedimentos&modo=desativarcabecalho&id=<?php echo($list[$cont]->idProcedimentoCabecalho); ?>">
+                 <a href="../../router.php?controller=cmsAmbiente&modo=desativarcabecalho&id=<?php echo($list[$cont]->idAmbienteCabecalho); ?>">
                    <img src="../../imagens/check.png" alt="Desativar" title="Desativar">
                  </a>
                </div>
@@ -113,7 +113,7 @@
              } else {
                 ?>
                <div class="desativar_crud ">
-                 <a href="../../router.php?controller=cmsProcedimentos&modo=ativarcabecalho&id=<?php echo($list[$cont]->idProcedimentoCabecalho); ?>">
+                 <a href="../../router.php?controller=cmsAmbiente&modo=ativarcabecalho&id=<?php echo($list[$cont]->idAmbienteCabecalho); ?>">
                    <img src="../../imagens/no.png" alt="Ativar" title="Ativar">
                  </a>
                </div>

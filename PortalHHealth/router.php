@@ -197,35 +197,35 @@ if(isset($_GET['controller'])){
                 $controller_procedimentos::DesativarCabecalho();
                 break;
 
-                //REFENTE AO CONTEUDO DE PROCEDIMENTOS
+                //REFENTE AO CONTEUDO DOS AMBIENTES
 
               case 'novoconteudo':
-                $controller_procedimentos = new controllerCmsProcedimentos();
+                $controller_procedimentos = new controllerCmsAmbientes();
                 $controller_procedimentos::NovoConteudo();
                 break;
 
               case 'excluirconteudo':
-                $controller_procedimentos = new controllerCmsProcedimentos();
+                $controller_procedimentos = new controllerCmsAmbientes();
                 $controller_procedimentos::ExcluirConteudo();
                 break;
 
               case 'editarconteudo':
-                $controller_procedimentos = new controllerCmsProcedimentos();
+                $controller_procedimentos = new controllerCmsAmbientes();
                 $controller_procedimentos::EditarConteudo();
                 break;
 
               case 'buscarconteudo':
-                $controller_procedimentos = new controllerCmsProcedimentos();
+                $controller_procedimentos = new controllerCmsAmbientes();
                 $controller_procedimentos::BuscarConteudo();
                 break;
 
               case 'ativarconteudo':
-                $controller_procedimentos = new controllerCmsProcedimentos();
+                $controller_procedimentos = new controllerCmsAmbientes();
                 $controller_procedimentos::AtivarConteudo();
                 break;
 
               case 'desativarconteudo':
-                $controller_procedimentos = new controllerCmsProcedimentos();
+                $controller_procedimentos = new controllerCmsAmbientes();
                 $controller_procedimentos::DesativarConteudo();
                 break;
           }
