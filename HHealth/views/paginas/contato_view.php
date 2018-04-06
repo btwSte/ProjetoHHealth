@@ -28,7 +28,7 @@
           <h1>Titulo Contato</h1>
         </div>
         <div id="segura_form_contato">
-          <form class="contato" action="contato" method="post">
+          <form class="contato" action="../../router.php?controller=Contato" method="post">
             <div id="tit">
               <p>Envie sua Sugestão ou Crítica:</p>
             </div>

@@ -9,8 +9,11 @@
         case 'home':
             $controller = new HomeController();
             break;
-        case 'cmsmochila':
-          $controller = new CmsMochilaController();
+        case 'Contato':
+          require_once('controllers/contato_controller.php');
+          require_once('models/contato.php');
+          $contato = new controllerCmsAmbientes();
+          $contato::InserirContato();
           break;
 
     }
