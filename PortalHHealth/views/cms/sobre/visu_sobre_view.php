@@ -5,7 +5,7 @@ require_once('../../../variaveis.php');
   #require_once("cms/conexao.php");
 
   /* Chama o arquivo que contem os funçoes*/
-  require_once ("../../func.php");
+  require_once ($voltaTres."func.php");
   /*Chama a função para verificar se o usuario esta logado*/
   logar($_SESSION['LogCod']);
 
@@ -15,12 +15,12 @@ require_once('../../../variaveis.php');
   <head>
     <meta charset="utf-8">
     <title>Portal HHealth - Visualizar Sobre</title>
-    <link rel="stylesheet" type="text/css" href="../../css/Frajola.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo $voltaTres; ?>css/Frajola.css">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<script src="js/modernizr.min.js"></script>
   </head>
   <body>
-    <?php include("../header.php"); ?>
+    <?php include($voltaDois."header.php"); ?>
 
     <script src="js/classie.js"></script>
 		<script src="js/photostack.js"></script>
@@ -52,7 +52,7 @@ require_once('../../../variaveis.php');
     </div>
 
     <main>
-      <?php include("../menuLateral_view.php"); ?>
+      <?php include($voltaDois."menuLateral_view.php"); ?>
 
       <script>
         function openNav() {
@@ -66,9 +66,9 @@ require_once('../../../variaveis.php');
 
       <h1>Cabeçalhos</h1>
       <?php
-        require_once('../../router.php');
-        require_once('../../controllers/cmsSobre_controller.php');
-        require_once('../../models/sobre_class.php');
+        require_once($voltaTres.'router.php');
+        require_once($voltaTres.'controllers/cmsSobre_controller.php');
+        require_once($voltaTres.'models/sobre_class.php');
 
         $controller_sobre = new controllerCmsSobre();
         //chama metodo para listar os registros
@@ -82,7 +82,7 @@ require_once('../../../variaveis.php');
         <div id="segura">
          <div id="imagem_titulo">
            <h1><?php echo($list[$cont]->tituloFoto); ?></h1>
-           <img src="../../<?php echo($list[$cont]->fotoCabecalho); ?>" alt="background Informações">
+           <img src="<?php echo($voltaTres.$list[$cont]->fotoCabecalho); ?>" alt="background Informações">
          </div>
          <div id="texto_info">
            <h1><?php echo($list[$cont]->tituloPagina); ?></h1>
@@ -90,11 +90,11 @@ require_once('../../../variaveis.php');
          <div class="Crud_Opc">
 
              <div class="Deletar_crud">
-               <a href="../../router.php?controller=cmsSobre&modo=excluircabecalho&id=<?php echo($list[$cont]->idSobreCabecalho); ?>">DELETAR</a>
+               <a href="<?php echo $voltaTres; ?>router.php?controller=cmsSobre&modo=excluircabecalho&id=<?php echo($list[$cont]->idSobreCabecalho); ?>">DELETAR</a>
 
              </div>
              <div class="Editar_crud">
-               <a href="../../router.php?controller=cmsSobre&modo=buscarcabecalho&id=<?php echo($list[$cont]->idSobreCabecalho); ?>">EDITAR</a>
+               <a href="<?php echo $voltaTres; ?>router.php?controller=cmsSobre&modo=buscarcabecalho&id=<?php echo($list[$cont]->idSobreCabecalho); ?>">EDITAR</a>
              </div>
 
              </div>
@@ -106,7 +106,7 @@ require_once('../../../variaveis.php');
               ?>
                <div class="ativar_crud ">
                  <a href="../../router.php?controller=cmsSobre&modo=desativarcabecalho&id=<?php echo($list[$cont]->idSobreCabecalho); ?>">
-                   <img src="../../imagens/check.png" alt="Desativar" title="Desativar">
+                   <img src="<?php echo $voltaTres; ?>imagens/check.png" alt="Desativar" title="Desativar">
                  </a>
                </div>
                <?php
@@ -116,7 +116,7 @@ require_once('../../../variaveis.php');
                 ?>
                <div class="desativar_crud ">
                  <a href="../../router.php?controller=cmsSobre&modo=ativarcabecalho&id=<?php echo($list[$cont]->idSobreCabecalho); ?>">
-                   <img src="../../imagens/no.png" alt="Ativar" title="Ativar">
+                   <img src="<?php echo $voltaTres; ?>imagens/no.png" alt="Ativar" title="Ativar">
                  </a>
                </div>
                <!-- FECHA O ELSE -->
@@ -143,7 +143,7 @@ require_once('../../../variaveis.php');
          <div id="segura">
            <div class="segura_img_info">
              <div class="img_info">
-               <img src="../../<?php echo($listConteudo[$contConteudo]->fotoSobre); ?>" alt="Sobre">
+               <img src="<?php echo($voltaTres.$listConteudo[$contConteudo]->fotoSobre); ?>" alt="Sobre">
              </div>
              <div class="info">
                <p><?php echo($listConteudo[$contConteudo]->textoSobre); ?></p>
@@ -167,7 +167,7 @@ require_once('../../../variaveis.php');
             ?>
              <div class="ativar_crud ">
                <a href="../../router.php?controller=cmsSobre&modo=desativarconteudo&id=<?php echo($listConteudo[$contConteudo]->idPaginaSobre); ?>">
-                 <img src="../../imagens/check.png" alt="Desativar" title="Desativar">
+                 <img src="<?php echo $voltaTres; ?>imagens/check.png" alt="Desativar" title="Desativar">
                </a>
              </div>
              <?php
@@ -177,7 +177,7 @@ require_once('../../../variaveis.php');
               ?>
              <div class="desativar_crud ">
                <a href="../../router.php?controller=cmsSobre&modo=ativarconteudo&id=<?php echo($listConteudo[$contConteudo]->idPaginaSobre); ?>">
-                 <img src="../../imagens/no.png" alt="Ativar" title="Ativar">
+                 <img src="<?php echo $voltaTres; ?>imagens/no.png" alt="Ativar" title="Ativar">
                </a>
              </div>
              <!-- FECHA O ELSE -->
