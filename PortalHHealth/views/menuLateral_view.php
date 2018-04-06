@@ -36,21 +36,14 @@
      <div class="linha_menu" href="#"> Procedimento de Exames
         <div class="categorias_ocultas" > <a href="cadastroProcedimentos_view.php">  Cadastrar </a></div>
         <div class="categorias_ocultas"> <a href="visu_procedimentos_view.php">  Visualizar </a></div>
-     </div >
-    
-    <div class="linha_menu" href="#"> Convênios
-        <div class="categorias_ocultas" > <a href="cadastroConvenio_view.php">  Cadastrar </a></div>
-        <div class="categorias_ocultas"> <a href="visu_convenio_view.php">  Visualizar </a></div>
-     </div >
-    
-     <div class="linha_menu" href="#"> Trabalhe Conosco
-        <div class="categorias_ocultas" > <a href="cadastroTrabalhe_view.php">  Cadastrar </a></div>
-        <div class="categorias_ocultas"> <a href="visu_trabalhe_view.php">  Visualizar </a></div>
-     </div >
+     </div >     
 
      <div  class="linha_menu" href="#">Troca de tema
        <div class="categorias_ocultas"><a href="">  Cadastrar</a></div>
        <div class="categorias_ocultas"> <a href=""> Visualizar</a></div>
+    </div>
+    
+    <div  class="linha_menu" href="#">Editar Perfil       
     </div>
 
   </div>

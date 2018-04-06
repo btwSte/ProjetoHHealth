@@ -1,21 +1,39 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Informações - HHealth</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/normalize.css">
-  </head>
-  <body>
-    <div id="principal_login">
-      <h1>LOGIN</h1>
-      <form class="" action="router.php?controller=cmsmochila&modo=logar" method="post">
-        <input type="text" name="cpf" value="" placeholder="CPF"> <br>
-        <input type="password" name="senha" value="" placeholder="Senha"> <br>
-        <input type="submit" name="entrar" value="ENTRAR">
-      </form>
-      <a href="#"> Cadastre-se </a>
-    </div>
-  </body>
-</html>
+    <head>
+        
+        <meta charset="utf-8">
+        <title>Login Sistema Gerenciavel</title>
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <link rel="stylesheet" type="text/css" href="css/Frajola.css">
+        <link rel="stylesheet" type="text/javascript"  href="js/script.js">
+    </head>
+    <body>
+        <div id="back">
+          <div class="backRight"></div>
+          <div class="backLeft"></div>
+        </div>
+
+        <div id="slideBox">
+          <div class="topLayer">            
+            <div class="right">
+                <div class="containerLogo">
+                 <img src="imagens/hhealth.png" alt="Logo" width="100%" height="100%">   
+                </div>
+              <div class="content">
+                
+                <form class="" action="router.php?controller=cmsmochila&modo=logar" method="post">
+                  <div class="form-groupDir">
+                        <input type="text" name="cpf" value="" placeholder="CPF">
+                  </div>
+                    <div class="form-group">
+                        <input type="password" name="senha" value="" placeholder="Senha">
+                  </div>                      
+                    <button type="submit" name="entrar" value="ENTRAR">ENTRAR</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>    
+    </body>
+</html>                                                                     
