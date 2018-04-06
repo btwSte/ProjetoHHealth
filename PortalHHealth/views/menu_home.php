@@ -13,8 +13,8 @@
     </div>
 
     <div  class="linha_menu" href="#">Sobre
-		<div class="categorias_ocultas"> <a href="cadastroSobre_view.php"> Cadastrar </a></div>
-		<div class="categorias_ocultas"> <a href="visu_sobre_view.php"> Visualizar </a></div>
+		<div class="categorias_ocultas"> <a href="sobre/cadastroSobre_view.php"> Cadastrar </a></div>
+		<div class="categorias_ocultas"> <a href="editar/visu_sobre.php"> Visualizar </a></div>
     </div>
 
 	<div  class="linha_menu" href="#">Unidades

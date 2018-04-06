@@ -1,4 +1,6 @@
 <?php
+require_once('../../variaveis.php');
+
 session_start();
 #require_once("cms/conexao.php");
 
@@ -19,7 +21,7 @@ logar($_SESSION['LogCod']);
 </head>
   <body>
 
-      <?php include("../header.php"); ?>
+      <?php include("../header_home.php"); ?>
 
 
   		<script src="js/classie.js"></script>
@@ -53,7 +55,7 @@ logar($_SESSION['LogCod']);
 
 
 
-      <?php include("../menuLateral_view.php"); ?>
+      <?php include("../menu_home.php"); ?>
 
 
         <script>

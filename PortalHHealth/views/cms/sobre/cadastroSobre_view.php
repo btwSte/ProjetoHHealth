@@ -1,4 +1,6 @@
 <?php
+require_once('../../../variaveis.php');
+
   $action2 = "modo=novoconteudo";
   $action = "modo=novocabecalho";
 
@@ -18,12 +20,12 @@
 	<head>
 		<meta charset="utf-8">
 		<title>CMS - Cadastrar Sobre</title>
-		<link rel="stylesheet" type="text/css" href="../../css/Frajola.css">
+		<link rel="stylesheet" type="text/css" href="<?php echo($voltaTres); ?>css/Frajola.css">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<script src="js/modernizr.min.js"></script>
 	</head>
 	<body>
-    <?php include("../header.php"); ?>
+    <?php include($voltaDois."header.php"); ?>
 		<div class="container">
 
 		</div><!-- /container -->
@@ -53,7 +55,7 @@
 			</span>
 		</div>
 		<main>
-			<?php include("../menuLateral_view.php"); ?>
+			<?php include($voltaDois."menuLateral_view.php"); ?>
 			<script>
 				function openNav() {
 					document.getElementById("mySidenav").style.width = "270px";

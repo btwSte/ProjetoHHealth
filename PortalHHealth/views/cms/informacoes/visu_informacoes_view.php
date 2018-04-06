@@ -1,4 +1,6 @@
 <?php
+require_once('../../../variaveis.php');
+
   session_start();
   #require_once("cms/conexao.php");
 

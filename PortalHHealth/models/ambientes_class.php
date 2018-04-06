@@ -5,6 +5,7 @@
    Class: Ambientes
    Obs: Replica dos campos do BD com os metodos de ações do CRUD
 */
+require_once("../../../variaveis.php");
 
 class Ambientes
 {
@@ -18,7 +19,7 @@ class Ambientes
   public $fotoConteudoAmbiente;
   public $textoConteudoAmbiente;
 
-  require_once("../variaveis.php");
+
 
   function __construct()
   {

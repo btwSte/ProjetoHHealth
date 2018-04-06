@@ -1,4 +1,5 @@
-<<<<<<< HEAD
+
+
 -- MySQL dump 10.13  Distrib 5.7.17, for Win64 (x86_64)
 --
 -- Host: localhost    Database: dbhhealth
@@ -3802,4 +3803,4 @@ UNLOCK TABLES;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
 -- Dump completed on 2018-04-04 21:34:54
->>>>>>> ae484674fbb6ae38ff627cbbeef1bf422505f744
+

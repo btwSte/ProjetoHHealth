@@ -1,3 +1,6 @@
+<?php
+	require_once('../../../variaveis.php');
+?>
 <!DOCTYPE html>
 <html>
 	<head>

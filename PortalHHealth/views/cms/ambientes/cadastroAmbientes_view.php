@@ -40,7 +40,7 @@
 		<script src="<?php echo($voltaTres); ?>js/modernizr.min.js"></script>
   </head>
   <body>
-    <?php include("../header.php"); ?>
+    <?php include($voltaDois."header.php"); ?>
 
 
       <div class="container">
@@ -78,7 +78,7 @@
       </div>
     <main>
 
-        <?php include("../menuLateral_view.php"); ?>
+        <?php include($voltaDois."menuLateral_view.php"); ?>
 
 
 
@@ -95,7 +95,7 @@
 
 
        <div class="segura_form_tbc">
-         <form class="frmCabecalhoAmbiente" action="../../router.php?controller=cmsAmbiente&<?php echo($action); ?>" method="post" enctype="multipart/form-data">
+         <form class="frmCabecalhoAmbiente" action="<?php echo $voltaDois; ?>router.php?controller=cmsAmbiente&<?php echo($action); ?>" method="post" enctype="multipart/form-data">
            <div class="tit">
              <p>Cadastro: Cabeçalho Ambientes</p>
            </div>
@@ -117,7 +117,7 @@
 
 
        <div class="segura_form_tbc">
-         <form class="frmConteudoAmbiente" action="../../router.php?controller=cmsAmbiente&<?php echo($action2); ?>" method="post" enctype="multipart/form-data">
+         <form class="frmConteudoAmbiente" action="<?php echo $voltaDois; ?>router.php?controller=cmsAmbiente&<?php echo($action2); ?>" method="post" enctype="multipart/form-data">
            <div class="tit">
              <p>Cadastro De Ambientes:</p>
            </div>

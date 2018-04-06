@@ -12,29 +12,29 @@
   <nav class="menu">
     <a class="btn_close"><i class="fa fa-times">X</i></a>
     <ul>
-      <li><a href="<?php  echo RAIZ; ?>home/ambientes">Ambientes</a></li>
-      <li><a href="<?php  echo RAIZ; ?>home/contato">Contato</a></li>
-      <li><a href="<?php  echo RAIZ; ?>home/convenios">Convênios</a></li>
-      <li><a href="<?php  echo RAIZ; ?>home/informacoes">Informações</a></li>
-      <li><a href="<?php  echo RAIZ; ?>home/procedimentoExames">Procedimento de Exames</a></li>
-      <li><a href="<?php  echo RAIZ; ?>home/sobre">Sobre</a></li>
-      <li><a href="<?php  echo RAIZ; ?>home/trabalheConosco">Trabalhe Conosco</a></li>
-      <li><a href="<?php  echo RAIZ; ?>home/unidades">Unidades</a></li>
+      <li><a href="home/ambientes">Ambientes</a></li>
+      <li><a href="home/contato">Contato</a></li>
+      <li><a href="home/convenios">Convênios</a></li>
+      <li><a href="home/informacoes">Informações</a></li>
+      <li><a href="home/procedimentoExames">Procedimento de Exames</a></li>
+      <li><a href="home/sobre">Sobre</a></li>
+      <li><a href="home/trabalheConosco">Trabalhe Conosco</a></li>
+      <li><a href="home/unidades">Unidades</a></li>
     </ul>
     <ul id="login_menu">
-      <li> <a href="<?php  echo RAIZ; ?>home/login">Login</a></li>
+      <li> <a href="home/login">Login</a></li>
       <li> <a href="#c">Cadastro</a></li>
     </ul>
   </nav>
 
   <div class="login_cadastro">
     <div id="login">
-      <a href="<?php  echo RAIZ; ?>home/login"> <img src="<?php  echo RAIZ; ?>imagens/login.png" alt="Login"> </a>
+      <a href="home/login"> <img src="imagens/login.png" alt="Login"> </a>
     </div>
     <div id="borda">
     </div>
     <div id="cadastro">
-      <a href="#"><img src="<?php  echo RAIZ; ?>imagens/cadUsuario.png" alt="Cadastro de Usuário"> </a>
+      <a href="#"><img src="imagens/cadUsuario.png" alt="Cadastro de Usuário"> </a>
     </div>
 
   </div>

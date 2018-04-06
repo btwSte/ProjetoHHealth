@@ -1,4 +1,6 @@
 <?php
+  require_once('../../../variaveis.php');
+  
   $action2 = "modo=novoconteudo";
   $action = "modo=novocabecalho";
 

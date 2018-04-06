@@ -1,7 +1,7 @@
 <?php
-  require_once("../../../variaveis.php");
+  require_once("../../variaveis.php");
 
-  require_once($voltaTres.'func.php');
+  require_once($voltaDois.'func.php');
 
 
 /*Verifica se o batao de deslogar existe e chama a função para deslogar o usuario*/
@@ -12,7 +12,7 @@ if (isset($_POST['deslogar'])) {
  ?>
 <header>
     <div id="logo">
-      <img src="<?php echo $voltaTres; ?>imagens/hhealth.png" alt="logo">
+      <img src="<?php echo $voltaDois; ?>imagens/hhealth.png" alt="logo">
     </div>
     <!--menu -->
     <div class="Titulo">

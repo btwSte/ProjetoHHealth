@@ -27,8 +27,8 @@
      </div>
 
      <div class="linha_menu" href="#"> Informações
-        <div class="categorias_ocultas" > <a href="views/cms/cadastroInformacoes_view.php">  Cadastrar </a></div>
-        <div class="categorias_ocultas"> <a href="views/cms/visu_informacoes.php">  Visualizar </a></div>
+        <div class="categorias_ocultas" > <a href="views/cms/informacoes/cadastroInformacoes_view.php">  Cadastrar </a></div>
+        <div class="categorias_ocultas"> <a href="views/cms/informacoes/visu_informacoes.php">  Visualizar </a></div>
      </div >
 
       <div  class="menu_segura" href="#">Historia
@@ -38,8 +38,8 @@
      </div>
 
      <div class="linha_menu" href="#"> Procedimento de Exames
-        <div class="categorias_ocultas" > <a href="views/cms/cadastroProcedimentos_view.php">  Cadastrar </a></div>
-        <div class="categorias_ocultas"> <a href="views/cms/visu_procedimentos.php">  Visualizar </a></div>
+        <div class="categorias_ocultas" > <a href="views/cms/procedimentos/cadastroProcedimentos_view.php">  Cadastrar </a></div>
+        <div class="categorias_ocultas"> <a href="views/cms/procedimentos/visu_procedimentos.php">  Visualizar </a></div>
      </div >
 
      <div  class="menu_segura" href="#">Troca de tema
