@@ -18,8 +18,8 @@
     </div>
 
 	<div  class="linha_menu" href="#">Unidades
-		<div class="categorias_ocultas"> <a href="unidades/cadastroUnidades_view.php"> Cadastrar </a></div>
-		<div class="categorias_ocultas"> <a href="unidades/visu_unidades_view.php"> Visualizar </a></div>
+		<div class="categorias_ocultas"> <a href="cadastroUnidades_view.php"> Cadastrar </a></div>
+		<div class="categorias_ocultas"> <a href="visu_unidades_view.php"> Visualizar </a></div>
     </div>
 
       <div  class="linha_menu" href="#">Contatos
