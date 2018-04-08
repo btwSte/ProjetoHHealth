@@ -5,7 +5,7 @@ require_once('../../../variaveis.php');
   #require_once("cms/conexao.php");
 
   /* Chama o arquivo que contem os funçoes*/
-  require_once ("../../func.php");
+  require_once ($voltaTres."func.php");
   /*Chama a função para verificar se o usuario esta logado*/
   logar($_SESSION['LogCod']);
 
@@ -15,15 +15,15 @@ require_once('../../../variaveis.php');
   <head>
     <meta charset="utf-8">
     <title>Portal HHealth - Visualizar Unidades</title>
-    <link rel="stylesheet" type="text/css" href="../../css/Frajola.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo($voltaTres); ?>css/Frajola.css">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<script src="js/modernizr.min.js"></script>
+		<script src="<?php echo($voltaTres); ?>js/modernizr.min.js"></script>
   </head>
   <body>
-    <?php include("../header.php"); ?>
+    <?php include($voltaDois."header.php"); ?>
 
-    <script src="js/classie.js"></script>
-		<script src="js/photostack.js"></script>
+    <script src="<?php echo($voltaTres); ?>js/classie.js"></script>
+		<script src="<?php echo($voltaTres); ?>js/photostack.js"></script>
 		<script>
       [].slice.call( document.querySelectorAll( '.photostack' ) ).forEach( function( el ) { new Photostack( el ); } );
 
@@ -52,7 +52,7 @@ require_once('../../../variaveis.php');
     </div>
 
     <main>
-      <?php include("../menuLateral_view.php"); ?>
+      <?php include($voltaDois."menuLateral_view.php"); ?>
 
       <script>
         function openNav() {
@@ -88,13 +88,13 @@ require_once('../../../variaveis.php');
 
                <div class="ativar_crud ">
                  <a href="">
-                   <img src="../../imagens/check.png" alt="Desativar" title="Desativar">
+                   <img src="<?php echo($voltaTres); ?>imagens/check.png" alt="Desativar" title="Desativar">
                  </a>
                </div>
 
                <div class="desativar_crud ">
                  <a href="">
-                   <img src="../../imagens/no.png" alt="Ativar" title="Ativar">
+                   <img src="<?php echo($voltaTres); ?>imagens/no.png" alt="Ativar" title="Ativar">
                  </a>
                </div>
 
@@ -129,13 +129,13 @@ require_once('../../../variaveis.php');
 
              <div class="ativar_crud ">
                <a href="">
-                 <img src="../../imagens/check.png" alt="Desativar" title="Desativar">
+                 <img src="<?php echo($voltaTres); ?>imagens/check.png" alt="Desativar" title="Desativar">
                </a>
              </div>
 
              <div class="desativar_crud ">
                <a href="">
-                 <img src="../../imagens/no.png" alt="Ativar" title="Ativar">
+                 <img src="<?php echo($voltaTres); ?>imagens/no.png" alt="Ativar" title="Ativar">
                </a>
              </div>
 

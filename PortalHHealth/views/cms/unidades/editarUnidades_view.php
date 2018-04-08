@@ -42,9 +42,9 @@ require_once('../../../variaveis.php');
   <head>
     <meta charset="utf-8">
     <title>CMS - Cadastrar Procedimentos</title>
-    <link rel="stylesheet" type="text/css" href="css/Frajola.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo($voltaTres); ?>css/Frajola.css">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<script src="js/modernizr.min.js"></script>
+		<script src="<?php echo($voltaTres); ?>js/modernizr.min.js"></script>
   </head>
   <body>
     <?php
@@ -68,8 +68,8 @@ require_once('../../../variaveis.php');
 
 
   		</div><!-- /container -->
-  		<script src="js/classie.js"></script>
-  		<script src="js/photostack.js"></script>
+  		<script src="<?php echo($voltaTres); ?>js/classie.js"></script>
+  		<script src="<?php echo($voltaTres); ?>js/photostack.js"></script>
   		<script>
   			 [].slice.call( document.querySelectorAll( '.photostack' ) ).forEach( function( el ) { new Photostack( el ); } );
 
@@ -98,7 +98,7 @@ require_once('../../../variaveis.php');
       </div>
     <main>
 
-        <?php include("views/menuLateral-editar.php"); ?>
+        <?php include($voltaDois."menuLateral-editar.php"); ?>
 
 
 
@@ -115,7 +115,7 @@ require_once('../../../variaveis.php');
 
 
        <div class="segura_form_tbc">
-         <form class="trabalhe_conosco" action="router.php?controller=cmsProcedimentos&<?php echo($action); ?>" method="post" enctype="multipart/form-data">
+         <form class="trabalhe_conosco" action="<?php echo($voltaTres); ?>router.php?controller=cmsUnidades&<?php echo($action); ?>" method="post" enctype="multipart/form-data">
            <div class="tit">
              <p>Cadastro: Cabeçalho informações</p>
            </div>
@@ -144,7 +144,7 @@ require_once('../../../variaveis.php');
 
 
        <div class="segura_form_tbc">
-         <form class="trabalhe_conosco" action="router.php?controller=cmsProcedimentos&<?php echo($action2); ?>" method="post" enctype="multipart/form-data">
+         <form class="trabalhe_conosco" action="<?php echo($voltaTres); ?>router.php?controller=cmsUnidades&<?php echo($action); ?>" method="post" enctype="multipart/form-data">
            <div class="tit">
              <p>Cadastro De Informações:</p>
            </div>

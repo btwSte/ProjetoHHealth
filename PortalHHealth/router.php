@@ -299,6 +299,75 @@ if(isset($_GET['controller'])){
 
         }
         break;
+
+      case 'cmsUnidades':
+        require_once('controllers/cmsUnidades_controller.php');
+        require_once('models/unidades_class.php');
+        switch ($modo) {
+        //REFENTE AO CABEÇALHO DE PROCEDIMENTOS
+          case 'novocabecalho':
+            $controller_unidades = new controllerCmsUnidades();
+            $controller_unidades::NovoCabecalho();
+            break;
+
+          case 'excluircabecalho':
+            $controller_unidades = new controllerCmsUnidades();
+            $controller_unidades::ExcluirCabecalho();
+            break;
+
+          case 'editarcabecalho':
+            $controller_unidades = new controllerCmsUnidades();
+            $controller_unidades::EditarCabecalho();
+            break;
+
+          case 'buscarcabecalho':
+            $controller_unidades = new controllerCmsUnidades();
+            $controller_unidades::BuscarCabecalho();
+            break;
+
+          case 'ativarcabecalho':
+            $controller_unidades = new controllerCmsUnidades();
+            $controller_unidades::AtivarCabecalho();
+            break;
+
+          case 'desativarcabecalho':
+            $controller_unidades = new controllerCmsUnidades();
+            $controller_unidades::DesativarCabecalho();
+            break;
+
+        //REFENTE AO CONTEUDO DE PROCEDIMENTOS
+          case 'novoconteudo':
+            $controller_unidades = new controllerCmsUnidades();
+            $controller_unidades::NovoConteudo();
+            break;
+
+          case 'excluirconteudo':
+            $controller_unidades = new controllerCmsUnidades();
+            $controller_unidades::ExcluirConteudo();
+            break;
+
+          case 'editarconteudo':
+            $controller_unidades = new controllerCmsUnidades();
+            $controller_unidades::EditarConteudo();
+            break;
+
+          case 'buscarconteudo':
+            $controller_unidades = new controllerCmsUnidades();
+            $controller_unidades::BuscarConteudo();
+            break;
+
+          case 'ativarconteudo':
+            $controller_unidades = new controllerCmsUnidades();
+            $controller_unidades::AtivarConteudo();
+            break;
+
+          case 'desativarconteudo':
+            $controller_unidades = new controllerCmsUnidades();
+            $controller_unidades::DesativarConteudo();
+            break;
+
+        }
+        break;
   }
 
 }
