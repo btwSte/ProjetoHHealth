@@ -5,7 +5,7 @@
   #require_once("cms/conexao.php");
 
   /* Chama o arquivo que contem os funçoes*/
-  require_once ("../../func.php");
+  require_once('../../../func.php');
   /*Chama a função para verificar se o usuario esta logado*/
   logar($_SESSION['LogCod']);
 
@@ -15,12 +15,12 @@
   <head>
     <meta charset="utf-8">
     <title>Portal HHealth - Visualizar pagina</title>
-    <link rel="stylesheet" type="text/css" href="../../css/Frajola.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo $voltaTres; ?>css/Frajola.css">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<script src="js/modernizr.min.js"></script>
   </head>
   <body>
-    <?php include("../header.php"); ?>
+    <?php include($voltaDois."header.php"); ?>
 
     <script src="js/classie.js"></script>
 		<script src="js/photostack.js"></script>
@@ -52,7 +52,7 @@
     </div>
 
     <main>
-      <?php include("../menuLateral_view.php"); ?>
+      <?php include($voltaDois."menuLateral_view.php"); ?>
 
       <script>
         function openNav() {
@@ -66,9 +66,9 @@
 
       <h1>Cabeçalhos</h1>
       <?php
-        require_once('../../router.php');
-        require_once('../../controllers/cmsSobre_controller.php');
-        require_once('../../models/procedimentos_class.php');
+        require_once($voltaTres.'router.php');
+        require_once($voltaTres.'controllers/cmsSobre_controller.php');
+        require_once($voltaTres.'models/procedimentos_class.php');
 
         $controller_procedimentos = new controllerCmsProcedimentos();
         //chama metodo para listar os registros
