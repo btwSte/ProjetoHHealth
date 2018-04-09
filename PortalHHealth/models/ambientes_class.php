@@ -220,9 +220,10 @@ class Ambientes
 
       //executa script no banco
       if ($PDOconex->query($sql))
-        header('location:'.$voltaUm.'PortalHHealth/views/cms/ambientes/cadastroAmbientes_view.php');
+        header('location:'.$voltaUm.'views/cms/ambientes/cadastroAmbientes_view.php');
       else
         echo "Erro no cadastro";
+        echo $sql;
 
       //Chama função que encerra conexao no banco
       $conex->Desconectar();
