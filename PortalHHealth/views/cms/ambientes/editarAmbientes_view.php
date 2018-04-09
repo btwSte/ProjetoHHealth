@@ -1,6 +1,6 @@
 <?php
-  require_once('../../../variaveis.php');
-  
+  require_once('variaveis.php');
+
   $action2 = "modo=novoconteudo";
   $action = "modo=novocabecalho";
 
@@ -97,7 +97,7 @@
       </div>
     <main>
 
-        <?php include("views/menuLateral-editar.php"); ?>
+        <?php include("views/menuLateral_view.php"); ?>
 
 
 

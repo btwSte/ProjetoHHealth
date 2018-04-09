@@ -6,14 +6,21 @@
  */
 
  class controllerCmsAmbientes{
-     public function InserirContato{
-       $idDadoContato = null;
-       $nome = $_POST['txtNome'];
-       $telefone = $_POST['txtTelefone'];
-       $celular = $_POST['txtCelular'];
-       $email = $_POST['txtEmail'];
-       $sugestao_critica = $_POST['rdo'];
-       $texto = $_POST['sugestaocritica'];
+
+    function InserirContato(){
+       $dadoContato = new Contato();
+
+       $dadoContato->idDadoContato = null;
+       $dadoContato->nome = $_POST['txtNome'];
+       $dadoContato->telefone = $_POST['txtTelefone'];
+       $dadoContato->celular = $_POST['txtCelular'];
+       $dadoContato->email = $_POST['txtEmail'];
+       $dadoContato->sugestaoOUcritica = $_POST['cs'];
+       $dadoContato->texto = $_POST['sugestaocritica'];
+
+       $dadoContato::Insert($dadoContato);
+       header('location:views/paginas/contato_view.php');
      }
+
      }
  ?>

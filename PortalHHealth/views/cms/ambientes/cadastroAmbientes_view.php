@@ -95,7 +95,7 @@
 
 
        <div class="segura_form_tbc">
-         <form class="frmCabecalhoAmbiente" action="<?php echo $voltaDois; ?>router.php?controller=cmsAmbiente&<?php echo($action); ?>" method="post" enctype="multipart/form-data">
+         <form class="frmCabecalhoAmbiente" action="<?php echo $voltaTres; ?>router.php?controller=cmsAmbiente&<?php echo($action); ?>" method="post" enctype="multipart/form-data">
            <div class="tit">
              <p>Cadastro: Cabeçalho Ambientes</p>
            </div>
@@ -117,7 +117,7 @@
 
 
        <div class="segura_form_tbc">
-         <form class="frmConteudoAmbiente" action="<?php echo $voltaDois; ?>router.php?controller=cmsAmbiente&<?php echo($action2); ?>" method="post" enctype="multipart/form-data">
+         <form class="frmConteudoAmbiente" action="<?php echo $voltaTres; ?>router.php?controller=cmsAmbiente&<?php echo($action2); ?>" method="post" enctype="multipart/form-data">
            <div class="tit">
              <p>Cadastro De Ambientes:</p>
            </div>

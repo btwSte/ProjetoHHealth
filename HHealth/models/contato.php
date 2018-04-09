@@ -14,7 +14,7 @@ class Contato
   public $telefone;
   public $celular;
   public $email;
-  public $sugestao_critica;
+  public $sugestaoOUcritica;
   public $texto;
 
 
@@ -29,7 +29,7 @@ class Contato
             '".$informacaoContato->telefone."',
             '".$informacaoContato->celular."',
             '".$informacaoContato->email."',
-            '".$informacaoContato->susgestao_critica."',
+            '".$informacaoContato->sugestaoOUcritica."',
             '".$informacaoContato->texto."');";
 
 
@@ -40,8 +40,13 @@ class Contato
     $PDOconex = $conex->Conectar();
 
     //executa script no banco
-    if ($PDOconex->query($sql))
-      header('');
+    if ($PDOconex->query($sql)){
+      echo "<script>
+            alert('Sua sugestao ou critica foi enviada');
+            </script>";
+
+      
+    }
     else
       echo "Erro no cadastro";
 
