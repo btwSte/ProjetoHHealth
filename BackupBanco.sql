@@ -513,7 +513,7 @@ CREATE TABLE `tbl_cidade` (
   `idCidade` int(11) NOT NULL AUTO_INCREMENT,
   `nome` varchar(255) NOT NULL,
   PRIMARY KEY (`idCidade`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -522,6 +522,7 @@ CREATE TABLE `tbl_cidade` (
 
 LOCK TABLES `tbl_cidade` WRITE;
 /*!40000 ALTER TABLE `tbl_cidade` DISABLE KEYS */;
+INSERT INTO `tbl_cidade` VALUES (1,'Alta Floresta D\'Oeste'),(2,'Ariquemes'),(3,'Cabixi'),(4,'Cacoal'),(5,'Embaúba'),(6,'Embu das Artes'),(7,'Embu-Guaçu'),(8,'Emilianópolis'),(9,'Engenheiro Coelho'),(10,'Espírito Santo do Pinhal'),(11,'Espírito Santo do Turvo'),(12,'Estrela D\'Oeste'),(13,'Estrela do Norte'),(14,'Euclides da Cunha Paulista');
 /*!40000 ALTER TABLE `tbl_cidade` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -758,7 +759,7 @@ CREATE TABLE `tbl_estado` (
   `nome` varchar(45) NOT NULL,
   `sigla` char(2) NOT NULL,
   PRIMARY KEY (`idEstado`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -767,6 +768,7 @@ CREATE TABLE `tbl_estado` (
 
 LOCK TABLES `tbl_estado` WRITE;
 /*!40000 ALTER TABLE `tbl_estado` DISABLE KEYS */;
+INSERT INTO `tbl_estado` VALUES (1,'Alagoas','AL'),(2,'Amapá','AP'),(3,'Amazonas','AM'),(4,'Bahia','BA'),(5,'Ceará','CE'),(6,'Distrito Federal','DF'),(7,'Espírito Santo','ES'),(8,'Goiás','GO'),(9,'Maranhão','MA'),(10,'Mato Grosso','MT'),(11,'Mato Grosso do Sul','MS'),(12,'Minas Gerais','MG'),(13,'Pará','PA'),(14,'Paraíba','PB'),(15,'Paraná','PR'),(16,'Pernambuco','PE'),(17,'Piauí','PI'),(18,'Rio de Janeiro','RJ'),(19,'Rio Grande do Norte','RN'),(20,'Rio Grande do Sul','RS'),(21,'Rondônia','RO'),(22,'Roraima','RR'),(23,'Santa Catarina','SC'),(24,'São Paulo','SP'),(25,'Sergipe','SE'),(26,'Tocantins','TO');
 /*!40000 ALTER TABLE `tbl_estado` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1893,4 +1895,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-04-09 10:05:51
+-- Dump completed on 2018-04-09 11:23:09
