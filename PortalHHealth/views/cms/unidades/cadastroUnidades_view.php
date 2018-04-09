@@ -3,25 +3,6 @@ require_once('../../../variaveis.php');
 
   $action2 = "modo=novoconteudo";
   $action = "modo=novocabecalho";
-
-  $idProcedimentoCabecalho = null;
-  $fotoCabecalho = null;
-  $tituloFoto = null;
-  $tituloCabecalho = null;
-  $idPaginaProcedimento = null;
-  $fotoProcedimento = null;
-  $textoProcedimento = null;
-
-  if (isset($cabecalhoResultado)) {
-    $idProcedimentoCabecalho = $cabecalhoResultado->idProcedimentoCabecalho;
-    $fotoCabecalho = $cabecalhoResultado->fotoCabecalho;
-    $tituloFoto = $cabecalhoResultado->tituloFoto;
-    $tituloCabecalho = $cabecalhoResultado->tituloCabecalho;
-    echo "<script>alert('Dentro do if!');
-          </script>";
-
-    $action = "modo=editarcabecalho&id=".$idProcedimentoCabecalho;
-  }
 ?>
 
 <!DOCTYPE html>
@@ -39,10 +20,6 @@ require_once('../../../variaveis.php');
 
       <div class="container">
 			<!-- Top Navigation -->
-
-
-
-
 
   		</div><!-- /container -->
   		<script src="<?php echo($voltaTres); ?>js/classie.js"></script>
@@ -67,79 +44,72 @@ require_once('../../../variaveis.php');
   			} );
   		</script>
       <div  id="opcao" class="button shrink">
-          <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;Menu
-		  </span>
+        <span style="font-size:30px;cursor:pointer" onclick="openNav()">
+          &#9776;Menu
+		    </span>
       </div>
     <main>
+      <?php include($voltaDois."menuLateral_view.php"); ?>
+      <script>
+        function openNav() {
+          document.getElementById("mySidenav").style.width = "270px";
+        }
 
-        <?php include($voltaDois."menuLateral_view.php"); ?>
-
-
-
-        <script>
-            function openNav() {
-                document.getElementById("mySidenav").style.width = "270px";
-            }
-
-            function closeNav() {
-                document.getElementById("mySidenav").style.width = "0";
-            }
-        </script>
+        function closeNav() {
+          document.getElementById("mySidenav").style.width = "0";
+        }
+      </script>
 
 
 
-       <div class="segura_form_tbc">
-         <form class="frmCabecalhoUnidade" action="<?php echo($voltaTres); ?>router.php?controller=cmsUnidades&<?php echo($action); ?>" method="post" enctype="multipart/form-data">
-           <div class="tit">
-             <p>Cadastro: Cabeçalho Unidades</p>
-           </div>
+      <div class="segura_form_tbc">
+        <form class="frmCabecalhoUnidade" action="<?php echo($voltaTres); ?>router.php?controller=cmsUnidades&<?php echo($action); ?>" method="post" enctype="multipart/form-data">
 
-             <div  class="text">
-               <input type="file" name="imagem_cabecalho"  size="16" />
-             </div>
+          <div class="tit">
+            <p>Cadastro: Cabeçalho Unidades</p>
+          </div>
 
-             <div class="text">
-               <input id="tel" placeholder="Texto da imagem:" type="text" name="txt1" value=""  maxlength="60">
-             </div>
+          <div  class="text">
+            <input type="file" name="imagem_cabecalho"  size="16" />
+          </div>
+          <div class="text">
+            <input id="tel" placeholder="Texto da imagem:" type="text" name="txt1" value=""  maxlength="60">
+          </div>
+          <div id="btn_tbc">
+            <input type="submit" name="btnEnviar" value="Enviar">
+          </div>
 
-             <div id="btn_tbc">
-               <input type="submit" name="btnEnviar" value="Enviar">
-             </div>
-         </form>
+        </form>
+      </div>
 
-       </div>
+      <div class="segura_form_tbc">
+        <form class="frmConteudoUnidade" action="<?php echo($voltaTres); ?>router.php?controller=cmsUnidades&<?php echo($action2); ?>" method="post" enctype="multipart/form-data">
 
+          <div class="tit">
+            <p>Cadastro De unidades:</p>
+          </div>
+          <div  class="text">
+           <input type="file" name="imagem_conteudo"  size="16" />
+          </div>
 
-       <div class="segura_form_tbc">
-         <form class="frmConteudoUnidade" action="<?php echo($voltaTres); ?>router.php?controller=cmsUnidades&<?php echo($action2); ?>" method="post" enctype="multipart/form-data">
-           <div class="tit">
-             <p>Cadastro De unidades:</p>
-           </div>
+          <div  class="text">
+            <input id="tel" placeholder="Endereço" type="text" name="txtEnd" value=""  maxlength="255">
+          </div>
 
-             <div  class="text">
-               <input type="file" name="imagem_conteudo"  size="16" />
-             </div>
+          <div  class="text">
+            <input id="tel" placeholder="Email da Unidade" maxlength="255" type="text2" name="txtEmail" value=""  maxlength="255">
+          </div>
 
-             <div  class="text">
-              <input id="tel" placeholder="Endereço" type="text" name="txt1" value=""  maxlength="255">
-             </div>
+          <div  class="text">
+            <input id="tel" placeholder="Numero" type="number" name="txtNum" value=""  maxlength="60">
+          </div>
 
-             <div  class="text">
-              <input id="tel" placeholder="Email da Unidade" type="text2" name="txt1" value=""  maxlength="255">
-             </div>
+          <div id="btn_tbc">
+            <input type="submit" name="btnEnviarConteudo" value="Enviar">
+          </div>
 
-             <div  class="text">
-              <input id="tel" placeholder="Numero" type="number" name="txt3" value=""  maxlength="60">
-             </div>
-
-           <div id="btn_tbc">
-             <input type="submit" name="btnEnviarConteudo" value="Enviar">
-           </div>
-         </form>
-
-       </div>
-
-
+        </form>
+      </div>
 	  </main>
   </body>
 </html>

@@ -38,7 +38,7 @@
 
         //executa script no banco
         if ($PDOconex->query($sql))
-          header('location:../PortalHHealth/views/cms/cadastroProcedimentos_view.php');
+          header('location:../PortalHHealth/views/cms/procedimentos/cadastroProcedimentos_view.php');
           // echo $sql;
         else
           echo "Erro no cadastro";
@@ -210,7 +210,7 @@
 
         //executa script no banco
         if ($PDOconex->query($sql))
-          header('location:../PortalHHealth/views/cms/cadastroProcedimentos_view.php');
+          header('location:../PortalHHealth/views/cms/procedimentos/cadastroProcedimentos_view.php');
         else
           echo "Erro no cadastro";
 

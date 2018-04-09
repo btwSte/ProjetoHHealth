@@ -65,11 +65,25 @@ require_once('../../../variaveis.php');
       </script>
 
       <h1>Cabeçalhos</h1>
+      <?php
+        require_once($voltaTres.'router.php');
+        require_once($voltaTres.'controllers/cmsUnidades_controller.php');
+        require_once($voltaTres.'models/unidades_class.php');
+
+        $controller_unidades = new controllerCmsUnidades();
+        //chama metodo para listar os registros
+        $list = $controller_unidades::ListarCabecalho();
+
+        $cont = 0;
+
+        while ($cont < count($list)) {
+
+       ?>
 
         <div id="segura">
          <div id="imagem_titulo">
-           <h1></h1>
-           <img src="" alt="">
+           <h1><?php echo($list[$cont]->tituloFoto); ?></h1>
+           <img src="<?php echo($voltaTres.$list[$cont]->fotoCabecalho); ?>" alt="">
          </div>
          <div id="texto_info">
            <h1></h1>
@@ -77,71 +91,118 @@ require_once('../../../variaveis.php');
          <div class="Crud_Opc">
 
              <div class="Deletar_crud">
-               <a href="">DELETAR</a>
+               <a href="<?php echo $voltaTres; ?>router.php?controller=cmsUnidades&modo=excluircabecalho&id=<?php echo($list[$cont]->idUnidadeCabecalho); ?>">DELETAR</a>
 
              </div>
              <div class="Editar_crud">
-               <a href="">EDITAR</a>
+               <a href="<?php echo $voltaTres; ?>router.php?controller=cmsUnidades&modo=buscarcabecalho&id=<?php echo($list[$cont]->idUnidadeCabecalho); ?>">EDITAR</a>
              </div>
 
              </div>
+             <!-- ABRE O IF -->
+             <?php
+                 // IF PARA DESATIVAR O CONTEUDO
+                   if ($list[$cont]->ativo == 1){
 
+              ?>
                <div class="ativar_crud ">
-                 <a href="">
+                 <a href="<?php echo $voltaTres; ?>router.php?controller=cmsUnidades&modo=desativarcabecalho&id=<?php echo($list[$cont]->idUnidadeCabecalho); ?>">
                    <img src="<?php echo($voltaTres); ?>imagens/check.png" alt="Desativar" title="Desativar">
                  </a>
                </div>
+               <?php
+             // FECHA O IF E ABRE ELSE
+             // ELSE PARA ATIVAR CONTEUDO
+             } else {
+                ?>
 
                <div class="desativar_crud ">
-                 <a href="">
+                 <a href="<?php echo $voltaTres; ?>router.php?controller=cmsUnidades&modo=ativarcabecalho&id=<?php echo($list[$cont]->idUnidadeCabecalho); ?>">
                    <img src="<?php echo($voltaTres); ?>imagens/no.png" alt="Ativar" title="Ativar">
                  </a>
                </div>
-
+               <!-- FECHA O ELSE -->
+                <?php
+                }
+                 ?>
          </div>
-
+         <?php
+             $cont += 1;
+           }
+         ?>
 
          <h1>Conteúdos</h1>
+
+         <?php
+           $controller_unidades = new controllerCmsUnidades();
+           //chama metodo para listar os registros
+           $listConteudo = $controller_unidades::ListarConteudo();
+
+           $contConteudo = 0;
+
+           while ($contConteudo < count($listConteudo)) {
+
+          ?>
 
          <div id="segura">
            <div class="segura_img_info">
              <div class="imgUniVisu">
-               <img src="" alt="">
+               <img src="<?php echo($voltaTres.$listConteudo[$contConteudo]->fotoUnidade); ?>" alt="Unidades">
              </div>
              <div class="txtUniVisu">
-                <div class="txtUnidade">Endereço:<!--SelectAqui--></div>
-                 <div class="txtUnidade">Email:<!--SelectAqui--></div>
-                 <div class="txtUnidade">Numero:<!--SelectAqui--></div>
+                <div class="txtUnidade">
+                  Endereço: <?php echo($listConteudo[$contConteudo]->endereco); ?>
+                </div>
+                 <div class="txtUnidade">
+                   Email: <?php echo($listConteudo[$contConteudo]->email); ?>
+                 </div>
+                 <div class="txtUnidade">
+                   Numero: <?php echo($listConteudo[$contConteudo]->numero); ?>
+                 </div>
              </div>
            </div>
            <div class="Crud_Opc">
 
                <div class="Deletar_crud">
-                 <a href="">DELETAR</a>
+                 <a href="<?php echo $voltaTres; ?>router.php?controller=cmsUnidades&modo=excluirconteudo&id=<?php echo($listConteudo[$contConteudo]->idPaginaUnidade); ?>">DELETAR</a>
 
                </div>
                <div class="Editar_crud">
-                 <a href="">EDITAR</a>
+                 <a href="<?php echo $voltaTres; ?>router.php?controller=cmsUnidades&modo=buscarconteudo&id=<?php echo($listConteudo[$contConteudo]->idPaginaUnidade); ?>">EDITAR</a>
                </div>
 
            </div>
            <!-- ABRE O IF -->
+           <?php
+               // IF PARA DESATIVAR O CONTEUDO
+                 if ($listConteudo[$contConteudo]->ativo == 1){
 
+            ?>
              <div class="ativar_crud ">
-               <a href="">
+               <a href="<?php echo $voltaTres; ?>router.php?controller=cmsUnidades&modo=desativarconteudo&id=<?php echo($listConteudo[$contConteudo]->idPaginaUnidade); ?>">
                  <img src="<?php echo($voltaTres); ?>imagens/check.png" alt="Desativar" title="Desativar">
                </a>
              </div>
-
+             <?php
+           // FECHA O IF E ABRE ELSE
+           // ELSE PARA ATIVAR CONTEUDO
+           } else {
+              ?>
              <div class="desativar_crud ">
-               <a href="">
+               <a href="<?php echo $voltaTres; ?>router.php?controller=cmsUnidades&modo=ativarconteudo&id=<?php echo($listConteudo[$contConteudo]->idPaginaUnidade); ?>">
                  <img src="<?php echo($voltaTres); ?>imagens/no.png" alt="Ativar" title="Ativar">
                </a>
              </div>
-
+             <!-- FECHA O ELSE -->
+              <?php
+              }
+               ?>
 
          </div>
-
+         <?php
+             $contConteudo +=1;
+           }
+         ?>
     </main>
   </body>
 </html>
