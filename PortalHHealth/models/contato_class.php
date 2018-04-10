@@ -28,6 +28,8 @@
      //chama o metodo para conectar no BD e guarda o resultado da funcao em uma variavel local($PDOconex)
      $PDOconex = $conex->Conectar();
 
+     $select = $PDOconex->query($sql);
+
      //inicia contador em 0
      $cont = 0;
 
@@ -53,6 +55,18 @@
      if (isset($listContato)) {
          return $listContato;
      }
+   }
+
+   public function Excluir($info_Contato){
+     $sql = "DELETE FROM tbl_dado_contato WHERE idDadoContato= $info_Contato->idDadoContato;";
+
+     //instancia a classe do banco
+     $conex = new Mysql_db();
+
+     //chama o metodo para conectar no BD e guarda o resultado da funcao em uma variavel local($PDOconex)
+     $PDOconex = $conex->Conectar();
+
+     $select = $PDOconex->query($sql);
    }
 
  }

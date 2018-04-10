@@ -18,5 +18,16 @@
        $info_Contato = new Contato();
        return $info_Contato::Select();
      }
+
+     public function ExcluirContato(){
+       $info_Contato = new Contato();
+
+       $info_Contato->idDadoContato = $_GET['id'];
+
+
+
+       return $info_Contato::Excluir($info_Contato);
+     }
+
   }
  ?>

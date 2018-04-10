@@ -1,14 +1,11 @@
 <?php
   require_once('../../../variaveis.php');
-
   session_start();
   #require_once("cms/conexao.php");
-
   /* Chama o arquivo que contem os funçoes*/
   require_once('../../../func.php');
   /*Chama a função para verificar se o usuario esta logado*/
   logar($_SESSION['LogCod']);
-
  ?>
 <!DOCTYPE html>
 <html>
@@ -26,19 +23,16 @@
 		<script src="js/photostack.js"></script>
 		<script>
       [].slice.call( document.querySelectorAll( '.photostack' ) ).forEach( function( el ) { new Photostack( el ); } );
-
   		new Photostack( document.getElementById( 'photostack-1' ), {
   			callback : function( item ) {
   				console.log(item)
   			}
   		} );
-
       new Photostack( document.getElementById( 'photostack-2' ), {
 				callback : function( item ) {
 					console.log(item)
 				}
 			} );
-
 			new Photostack( document.getElementById( 'photostack-3' ), {
 				callback : function( item ) {
 					console.log(item)
@@ -58,7 +52,6 @@
         function openNav() {
           document.getElementById("mySidenav").style.width = "270px";
         }
-
         function closeNav() {
           document.getElementById("mySidenav").style.width = "0";
         }
@@ -69,15 +62,11 @@
         require_once($voltaTres.'router.php');
         require_once($voltaTres.'controllers/cmsContato_controller.php');
         require_once($voltaTres.'models/contato_class.php');
-
         $controller_contatos = new controllerContato();
         //chama metodo para listar os registros
         $list = $controller_contatos::selectContato();
-
         $cont = 0;
-
         while ($cont < count($list)) {
-
        ?>
         <div id="segura">
          <div id="imagem_titulo">
@@ -102,7 +91,6 @@
              <?php
                  // IF PARA DESATIVAR O CONTEUDO
                    if ($list[$cont]->ativo == 1){
-
               ?>
                <div class="ativar_crud ">
                  <a href="../../router.php?controller=cmsProcedimentos&modo=desativarcabecalho&id=<?php echo($list[$cont]->idProcedimentoCabecalho); ?>">
@@ -134,9 +122,7 @@
            $controller_procedimentos = new controllercmsProcedimentos();
            //chama metodo para listar os registros
            $listConteudo = $controller_procedimentos::ListarConteudo();
-
            $contConteudo = 0;
-
            while ($contConteudo < count($listConteudo)) {
          ?>
 
@@ -163,7 +149,6 @@
            <?php
                // IF PARA DESATIVAR O CONTEUDO
                  if ($listConteudo[$contConteudo]->ativo == 1){
-
             ?>
              <div class="ativar_crud ">
                <a href="../../router.php?controller=cmsProcedimentos&modo=desativarconteudo&id=<?php echo($listConteudo[$contConteudo]->idPaginaProcedimento); ?>">
