@@ -67,12 +67,12 @@
       <h1>Cabeçalhos</h1>
       <?php
         require_once($voltaTres.'router.php');
-        require_once($voltaTres.'controllers/cmsSobre_controller.php');
-        require_once($voltaTres.'models/procedimentos_class.php');
+        require_once($voltaTres.'controllers/cmsContato_controller.php');
+        require_once($voltaTres.'models/contato_class.php');
 
-        $controller_procedimentos = new controllerCmsProcedimentos();
+        $controller_contatos = new controllerContato();
         //chama metodo para listar os registros
-        $list = $controller_procedimentos::ListarCabecalho();
+        $list = $controller_contatos::selectContato();
 
         $cont = 0;
 

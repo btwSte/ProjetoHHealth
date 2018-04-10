@@ -368,6 +368,17 @@ if(isset($_GET['controller'])){
 
         }
         break;
+      case 'Contato':
+        require_once('controllers/cmsUnidades_controller.php');
+        require_once('models/contato_class.php');
+        switch ($modo) {
+        //REFENTE AO CABEÇALHO DE PROCEDIMENTOS
+          case 'Selecionar':
+            $controller_contatos = new controllerContato();
+            $controller_contatos::selectContato();
+            break;
+        }
+        break;
   }
 
 }
