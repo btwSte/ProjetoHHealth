@@ -67,6 +67,7 @@
      $PDOconex = $conex->Conectar();
 
      $select = $PDOconex->query($sql);
+    header('location:views/cms/contatos/visu_contatosRecebidos_view.php');
    }
 
  }

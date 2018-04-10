@@ -27,6 +27,7 @@
 
 
        return $info_Contato::Excluir($info_Contato);
+      
      }
 
   }
