@@ -151,9 +151,14 @@
         $unidadeConteudo = new Unidades();
 
         // pega o conteudo
-        $unidadeConteudo->endereco = $_POST['txtEnd'];
+        $unidadeConteudo->cnpj = $_POST['txtCnpj'];
+        $unidadeConteudo->nome = $_POST['txtNome'];
         $unidadeConteudo->email = $_POST['txtEmail'];
+        $unidadeConteudo->telefone = $_POST['txtTel'];
+        $unidadeConteudo->logradouro = $_POST['txtLogradouro'];
         $unidadeConteudo->numero = $_POST['txtNum'];
+        $unidadeConteudo->bairro = $_POST['txtBairro'];
+        $unidadeConteudo->cep = $_POST['txtCep'];
 
         //inicia variaveis
         $diretorio_completo = null;

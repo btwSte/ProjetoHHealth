@@ -13,7 +13,9 @@
     public $tituloFoto;
     public $idPaginaUnidade;
     public $fotoUnidade;
-    public $endereco;
+    public $idEndereco;
+    public $cnpj;
+    public $nome;
     public $email;
     public $telefone;
     public $logradouro;
@@ -21,6 +23,7 @@
     public $bairro;
     public $cep;
     public $ativo;
+
 
     // Conexão com o banco
     public function __construct() {
@@ -200,6 +203,9 @@
 
     // REFERENTE AO CONTEUDO
     public function InsertConteudo($unidadeConteudo){
+      $enderecoResultado = new controllerCmsUnidades();
+      $sql = "";
+
       $sqlEnd = "INSERT INTO tbl_endereco (logradouro, numero, bairro, cep)
           VALUES ('".$unidadeConteudo->logradouro."',
                   '".$unidadeConteudo->numero."',
@@ -214,29 +220,31 @@
 
       if ($PDOconex->query($sqlEnd)){
         $select = "SELECT * FROM tbl_endereco ORDER BY idEndereco DESC LIMIT 1";
+        $resultEnd = $PDOconex->query($select);
 
-        if($result = $select->fetch(PDO::FETCH_ASSOC)){
-          $enderecoResultado = new controllerCmsUnidades();
+
+        if($result = $resultEnd->fetch(PDO::FETCH_ASSOC)){
 
           $enderecoResultado->idEndereco = $result['idEndereco'];
-          // $enderecoResultado->fotoCabecalho = $result['fotoCabecalho'];
-          // $enderecoResultado->tituloFoto = $result['tituloFoto'];
-          // $enderecoResultado->ativo = $result['ativo'];
+
         }else{
           echo "Nada encontrado";
         }
 
-        $sql = "INSERT INTO pagina_unidade (fotoUnidade, endereco, email, telefone)
+        $sql = "INSERT INTO tbl_unidade (fotoUnidade, nome, cnpj, idEndereco, email, telefone)
            VALUES ('".$unidadeConteudo->fotoUnidade."',
-                   '".$unidadeConteudo->enderecoResultado."',
+                  '".$unidadeConteudo->nome."',
+                  '".$unidadeConteudo->cnpj."',
+                   '".$enderecoResultado->idEndereco."',
                    '".$unidadeConteudo->email."',
                    '".$unidadeConteudo->telefone."')";
 
         //executa script no banco
         if ($PDOconex->query($sql)){
-          header('location:'.$voltaUm.'PortalHHealth/views/cms/unidades/cadastroUnidades_view.php');
+          header('location:'.$voltaUm.'views/cms/unidades/cadastroUnidades_view.php');
         } else {
           echo "Erro no cadastro";
+          echo $sql;
         }
 
       } else {
