@@ -151,13 +151,19 @@ require_once('../../../variaveis.php');
              </div>
              <div class="txtUniVisu">
                 <div class="txtUnidade">
-                  Endereço: <?php echo($listConteudo[$contConteudo]->endereco); ?>
+                   Nome: <!-- echo aqui -->
                 </div>
                  <div class="txtUnidade">
-                   Email: <?php echo($listConteudo[$contConteudo]->email); ?>
+                    Email: <!-- echo aqui -->
                  </div>
                  <div class="txtUnidade">
-                   Numero: <?php echo($listConteudo[$contConteudo]->numero); ?>
+                    Telefone: <!-- echo aqui -->
+                 </div>
+                 <div class="txtUnidade">
+                    Endereço: <!-- echo aqui -->
+                 </div>
+                 <div class="txtUnidade">
+                    CNPJ: <!-- echo aqui -->
                  </div>
              </div>
            </div>
