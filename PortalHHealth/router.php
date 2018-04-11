@@ -368,6 +368,7 @@ if(isset($_GET['controller'])){
 
         }
         break;
+
       case 'Contato':
         require_once('controllers/cmsContato_controller.php');
         require_once('models/contato_class.php');
