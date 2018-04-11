@@ -33,7 +33,7 @@
     <div id="borda">
     </div>
     <div id="cadastro">
-      <a href="#"><img src="imagens/cadUsuario.png" alt="Cadastro de Usuário" title="Cadastre-se"> </a>
+      <a href="views/cadastro_paciente/cadastroEtapaUm.php"><img src="imagens/cadUsuario.png" alt="Cadastro de Usuário" title="Cadastre-se"> </a>
     </div>
 
   </div>
