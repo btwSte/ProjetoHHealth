@@ -1,9 +1,11 @@
 <?php
   /* Autor: Stéphanie
-     Data de modificação: 06/04/18
+     Data de modificação: 10/04/18
      Class: Unidades
      Obs: Replica dos campos do BD com os metodos de ações do CRUD
    */
+
+   require_once(".../../../variaveis.php");
 
   class Unidades{
     public $idUnidadeCabecalho;
@@ -13,7 +15,11 @@
     public $fotoUnidade;
     public $endereco;
     public $email;
+    public $telefone;
+    public $logradouro;
     public $numero;
+    public $bairro;
+    public $cep;
     public $ativo;
 
     // Conexão com o banco
@@ -23,9 +29,12 @@
 
     //FUNÇÕES REFERENTE AO CABEÇALHO
     public function Insert($unidadeCabecalho){
+      $ativo = '1';
+
       $sql = "INSERT INTO tbl_unidade_cabecalho (fotoCabecalho, tituloFoto)
          VALUES ('".$unidadeCabecalho->fotoCabecalho."',
-                 '".$unidadeCabecalho->tituloFoto."')";
+                 '".$unidadeCabecalho->tituloFoto."',
+                 '".$ativo."')";
 
       //instancia a classe do banco
       $conex = new Mysql_db();
@@ -155,6 +164,8 @@
     }
 
     public function ActivateCabecalho($ativarCabecalho){
+      $update = "UPDATE tbl_unidade_cabecalho SET ativo='0' WHERE idUnidadeCabecalho > '0';";
+
       $sql = "UPDATE tbl_unidade_cabecalho SET ativo= 1 WHERE idUnidadeCabecalho=".$ativarCabecalho->id;
 
       $conex = new Mysql_db();
@@ -162,7 +173,7 @@
       $PDOconex = $conex->Conectar();
 
       if ($PDOconex->query($sql)) {
-        header('location:../PortalHHealth/views/cms/unidades/visu_unidades_view.php');
+        header('location:'.$voltaUm.'PortalHHealth/views/cms/unidades/visu_unidades_view.php');
       }else{
         echo "erro";
       }
@@ -178,7 +189,7 @@
       $PDOconex = $conex->Conectar();
 
       if ($PDOconex->query($sql)) {
-        header('location:../PortalHHealth/views/cms/unidades/visu_unidades_view.php');
+        header('location:'.$voltaUm.'PortalHHealth/views/cms/unidades/visu_unidades_view.php');
       }else{
         echo "erro";
       }
@@ -189,11 +200,11 @@
 
     // REFERENTE AO CONTEUDO
     public function InsertConteudo($unidadeConteudo){
-      $sql = "INSERT INTO pagina_unidade (fotoUnidade, endereco, email, numero)
-         VALUES ('".$unidadeConteudo->fotoUnidade."',
-                 '".$unidadeConteudo->endereco."',
-                 '".$unidadeConteudo->email."',
-                 '".$unidadeConteudo->numero."')";
+      $sqlEnd = "INSERT INTO tbl_endereco (logradouro, numero, bairro, cep)
+          VALUES ('".$unidadeConteudo->logradouro."',
+                  '".$unidadeConteudo->numero."',
+                  '".$unidadeConteudo->bairro."',
+                  '".$unidadeConteudo->cep."')";
 
       //instancia a classe do banco
       $conex = new Mysql_db();
@@ -201,11 +212,36 @@
       //chama o metodo para conectar no BD e guarda o resultado da funcao em uma variavel local($PDOconex)
       $PDOconex = $conex->Conectar();
 
-      //executa script no banco
-      if ($PDOconex->query($sql))
-        header('location:../PortalHHealth/views/cms/unidades/cadastroUnidades_view.php');
-      else
-        echo "Erro no cadastro";
+      if ($PDOconex->query($sqlEnd)){
+        $select = "SELECT * FROM tbl_endereco ORDER BY idEndereco DESC LIMIT 1";
+
+        if($result = $select->fetch(PDO::FETCH_ASSOC)){
+          $enderecoResultado = new controllerCmsUnidades();
+
+          $enderecoResultado->idEndereco = $result['idEndereco'];
+          // $enderecoResultado->fotoCabecalho = $result['fotoCabecalho'];
+          // $enderecoResultado->tituloFoto = $result['tituloFoto'];
+          // $enderecoResultado->ativo = $result['ativo'];
+        }else{
+          echo "Nada encontrado";
+        }
+
+        $sql = "INSERT INTO pagina_unidade (fotoUnidade, endereco, email, telefone)
+           VALUES ('".$unidadeConteudo->fotoUnidade."',
+                   '".$unidadeConteudo->enderecoResultado."',
+                   '".$unidadeConteudo->email."',
+                   '".$unidadeConteudo->telefone."')";
+
+        //executa script no banco
+        if ($PDOconex->query($sql)){
+          header('location:'.$voltaUm.'PortalHHealth/views/cms/unidades/cadastroUnidades_view.php');
+        } else {
+          echo "Erro no cadastro";
+        }
+
+      } else {
+        echo "Erro no cadastro de endereço";
+      }
 
       //Chama função que encerra conexao no banco
       $conex->Desconectar();
@@ -291,7 +327,7 @@
       $PDOconex = $conex->Conectar();
 
       if ($PDOconex->query($sql)) {
-        header('location:../PortalHHealth/views/cms/unidades/visu_unidades_view.php');
+        header('location:'.$voltaUm.'PortalHHealth/views/cms/unidades/visu_unidades_view.php');
       }else{
         echo "erro ao deletar";
       }
@@ -321,7 +357,7 @@
       $PDOconex = $conex->Conectar();
 
       if ($PDOconex->query($sql)) {
-        header('location:../PortalHHealth/views/cms/unidades/cadastroUnidades_view.php');
+        header('location:'.$voltaUm.'PortalHHealth/views/cms/unidades/cadastroUnidades_view.php');
         //
       }else{
         echo "erro";
@@ -339,7 +375,7 @@
       $PDOconex = $conex->Conectar();
 
       if ($PDOconex->query($sql)) {
-        header('location:../PortalHHealth/views/cms/unidades/visu_unidades_view.php');
+        header('location:'.$voltaUm.'PortalHHealth/views/cms/unidades/visu_unidades_view.php');
       }else{
         echo "erro";
       }
@@ -355,7 +391,7 @@
       $PDOconex = $conex->Conectar();
 
       if ($PDOconex->query($sql)) {
-        header('location:../PortalHHealth/views/cms/unidades/visu_unidades_view.php');
+        header('location:'.$voltaUm.'PortalHHealth/views/cms/unidades/visu_unidades_view.php');
       }else{
         echo "erro";
       }

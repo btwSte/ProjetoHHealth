@@ -17,7 +17,7 @@
       $this->user = "root";
       $this->password = "bcd127";
       $this->dataBaseName = "dbhhealth";
-      $this->user ="root";
+      //$this->user ="root";
     }
 
     //Conectar no DB

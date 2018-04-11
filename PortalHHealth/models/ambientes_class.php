@@ -5,7 +5,7 @@
    Class: Ambientes
    Obs: Replica dos campos do BD com os metodos de ações do CRUD
 */
-require_once("../../../variaveis.php");
+require_once(".../../../variaveis.php");
 
 class Ambientes
 {
@@ -44,7 +44,7 @@ class Ambientes
 
       //executa script no banco
       if ($PDOconex->query($sql))
-        header('location:'.$voltaUm.'PortalHHealth/views/cms/ambientes/cadastroAmbientes_view.php');
+        header('location:'.$voltaUm.'views/cms/ambientes/cadastroAmbientes_view.php');
       else
         echo "Erro no cadastro";
 
@@ -220,9 +220,10 @@ class Ambientes
 
       //executa script no banco
       if ($PDOconex->query($sql))
-        header('location:'.$voltaUm.'PortalHHealth/views/cms/ambientes/cadastroAmbientes_view.php');
+        header('location:'.$voltaUm.'views/cms/ambientes/cadastroAmbientes_view.php');
       else
         echo "Erro no cadastro";
+        echo $sql;
 
       //Chama função que encerra conexao no banco
       $conex->Desconectar();

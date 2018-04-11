@@ -93,21 +93,44 @@ require_once('../../../variaveis.php');
           </div>
 
           <div  class="text">
-            <input id="tel" placeholder="Endereço" type="text" name="txtEnd" value=""  maxlength="255">
+            <input id="tel" placeholder="CNPJ" maxlength="255" type="text" name="txtCnpj" value=""  maxlength="255">
           </div>
 
           <div  class="text">
-            <input id="tel" placeholder="Email da Unidade" maxlength="255" type="text2" name="txtEmail" value=""  maxlength="255">
+            <input id="tel" placeholder="Nome da Unidade" maxlength="255" type="text" name="txtNome" value=""  maxlength="255">
           </div>
 
           <div  class="text">
-            <input id="tel" placeholder="Numero" type="number" name="txtNum" value=""  maxlength="60">
+            <input id="tel" placeholder="Email da Unidade" maxlength="255" type="text" name="txtEmail" value=""  maxlength="255">
+          </div>
+
+          <div  class="text">
+            <input id="tel" placeholder="Telefone" type="text" name="txtTel" value=""  maxlength="60">
+          </div>
+
+          <div class="tit">
+            <p>Endereço: </p>
+          </div>
+
+          <div  class="text">
+            <input id="tel" placeholder="Logradouro" maxlength="255" type="text" name="txtLogradouro" value=""  maxlength="255">
+          </div>
+
+          <div  class="text">
+            <input id="tel" placeholder="N°" maxlength="255" type="text" name="txtNum" value=""  maxlength="255">
+          </div>
+
+          <div  class="text">
+            <input id="tel" placeholder="Bairro" maxlength="255" type="text" name="txtBairro" value=""  maxlength="255">
+          </div>
+
+          <div  class="text">
+            <input id="tel" placeholder="CEP" maxlength="255" type="text" name="txtCep" value=""  maxlength="255">
           </div>
 
           <div id="btn_tbc">
             <input type="submit" name="btnEnviarConteudo" value="Enviar">
           </div>
-
         </form>
       </div>
 	  </main>
