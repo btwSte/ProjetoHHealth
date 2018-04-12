@@ -1,0 +1,400 @@
+@charset "utf-8";
+/* CSS Document */
+
+body {
+
+	background-color:#FFFFFF;
+	/*background-image:url(../imagens/Futebol.jpg);
+	background-repeat:no-repeat;
+	background-position:center;*/
+}
+
+#principal {
+
+	width:980px;
+	height:1200px;
+	background-color:#FFFFFF;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+#cabecalho {
+
+	width:100%;
+	height:200px;
+	background-color:#999999;
+	background-image:url(../imagens/cabecalho3.jpg);
+}
+
+#menu {
+
+	width:100%;
+	height:50px;
+	background-color:#EFEFEF;
+
+}
+
+#conteudo {
+
+	width:100%;
+	height:900px;
+	background-color:#FFFFFF;
+
+}
+
+#rodape {
+
+	width:100%;
+	height:50px;
+	background-color:#999999;
+
+}
+
+/*Configuração da tablea do menu*/
+
+#tblmenu {
+
+	width:100%;
+	height:100%;
+	border:solid 2px;
+
+}
+
+#tblmenu td {
+
+	border:solid 1px;
+	background-color:#FFFF00;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:14px;
+	color:#993300;
+	font-weight:bold;
+	text-align:center;
+	width:20%;
+}
+
+
+/**/
+
+/*formatação de link*/
+a {
+
+	text-decoration:none;
+	color:#333333;
+}
+
+a:hover {
+
+	/*color:#CCCCCC;
+	font-size:16px;*/
+}
+
+#tblmenu td:hover {
+	
+	background-color:#FFFFCC;
+	font-size:18px;
+
+}
+
+/*
+a:alink {
+
+	text-decoration:none;
+	color:#FFFFFF;
+}
+
+a:vlink {
+	text-decoration:none;
+	color:#FFFFFF;
+}
+*/
+/**/
+
+/*Divs para estrutura o conteudo*/
+
+#conteudo1 {
+
+	width:294px;
+	height:300px;
+	background-color:#CCCCCC;
+	/*position:absolute;*/
+	float:left;
+	
+
+}
+#conteudo2 {
+
+	width:670px;
+	height:300px;
+	background-color:#FFFFFF;
+	/*position:absolute;
+	margin-left:294px;*/
+	float:right;
+	
+	padding:2px;
+	overflow:auto;
+
+
+}
+
+
+#conteudo3 {
+
+	width:670px;
+	height:300px;
+	background-color:#FFFFFF;
+	/*position:absolute;
+	margin-left:294px;*/
+	float:left;
+
+}
+
+
+.titulo {
+
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:18px;
+	text-align:center;
+	color:#0099FF;
+	font-weight:bold;
+
+}
+
+.texto {
+
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:12px;
+	text-align:justify;
+
+}
+
+
+
+/*formatação para o php*/
+
+#cadastro {
+
+	width:100%;
+	height:300px;
+	background-color:#FFFFFF;
+}
+
+#tblcadastro {
+	width:400px;
+	margin-left:auto;
+	margin-right:auto;
+	margin-top:10px;
+	border:solid 2px;
+	border-color:#C0C0C0;
+	
+}
+
+.tblcadastro_td{
+	width:100px;
+	border:solid 1px;
+	border-color:#CCCCCC;
+	font-family:verdana;
+	font-size:12px;
+	font-weight:bold;
+	height:40px;
+	text-align:right;
+	border-color:#DCDCDC;
+}
+
+
+.tblcadastro_td_campos{
+	width:100px;
+	border:solid 1px;
+	border-color:#CCCCCC;
+	font-family:verdana;
+	font-size:12px;
+	font-weight:bold;
+	height:40px;
+	text-align:left;
+	border-color:#DCDCDC;
+}
+
+#consulta {
+	
+	width:100%;
+	height:300px;
+	background-color:#FFFFFF;
+	overflow:auto;
+
+
+}
+
+#tblconsulta {
+
+	width:80%;
+	border: solid 3px;
+	margin-left:auto;
+	margin-right:auto;
+	background-color:#FFFFFF;
+
+
+}
+
+#tblconsulta td{
+
+	width:20%;
+	border: solid 1px;
+
+}
+
+.titulo_tabela {
+	background-color:#6495ED;
+	font-family:verdana;
+	font-size:16px;
+	text-align:center;
+	height:50px;
+	color:#ffffff;
+
+
+}
+/**/
+
+.caixa:focus{
+	background-color:#FFFFCC;
+}
+.caixa{
+	font-family:verdana;
+	font-size:10px;
+}
+
+
+.modal{
+	width:700px;
+	height:500px;
+	background-color:#ffffff;
+	margin:auto;
+	margin-top:250px;
+    box-shadow: 3px 5px 5px 3px #6bb27d;
+    min-height: 250px;
+    min-width: 50px;
+    
+}
+
+.modalContainer{
+	width:100%;
+	height:100%;
+	background: #6bb27d82;
+	position:fixed;
+	display:none;
+	
+
+}
+
+#barraIcone{
+    width: 700px;
+    height: 26px;
+    /*background-color: blue;*/
+    margin-top: 20px;
+    float: right
+}
+
+#btnClose{
+    width: 26px;
+    height: 26px;
+    /*background-color: aqua;*/
+    float: right;
+    margin-right: 20px;
+    
+}
+
+#txtTitulo{
+    width: 300px;
+    height: 26px;
+    /*background-color: aqua;*/
+    margin: auto;
+    font-family: "Avenir", 'Helvetica Neue', 'Lato', 'Segoe UI', Helvetica, Arial, sans-serif;
+    text-align: center;
+    color: #6bb27d;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* CAMPOS TEXTOS */
+.campoTexto{
+    width: 650px;
+    height: 25px;
+    margin: auto;
+    margin-top: 10px;
+    border: solid 2px #6bb27d;   
+    border-radius: 10px;
+}
+
+.campoEsqTexto{
+    width: 120px;
+    height: 23px;
+    border-radius: 7px 0px 0px 7px;
+    border: solid 2px #6bb27d; 
+    background-color: #6bb27d;
+    left: auto;
+    font-family: "Avenir", 'Helvetica Neue', 'Lato', 'Segoe UI', Helvetica, Arial, sans-serif;
+    text-align: center;
+    color: #fff;
+    font-size: 15px;
+    float: left;
+}
+
+.campoDirTexto{
+    width: 523px;
+    height: 23px; 
+    font-family: "Avenir", 'Helvetica Neue', 'Lato', 'Segoe UI', Helvetica, Arial, sans-serif;
+    text-align: center;
+    color: #000;
+    font-size: 15px;
+    background-color: #fff;
+    float: left;
+    border-radius: 0px 7px 7px 0px;
+    word-wrap: break-word;    
+    overflow:auto;
+}
+
+.campoMensagem{
+    width: 650px;
+    height: 170px;
+    margin: auto;
+    margin-top: 10px;
+    border: solid 2px #6bb27d;
+    padding: 5px;    
+    border-radius: 10px;
+    text-align: justify;
+    font-family: "Avenir", 'Helvetica Neue', 'Lato', 'Segoe UI', Helvetica, Arial, sans-serif;    
+    color: #000;
+    font-size: 15px;
+    overflow:auto;
+}
+
+/* Opções */
+.campoEsqContato{/* Se a mensagem for uma SUGESTÃO */
+     width: 325px;
+    height: 25px;
+    border-radius: 7px 0px 0px 7px;
+    left: auto;
+    font-family: "Avenir", 'Helvetica Neue', 'Lato', 'Segoe UI', Helvetica, Arial, sans-serif;
+    text-align: center;    
+    font-size: 15px;
+    float: left;
+    border-width: 2px 0px 0px 2px;
+    /* 
+    color: #000;
+    background-color: #fff;
+    */
+}
+
+.campoDirContato{/* Se a mensagem for uma CRITICA */
+     width: 325px;
+    height: 25px;
+    border-radius: 0px 7px 7px 0px; 
+    right: auto;
+    font-family: "Avenir", 'Helvetica Neue', 'Lato', 'Segoe UI', Helvetica, Arial, sans-serif;
+    text-align: center;    
+    font-size: 15px;
+    float: right;
+    border-width: 0px 2px 2px 0px;
+    /* 
+    color: #000;
+    background-color: #fff;
+    */
+}

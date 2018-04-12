@@ -9,8 +9,37 @@
 		<link rel="stylesheet" type="text/css" href="<?php echo $voltaTres; ?>css/Frajola.css">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<script src="js/modernizr.min.js"></script>
+		<script>
+			$(document).ready(function() {
+
+			  $(".ver").click(function() {
+			    $(".modalContainer").slideToggle(2000);
+				//slideToggle
+				//toggle
+				//FadeIn
+			  });
+			});
+
+
+
+				function Modal(idIten){
+					$.ajax({
+						type: "POST",
+						url: "MODAL/modal.php",
+						data: {id:idIten},
+						success: function(dados){
+							$('.modal').html(dados);
+						}
+					});
+				}
+		</script>
 	</head>
 	<body>
+		<div class="modalContainer">
+			<div class="modal">
+
+			</div>
+		</div>
     <?php include($voltaDois."header.php"); ?>
 		<div class="container">
 
@@ -84,7 +113,7 @@
                     <div class="campoNeutroSelect"><?php echo($list[$cont]->email); ?></div>
                     <div class="campoNeutroSelect">
                         <div class="optionSelect">
-	                            <a href="#" alt="IconeVisualizar" >
+	                            <a class="ver" href="#" alt="IconeVisualizar" onclick="Modal(<?php echo($list[$cont]->idDadoContato) ?>)">
                                 <img src="<?php echo $voltaTres; ?>imagens/visualizarVerde.png" alt="Zoom" width="30" height="25" /><!-- Icone Para Visualizar a Selecionada -->
                             </a>
                         </div>
