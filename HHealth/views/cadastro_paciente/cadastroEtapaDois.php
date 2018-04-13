@@ -35,7 +35,7 @@
                     </div>
                     
                     <div class="barraInformacaoFormularioLeft">Cidade</div>
-                    <div class="barraInformacaoFormularioLeft">Estado</div>
+                    <div class="barraInformacaoFormularioRight">Estado</div>
                     <div class="barraInputFormularioDuo">
                         <div class="barraSemiImputDuos">
                             <select name="sltCidade">
@@ -54,7 +54,7 @@
                     </div>
 
                     <div class="barraInformacaoFormularioLeft">Numero</div>
-                    <div class="barraInformacaoFormularioLeft">Bairro</div>
+                    <div class="barraInformacaoFormularioRight">Bairro</div>
                     <div class="barraInputFormularioDuo">
                         <div class="barraSemiImputDuos">
                             <input type="tex" required placeholder="" name="txtNumero" value="" maxlength="255" class="inputRedux">

@@ -70,5 +70,38 @@
     header('location:views/cms/contatos/visu_contatosRecebidos_view.php');
    }
 
+   public function SelectByID($info_Contato){
+     $sql = "SELECT * FROM tbl_dado_contato WHERE idDadoContato = $info_Contato->idDadoContato";
+
+     //instancia a classe do banco
+     $conex = new Mysql_db();
+
+     //chama o metodo para conectar no BD e guarda o resultado da funcao em uma variavel local($PDOconex)
+     $PDOconex = $conex->Conectar();
+
+     $select = $PDOconex->query($sql);
+
+     //guarda resultado
+     if ($result = $select->fetch(PDO::FETCH_ASSOC)) {
+       $listContato = new Contato();
+
+       $listContato->idDadoContato = $result['idDadoContato'];
+       $listContato->nome = $result['nome'];
+       $listContato->telefone = $result['telefone'];
+       $listContato->celular = $result['celular'];
+       $listContato->email = $result['email'];
+       $listContato->sugestao_critica = $result['sugestao_critica'];
+       $listContato->texto = $result['texto'];
+    }
+
+     //Chama função que encerra conexao no banco
+     $conex->Desconectar();
+
+     if (isset($listContato)) {
+         return $listContato;
+     }
+   }
+
+
  }
  ?>

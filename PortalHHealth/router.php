@@ -383,6 +383,10 @@ if(isset($_GET['controller'])){
             $controller_contatos = new controllerContato();
             $controller_contatos::ExcluirContato();
             break;
+          case 'SelecionarEspecifico':
+            $controller_contatos = new controllerContato();
+            $controller_contatos::selectContato();
+            break;
         }
         break;
   }

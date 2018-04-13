@@ -29,7 +29,7 @@
                     </div>
 
                     <div class="barraInformacaoFormularioLeft">Data de Nascimento</div>
-                    <div class="barraInformacaoFormularioLeft">Estado Civil</div>
+                    <div class="barraInformacaoFormularioRight">Estado Civil</div>
                     <div class="barraInputFormularioDuo">
                         <div class="barraSemiImputDuos">
                             <input type="text" required placeholder="" name="txtDtnasc" value="" maxlength="255" class="inputRedux">
@@ -44,7 +44,7 @@
                     </div>
 
                     <div class="barraInformacaoFormularioLeft">Sexo</div>
-                    <div class="barraInformacaoFormularioLeft">Nacionalidade</div>
+                    <div class="barraInformacaoFormularioRight">Nacionalidade</div>
                     <div class="barraInputFormularioDuo">
                         <div class="barraSemiImputDuos">
                             <select name="sltSexo">
@@ -54,7 +54,7 @@
                             </select>
                         </div>
                         <div class="barraSemiImputDuos">
-                            <select name="sltNacionalidade" class="select">
+                            <select name="barraInformacaoFormularioRight" class="select">
                                 <option value="*">Nacionalidade</option>
                                 <option value="1">Brasilerira</option>
                                 <option value="2">Portuguesa</option>
@@ -63,7 +63,7 @@
                     </div>                 
 
                     <div class="barraInformacaoFormularioLeft">N° do RG</div>
-                    <div class="barraInformacaoFormularioLeft">N° do CPF</div>
+                    <div class="barraInformacaoFormularioRight">N° do CPF</div>
                     <div class="barraInputFormularioDuo">
                         <div class="barraSemiImputDuos">
                             <input type="text" required placeholder="" name="txtRg" value="" maxlength="255" class="inputRedux">
@@ -74,7 +74,7 @@
                     </div>
 
                     <div class="barraInformacaoFormularioLeft">Telefone</div>
-                    <div class="barraInformacaoFormularioLeft">Celular</div>
+                    <div class="barraInformacaoFormularioRight">Celular</div>
                     <div class="barraInputFormularioDuo">
                         <div class="barraSemiImputDuos">
                             <input type="tex" required placeholder="" name="txtTelefone" value="" maxlength="255" class="inputRedux">
@@ -86,7 +86,7 @@
 
 
                     <div class="barraInformacaoFormularioLeft">Email</div>
-                    <div class="barraInformacaoFormularioLeft">Senha</div>
+                    <div class="barraInformacaoFormularioRight">Senha</div>
                     <div class="barraInputFormularioDuo">
                         <div class="barraSemiImputDuos">
                             <input type="email" required placeholder="" name="txtEmail" value="" maxlength="255" class="inputRedux">

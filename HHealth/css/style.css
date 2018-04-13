@@ -479,7 +479,7 @@
 
          /* Manipula input*/
         .inputFile input {
-          margin-left: 10px;
+          margin-left: 0px;
           margin-right: 10px;
           padding: 5px;
           width: 90%;
@@ -1454,7 +1454,7 @@ button {
     height: 25px;
     /*background-color: aqua;*/
     margin-top: 5px;
-    margin-left: 50px;
+    margin-left: 5px;
     font-family: "Avenir", 'Helvetica Neue', 'Lato', 'Segoe UI', Helvetica, Arial, sans-serif;
     text-align: left;
     color: #6bb27d;
@@ -1465,7 +1465,7 @@ button {
     width: 350px;
     height: 100%;
     /* background-color: aqua;*/
-    margin-left: 15px;
+    margin-left: 5px;
     font-family: "Avenir", 'Helvetica Neue', 'Lato', 'Segoe UI', Helvetica, Arial, sans-serif;
     text-align: left;
     color: #6bb27d;
@@ -1477,13 +1477,13 @@ button {
     width: 300px;
     height: 25px;
     /*background-color: aqua;*/
-    margin-top: 7px;
-    margin-left: 50px;
+    margin-top: 5px;
+    margin-left: 60px;
     font-family: "Avenir", 'Helvetica Neue', 'Lato', 'Segoe UI', Helvetica, Arial, sans-serif;
     text-align: left;
     color: #6bb27d;
     font-size: 20px;
-    float: right;
+    float: left;
 }
 
 .arquivo {

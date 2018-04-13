@@ -27,7 +27,12 @@
 
 
        return $info_Contato::Excluir($info_Contato);
-      
+
+     }
+     public function selectContatoByID(){
+       $info_Contato = new Contato();
+       $info_Contato->idDadoContato = $_POST['id'];
+       return $info_Contato::SelectByID($info_Contato);
      }
 
   }
