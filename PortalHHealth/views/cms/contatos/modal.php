@@ -1,4 +1,5 @@
 <?php 
+    require_once('../../../variaveis.php');
 	$id = $_POST['id'];
 
 
@@ -13,7 +14,7 @@ $(document).ready(function() {
 
   $(".fechar").click(function() {
     //$(".modalContainer").fadeOut();
-	$(".modalContainer").slideToggle(1000);
+	$(".modalContainer").slideToggle(100);
   });
 });
 	
@@ -24,7 +25,7 @@ $(document).ready(function() {
         <div id="barraIcone">
             <div id="btnClose">
                 <a href="#" class="fechar">
-                    <img src="imagens/iconeFechar.png" alt="Fechar" /><!-- Icone Para Visualizar a Selecionada -->
+                    <img src="<?php echo $voltaTres; ?>imagens/iconeFechar.png" alt="Fechar" /><!-- Icone Para Visualizar a Selecionada -->
                 </a>
             </div>
             <div id="txtTitulo">

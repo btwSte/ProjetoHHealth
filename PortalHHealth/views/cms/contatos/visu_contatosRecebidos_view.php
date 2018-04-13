@@ -7,8 +7,11 @@
 		<meta charset="utf-8">
 		<title>CMS - Mensagens Recebidads</title>
 		<link rel="stylesheet" type="text/css" href="<?php echo $voltaTres; ?>css/Frajola.css">
+        <link rel="stylesheet" type="text/css" href="MODAL/css/style.css">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<script src="js/modernizr.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="<?php echo $voltaTres; ?>css/styleModal.css">
+		<script src="<?php echo $voltaTres; ?>js/modernizr.min.js"></script>
+        <script type="text/javascript" src="<?php echo $voltaTres; ?>js/jquery.js"></script>
 		<script>
 			$(document).ready(function() {
 
@@ -25,7 +28,7 @@
 				function Modal(idIten){
 					$.ajax({
 						type: "POST",
-						url: "MODAL/modal.php",
+						url: "modal.php",
 						data: {id:idIten},
 						success: function(dados){
 							$('.modal').html(dados);
@@ -113,7 +116,7 @@
                     <div class="campoNeutroSelect"><?php echo($list[$cont]->email); ?></div>
                     <div class="campoNeutroSelect">
                         <div class="optionSelect">
-	                            <a class="ver" href="#" alt="IconeVisualizar" onclick="Modal(<?php echo($list[$cont]->idDadoContato) ?>)">
+                            <a class="ver" href="#" alt="IconeVisualizar" onclick="Modal(<?php echo($list[$cont]->idDadoContato) ?>)">
                                 <img src="<?php echo $voltaTres; ?>imagens/visualizarVerde.png" alt="Zoom" width="30" height="25" /><!-- Icone Para Visualizar a Selecionada -->
                             </a>
                         </div>
