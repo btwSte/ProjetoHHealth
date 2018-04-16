@@ -1,6 +1,6 @@
 <?php
 /* Autor: Stéphanie
-   Data de modificação: 11/04/18
+   Data de modificação: 16/04/18
    Class: Endereço
    Obs: Replica dos campos do BD com os metodos de ações do CRUD
  */
@@ -52,6 +52,25 @@
 
 
       //Chama função que encerra conexao no banco
+      $conex->Desconectar();
+    }
+
+    public function Delete($excluirEnd){
+      // Select no banco
+      $sql = "DELETE FROM tbl_endereco WHERE idEndereco=".$excluirEnd->idEndereco;
+
+      //instancia a classe do banco
+      $conex = new Mysql_db();
+
+      //chama o metodo para conectar no BD e guarda o resultado da funcao em uma variavel local($PDOconex)
+      $PDOconex = $conex->Conectar();
+
+      if ($PDOconex->query($sql)) {
+        header('location:PortalHHealth/views/cms/unidades/visu_unidades_view.php');
+      }else{
+        echo "erro ao deletar";
+      }
+
       $conex->Desconectar();
     }
   }

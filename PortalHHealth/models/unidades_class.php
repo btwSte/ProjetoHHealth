@@ -1,6 +1,6 @@
 <?php
   /* Autor: Stéphanie
-     Data de modificação: 11/04/18
+     Data de modificação: 16/04/18
      Class: Unidades
      Obs: Replica dos campos do BD com os metodos de ações do CRUD
    */
@@ -13,17 +13,11 @@
     public $tituloFoto;
     public $idUnidade;
     public $fotoUnidade;
-<<<<<<< HEAD
     public $nome;
     public $cnpj;
-    public $endereco;
-=======
-    public $idEndereco;
-    public $cnpj;
-    public $nome;
->>>>>>> 05cf7b4cf897a392a44504680feabb506444120f
     public $email;
     public $telefone;
+    public $idEndereco;
     public $ativo;
 
 
@@ -36,7 +30,7 @@
     public function Insert($unidadeCabecalho){
       $ativo = '1';
 
-      $sql = "INSERT INTO tbl_unidade_cabecalho (fotoCabecalho, tituloFoto)
+      $sql = "INSERT INTO tbl_unidade_cabecalho2 (fotoCabecalho, tituloFoto, ativo)
          VALUES ('".$unidadeCabecalho->fotoCabecalho."',
                  '".$unidadeCabecalho->tituloFoto."',
                  '".$ativo."')";
@@ -52,7 +46,7 @@
         header('location:../PortalHHealth/views/cms/unidades/cadastroUnidades_view.php');
       else
         echo "Erro no cadastro";
-        // echo $sql;
+        echo $sql;
 
       //Chama função que encerra conexao no banco
       $conex->Desconectar();
@@ -60,7 +54,7 @@
 
     public function SelectCabecalho(){
       // Select no banco
-      $sql = "SELECT * FROM tbl_unidade_cabecalho ORDER BY idUnidadeCabecalho DESC";
+      $sql = "SELECT * FROM tbl_unidade_cabecalho2 ORDER BY idUnidadeCabecalho DESC";
 
       //instancia a classe do banco
       $conex = new Mysql_db();
@@ -94,7 +88,7 @@
     }
 
     public function SelectCabecalhoById($unidades){
-      $sql = "SELECT * FROM tbl_unidade_cabecalho WHERE idUnidadeCabecalho=".$unidades->id;
+      $sql = "SELECT * FROM tbl_unidade_cabecalho2 WHERE idUnidadeCabecalho=".$unidades->id;
 
       //instancia a classe do banco
       $conex = new Mysql_db();
@@ -125,7 +119,7 @@
 
     public function DeleteCabecalho($excluirCabecalho){
       // Select no banco
-      $sql = "DELETE FROM tbl_unidade_cabecalho WHERE idUnidadeCabecalho=".$excluirCabecalho->id;
+      $sql = "DELETE FROM tbl_unidade_cabecalho2 WHERE idUnidadeCabecalho=".$excluirCabecalho->id;
 
       //instancia a classe do banco
       $conex = new Mysql_db();
@@ -145,11 +139,11 @@
 
     public function UpdateCabecalho($unidades){
       if ($unidades->fotoCabecalho == "vazio") {
-        $sql = "UPDATE tbl_unidade_cabecalho SET
+        $sql = "UPDATE tbl_unidade_cabecalho2 SET
             tituloFoto='".$unidades->tituloFoto."'
             WHERE idUnidadeCabecalho=".$unidades->id;
       } else {
-        $sql = "UPDATE tbl_unidade_cabecalho SET
+        $sql = "UPDATE tbl_unidade_cabecalho2 SET
           fotoCabecalho='".$unidades->fotoCabecalho."',
           tituloFoto='".$unidades->tituloFoto."'
           WHERE idUnidadeCabecalho=".$unidades->id;
@@ -169,16 +163,16 @@
     }
 
     public function ActivateCabecalho($ativarCabecalho){
-      $update = "UPDATE tbl_unidade_cabecalho SET ativo='0' WHERE idUnidadeCabecalho > '0';";
+      $update = "UPDATE tbl_unidade_cabecalho2 SET ativo='0' WHERE idUnidadeCabecalho > '0';";
 
-      $sql = "UPDATE tbl_unidade_cabecalho SET ativo= 1 WHERE idUnidadeCabecalho=".$ativarCabecalho->id;
+      $sql = "UPDATE tbl_unidade_cabecalho2 SET ativo= 1 WHERE idUnidadeCabecalho=".$ativarCabecalho->id;
 
       $conex = new Mysql_db();
 
       $PDOconex = $conex->Conectar();
 
       if ($PDOconex->query($sql)) {
-        header('location:'.$voltaUm.'PortalHHealth/views/cms/unidades/visu_unidades_view.php');
+        header('location:'.$voltaUm.'views/cms/unidades/visu_unidades_view.php');
       }else{
         echo "erro";
       }
@@ -187,14 +181,14 @@
     }
 
     public function DisableCabecalho($desativarCabecalho){
-      $sql = "UPDATE tbl_unidade_cabecalho SET ativo= 0 WHERE idUnidadeCabecalho=".$desativarCabecalho->id;
+      $sql = "UPDATE tbl_unidade_cabecalho2 SET ativo= 0 WHERE idUnidadeCabecalho=".$desativarCabecalho->id;
 
       $conex = new Mysql_db();
 
       $PDOconex = $conex->Conectar();
 
       if ($PDOconex->query($sql)) {
-        header('location:'.$voltaUm.'PortalHHealth/views/cms/unidades/visu_unidades_view.php');
+        header('location:'.$voltaUm.'views/cms/unidades/visu_unidades_view.php');
       }else{
         echo "erro";
       }
@@ -204,24 +198,15 @@
 
 
     // REFERENTE AO CONTEUDO
-<<<<<<< HEAD
-    public function InsertConteudo($unidadeConteudo, $enderecoResultado){
-      $sql = "INSERT INTO pagina_unidade (fotoUnidade, endereco, email, telefone)
+
+    public function InsertConteudo($unidadeConteudo){
+      $sql = "INSERT INTO tbl_unidade (fotoUnidade, nome, cnpj, idEndereco, email, telefone)
          VALUES ('".$unidadeConteudo->fotoUnidade."',
-                 '".$unidadeConteudo->enderecoResultado."',
+                '".$unidadeConteudo->nome."',
+                '".$unidadeConteudo->cnpj."',
+                 '".$unidadeConteudo->idEndereco."',
                  '".$unidadeConteudo->email."',
                  '".$unidadeConteudo->telefone."')";
-=======
-    public function InsertConteudo($unidadeConteudo){
-      $enderecoResultado = new controllerCmsUnidades();
-      $sql = "";
-
-      $sqlEnd = "INSERT INTO tbl_endereco (logradouro, numero, bairro, cep)
-          VALUES ('".$unidadeConteudo->logradouro."',
-                  '".$unidadeConteudo->numero."',
-                  '".$unidadeConteudo->bairro."',
-                  '".$unidadeConteudo->cep."')";
->>>>>>> 05cf7b4cf897a392a44504680feabb506444120f
 
       //instancia a classe do banco
       $conex = new Mysql_db();
@@ -229,44 +214,13 @@
       //chama o metodo para conectar no BD e guarda o resultado da funcao em uma variavel local($PDOconex)
       $PDOconex = $conex->Conectar();
 
-<<<<<<< HEAD
       //executa script no banco
       if ($PDOconex->query($sql)){
-        header('location:'.$voltaUm.'PortalHHealth/views/cms/unidades/cadastroUnidades_view.php');
-=======
-      if ($PDOconex->query($sqlEnd)){
-        $select = "SELECT * FROM tbl_endereco ORDER BY idEndereco DESC LIMIT 1";
-        $resultEnd = $PDOconex->query($select);
-
-
-        if($result = $resultEnd->fetch(PDO::FETCH_ASSOC)){
-
-          $enderecoResultado->idEndereco = $result['idEndereco'];
-
-        }else{
-          echo "Nada encontrado";
-        }
-
-        $sql = "INSERT INTO tbl_unidade (fotoUnidade, nome, cnpj, idEndereco, email, telefone)
-           VALUES ('".$unidadeConteudo->fotoUnidade."',
-                  '".$unidadeConteudo->nome."',
-                  '".$unidadeConteudo->cnpj."',
-                   '".$enderecoResultado->idEndereco."',
-                   '".$unidadeConteudo->email."',
-                   '".$unidadeConteudo->telefone."')";
-
-        //executa script no banco
-        if ($PDOconex->query($sql)){
           header('location:'.$voltaUm.'views/cms/unidades/cadastroUnidades_view.php');
         } else {
           echo "Erro no cadastro";
           echo $sql;
         }
-
->>>>>>> 05cf7b4cf897a392a44504680feabb506444120f
-      } else {
-        echo "Erro no cadastro";
-      }
 
       //Chama função que encerra conexao no banco
       $conex->Desconectar();
@@ -274,7 +228,7 @@
 
     public function SelectConteudo() {
       // Select no banco
-      $sql = "SELECT * FROM pagina_unidade ORDER BY idPaginaUnidade DESC";
+      $sql = "SELECT * FROM tbl_unidade INNER JOIN tbl_endereco ON tbl_endereco.idEndereco = tbl_unidade.idEndereco;";
 
       //instancia a classe do banco
       $conex = new Mysql_db();
@@ -284,34 +238,27 @@
 
       $select = $PDOconex->query($sql);
 
-      //inicia contador em 0
-      $cont = 0;
+      $listConteudo=array();
 
       //guarda resultado
-      while ($result = $select->fetch(PDO::FETCH_ASSOC)) {
-        $listConteudo[] = new Unidades();
+      //$result = $select->fetch(PDO::FETCH_ASSOC);
+      while($result = $select->fetch(PDO::FETCH_ASSOC)){
+        $listConteudo[] = $result;
+      }
 
-        $listConteudo[$cont]->idPaginaUnidade = $result['idPaginaUnidade'];
-        $listConteudo[$cont]->fotoUnidade = $result['fotoUnidade'];
-        $listConteudo[$cont]->endereco = $result['endereco'];
-        $listConteudo[$cont]->email = $result['email'];
-        $listConteudo[$cont]->numero = $result['numero'];
-        $listConteudo[$cont]->ativo = $result['ativo'];
-
-        //incrementa o contador
-        $cont += 1;
-     }
 
      $conex->Desconectar();
 
-     if (isset($listConteudo)) {
+     if (count($listConteudo) > 0) {
          return $listConteudo;
      }
 
     }
 
     public function SelectConteudoById($conteudo){
-      $sql = "SELECT * FROM pagina_unidade WHERE idPaginaUnidade=".$conteudo->id;
+      $sql = "SELECT * FROM tbl_unidade INNER JOIN tbl_endereco ON tbl_endereco.idEndereco = tbl_unidade.idEndereco WHERE idUnidade=".$conteudo->id;
+
+
       //instancia a classe do banco
       $conex = new Mysql_db();
 
@@ -323,12 +270,19 @@
       if($result = $select->fetch(PDO::FETCH_ASSOC)){
       $conteudoResultado = new controllerCmsUnidades();
 
-      $conteudoResultado->idPaginaUnidade = $result['idPaginaUnidade'];
+      //Faz select da tabela unidade e da tabela endereco
+      $conteudoResultado->idUnidade = $result['idUnidade'];
       $conteudoResultado->fotoUnidade = $result['fotoUnidade'];
-      $conteudoResultado->endereco = $result['endereco'];
+      $conteudoResultado->nome = $result['nome'];
+      $conteudoResultado->cnpj = $result['cnpj'];
+      $conteudoResultado->idEndereco = $result['idEndereco'];
       $conteudoResultado->email = $result['email'];
-      $conteudoResultado->numero = $result['numero'];
+      $conteudoResultado->telefone = $result['telefone'];
       $conteudoResultado->ativo = $result['ativo'];
+      $conteudoResultado->logradouro= $result['logradouro'];
+      $conteudoResultado->numero= $result['numero'];
+      $conteudoResultado->bairro= $result['bairro'];
+      $conteudoResultado->cep= $result['cep'];
 
       }else{
         echo "Nada encontrado";
@@ -343,7 +297,7 @@
 
     public function DeleteConteudo($excluirConteudo){
       // Select no banco
-      $sql = "DELETE FROM pagina_unidade WHERE idPaginaUnidade=".$excluirConteudo->id;
+      $sql = "DELETE FROM tbl_unidade WHERE idUnidade=".$excluirConteudo->id;
 
       //instancia a classe do banco
       $conex = new Mysql_db();
@@ -352,9 +306,11 @@
       $PDOconex = $conex->Conectar();
 
       if ($PDOconex->query($sql)) {
-        header('location:'.$voltaUm.'PortalHHealth/views/cms/unidades/visu_unidades_view.php');
+        // header('location:'.$voltaUm.'PortalHHealth/views/cms/unidades/visu_unidades_view.php');
+        return 1;
       }else{
         echo "erro ao deletar";
+        return 0;
       }
 
       $conex->Desconectar();

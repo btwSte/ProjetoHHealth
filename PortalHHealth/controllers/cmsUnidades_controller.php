@@ -1,6 +1,6 @@
 <?php
   /* Autor: Stéphanie
-     Data de modificação: 05/04/18
+     Data de modificação: 16/04/18
      Controller: Procedimentos de Exames
      Obs: Controller para realizar CRUD da pagina Unidades e verifica login
    */
@@ -144,7 +144,7 @@
       }
 
       // REFERENTE AO CONTEUDO
-      public function NovoConteudo(){
+      public function NovoConteudo($idEndereco){
         // require da funcao modulo para envio das imagens
         require_once('modulo.php');
 
@@ -156,10 +156,7 @@
         $unidadeConteudo->nome = $_POST['txtNome'];
         $unidadeConteudo->email = $_POST['txtEmail'];
         $unidadeConteudo->telefone = $_POST['txtTel'];
-        $unidadeConteudo->logradouro = $_POST['txtLogradouro'];
-        $unidadeConteudo->numero = $_POST['txtNum'];
-        $unidadeConteudo->bairro = $_POST['txtBairro'];
-        $unidadeConteudo->cep = $_POST['txtCep'];
+        $unidadeConteudo->idEndereco = $idEndereco->idEndereco;
 
         //inicia variaveis
         $diretorio_completo = null;
@@ -198,7 +195,7 @@
         $excluirConteudo = new Unidades();
 
         $excluirConteudo->id = $idConteudo;
-        $excluirConteudo::DeleteConteudo($excluirConteudo);
+        return $excluirConteudo::DeleteConteudo($excluirConteudo);
       }
 
       public function BuscarConteudo(){
