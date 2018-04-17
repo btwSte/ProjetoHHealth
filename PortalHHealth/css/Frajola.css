@@ -633,7 +633,7 @@ padding: 5%;
 /*Unidades/visualizar*/
 
 .imgUniVisu{
-    max-width: 500px;
+    width: 40%;
     height: 200px;
     float: left;
     display: flex;
@@ -642,15 +642,10 @@ padding: 5%;
     box-shadow: 2px 2px 2px 2px #6bb27d;
 
 }
-  .imgUniVisu img{
-    max-width: 500px;
-    height: 200px;
-  }
 
 .txtUniVisu{
     width: 60%;
-    min-height: 200px;
-    height: auto;
+    height: 200px;
     float: left;
     margin-left: auto;
     margin-right: auto;
@@ -670,6 +665,7 @@ padding: 5%;
     padding: 2px;
 
 }
+
 .containerOpcaoConvenio{
     width: 250px;
     height: 200px;

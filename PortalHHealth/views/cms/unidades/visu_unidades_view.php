@@ -147,45 +147,45 @@ require_once('../../../variaveis.php');
          <div id="segura">
            <div class="segura_img_info">
              <div class="imgUniVisu">
-               <img src="<?php echo($voltaTres.$listConteudo[$contConteudo]['fotoUnidade']); ?>" alt="Unidades">
+               <img src="<?php echo($voltaTres.$listConteudo[$contConteudo]->fotoUnidade); ?>" alt="Unidades">
              </div>
              <div class="txtUniVisu">
                 <div class="txtUnidade">
-                   Nome: <?php echo($listConteudo[$contConteudo]['nome']); ?>
+                   Nome: <!-- echo aqui -->
                 </div>
                  <div class="txtUnidade">
-                    Email: <?php echo($listConteudo[$contConteudo]['email']); ?>
+                    Email: <!-- echo aqui -->
                  </div>
                  <div class="txtUnidade">
-                    Telefone: <?php echo($listConteudo[$contConteudo]['telefone']); ?>
+                    Telefone: <!-- echo aqui -->
                  </div>
                  <div class="txtUnidade">
-                    Endereço: <?php echo($listConteudo[$contConteudo]['logradouro'].', '.$listConteudo[$contConteudo]['numero'].' - '.$listConteudo[$contConteudo]['bairro'].' - '.$listConteudo[$contConteudo]['cep']); ?>
+                    Endereço: <!-- echo aqui -->
                  </div>
                  <div class="txtUnidade">
-                    CNPJ: <?php echo($listConteudo[$contConteudo]['cnpj']); ?>
+                    CNPJ: <!-- echo aqui -->
                  </div>
              </div>
            </div>
            <div class="Crud_Opc">
 
                <div class="Deletar_crud">
-                 <a href="<?php echo $voltaTres; ?>router.php?controller=cmsUnidades&modo=excluirconteudo&id=<?php echo($listConteudo[$contConteudo]['idUnidade']); ?>&idEnd=<?php echo($listConteudo[$contConteudo]['idEndereco']); ?>">DELETAR</a>
+                 <a href="<?php echo $voltaTres; ?>router.php?controller=cmsUnidades&modo=excluirconteudo&id=<?php echo($listConteudo[$contConteudo]->idPaginaUnidade); ?>">DELETAR</a>
 
                </div>
                <div class="Editar_crud">
-                 <a href="<?php echo $voltaTres; ?>router.php?controller=cmsUnidades&modo=buscarconteudo&id=<?php echo($listConteudo[$contConteudo]['idUnidade']); ?>&idEnd=<?php echo($listConteudo[$contConteudo]['idEndereco']); ?>">EDITAR</a>
+                 <a href="<?php echo $voltaTres; ?>router.php?controller=cmsUnidades&modo=buscarconteudo&id=<?php echo($listConteudo[$contConteudo]->idPaginaUnidade); ?>">EDITAR</a>
                </div>
 
            </div>
            <!-- ABRE O IF -->
            <?php
                // IF PARA DESATIVAR O CONTEUDO
-                 if ($listConteudo[$contConteudo]['ativo'] == 1){
+                 if ($listConteudo[$contConteudo]->ativo == 1){
 
             ?>
              <div class="ativar_crud ">
-               <a href="<?php echo $voltaTres; ?>router.php?controller=cmsUnidades&modo=desativarconteudo&id=<?php echo($listConteudo[$contConteudo]['idUnidade']); ?>">
+               <a href="<?php echo $voltaTres; ?>router.php?controller=cmsUnidades&modo=desativarconteudo&id=<?php echo($listConteudo[$contConteudo]->idPaginaUnidade); ?>">
                  <img src="<?php echo($voltaTres); ?>imagens/check.png" alt="Desativar" title="Desativar">
                </a>
              </div>
@@ -195,7 +195,7 @@ require_once('../../../variaveis.php');
            } else {
               ?>
              <div class="desativar_crud ">
-               <a href="<?php echo $voltaTres; ?>router.php?controller=cmsUnidades&modo=ativarconteudo&id=<?php echo($listConteudo[$contConteudo]['idUnidade']); ?>">
+               <a href="<?php echo $voltaTres; ?>router.php?controller=cmsUnidades&modo=ativarconteudo&id=<?php echo($listConteudo[$contConteudo]->idPaginaUnidade); ?>">
                  <img src="<?php echo($voltaTres); ?>imagens/no.png" alt="Ativar" title="Ativar">
                </a>
              </div>

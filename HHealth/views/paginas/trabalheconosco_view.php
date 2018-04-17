@@ -28,7 +28,7 @@
         </div>
 
         <div id="segura_form_tbc">
-          <form class="trabalhe_conosco" action="trabalheConosco" method="post" enctype='multipart/form-data'>
+          <form class="trabalhe_conosco" action="../../router.php?controller=trabalheConosco" method="post" enctype='multipart/form-data'>
             <div id="tit">
               <p>Envie seus dados:</p>
             </div>
@@ -49,7 +49,7 @@
                 <input type="text" required placeholder="Profissão:" name="txtProfissao" value="" maxlength="100">
               </div>
               <div id="arq_tbc">
-                <input type="file" name="curriculo"  size="16" />
+                <input type="file" name="Doc_curriculo"  size="16" />
               </div>
             <div id="btn_tbc">
               <input type="submit" name="btnEnviar" value="Enviar">

@@ -7,19 +7,12 @@
   $idUnidadeCabecalho = null;
   $fotoCabecalho = null;
   $tituloFoto = null;
-  $idUnidade = null;
+  $idPaginaUnidade = null;
   $fotoUnidade = null;
   $endereco = null;
   $email = null;
-  $telefone = null;
-  $cnpj = null;
-  $nome = null;
-  $cep = null;
-  $logradouro = null;
-  $bairro = null;
   $numero = null;
 
-  //if do conteudo do CABEÇALHO
   if (isset($cabecalhoResultado)) {
     $idUnidadeCabecalho = $cabecalhoResultado->idUnidadeCabecalho;
     $fotoCabecalho = $cabecalhoResultado->fotoCabecalho;
@@ -27,21 +20,17 @@
     $action = "modo=editarcabecalho&id=".$idUnidadeCabecalho;
   }
 
-  // if do conteudo de endereco e unidade
-  if (isset($conteudoResultado)) {
-    $idUnidade = $conteudoResultado->idUnidade;
-    $fotoUnidade = $conteudoResultado->fotoUnidade;
-    $idEndereco = $conteudoResultado->idEndereco;
-    $email = $conteudoResultado->email;
-    $telefone = $conteudoResultado->telefone;
-    $cnpj = $conteudoResultado->cnpj;
-    $nome = $conteudoResultado->nome;
-    $logradouro = $conteudoResultado->logradouro;
-    $numero = $conteudoResultado->numero;
-    $bairro = $conteudoResultado->bairro;
-    $cep = $conteudoResultado->cep;
 
-    $action2 = "modo=editarconteudo&id=".$idUnidade."&idEnd=".$idEndereco;
+  if (isset($conteudoResultado)) {
+    $idPaginaUnidade = $conteudoResultado->idPaginaUnidade;
+    $fotoUnidade = $conteudoResultado->fotoUnidade;
+    $endereco = $conteudoResultado->endereco;
+    $email = $conteudoResultado->email;
+    $numero = $conteudoResultado->numero;
+    echo "<script>alert('Dentro do if do conteudo!');
+          </script>";
+
+    $action2 = "modo=editarconteudo&id=".$idPaginaUnidade;
   }
 ?>
 
@@ -151,21 +140,19 @@
        <div class="segura_form_tbc">
          <form class="frmConteudoUnidade" action="router.php?controller=cmsUnidades&<?php echo($action2); ?>" method="post" enctype="multipart/form-data">
            <div class="tit">
-             <p>Editar unidades:</p>
+             <p>Cadastro De unidades:</p>
            </div>
-
-
 
              <div  class="text">
                <input type="file" name="imagem_conteudo"  size="16" />
              </div>
 
              <div  class="text">
-               <input id="tel" placeholder="CNPJ" maxlength="255" type="text" name="txtCnpj" value="<?php echo $cnpj ?>"  maxlength="255">
+               <input id="tel" placeholder="CNPJ" maxlength="255" type="text" name="txtCnpj" value=""  maxlength="255">
              </div>
 
              <div  class="text">
-               <input id="tel" placeholder="Nome da Unidade" maxlength="255" type="text" name="txtNome" value="<?php echo $nome ?>"  maxlength="255">
+               <input id="tel" placeholder="Nome da Unidade" maxlength="255" type="text" name="txtNome" value=""  maxlength="255">
              </div>
 
              <div  class="text">
@@ -173,11 +160,7 @@
              </div>
 
              <div  class="text">
-               <input id="tel" placeholder="Telefone" type="text" name="txtTel" value="<?php echo $telefone ?>"  maxlength="60">
-             </div>
-
-             <div class="imagem_cabecalho">
-                <img src="<?php echo($fotoUnidade); ?>" alt="" style="width:200px; height:200px;">
+               <input id="tel" placeholder="Telefone" type="text" name="txtTel" value=""  maxlength="60">
              </div>
 
              <div class="tit">
@@ -185,26 +168,28 @@
              </div>
 
              <div  class="text">
-               <input id="tel" placeholder="Logradouro" maxlength="255" type="text" name="txtLogradouro" value="<?php echo $logradouro; ?>"  maxlength="255">
+               <input id="tel" placeholder="Logradouro" maxlength="255" type="text" name="txtLogradouro" value=""  maxlength="255">
              </div>
 
              <div  class="text">
-               <input id="tel" placeholder="N°" maxlength="255" type="text" name="txtNum" value="<?php echo $numero; ?>"  maxlength="255">
+               <input id="tel" placeholder="N°" maxlength="255" type="text" name="txtNum" value=""  maxlength="255">
              </div>
 
              <div  class="text">
-               <input id="tel" placeholder="Bairro" maxlength="255" type="text" name="txtBairro" value="<?php echo $bairro; ?>"  maxlength="255">
+               <input id="tel" placeholder="Bairro" maxlength="255" type="text" name="txtBairro" value=""  maxlength="255">
              </div>
 
              <div  class="text">
-               <input id="tel" placeholder="CEP" maxlength="255" type="text" name="txtCep" value="<?php echo $cep; ?>"  maxlength="255">
+               <input id="tel" placeholder="CEP" maxlength="255" type="text" name="txtCep" value=""  maxlength="255">
              </div>
 
            <div id="btn_tbc">
              <input type="submit" name="btnEnviarConteudo" value="Enviar">
            </div>
 
-
+           <div class="imagem_cabecalho">
+              <img src="<?php echo($fotoUnidade); ?>" alt="" style="width:200px; height:200px;">
+           </div>
          </form>
 
 

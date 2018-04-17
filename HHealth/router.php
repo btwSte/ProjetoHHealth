@@ -14,6 +14,14 @@ if(isset($_GET['controller'])){
           $contato = new controllerCmsAmbientes();
           $contato::InserirContato();
           break;
+
+      case 'trabalheConosco':
+          require_once('controllers/trabalheConosco_controller.php');
+          require_once('models/trabalheConosco_class.php');
+          $trab_conosco= new controllerTrabalheConosco();
+          $trab_conosco::InserirTrabalheConosco();
+          break;
+
       }
 }
 

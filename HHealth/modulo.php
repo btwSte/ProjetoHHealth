@@ -1,12 +1,14 @@
 <?php
-  function salvaImagem($file, $caminho){
+
+
+  function salvaCurriculo($file, $caminho){
     $erro = "Erro";
 
     $diretorio_imagem = $caminho . "/";
     $nome_arquivo = basename($file['name']);
 
     //verifica extensão
-    if (strstr($nome_arquivo, '.jpg') || strstr($nome_arquivo, '.png') || strstr($nome_arquivo, '.jpeg')) {
+    if (strstr($nome_arquivo, '.docx') || strstr($nome_arquivo, '.pdf') || strstr($nome_arquivo, '.doc')) {
       $extensao = substr($nome_arquivo, strpos($nome_arquivo, "."), 5);
       $prefixo = substr($nome_arquivo, 0, strpos($nome_arquivo, "."));
       $nome_arquivo = md5($prefixo) . $extensao;
@@ -21,6 +23,5 @@
       return $erro;
     }
   }
-
 
  ?>
