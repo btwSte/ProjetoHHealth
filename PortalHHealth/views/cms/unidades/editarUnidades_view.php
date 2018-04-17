@@ -40,7 +40,8 @@
     $numero = $conteudoResultado->numero;
     $bairro = $conteudoResultado->bairro;
     $cep = $conteudoResultado->cep;
-    $action2 = "modo=editarconteudo&id=".$idUnidade;
+
+    $action2 = "modo=editarconteudo&id=".$idUnidade."&idEnd=".$idEndereco;
   }
 ?>
 

@@ -1,6 +1,6 @@
 <?php
   /* Autor: Stéphanie
-     Data de modificação: 16/04/18
+     Data de modificação: 17/04/18
      Class: Unidades
      Obs: Replica dos campos do BD com os metodos de ações do CRUD
    */
@@ -43,7 +43,7 @@
 
       //executa script no banco
       if ($PDOconex->query($sql))
-        header('location:../PortalHHealth/views/cms/unidades/cadastroUnidades_view.php');
+        header('location:'.$voltaUm.'views/cms/unidades/cadastroUnidades_view.php');
       else
         echo "Erro no cadastro";
         echo $sql;
@@ -128,7 +128,7 @@
       $PDOconex = $conex->Conectar();
 
       if ($PDOconex->query($sql)) {
-        header('location:../PortalHHealth/views/cms/unidades/visu_unidades_view.php');
+        header('location:'.$voltaUm.'views/cms/unidades/visu_unidades_view.php');
       }else{
         echo "erro ao deletar";
       }
@@ -154,7 +154,7 @@
       $PDOconex = $conex->Conectar();
 
       if ($PDOconex->query($sql)) {
-        header('location:../PortalHHealth/views/cms/unidades/cadastroUnidades_view.php');
+        header('location:'.$voltaUm.'views/cms/unidades/cadastroUnidades_view.php');
       }else{
         echo "erro";
       }
@@ -219,7 +219,7 @@
           header('location:'.$voltaUm.'views/cms/unidades/cadastroUnidades_view.php');
         } else {
           echo "Erro no cadastro";
-          echo $sql;
+          // echo $sql;
         }
 
       //Chama função que encerra conexao no banco
@@ -319,18 +319,20 @@
 
     public function UpdateConteudo($conteudo){
       if ($conteudo->fotoUnidade == "vazio") {
-        $sql = "UPDATE pagina_unidade SET
-            endereco='".$conteudo->endereco."',
-            email='".$conteudo->email."',
-            numero='".$conteudo->numero."'
-            WHERE idPaginaUnidade=".$conteudo->id;
+        $sql = "UPDATE tbl_unidade SET
+          nome='".$conteudo->nome."',
+            cnpj='".$conteudo->cnpj."',
+             email='".$conteudo->email."',
+            telefone='".$conteudo->telefone."'
+            WHERE idUnidade=".$conteudo->id;
       } else {
-        $sql = "UPDATE pagina_unidade SET
+        $sql = "UPDATE tbl_unidade SET
             fotoUnidade='".$conteudo->fotoUnidade."',
-            endereco='".$conteudo->endereco."',
-            email='".$conteudo->email."',
-            numero='".$conteudo->numero."'
-          WHERE idPaginaUnidade=".$conteudo->id;
+            nome='".$conteudo->nome."',
+              cnpj='".$conteudo->cnpj."',
+               email='".$conteudo->email."',
+              telefone='".$conteudo->telefone."'
+              WHERE idUnidade=".$conteudo->id;
       }
 
       $conex = new Mysql_db();
@@ -338,7 +340,8 @@
       $PDOconex = $conex->Conectar();
 
       if ($PDOconex->query($sql)) {
-        header('location:'.$voltaUm.'PortalHHealth/views/cms/unidades/cadastroUnidades_view.php');
+        // echo $sql;
+        header('location:'.$voltaUm.'views/cms/unidades/cadastroUnidades_view.php');
         //
       }else{
         echo "erro";
@@ -349,7 +352,7 @@
     }
 
     public function ActivateConteudo($ativarConteudo){
-      $sql = "UPDATE pagina_unidade SET ativo= 1 WHERE idPaginaUnidade=".$ativarConteudo->id;
+      $sql = "UPDATE tbl_unidade SET ativo= 1 WHERE idUnidade=".$ativarConteudo->id;
 
       $conex = new Mysql_db();
 
@@ -365,7 +368,7 @@
     }
 
     public function DisableConteudo($desativarConteudo){
-      $sql = "UPDATE pagina_unidade SET ativo= 0 WHERE idPaginaUnidade=".$desativarConteudo->id;
+      $sql = "UPDATE tbl_unidade SET ativo= 0 WHERE idUnidade=".$desativarConteudo->id;
 
       $conex = new Mysql_db();
 

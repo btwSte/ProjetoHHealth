@@ -4,6 +4,7 @@
    Class: Endereço
    Obs: Replica dos campos do BD com os metodos de ações do CRUD
  */
+  require_once(".../../../variaveis.php");
 
   class Endereco {
     public $idEndereco;
@@ -16,6 +17,7 @@
     public function __construct() {
       require_once('bd_class.php');
     }
+
 
     public function Insert($unidadeConteudo) {
       $sql = "INSERT INTO tbl_endereco (logradouro, numero, bairro, cep)
@@ -33,6 +35,8 @@
       //executa script no banco
       if ($PDOconex->query($sql)){
         $select = "SELECT * FROM tbl_endereco ORDER BY idEndereco DESC LIMIT 1";
+
+        $select = $PDOconex->query($select);
 
         if($result = $select->fetch(PDO::FETCH_ASSOC)){
           $enderecoResultado = new controllerCmsEndereco();
@@ -66,9 +70,32 @@
       $PDOconex = $conex->Conectar();
 
       if ($PDOconex->query($sql)) {
-        header('location:PortalHHealth/views/cms/unidades/visu_unidades_view.php');
+        header('location:'.$voltaUm.'views/cms/unidades/visu_unidades_view.php');
       }else{
         echo "erro ao deletar";
+      }
+
+      $conex->Desconectar();
+    }
+
+    public function Update($upEnd){
+      $sql = "UPDATE tbl_endereco SET
+                    logradouro='".$upEnd->logradouro."',
+                    numero='".$upEnd->numero."',
+                    bairro='".$upEnd->bairro."',
+                    cep='".$upEnd->cep."'  WHERE idEndereco=".$upEnd->idEndereco;
+
+      //instancia a classe do banco
+      $conex = new Mysql_db();
+
+      //chama o metodo para conectar no BD e guarda o resultado da funcao em uma variavel local($PDOconex)
+      $PDOconex = $conex->Conectar();
+
+      if ($PDOconex->query($sql)) {
+        return 1;
+      }else{
+        echo "erro ao atualizar end";
+        return 0;
       }
 
       $conex->Desconectar();

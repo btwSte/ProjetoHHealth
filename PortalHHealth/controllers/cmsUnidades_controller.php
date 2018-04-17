@@ -179,6 +179,7 @@
         } else {
           $imagem_file = false;
         }
+      
 
         $unidadeConteudo->fotoUnidade = $diretorio_completo;
         $unidadeConteudo::InsertConteudo($unidadeConteudo);
@@ -213,15 +214,16 @@
       public function EditarConteudo(){
         // require da funcao modulo para envio das imagens
         require_once('modulo.php');
-        $idPaginaUnidade = $_GET['id'];
+        $idUnidade = $_GET['id'];
 
         $unidadesConteudo = new Unidades();
 
         // pega o conteudo
-        $unidadesConteudo->id = $idPaginaUnidade;
-        $unidadesConteudo->endereco = $_POST['txtEnd'];
+        $unidadesConteudo->id = $idUnidade;
+        $unidadesConteudo->cnpj = $_POST['txtCnpj'];
+        $unidadesConteudo->nome = $_POST['txtNome'];
         $unidadesConteudo->email = $_POST['txtEmail'];
-        $unidadesConteudo->numero = $_POST['txtNum'];
+        $unidadesConteudo->telefone = $_POST['txtTel'];
 
         //inicia variaveis
         $diretorio_completo = null;
@@ -236,7 +238,7 @@
 
           if ($diretorio_completo == "Erro"){
              echo "<script>
-                 alert('arquivo nao movido');
+                 alert('Arquivo não movido');
                  window.history.go(-1);
                  </script>";
                $MovUpload = false;

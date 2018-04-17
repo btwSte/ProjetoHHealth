@@ -17,9 +17,6 @@
     }
 
     public function Novo(){
-      // require da funcao modulo para envio das imagens
-      require_once('modulo.php');
-
       // novo objeto
       $enderecoConteudo = new Endereco();
 
@@ -43,6 +40,21 @@
       $excluirEnd->idEndereco = $idEndereco;
       $excluirEnd::Delete($excluirEnd);
     }
+
+    public function Editar(){
+      $idEndereco = $_GET['idEnd'];
+
+      $upEnd = new Endereco();
+
+      $upEnd->idEndereco = $idEndereco;
+      $upEnd->logradouro = $_POST['txtLogradouro'];
+      $upEnd->numero = $_POST['txtNum'];
+      $upEnd->bairro = $_POST['txtBairro'];
+      $upEnd->cep = $_POST['txtCep'];
+
+      return $upEnd::Update($upEnd);
+    }
+
   }
 
 

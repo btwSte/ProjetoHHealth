@@ -359,8 +359,15 @@ if(isset($_GET['controller'])){
             break;
 
           case 'editarconteudo':
-            $controller_unidades = new controllerCmsUnidades();
-            $controller_unidades::EditarConteudo();
+            $controller_endereco = new controllerCmsEndereco();
+            $retorno = $controller_endereco::Editar();
+
+            if ($retorno = 1) {
+              $controller_unidades = new controllerCmsUnidades();
+              $controller_unidades::EditarConteudo();
+            } else {
+              echo "Erro ao atualizar endereco";
+            }
             break;
 
           case 'buscarconteudo':
