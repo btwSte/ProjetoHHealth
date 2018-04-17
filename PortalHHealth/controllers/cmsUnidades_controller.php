@@ -1,6 +1,6 @@
 <?php
   /* Autor: Stéphanie
-     Data de modificação: 05/04/18
+     Data de modificação: 16/04/18
      Controller: Procedimentos de Exames
      Obs: Controller para realizar CRUD da pagina Unidades e verifica login
    */
@@ -144,7 +144,7 @@
       }
 
       // REFERENTE AO CONTEUDO
-      public function NovoConteudo(){
+      public function NovoConteudo($idEndereco){
         // require da funcao modulo para envio das imagens
         require_once('modulo.php');
 
@@ -156,10 +156,7 @@
         $unidadeConteudo->nome = $_POST['txtNome'];
         $unidadeConteudo->email = $_POST['txtEmail'];
         $unidadeConteudo->telefone = $_POST['txtTel'];
-        $unidadeConteudo->logradouro = $_POST['txtLogradouro'];
-        $unidadeConteudo->numero = $_POST['txtNum'];
-        $unidadeConteudo->bairro = $_POST['txtBairro'];
-        $unidadeConteudo->cep = $_POST['txtCep'];
+        $unidadeConteudo->idEndereco = $idEndereco->idEndereco;
 
         //inicia variaveis
         $diretorio_completo = null;
@@ -183,6 +180,7 @@
           $imagem_file = false;
         }
 
+
         $unidadeConteudo->fotoUnidade = $diretorio_completo;
         $unidadeConteudo::InsertConteudo($unidadeConteudo);
       }
@@ -198,7 +196,7 @@
         $excluirConteudo = new Unidades();
 
         $excluirConteudo->id = $idConteudo;
-        $excluirConteudo::DeleteConteudo($excluirConteudo);
+        return $excluirConteudo::DeleteConteudo($excluirConteudo);
       }
 
       public function BuscarConteudo(){
@@ -216,15 +214,16 @@
       public function EditarConteudo(){
         // require da funcao modulo para envio das imagens
         require_once('modulo.php');
-        $idPaginaUnidade = $_GET['id'];
+        $idUnidade = $_GET['id'];
 
         $unidadesConteudo = new Unidades();
 
         // pega o conteudo
-        $unidadesConteudo->id = $idPaginaUnidade;
-        $unidadesConteudo->endereco = $_POST['txtEnd'];
+        $unidadesConteudo->id = $idUnidade;
+        $unidadesConteudo->cnpj = $_POST['txtCnpj'];
+        $unidadesConteudo->nome = $_POST['txtNome'];
         $unidadesConteudo->email = $_POST['txtEmail'];
-        $unidadesConteudo->numero = $_POST['txtNum'];
+        $unidadesConteudo->telefone = $_POST['txtTel'];
 
         //inicia variaveis
         $diretorio_completo = null;
@@ -239,7 +238,7 @@
 
           if ($diretorio_completo == "Erro"){
              echo "<script>
-                 alert('arquivo nao movido');
+                 alert('Arquivo não movido');
                  window.history.go(-1);
                  </script>";
                $MovUpload = false;

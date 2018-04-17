@@ -1,6 +1,6 @@
 <?php
 /* Autor: Vinicius
-   Data de criação: 010/04/18
+   Data de criação: 10/04/18
    Controller: Contato
    Obs: Controller para realizar CRUD da pagina Informacoes e verifica login
  */
@@ -29,6 +29,7 @@
        return $info_Contato::Excluir($info_Contato);
 
      }
+
      public function selectContatoByID(){
        $info_Contato = new Contato();
        $info_Contato->idDadoContato = $_POST['id'];

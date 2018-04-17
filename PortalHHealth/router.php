@@ -303,8 +303,10 @@ if(isset($_GET['controller'])){
       case 'cmsUnidades':
         require_once('controllers/cmsUnidades_controller.php');
         require_once('models/unidades_class.php');
+        require_once('controllers/cmsEndereco_controller.php');
+        require_once('models/endereco_class.php');
         switch ($modo) {
-        //REFENTE AO CABEÇALHO DE PROCEDIMENTOS
+        //REFENTE AO CABEÇALHO DE UNIDADES
           case 'novocabecalho':
             $controller_unidades = new controllerCmsUnidades();
             $controller_unidades::NovoCabecalho();
@@ -335,20 +337,37 @@ if(isset($_GET['controller'])){
             $controller_unidades::DesativarCabecalho();
             break;
 
-        //REFENTE AO CONTEUDO DE PROCEDIMENTOS
+        //REFENTE AO CONTEUDO DE UNIDADES
           case 'novoconteudo':
+            $controller_endereco = new controllerCmsEndereco();
+            $controller_endereco::Novo();
+
             $controller_unidades = new controllerCmsUnidades();
             $controller_unidades::NovoConteudo();
             break;
 
           case 'excluirconteudo':
             $controller_unidades = new controllerCmsUnidades();
-            $controller_unidades::ExcluirConteudo();
+            $retorno = $controller_unidades::ExcluirConteudo();
+
+            if ($retorno == 1) {
+              $controller_endereco = new controllerCmsEndereco();
+              $controller_endereco::Excluir();
+            } else {
+              echo "erro excluir unidade";
+            }
             break;
 
           case 'editarconteudo':
-            $controller_unidades = new controllerCmsUnidades();
-            $controller_unidades::EditarConteudo();
+            $controller_endereco = new controllerCmsEndereco();
+            $retorno = $controller_endereco::Editar();
+
+            if ($retorno = 1) {
+              $controller_unidades = new controllerCmsUnidades();
+              $controller_unidades::EditarConteudo();
+            } else {
+              echo "Erro ao atualizar endereco";
+            }
             break;
 
           case 'buscarconteudo':
@@ -365,7 +384,6 @@ if(isset($_GET['controller'])){
             $controller_unidades = new controllerCmsUnidades();
             $controller_unidades::DesativarConteudo();
             break;
-
         }
         break;
 
@@ -389,8 +407,6 @@ if(isset($_GET['controller'])){
             break;
         }
         break;
-
-      
   }
 
 }
