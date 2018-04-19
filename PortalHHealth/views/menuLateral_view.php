@@ -2,8 +2,8 @@
   <div  href="javascript:void(0)" class="closebtn linha_menu" onclick="closeNav()"><a href="">&times;</a></div>
 
     <div  class="linha_menuFirst" href="#"> Home
-          <div class="categorias_ocultas"><a href="">  Cadastrar</a></div>
-          <div class="categorias_ocultas"> <a href=""> Visualizar</a></div>
+          <div class="categorias_ocultas"><a href="../home/cadastroHome_view.php">  Cadastrar</a></div>
+          <div class="categorias_ocultas"> <a href="../home/visu_home_view.php"> Visualizar</a></div>
 
     </div>
     <div  class="linha_menu" href="#">Nossos ambientes
