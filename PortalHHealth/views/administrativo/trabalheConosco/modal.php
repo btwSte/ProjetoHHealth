@@ -45,7 +45,7 @@ $(document).ready(function() {
 
               }
             ?>
-            ID: <?php echo($id); ?>
+          <span style="color:#fff;"> ID: <?php echo($id); ?></span> 
             <div  class="campoTexto">
                 <div class="campoEsqTexto">Nome</div>
                 <div class="campoDirTexto"><!-- [SELECT AQUI > Nome] --></div>

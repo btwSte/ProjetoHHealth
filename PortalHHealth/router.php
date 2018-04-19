@@ -407,6 +407,26 @@ if(isset($_GET['controller'])){
             break;
         }
         break;
+
+      case 'Curriculo':
+        require_once('controllers/admTrabalheConosco_controller.php');
+        require_once('models/trabalheconosco_class.php');
+        switch ($modo) {
+          case 'Selecionar':
+            $controller_Curriculo = new controllerCurriculo();
+            $controller_Curriculo::selectCurriculo();
+            break;
+
+          case 'excluirCurriculo':
+            $controller_Curriculo = new controllerCurriculo();
+            $controller_Curriculo::ExcluirCurriculo();
+            break;
+          case 'SelecionarEspecifico':
+            $controller_Curriculo = new controllerCurriculo();
+            $controller_Curriculo::selectCurriculoByID();
+            break;
+        }
+        break;
   }
 
 }

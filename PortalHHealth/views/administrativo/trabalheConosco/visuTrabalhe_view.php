@@ -3,37 +3,52 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>CMS - Mensagens Recebidads</title>
+		<title>Visualiza curriculos enviados</title>
 		<link rel="stylesheet" type="text/css"  href="  <?php echo($voltaTres) ?>css/Frajola.css">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<script src="js/modernizr.min.js"></script>
+		<script src="<?php echo $voltaTres; ?>js/modernizr.min.js"></script>
+		<script type="text/javascript" src="<?php echo $voltaTres; ?>js/jquery.js"></script>
+		<script>
+			$(document).ready(function() {
+
+				$(".ver").click(function() {
+					$(".modalContainer").slideToggle(2000);
+				//slideToggle
+				//toggle
+				//FadeIn
+				});
+			});
+
+
+
+				function Modal(idIten){
+					$.ajax({
+						type: "POST",
+						url: "modal.php",
+						data: {id:idIten},
+						success: function(dados){
+							$('.modal').html(dados);
+						}
+					});
+				}
+		</script>
 	</head>
 	<body>
+
+		<div class="modalContainer">
+			<div class="modal">
+
+			</div>
+		</div>
+
+
     <?php include("../header.php"); ?>
 		<div class="container">
 
 		</div><!-- /container -->
-  		<script src="../../js/classie.js"></script>
-  		<script src="../../js/photostack.js"></script>
-  		<script>
-  			 [].slice.call( document.querySelectorAll( '.photostack' ) ).forEach( function( el ) { new Photostack( el ); } );
 
-  			new Photostack( document.getElementById( 'photostack-1' ), {
-  				callback : function( item ) {
-  					console.log(item)
-  				}
-  			} );
-  			new Photostack( document.getElementById( 'photostack-2' ), {
-  				callback : function( item ) {
-  					console.log(item)
-  				}
-  			} );
-  			new Photostack( document.getElementById( 'photostack-3' ), {
-  				callback : function( item ) {
-  					console.log(item)
-  				}
-  			} );
-  		</script>
+
 		<div  id="opcao" class="button shrink">
 			<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;Menu
 			</span>
@@ -62,12 +77,12 @@
 								<!-- Select do banco -->
 									<?php
 									require_once($voltaTres.'router.php');
-									require_once($voltaTres.'controllers/cmsContato_controller.php');
-									require_once($voltaTres.'models/contato_class.php');
+									require_once($voltaTres.'controllers/admTrabalheConosco_controller.php');
+									require_once($voltaTres.'models/trabalheconosco_class.php');
 
-									$controller_contatos = new controllerContato();
+									$controller_Curriculo = new controllerCurriculo();
 									//chama metodo para listar os registros
-									$list = $controller_contatos::selectContato();
+									$list = $controller_Curriculo::selectCurriculo();
 
 									$cont = 0;
 
@@ -75,19 +90,19 @@
 									{
 									?>
 		                <div class="linhaContato">
-		                    <div class="campoIdSelect"><!-- ID --></div>
-		                    <div class="campoNeutroSelect"><!-- NOME --></div>
-		                    <div class="campoNeutroSelect"><!-- TELEFONE --></div>
-		                    <div class="campoNeutroSelect"><!-- EMAIL --></div>
-		                    <div class="campoNeutroSelect"><!-- PROFISÃO --></div>
+		                    <div class="campoIdSelect"><?php echo($list[$cont]->idCurriculo); ?></div>
+		                    <div class="campoNeutroSelect"><?php echo($list[$cont]->nome); ?><!-- NOME --></div>
+		                    <div class="campoNeutroSelect"><?php echo($list[$cont]->telefone); ?><!-- TELEFONE --></div>
+		                    <div class="campoNeutroSelect"><?php echo($list[$cont]->email); ?><!-- EMAIL --></div>
+		                    <div class="campoNeutroSelect"><?php echo($list[$cont]->profissao); ?><!-- PROFISÃO --></div>
 		                    <div class="campoNeutroSelect">
 		                        <div class="optionSelect">
-		                            <a href="#" alt="IconeVisualizar">
+		                            <a href="#" alt="IconeVisualizar" class="ver" onclick="Modal(<?php echo($list[$cont]->idCurriculo) ?>)">
 		                                <img src="<?php echo($voltaTres) ?>imagens/visualizarVerde.png" alt="Zoom" width="30" height="25"/><!-- Icone Para Visualizar a Selecionada -->
 		                            </a>
 		                        </div>
 		                        <div class="optionSelectDir">
-		                            <a href="#" alt="IconeVisualizar">
+		                            <a  href="<?php echo $voltaTres ?>router.php?controller=Curriculo&modo=excluirCurriculo&id=<?php echo($list[$cont]->idCurriculo); ?>" alt="Deletar Curriculo" onClick="return confirm('Deseja realmente exluir ?');">
 		                                <img src="<?php echo($voltaTres) ?>imagens/excluirVermelho.png" alt="Zoom" width="30" height="23"/><!-- icone para Excluir o Selecionado -->
 		                            </a>
 		                        </div>

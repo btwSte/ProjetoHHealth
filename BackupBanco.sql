@@ -163,7 +163,7 @@ CREATE TABLE `pagina_info_usuario` (
   KEY `fk_info_user_rodape_idx` (`idRodape`),
   CONSTRAINT `fk_info_user_menu` FOREIGN KEY (`idMenu`) REFERENCES `tbl_menu` (`idMenu`),
   CONSTRAINT `fk_info_user_rodape` FOREIGN KEY (`idRodape`) REFERENCES `tbl_rodape` (`idRodape`)
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -190,7 +190,7 @@ CREATE TABLE `pagina_informacao` (
   `fotoAssunto` varchar(255) DEFAULT NULL,
   `textoAssunto` text NOT NULL,
   PRIMARY KEY (`idInformacao`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -221,7 +221,7 @@ CREATE TABLE `pagina_procedimento_exame` (
   KEY `fk_proc_rod_idx` (`idRodape`),
   CONSTRAINT `fk_proc_men` FOREIGN KEY (`idMenu`) REFERENCES `tbl_menu` (`idMenu`),
   CONSTRAINT `fk_proc_rod` FOREIGN KEY (`idRodape`) REFERENCES `tbl_rodape` (`idRodape`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -603,7 +603,7 @@ CREATE TABLE `tbl_conteudo_cabecalho` (
   `tituloPagina` varchar(100) NOT NULL,
   `ativo` int(1) DEFAULT NULL,
   PRIMARY KEY (`idConteudoCabecalho`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -714,7 +714,7 @@ CREATE TABLE `tbl_endereco` (
   KEY `fk_end_estad_idx` (`idEstado`),
   CONSTRAINT `fk_end_city` FOREIGN KEY (`idCidade`) REFERENCES `tbl_cidade` (`idCidade`),
   CONSTRAINT `fk_end_estad` FOREIGN KEY (`idEstado`) REFERENCES `tbl_estado` (`idEstado`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1829,6 +1829,35 @@ LOCK TABLES `tbl_tipo_telefone` WRITE;
 UNLOCK TABLES;
 
 --
+-- Table structure for table `tbl_trabalheconosco`
+--
+
+DROP TABLE IF EXISTS `tbl_trabalheconosco`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tbl_trabalheconosco` (
+  `idCurriculo` int(11) NOT NULL AUTO_INCREMENT,
+  `nome` varchar(45) NOT NULL,
+  `telefone` varchar(45) NOT NULL,
+  `celular` varchar(45) NOT NULL,
+  `email` varchar(45) NOT NULL,
+  `profissao` varchar(45) NOT NULL,
+  `curriculo` varchar(255) NOT NULL,
+  PRIMARY KEY (`idCurriculo`)
+) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tbl_trabalheconosco`
+--
+
+LOCK TABLES `tbl_trabalheconosco` WRITE;
+/*!40000 ALTER TABLE `tbl_trabalheconosco` DISABLE KEYS */;
+INSERT INTO `tbl_trabalheconosco` VALUES (7,'brunoCorreia','11987928392','11987928392','brunoramoscorreia15@gmail.com','Ti','arquivos/c298752391dc2eefb22fa93bb69a8f19.doc'),(8,'TESTEdois','11987928392','11987928392','brunoramoscorreia15@gmail.com','Ti','arquivos/c298752391dc2eefb22fa93bb69a8f19.doc'),(9,'xdjhsf','11987928392','11987928392','brunoramoscorreia15@gmail.com','Ti','arquivos/bd6d5514777f6e469fed3bdec8e5f7ce.docx'),(12,'xdjhsf','11987928392','11987928392','brunoramoscorreia15@gmail.com','Ti','arquivos/bd6d5514777f6e469fed3bdec8e5f7ce.docx'),(13,'xdjhsf','11987928392','11987928392','brunoramoscorreia15@gmail.com','Ti','arquivos/bd6d5514777f6e469fed3bdec8e5f7ce.docx'),(14,'xdjhsf','11987928392','11987928392','brunoramoscorreia15@gmail.com','Ti','arquivos/bd6d5514777f6e469fed3bdec8e5f7ce.docx'),(15,'xdjhsf','11987928392','11987928392','brunoramoscorreia15@gmail.com','Ti','arquivos/bd6d5514777f6e469fed3bdec8e5f7ce.docx'),(16,'xdjhsf','11987928392','11987928392','brunoramoscorreia15@gmail.com','Ti','arquivos/bd6d5514777f6e469fed3bdec8e5f7ce.docx'),(17,'xdjhsf','11987928392','11987928392','brunoramoscorreia15@gmail.com','Ti','arquivos/bd6d5514777f6e469fed3bdec8e5f7ce.docx'),(18,'xdjhsf','11987928392','11987928392','brunoramoscorreia15@gmail.com','Ti','arquivos/bd6d5514777f6e469fed3bdec8e5f7ce.docx'),(19,'xdjhsf','11987928392','11987928392','brunoramoscorreia15@gmail.com','Ti','arquivos/bd6d5514777f6e469fed3bdec8e5f7ce.docx'),(22,'xdjhsf','11987928392','11987928392','brunoramoscorreia15@gmail.com','Ti','arquivos/bd6d5514777f6e469fed3bdec8e5f7ce.docx'),(23,'xdjhsf','11987928392','11987928392','brunoramoscorreia15@gmail.com','Ti','arquivos/bd6d5514777f6e469fed3bdec8e5f7ce.docx'),(24,'xdjhsf','11987928392','11987928392','brunoramoscorreia15@gmail.com','Ti','arquivos/bd6d5514777f6e469fed3bdec8e5f7ce.docx'),(25,'xdjhsf','11987928392','11987928392','brunoramoscorreia15@gmail.com','Ti','arquivos/bd6d5514777f6e469fed3bdec8e5f7ce.docx'),(27,'xdjhsf','11987928392','11987928392','brunoramoscorreia15@gmail.com','Ti','arquivos/bd6d5514777f6e469fed3bdec8e5f7ce.docx'),(28,'xdjhsf','11987928392','11987928392','brunoramoscorreia15@gmail.com','Ti','arquivos/bd6d5514777f6e469fed3bdec8e5f7ce.docx'),(29,'xdjhsf','11987928392','11987928392','brunoramoscorreia15@gmail.com','Ti','arquivos/bd6d5514777f6e469fed3bdec8e5f7ce.docx');
+/*!40000 ALTER TABLE `tbl_trabalheconosco` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `tbl_unidade`
 --
 
@@ -1851,7 +1880,7 @@ CREATE TABLE `tbl_unidade` (
   KEY `fk_unid_rodape_idx` (`idRodape`),
   KEY `fk_unidade_ender_idx` (`idEndereco`),
   CONSTRAINT `fk_ender` FOREIGN KEY (`idEndereco`) REFERENCES `tbl_endereco` (`idEndereco`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1899,4 +1928,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-04-17 16:15:05
+-- Dump completed on 2018-04-19 10:28:54
