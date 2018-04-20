@@ -9,7 +9,6 @@
   //chama metodo para listar os registros
   $list = $controller_contatos::selectContatoByID();
 
-
 ?>
 <html>
 	<head>
@@ -48,22 +47,22 @@ $(document).ready(function() {
             ID: <?php echo($id); ?>
             <div  class="campoTexto">
                 <div class="campoEsqTexto">Nome</div>
-                <div class="campoDirTexto"><!-- [SELECT AQUI > Nome] --></div>
+                <div class="campoDirTexto"><?php echo($list->nome); ?></div>
             </div>
 
             <div  class="campoTexto">
                 <div class="campoEsqTexto">Telefone</div>
-                <div class="campoDirTexto"><!-- [SELECT AQUI > Telefone] --></div>
+                <div class="campoDirTexto"><?php echo($list->telefone); ?></div>
             </div>
 
             <div  class="campoTexto">
                 <div class="campoEsqTexto">Celular</div>
-                <div class="campoDirTexto"><!-- [SELECT AQUI > Celular] --></div>
+                <div class="campoDirTexto"><?php echo($list->celular); ?></div>
             </div>
 
             <div  class="campoTexto">
                 <div class="campoEsqTexto">Email</div>
-                <div class="campoDirTexto"><!-- [SELECT AQUI > Email] --></div>
+                <div class="campoDirTexto"><?php echo($list->email); ?></div>
             </div>
 
             <div  class="campoTexto">
@@ -76,7 +75,7 @@ $(document).ready(function() {
             </div>
 
             <div  class="campoMensagem">
-                <!-- [SELECT AQUI > Mensagem] -->
+                <?php echo($list->texto); ?>
             </div>
 
         </div>
