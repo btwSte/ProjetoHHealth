@@ -21,7 +21,7 @@ class controllerCmsAmbientes{
       require_once('modulo.php');
 
       // novo objeto
-      $informacaoCabecalho = new Ambientes();
+      $informacaoCabecalho = new AmbienteCabecalho();
 
       // pega o conteudo
       $informacaoCabecalho->tituloFoto = $_POST['txt1'];
@@ -54,14 +54,14 @@ class controllerCmsAmbientes{
     }
 
     public function ListarCabecalho(){
-      $cabecalho = new Ambientes();
+      $cabecalho = new AmbienteCabecalho();
       return $cabecalho::SelectCabecalho();
     }
 
     public function ExcluirCabecalho() {
       $idCabecalho = $_GET['id'];
 
-      $excluirCabecalho = new Ambientes();
+      $excluirCabecalho = new AmbienteCabecalho();
 
       $excluirCabecalho->id = $idCabecalho;
       $excluirCabecalho::DeleteCabecalho($excluirCabecalho);
@@ -70,7 +70,7 @@ class controllerCmsAmbientes{
     public function BuscarCabecalho(){
       $idCabecalho = $_GET['id'];
 
-      $cabecalho= new Ambientes();
+      $cabecalho= new AmbienteCabecalho();
 
       $cabecalho->id = $idCabecalho;
 
@@ -84,7 +84,7 @@ class controllerCmsAmbientes{
       require_once('modulo.php');
       $idConteudoCabecalho = $_GET['id'];
 
-      $informacaoCabecalho = new Ambientes();
+      $informacaoCabecalho = new AmbienteCabecalho();
 
       // pega o conteudo
       $informacaoCabecalho->idAmbienteCabecalho = $idConteudoCabecalho;
@@ -126,13 +126,13 @@ class controllerCmsAmbientes{
       }
 
       $informacaoCabecalho->foto = $foto;
-      Ambientes::UpdateCabecalho($informacaoCabecalho);
+      AmbienteCabecalho::UpdateCabecalho($informacaoCabecalho);
     }
 
     public function AtivarCabecalho(){
       $idCabecalho = $_GET['id'];
 
-      $ativarCabecalho = new Ambientes();
+      $ativarCabecalho = new AmbienteCabecalho();
 
       $ativarCabecalho->id = $idCabecalho;
       return $ativarCabecalho::ActivateCabecalho($ativarCabecalho);
@@ -141,14 +141,14 @@ class controllerCmsAmbientes{
     public function DesativarCabecalho(){
       $idCabecalho = $_GET['id'];
 
-      $desativarCabecalho = new Ambientes();
+      $desativarCabecalho = new AmbienteCabecalho();
 
       $desativarCabecalho->id = $idCabecalho;
       return $desativarCabecalho::DisableCabecalho($desativarCabecalho);
     }
 
     public function SelecionarCabecalhoAtivo(){
-      $cabecalho = new Ambientes();
+      $cabecalho = new AmbienteCabecalho();
       return $cabecalho::SelectCabecalhoAtivo();
     }
 

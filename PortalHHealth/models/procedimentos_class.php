@@ -5,11 +5,9 @@
      Obs: Replica dos campos do BD com os metodos de ações do CRUD
    */
 
+require_once("../../../variaveis.php");
+
   class Procedimentos {
-    public $idProcedimentoCabecalho;
-    public $fotoCabecalho;
-    public $tituloFoto;
-    public $tituloCabecalho;
     public $idPaginaProcedimento;
     public $fotoProcedimento;
     public $textoProcedimento;

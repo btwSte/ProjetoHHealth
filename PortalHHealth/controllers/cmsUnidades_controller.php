@@ -21,7 +21,7 @@
         require_once('modulo.php');
 
         // novo objeto
-        $unidadeCabecalho = new Unidades();
+        $unidadeCabecalho = new UnidadeCabecalho();
 
         // pega o conteudo
         $unidadeCabecalho->tituloFoto = $_POST['txt1'];
@@ -53,14 +53,14 @@
       }
 
       public function ListarCabecalho(){
-        $cabecalho = new Unidades();
+        $cabecalho = new UnidadeCabecalho();
         return $cabecalho::SelectCabecalho();
       }
 
       public function ExcluirCabecalho() {
         $idCabecalho = $_GET['id'];
 
-        $excluirCabecalho = new Unidades();
+        $excluirCabecalho = new UnidadeCabecalho();
 
         $excluirCabecalho->id = $idCabecalho;
         $excluirCabecalho::DeleteCabecalho($excluirCabecalho);
@@ -69,7 +69,7 @@
       public function BuscarCabecalho(){
         $idCabecalho = $_GET['id'];
 
-        $cabecalho= new Unidades();
+        $cabecalho= new UnidadeCabecalho();
 
         $cabecalho->id = $idCabecalho;
 
@@ -83,7 +83,7 @@
         require_once('modulo.php');
         $idUnidadeCabecalho = $_GET['id'];
 
-        $unidadesCabecalho = new Unidades();
+        $unidadesCabecalho = new UnidadeCabecalho();
 
         // pega o conteudo
         $unidadesCabecalho->id = $idUnidadeCabecalho;
@@ -122,13 +122,13 @@
         }
 
         $unidadesCabecalho->fotoCabecalho = $fotoCabecalho;
-        Unidades::UpdateCabecalho($unidadesCabecalho);
+        UnidadeCabecalho::UpdateCabecalho($unidadesCabecalho);
       }
 
       public function AtivarCabecalho(){
         $idCabecalho = $_GET['id'];
 
-        $ativarCabecalho = new Unidades();
+        $ativarCabecalho = new UnidadeCabecalho();
 
         $ativarCabecalho->id = $idCabecalho;
         return $ativarCabecalho::ActivateCabecalho($ativarCabecalho);
@@ -137,7 +137,7 @@
       public function DesativarCabecalho(){
         $idCabecalho = $_GET['id'];
 
-        $desativarCabecalho = new Unidades();
+        $desativarCabecalho = new UnidadeCabecalho();
 
         $desativarCabecalho->id = $idCabecalho;
         return $desativarCabecalho::DisableCabecalho($desativarCabecalho);

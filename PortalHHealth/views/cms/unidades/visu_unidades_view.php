@@ -69,6 +69,7 @@ require_once('../../../variaveis.php');
         require_once($voltaTres.'router.php');
         require_once($voltaTres.'controllers/cmsUnidades_controller.php');
         require_once($voltaTres.'models/unidades_class.php');
+        require_once($voltaTres.'models/unidade_cabecalho_class.php');
 
         $controller_unidades = new controllerCmsUnidades();
         //chama metodo para listar os registros

@@ -5,6 +5,7 @@
    Obs: Replica dos campos do BD com os metodos de ações do CRUD
  */
 
+require_once("../../../variaveis.php");
 
  class TrabalheConosco{
 

@@ -62,6 +62,7 @@
         require_once($voltaTres.'router.php');
         require_once($voltaTres.'controllers/cmsContato_controller.php');
         require_once($voltaTres.'models/contato_class.php');
+        require_once($voltaTres.'models/contato_cabecalho_class.php');
         $controller_contatos = new controllerContato();
         //chama metodo para listar os registros
         $list = $controller_contatos::selectContato();

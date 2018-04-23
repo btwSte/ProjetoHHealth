@@ -69,6 +69,7 @@ require_once('../../../variaveis.php');
         require_once($voltaTres.'router.php');
         require_once($voltaTres.'controllers/cmsSobre_controller.php');
         require_once($voltaTres.'models/sobre_class.php');
+        require_once($voltaTres.'models/sobre_cabecalho_class.php');
 
         $controller_sobre = new controllerCmsSobre();
         //chama metodo para listar os registros

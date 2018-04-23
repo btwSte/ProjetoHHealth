@@ -69,6 +69,7 @@
         require_once($voltaTres.'router.php');
         require_once($voltaTres.'controllers/cmsAmbientes_controller.php');
         require_once($voltaTres.'models/ambientes_class.php');
+        require_once($voltaTres.'models/ambientes_cabecalho_class.php');
 
         $controller_procedimentos = new controllerCmsAmbientes();
         //chama metodo para listar os registros

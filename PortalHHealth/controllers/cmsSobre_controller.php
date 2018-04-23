@@ -21,7 +21,7 @@
         require_once('modulo.php');
 
         // novo objeto
-        $sobreCabecalho = new Sobre();
+        $sobreCabecalho = new SobreCabecalho();
 
         // pega o conteudo
         $sobreCabecalho->tituloFoto = $_POST['txt1'];
@@ -54,14 +54,14 @@
       }
 
       public function ListarCabecalho(){
-        $cabecalho = new Sobre();
+        $cabecalho = new SobreCabecalho();
         return $cabecalho::SelectCabecalho();
       }
 
       public function ExcluirCabecalho() {
         $idCabecalho = $_GET['id'];
 
-        $excluirCabecalho = new Sobre();
+        $excluirCabecalho = new SobreCabecalho();
 
         $excluirCabecalho->id = $idCabecalho;
         $excluirCabecalho::DeleteCabecalho($excluirCabecalho);
@@ -70,7 +70,7 @@
       public function BuscarCabecalho(){
         $idCabecalho = $_GET['id'];
 
-        $cabecalho= new Sobre();
+        $cabecalho= new SobreCabecalho();
 
         $cabecalho->id = $idCabecalho;
 
@@ -84,7 +84,7 @@
         require_once('modulo.php');
         $idSobreCabecalho = $_GET['id'];
 
-        $sobreCabecalho = new Sobre();
+        $sobreCabecalho = new SobreCabecalho();
 
         // pega o conteudo
         $sobreCabecalho->id = $idSobreCabecalho;
@@ -124,13 +124,13 @@
         }
 
         $sobreCabecalho->fotoCabecalho = $fotoCabecalho;
-        Sobre::UpdateCabecalho($sobreCabecalho);
+        SobreCabecalho::UpdateCabecalho($sobreCabecalho);
       }
 
       public function AtivarCabecalho(){
         $idCabecalho = $_GET['id'];
 
-        $ativarCabecalho = new Sobre();
+        $ativarCabecalho = new SobreCabecalho();
 
         $ativarCabecalho->id = $idCabecalho;
         return $ativarCabecalho::ActivateCabecalho($ativarCabecalho);
@@ -139,7 +139,7 @@
       public function DesativarCabecalho(){
         $idCabecalho = $_GET['id'];
 
-        $desativarCabecalho = new Sobre();
+        $desativarCabecalho = new SobreCabecalho();
 
         $desativarCabecalho->id = $idCabecalho;
         return $desativarCabecalho::DisableCabecalho($desativarCabecalho);

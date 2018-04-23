@@ -21,7 +21,7 @@
         require_once('modulo.php');
 
         // novo objeto
-        $procedimentoCabecalho = new Procedimentos();
+        $procedimentoCabecalho = new ProcedimentoCabecalho();
 
         // pega o conteudo
         $procedimentoCabecalho->tituloFoto = $_POST['txt1'];
@@ -54,14 +54,14 @@
       }
 
       public function ListarCabecalho(){
-        $cabecalho = new Procedimentos();
+        $cabecalho = new ProcedimentoCabecalho();
         return $cabecalho::SelectCabecalho();
       }
 
       public function ExcluirCabecalho() {
         $idCabecalho = $_GET['id'];
 
-        $excluirCabecalho = new Procedimentos();
+        $excluirCabecalho = new ProcedimentoCabecalho();
 
         $excluirCabecalho->id = $idCabecalho;
         $excluirCabecalho::DeleteCabecalho($excluirCabecalho);
@@ -70,7 +70,7 @@
       public function BuscarCabecalho(){
         $idCabecalho = $_GET['id'];
 
-        $cabecalho= new Procedimentos();
+        $cabecalho= new ProcedimentoCabecalho();
 
         $cabecalho->id = $idCabecalho;
 
@@ -84,7 +84,7 @@
         require_once('modulo.php');
         $idProcedimentoCabecalho = $_GET['id'];
 
-        $procedimentoCabecalho = new Procedimentos();
+        $procedimentoCabecalho = new ProcedimentoCabecalho();
 
         // pega o conteudo
         $procedimentoCabecalho->id = $idProcedimentoCabecalho;
@@ -124,13 +124,13 @@
         }
 
         $procedimentoCabecalho->fotoCabecalho = $fotoCabecalho;
-        Procedimentos::UpdateCabecalho($procedimentoCabecalho);
+        ProcedimentoCabecalho::UpdateCabecalho($procedimentoCabecalho);
       }
 
       public function AtivarCabecalho(){
         $idCabecalho = $_GET['id'];
 
-        $ativarCabecalho = new Procedimentos();
+        $ativarCabecalho = new ProcedimentoCabecalho();
 
         $ativarCabecalho->id = $idCabecalho;
         return $ativarCabecalho::ActivateCabecalho($ativarCabecalho);
@@ -139,7 +139,7 @@
       public function DesativarCabecalho(){
         $idCabecalho = $_GET['id'];
 
-        $desativarCabecalho = new Procedimentos();
+        $desativarCabecalho = new ProcedimentoCabecalho();
 
         $desativarCabecalho->id = $idCabecalho;
         return $desativarCabecalho::DisableCabecalho($desativarCabecalho);

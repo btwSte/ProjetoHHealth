@@ -23,6 +23,7 @@ if(isset($_GET['controller'])){
       case 'cmsInformacoes':
         require_once('controllers/cmsInformacoes_controller.php');
         require_once('models/informacoes_class.php');
+        require_once('models/informacoes_cabecalho_class.php');
         switch ($modo) {
         //REFENTE AO CABEÇALHO DE INFORMAÇOES
           case 'novocabecalho':
@@ -96,6 +97,7 @@ if(isset($_GET['controller'])){
       case 'cmsProcedimentos':
         require_once('controllers/cmsProcedimentos_controller.php');
         require_once('models/procedimentos_class.php');
+        require_once('models/procedimentos_cabecalho_class.php');
         switch ($modo){
         //REFENTE AO CABEÇALHO DE PROCEDIMENTOS
           case 'novocabecalho':
@@ -165,6 +167,7 @@ if(isset($_GET['controller'])){
       case 'cmsAmbiente':
         require_once('controllers/cmsAmbientes_controller.php');
         require_once('models/ambientes_class.php');
+        require_once('models/ambientes_cabecalho_class.php');
           switch ($modo) {
             //REFENTE AO CABEÇALHO DE PROCEDIMENTOS
               case 'novocabecalho':
@@ -234,6 +237,7 @@ if(isset($_GET['controller'])){
       case 'cmsSobre':
         require_once('controllers/cmsSobre_controller.php');
         require_once('models/sobre_class.php');
+        require_once('models/sobre_cabecalho_class.php');
         switch ($modo) {
         //REFENTE AO CABEÇALHO DE PROCEDIMENTOS
           case 'novocabecalho':
@@ -305,6 +309,7 @@ if(isset($_GET['controller'])){
         require_once('models/unidades_class.php');
         require_once('controllers/cmsEndereco_controller.php');
         require_once('models/endereco_class.php');
+        require_once('models/unidade_cabecalho_class.php');
         switch ($modo) {
         //REFENTE AO CABEÇALHO DE UNIDADES
           case 'novocabecalho':
@@ -390,6 +395,7 @@ if(isset($_GET['controller'])){
       case 'Contato':
         require_once('controllers/cmsContato_controller.php');
         require_once('models/contato_class.php');
+        require_once('models/contato_cabecalho_class.php');
         switch ($modo) {
         //REFENTE AO CABEÇALHO DE PROCEDIMENTOS
           case 'Selecionar':
@@ -411,6 +417,7 @@ if(isset($_GET['controller'])){
       case 'Curriculo':
         require_once('controllers/admTrabalheConosco_controller.php');
         require_once('models/trabalheconosco_class.php');
+        require_once('models/trabalheconosco_cabecalho_class.php');
         switch ($modo) {
           case 'Selecionar':
             $controller_Curriculo = new controllerCurriculo();
