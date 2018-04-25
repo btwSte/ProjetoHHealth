@@ -109,28 +109,7 @@
                     <input type="file" required placeholder="ImagemFundo" name="imgimagemFundo" value="" maxlength="255" class="inputHomeDuplo">
                 </div>
 
-                <!-- Nossas Unidades -->
-                <div class="textoHomePortal">Nossas Unidades</div>
-                <div class="inputHomePortal">
-                    <input type="file" required placeholder="NossasUnidades" name="imgUnidade1" value="" maxlength="255" class="inputHomeDuplo">
-                    <input type="file" required placeholder="NossasUnidades" name="imgUnidade2" value="" maxlength="255" class="inputHomeDuploDir">
-                </div>
-                <div class="inputHomePortal">
-                    <input type="file" required placeholder="NossasUnidades" name="imgUnidade3" value="" maxlength="255" class="inputHomeDuplo">
-                    <input type="file" required placeholder="NossasUnidades" name="imgUnidade4" value="" maxlength="255" class="inputHomeDuploDir">
-                </div>
-
-                <div class="inputHomePortal">
-                    <input type="file" required placeholder="NossasUnidades" name="imgUnidade5" value="" maxlength="255" class="inputHomeDuplo">
-                </div>
-
-                <!-- Rodape -->
-                <div class="textoHomePortal">Rodapé do Site</div>
-                <div class="inputHomePortal">
-                    <input type="text" required placeholder="Email" name="txtNEmail" value="" maxlength="255" class="inputHomeDuplo">
-                    <input type="text" required placeholder="Telefone" name="txtTelefone" value="" maxlength="255" class="inputHomeDuplo">
-                </div>
-
+                
                 <!-- Redes Sociais -->
                 <div class="textoHomePortal">Redes Sociais</div>
                 <div class="inputHomePortal">
