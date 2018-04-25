@@ -1,6 +1,6 @@
 <?php
   /* Autor: Stéphanie e Vinicius
-     Data de modificação: 05/04/18
+     Data de modificação: 24/04/18
      Controller: Informacoes
      Obs: Controller para realizar CRUD da pagina Informacoes e verifica login
    */
@@ -148,6 +148,11 @@
         return $desativarCabecalho::DisableCabecalho($desativarCabecalho);
       }
 
+      public function SelecionarCabecalhoAtivo(){
+        $cabecalho = new InformacoesCabecalho();
+        return $cabecalho::SelectCabecalhoAtivo();
+      }
+
     //FUNÇÕES REFERENTE AO CONTEUDO
       public function NovoConteudo(){
         require_once('modulo.php');
@@ -269,6 +274,11 @@
 
         $desativarConteudo->id = $idConteudo;
         return $desativarConteudo::DisableConteudo($desativarConteudo);
+      }
+
+      public function SelecionarConteudoAtivo(){
+        $conteudo = new Informacoes();
+        return $conteudo::SelectConteudoAtivo();
       }
 
   }

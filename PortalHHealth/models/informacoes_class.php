@@ -1,10 +1,10 @@
 <?php
   /* Autor: Stéphanie e Vinicius
-     Data de modificação: 01/04/18
+     Data de modificação: 24/04/18
      Class: Informacoes
      Obs: Replica dos campos do BD com os metodos de ações do CRUD
    */
-   require_once("../../../variaveis.php");
+
 
   class Informacoes {
     public $idPaginaInfoUsuario;
@@ -35,7 +35,7 @@
 
         //executa script no banco
         if ($PDOconex->query($sql))
-          header('location:'.$voltaUm.'views/cms/cadastroInformacoes_view.php');
+          header('location:'.$voltaUm.'views/cms/informacoes/cadastroInformacoes_view.php');
         else
           echo "Erro no cadastro";
 
@@ -119,7 +119,7 @@
         $PDOconex = $conex->Conectar();
 
         if ($PDOconex->query($sql)) {
-          header('location:'.$voltaUm.'views/cms/visu_informacoes_view.php');
+          header('location:'.$voltaUm.'views/cms/informacoes/visu_informacoes_view.php');
         }else{
           echo "erro ao deletar";
         }
@@ -145,7 +145,7 @@
         $PDOconex = $conex->Conectar();
 
         if ($PDOconex->query($sql)) {
-          header('location:'.$voltaUm.'views/cms/cadastroInformacoes_view.php');
+          header('location:'.$voltaUm.'views/cms/informacoes/cadastroInformacoes_view.php');
         }else{
           echo "erro";
         }
@@ -161,7 +161,7 @@
         $PDOconex = $conex->Conectar();
 
         if ($PDOconex->query($sql)) {
-          header('location:'.$voltaUm.'views/cms/visu_informacoes_view.php');
+          header('location:'.$voltaUm.'views/cms/informacoes/visu_informacoes_view.php');
         }else{
           echo "erro";
         }
@@ -177,12 +177,48 @@
         $PDOconex = $conex->Conectar();
 
         if ($PDOconex->query($sql)) {
-          header('location:'.$voltaUm.'views/cms/visu_informacoes_view.php');
+          header('location:'.$voltaUm.'views/cms/informacoes/visu_informacoes_view.php');
         }else{
           echo "erro";
         }
 
         $conex->Desconectar();
+      }
+
+      public function SelectConteudoAtivo(){
+        // Select no banco
+        $sql = "SELECT * FROM pagina_info_usuario WHERE ativo=1";
+
+        //instancia a classe do banco
+        $conex = new Mysql_db();
+
+        //chama o metodo para conectar no BD e guarda o resultado da funcao em uma variavel local($PDOconex)
+        $PDOconex = $conex->Conectar();
+
+        $select = $PDOconex->query($sql);
+
+        //inicia contador em 0
+        $cont = 0;
+
+        //guarda resultado
+        while ($result = $select->fetch(PDO::FETCH_ASSOC)) {
+          $listConteudo[] = new Informacoes();
+
+          $listConteudo[$cont]->idPaginaInfoUsuario = $result['idPaginaInfoUsuario'];
+          $listConteudo[$cont]->fotoAssunto = $result['fotoAssunto'];
+          $listConteudo[$cont]->textoAssunto = $result['textoAssunto'];
+          $listConteudo[$cont]->ativo = $result['ativo'];
+
+          //incrementa o contador
+          $cont += 1;
+       }
+
+       $conex->Desconectar();
+
+       if (isset($listConteudo)) {
+           return $listConteudo;
+       }
+
       }
   }
 ?>

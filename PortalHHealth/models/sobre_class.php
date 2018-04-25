@@ -4,7 +4,6 @@
      Class: Sobre
      Obs: Replica dos campos do BD com os metodos de ações do CRUD
    */
-  require_once("../../../variaveis.php");
 
   class Sobre {
     public $idPaginaSobre;
@@ -33,7 +32,7 @@
 
         //executa script no banco
         if ($PDOconex->query($sql))
-          header('location:'.$voltaUm.'views/cms/cadastroSobre_view.php');
+          header('location:'.$voltaUm.'views/cms/sobre/cadastroSobre_view.php');
         else
           echo "Erro no cadastro";
 
@@ -117,7 +116,7 @@
         $PDOconex = $conex->Conectar();
 
         if ($PDOconex->query($sql)) {
-          header('location:'.$voltaUm.'views/cms/visu_sobre_view.php');
+          header('location:'.$voltaUm.'views/cms/sobre/visu_sobre_view.php');
         }else{
           echo "erro ao deletar";
         }
@@ -142,7 +141,7 @@
         $PDOconex = $conex->Conectar();
 
         if ($PDOconex->query($sql)) {
-          header('location:'.$voltaUm.'views/cms/cadastroSobre_view.php');
+          header('location:'.$voltaUm.'views/cms/sobre/cadastroSobre_view.php');
         }else{
           echo "erro";
         }
@@ -158,7 +157,7 @@
         $PDOconex = $conex->Conectar();
 
         if ($PDOconex->query($sql)) {
-          header('location:'.$voltaUm.'views/cms/visu_sobre_view.php');
+          header('location:'.$voltaUm.'views/cms/sobre/visu_sobre_view.php');
         }else{
           echo "erro";
         }
@@ -174,12 +173,48 @@
         $PDOconex = $conex->Conectar();
 
         if ($PDOconex->query($sql)) {
-          header('location:'.$voltaUm.'views/cms/visu_sobre_view.php');
+          header('location:'.$voltaUm.'views/cms/sobre/visu_sobre_view.php');
         }else{
           echo "erro";
         }
 
         $conex->Desconectar();
+      }
+
+      public function SelectConteudoAtivo(){
+        // Select no banco
+        $sql = "SELECT * FROM pagina_sobre WHERE ativo=1";
+
+        //instancia a classe do banco
+        $conex = new Mysql_db();
+
+        //chama o metodo para conectar no BD e guarda o resultado da funcao em uma variavel local($PDOconex)
+        $PDOconex = $conex->Conectar();
+
+        $select = $PDOconex->query($sql);
+
+        //inicia contador em 0
+        $cont = 0;
+
+        //guarda resultado
+        while ($result = $select->fetch(PDO::FETCH_ASSOC)) {
+          $listConteudo[] = new Sobre();
+
+          $listConteudo[$cont]->idPaginaSobre = $result['idPaginaSobre'];
+          $listConteudo[$cont]->fotoSobre = $result['fotoSobre'];
+          $listConteudo[$cont]->textoSobre = $result['textoSobre'];
+          $listConteudo[$cont]->ativo = $result['ativo'];
+
+          //incrementa o contador
+          $cont += 1;
+       }
+
+       $conex->Desconectar();
+
+       if (isset($listConteudo)) {
+           return $listConteudo;
+       }
+
       }
   }
 ?>

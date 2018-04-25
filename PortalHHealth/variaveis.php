@@ -3,5 +3,6 @@
   $voltaTres = "../../../";
   $voltaDois = "../../";
   $voltaUm = "../";
+  $entraHHealth = "../../../../HHealth/";
 
  ?>

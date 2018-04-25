@@ -6,6 +6,7 @@
    */
 
 class controllerCmsAmbientes{
+
     function Logar(){
       $Login = new Login();
 

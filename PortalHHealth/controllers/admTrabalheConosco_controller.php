@@ -30,7 +30,7 @@
 
      public function selectCurriculoByID(){
        $info_Curriculo = new TrabalheConosco();
-       $info_Curriculo->idDadoContato = $_POST['id'];
+       $info_Curriculo->idCurriculo = $_POST['id'];
        return $info_Curriculo::SelectByID($info_Curriculo);
      }
 

@@ -88,9 +88,9 @@ require_once('../../../variaveis.php');
 
 
        <div class="segura_form_tbc">
-         <form class="trabalhe_conosco" action="../../router.php?controller=cmsProcedimentos&<?php echo($action); ?>" method="post" enctype="multipart/form-data">
+         <form class="trabalhe_conosco" action="<?php echo $voltaTres; ?>router.php?controller=cmsProcedimentos&<?php echo($action); ?>" method="post" enctype="multipart/form-data">
            <div class="tit">
-             <p>Cadastro: Cabeçalho Procedimentos</p>
+             <p>Cadastro: Cabeçalho Procedimento de Exames</p>
            </div>
 
              <div  class="text">
@@ -114,9 +114,9 @@ require_once('../../../variaveis.php');
 
 
        <div class="segura_form_tbc">
-         <form class="trabalhe_conosco" action="../../router.php?controller=cmsProcedimentos&<?php echo($action2); ?>" method="post" enctype="multipart/form-data">
+         <form class="trabalhe_conosco" action="<?php echo $voltaTres; ?>router.php?controller=cmsProcedimentos&<?php echo($action2); ?>" method="post" enctype="multipart/form-data">
            <div class="tit">
-             <p>Cadastro De Procedimentos:</p>
+             <p>Cadastro De Procedimentos de Exames:</p>
            </div>
 
              <div  class="text">

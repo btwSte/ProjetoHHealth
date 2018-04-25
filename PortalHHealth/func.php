@@ -20,7 +20,7 @@ function logar($id){
 function deslogar(){
   session_destroy();
   /*Quando o usuario deslogar destroi a variavel de sessao e redireciona para area de login*/
-  header('location:../../index.php');
+  header('location:../../../index.php');
 
 }
 ?>

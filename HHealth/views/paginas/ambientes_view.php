@@ -1,8 +1,7 @@
 <?php
   require_once('../../variaveis.php');
+?>
 
-
- ?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -30,6 +29,7 @@
           require_once($entraPortal.'router.php');
           require_once($entraPortal.'controllers/cmsAmbientes_controller.php');
           require_once($entraPortal.'models/ambientes_class.php');
+          require_once($entraPortal.'models/ambientes_cabecalho_class.php');
 
           $controller_procedimentos = new controllerCmsAmbientes();
           //chama metodo para listar os registros

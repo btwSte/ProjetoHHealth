@@ -1,13 +1,14 @@
+<?php
+  require_once('../../variaveis.php');
+?>
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Informações - HHealth</title>
-    <link rel="stylesheet" href="../../css/style.css">
-    <link rel="stylesheet" href="../../css/normalize.css">
-    <script src="../../js/jquery.js"></script>
-    <script src="../../js/modernizr.min.js"></script>
+    <link rel="stylesheet" href="<?php echo $voltaDois; ?>css/style.css">
+    <link rel="stylesheet" href="<?php echo $voltaDois; ?>css/normalize.css">
   </head>
   <body>
     <div id="principal_informacao">
@@ -20,45 +21,61 @@
         <div id="segura">
 
         </div>
+
+        <?php
+          require_once($entraPortal.'router.php');
+          require_once($entraPortal.'controllers/cmsInformacoes_controller.php');
+          require_once($entraPortal.'models/informacoes_class.php');
+          require_once($entraPortal.'models/informacoes_cabecalho_class.php');
+
+          $controller_procedimentos = new controllerCmsInformacoes();
+          //chama metodo para listar os registros
+          $list = $controller_procedimentos::SelecionarCabecalhoAtivo();
+
+          $cont = 0;
+
+          while ($cont < count($list)) {
+
+         ?>
+
         <div id="imagem_titulo">
-          <h1>Informações</h1>
-          <img src="../../imagens/slide2.jpg" alt="background Informações">
+          <h1><?php echo($list[$cont]->tituloFoto); ?></h1>
+          <img src="<?php echo $entraPortal.$list[$cont]->foto; ?>" alt="background Informações">
         </div>
           <div id="texto_info">
-            <h1>Tudo que você precisa saber</h1>
+            <h1><?php echo($list[$cont]->tituloPagina); ?></h1>
           </div>
 
+          <?php
+              $cont += 1;
+            }
+          ?>
 
         <div id="segura_img_info">
+          <?php
+            $controller_procedimentos = new controllerCmsInformacoes();
+            //chama metodo para listar os registros
+            $listConteudo = $controller_procedimentos::SelecionarConteudoAtivo();
+
+            $contConteudo = 0;
+
+            while ($contConteudo < count($listConteudo)) {
+          ?>
           <div class="img_info">
-            <img src="../../imagens/info1.jpeg" alt="Informação">
+            <img src="<?php echo($entraPortal.$listConteudo[$contConteudo]->fotoAssunto); ?>" alt="Informação">
           </div>
           <div class="info">
-            <p>Ainda assim, existem dúvidas a respeito de como a expansão dos mercados mundiais obstaculiza a apreciação da importância das posturas dos órgãos dirigentes com relação às suas atribuições.</p>
+            <p><?php echo($listConteudo[$contConteudo]->textoAssunto); ?></p>
+          </div>
 
-            <p>A prática cotidiana prova que a adoção de políticas descentralizadoras pode nos levar a considerar a reestruturação de alternativas às soluções ortodoxas.</p>
-          </div>
-        </div>
-        <div id="segura_img_info">
-          <div class="img_info">
-            <img src="../../imagens/pressao.jpeg" alt="Informação">
-          </div>
-          <div class="info">
-            <p>Nunca é demais lembrar o peso e o significado destes problemas, uma vez que a contínua expansão de nossa atividade cumpre um papel essencial na formulação do processo de comunicação como um todo.</p>
+          <?php
+              $contConteudo +=1;
+            }
+          ?>
 
-            <p>A prática cotidiana prova que a adoção de políticas descentralizadoras pode nos levar a considerar a reestruturação de alternativas às soluções ortodoxas.</p>
-          </div>
         </div>
-        <div id="segura_img_info">
-          <div class="img_info">
-            <img src="../../imagens/raio.jpeg" alt="Informação">
-          </div>
-          <div class="info">
-            <p>A prática cotidiana prova que a adoção de políticas descentralizadoras pode nos levar a considerar a reestruturação de alternativas às soluções ortodoxas.</p>
 
-            <p>Nunca é demais lembrar o peso e o significado destes problemas, uma vez que a contínua expansão de nossa atividade cumpre um papel essencial na formulação do processo de comunicação como um todo.</p>
-          </div>
-        </div>
+
       </main>
       <!--  Exemplo de exibição de conteudo pego do banco-->
        <?php  //echo  $info->conteudo; ?>

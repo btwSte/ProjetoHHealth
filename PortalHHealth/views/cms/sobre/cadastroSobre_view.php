@@ -13,6 +13,8 @@ require_once('../../../variaveis.php');
   $textoSobre = null;
   $ativo = null;
 
+
+
 ?>
 
 <!DOCTYPE html>
@@ -23,8 +25,22 @@ require_once('../../../variaveis.php');
 		<link rel="stylesheet" type="text/css" href="<?php echo($voltaTres); ?>css/Frajola.css">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<script src="js/modernizr.min.js"></script>
+
+    <script>
+      function travaEnter(e) {
+
+        var item = null;
+        item = (e.keyCode ? e.keyCode : e.which);
+
+        if (item == 13) {
+          e.preventDefault();
+          console.log('Travando enter');
+        }
+      }
+    </script>
+
 	</head>
-	<body>
+	<body >
     <?php include($voltaDois."header.php"); ?>
 		<div class="container">
 
@@ -66,7 +82,7 @@ require_once('../../../variaveis.php');
 				}
 			</script>
 			<div class="segura_form_tbc">
-				<form class="frmCabecalhoSobre" action="../../router.php?controller=cmsSobre&<?php echo($action); ?>" method="post" enctype="multipart/form-data">
+				<form class="frmCabecalhoSobre" action="<?php echo $voltaTres; ?>router.php?controller=cmsSobre&<?php echo($action); ?>" method="post" enctype="multipart/form-data">
 					<div class="tit">
 						<p>Cadastro: Cabeçalho Sobre</p>
 					</div>
@@ -87,8 +103,9 @@ require_once('../../../variaveis.php');
 				</form>
 			</div>
 			<!-- SegundoForm -->
+
 			<div class="segura_form_tbc">
-				<form class="frmConteudoSobre" action="../../router.php?controller=cmsSobre&<?php echo($action2); ?>" method="post" enctype="multipart/form-data">
+				<form class="frmConteudoSobre" action="<?php echo $voltaTres; ?>router.php?controller=cmsSobre&<?php echo($action2); ?>" method="post" enctype="multipart/form-data">
 					<div class="tit">
 						<p>Cadastro da Pagina Sobre:</p>
 					</div>
@@ -97,8 +114,8 @@ require_once('../../../variaveis.php');
 						<input type="file" name="imagem_conteudo"  size="16" />
 					</div>
 
-					<div  class="textAlt">
-						<input type="text" required placeholder="Conteudo/Historia" name="txtConteudo" value="" maxlength="1000">
+					<div  class="textAlt" >
+            <textarea name="txtConteudo" onkeypress="travaEnter(event);"  placeholder="Conteudo/Historia" rows="8" cols="80" maxlength="1000">  </textarea>
 					</div>
 
 					<div id="btn_tbc">

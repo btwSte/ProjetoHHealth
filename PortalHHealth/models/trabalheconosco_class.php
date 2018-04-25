@@ -5,7 +5,6 @@
    Obs: Replica dos campos do BD com os metodos de ações do CRUD
  */
 
-require_once("../../../variaveis.php");
 
  class TrabalheConosco{
 
@@ -71,10 +70,43 @@ require_once("../../../variaveis.php");
      $PDOconex = $conex->Conectar();
 
      $select = $PDOconex->query($sql);
-     // echo $sql;
     header('location:views/administrativo/trabalheConosco/visuTrabalhe_view.php');
    }
 
+   public function SelectByID($info_Curriculo){
+     $sql = "SELECT * FROM tbl_trabalheconosco WHERE idCurriculo = $info_Curriculo->idCurriculo";
+
+     //instancia a classe do banco
+     $conex = new Mysql_db();
+
+     //chama o metodo para conectar no BD e guarda o resultado da funcao em uma variavel local($PDOconex)
+     $PDOconex = $conex->Conectar();
+
+     $select = $PDOconex->query($sql);
+
+
+
+     //guarda resultado
+     if ($result = $select->fetch(PDO::FETCH_ASSOC)) {
+
+       $listCuriculo = new TrabalheConosco();
+
+       $listCuriculo->idCurriculo = $result['idCurriculo'];
+       $listCuriculo->nome = $result['nome'];
+       $listCuriculo->telefone = $result['telefone'];
+       $listCuriculo->celular = $result['celular'];
+       $listCuriculo->email = $result['email'];
+       $listCuriculo->profissao = $result['profissao'];
+       $listCuriculo->curriculo = $result['curriculo'];
+    }
+
+     //Chama função que encerra conexao no banco
+     $conex->Desconectar();
+
+     if (isset($listCuriculo)) {
+         return $listCuriculo;
+     }
+   }
 
  }
 

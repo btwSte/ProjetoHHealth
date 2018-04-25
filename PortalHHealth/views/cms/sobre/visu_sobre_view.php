@@ -106,7 +106,7 @@ require_once('../../../variaveis.php');
 
               ?>
                <div class="ativar_crud ">
-                 <a href="../../router.php?controller=cmsSobre&modo=desativarcabecalho&id=<?php echo($list[$cont]->idSobreCabecalho); ?>">
+                 <a href="<?php echo $voltaTres; ?>router.php?controller=cmsSobre&modo=desativarcabecalho&id=<?php echo($list[$cont]->idSobreCabecalho); ?>">
                    <img src="<?php echo $voltaTres; ?>imagens/check.png" alt="Desativar" title="Desativar">
                  </a>
                </div>
@@ -116,7 +116,7 @@ require_once('../../../variaveis.php');
              } else {
                 ?>
                <div class="desativar_crud ">
-                 <a href="../../router.php?controller=cmsSobre&modo=ativarcabecalho&id=<?php echo($list[$cont]->idSobreCabecalho); ?>">
+                 <a href="<?php echo $voltaTres; ?>router.php?controller=cmsSobre&modo=ativarcabecalho&id=<?php echo($list[$cont]->idSobreCabecalho); ?>">
                    <img src="<?php echo $voltaTres; ?>imagens/no.png" alt="Ativar" title="Ativar">
                  </a>
                </div>
@@ -153,11 +153,11 @@ require_once('../../../variaveis.php');
            <div class="Crud_Opc">
 
                <div class="Deletar_crud">
-                 <a href="../../router.php?controller=cmsSobre&modo=excluirconteudo&id=<?php echo($listConteudo[$contConteudo]->idPaginaSobre); ?>">DELETAR</a>
+                 <a href="<?php echo $voltaTres; ?>router.php?controller=cmsSobre&modo=excluirconteudo&id=<?php echo($listConteudo[$contConteudo]->idPaginaSobre); ?>">DELETAR</a>
 
                </div>
                <div class="Editar_crud">
-                 <a href="../../router.php?controller=cmsSobre&modo=buscarconteudo&id=<?php echo($listConteudo[$contConteudo]->idPaginaSobre); ?>">EDITAR</a>
+                 <a href="<?php echo $voltaTres; ?>router.php?controller=cmsSobre&modo=buscarconteudo&id=<?php echo($listConteudo[$contConteudo]->idPaginaSobre); ?>">EDITAR</a>
                </div>
            </div>
            <!-- ABRE O IF -->
@@ -167,7 +167,7 @@ require_once('../../../variaveis.php');
 
             ?>
              <div class="ativar_crud ">
-               <a href="../../router.php?controller=cmsSobre&modo=desativarconteudo&id=<?php echo($listConteudo[$contConteudo]->idPaginaSobre); ?>">
+               <a href="<?php echo $voltaTres; ?>router.php?controller=cmsSobre&modo=desativarconteudo&id=<?php echo($listConteudo[$contConteudo]->idPaginaSobre); ?>">
                  <img src="<?php echo $voltaTres; ?>imagens/check.png" alt="Desativar" title="Desativar">
                </a>
              </div>
@@ -177,7 +177,7 @@ require_once('../../../variaveis.php');
            } else {
               ?>
              <div class="desativar_crud ">
-               <a href="../../router.php?controller=cmsSobre&modo=ativarconteudo&id=<?php echo($listConteudo[$contConteudo]->idPaginaSobre); ?>">
+               <a href="<?php echo $voltaTres; ?>router.php?controller=cmsSobre&modo=ativarconteudo&id=<?php echo($listConteudo[$contConteudo]->idPaginaSobre); ?>">
                  <img src="<?php echo $voltaTres; ?>imagens/no.png" alt="Ativar" title="Ativar">
                </a>
              </div>

@@ -145,6 +145,11 @@
         return $desativarCabecalho::DisableCabecalho($desativarCabecalho);
       }
 
+      public function SelecionarCabecalhoAtivo(){
+        $cabecalho = new SobreCabecalho();
+        return $cabecalho::SelectCabecalhoAtivo();
+      }
+
     //FUNÇÕES REFERENTE AO CONTEUDO
       public function NovoConteudo(){
         require_once('modulo.php');
@@ -266,6 +271,11 @@
 
         $desativarConteudo->id = $idConteudo;
         return $desativarConteudo::DisableConteudo($desativarConteudo);
+      }
+
+      public function SelecionarConteudoAtivo(){
+        $conteudo = new Sobre();
+        return $conteudo::SelectConteudoAtivo();
       }
 
   }

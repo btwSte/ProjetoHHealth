@@ -1,13 +1,20 @@
 <?php
-  require_once('../../../variaveis.php');
-	$id = $_POST['id'];
-  require_once($voltaTres.'router.php');
-  require_once($voltaTres.'controllers/cmsContato_controller.php');
-  require_once($voltaTres.'models/contato_class.php');
 
-  $controller_contatos = new controllerContato();
+ include("../../../variaveis.php");
+
+	$id = $_POST['id'];
+
+  require_once($voltaTres.'router.php');
+  require_once($voltaTres.'controllers/admTrabalheConosco_controller.php');
+  require_once($voltaTres.'models/trabalheconosco_class.php');
+
+  $controller_curriculo = new controllerCurriculo();
   //chama metodo para listar os registros
-  $list = $controller_contatos::selectContatoByID();
+  $list = $controller_curriculo::selectCurriculoByID();
+
+
+
+
 
 
 ?>
@@ -36,7 +43,7 @@ $(document).ready(function() {
                 </a>
             </div>
             <div id="txtTitulo">
-                Visualizar Mensagens
+                Curriculos enviados
             </div>
         </div>
         <div>
@@ -45,39 +52,34 @@ $(document).ready(function() {
 
               }
             ?>
-          <span style="color:#fff;"> ID: <?php echo($id); ?></span> 
+          <span style="color:#fff;"> ID: <?php echo($id); ?></span>
             <div  class="campoTexto">
                 <div class="campoEsqTexto">Nome</div>
-                <div class="campoDirTexto"><!-- [SELECT AQUI > Nome] --></div>
+                <div class="campoDirTexto"><?php echo($list->nome); ?></div>
             </div>
 
             <div  class="campoTexto">
                 <div class="campoEsqTexto">Telefone</div>
-                <div class="campoDirTexto"><!-- [SELECT AQUI > Telefone] --></div>
+                <div class="campoDirTexto"><?php echo($list->celular); ?></div>
             </div>
 
             <div  class="campoTexto">
                 <div class="campoEsqTexto">Celular</div>
-                <div class="campoDirTexto"><!-- [SELECT AQUI > Celular] --></div>
+                <div class="campoDirTexto"><?php echo($list->email); ?></div>
             </div>
 
             <div  class="campoTexto">
-                <div class="campoEsqTexto">Email</div>
-                <div class="campoDirTexto"><!-- [SELECT AQUI > Email] --></div>
+                <div class="campoEsqTexto">Profissão</div>
+                <div class="campoDirTexto"><?php echo($list->profissao); ?></div>
             </div>
 
-            <div  class="campoTexto">
-                <style>
-                    .campoEsqContato{background-color: #6bb27d;color: #fff;}
-                    .campoDirContato{background-color: #6bb27d;color: #fff;}
-                </style>
-                <div class="campoEsqContato">Sugestão</div>
-                <div class="campoDirContato">Critica</div>
-            </div>
 
-            <div  class="campoMensagem">
-                <!-- [SELECT AQUI > Mensagem] -->
-            </div>
+            <a href="<?php echo($entraHHealth.$list->curriculo); ?>">
+                <div  class="campoBotao" >
+                  Baixar curiculo
+                </div>
+            </a>
+
 
         </div>
     </form>

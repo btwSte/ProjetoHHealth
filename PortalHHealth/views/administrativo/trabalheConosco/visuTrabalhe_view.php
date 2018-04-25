@@ -1,4 +1,9 @@
-<?php include("../../../variaveis.php") ?>
+<?php
+ include("../../../variaveis.php");
+
+
+
+ ?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -91,10 +96,10 @@
 									?>
 		                <div class="linhaContato">
 		                    <div class="campoIdSelect"><?php echo($list[$cont]->idCurriculo); ?></div>
-		                    <div class="campoNeutroSelect"><?php echo($list[$cont]->nome); ?><!-- NOME --></div>
-		                    <div class="campoNeutroSelect"><?php echo($list[$cont]->telefone); ?><!-- TELEFONE --></div>
-		                    <div class="campoNeutroSelect"><?php echo($list[$cont]->email); ?><!-- EMAIL --></div>
-		                    <div class="campoNeutroSelect"><?php echo($list[$cont]->profissao); ?><!-- PROFISÃO --></div>
+		                    <div class="campoNeutroSelect"><?php echo($list[$cont]->nome); ?></div>
+		                    <div class="campoNeutroSelect"><?php echo($list[$cont]->telefone); ?></div>
+		                    <div class="campoNeutroSelect"><?php echo($list[$cont]->email); ?></div>
+		                    <div class="campoNeutroSelect"><?php echo($list[$cont]->profissao); ?></div>
 		                    <div class="campoNeutroSelect">
 		                        <div class="optionSelect">
 		                            <a href="#" alt="IconeVisualizar" class="ver" onclick="Modal(<?php echo($list[$cont]->idCurriculo) ?>)">

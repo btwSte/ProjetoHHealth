@@ -1,5 +1,5 @@
 <?php
-require_once('../../../variaveis.php');
+require_once('variaveis.php');
 
   $action2 = "modo=novoconteudo";
   $action = "modo=novocabecalho";
@@ -18,8 +18,6 @@ require_once('../../../variaveis.php');
     $fotoCabecalho = $cabecalhoResultado->fotoCabecalho;
     $tituloFoto = $cabecalhoResultado->tituloFoto;
     $tituloCabecalho = $cabecalhoResultado->tituloCabecalho;
-    echo "<script>alert('Dentro do if!');
-          </script>";
 
     $action = "modo=editarcabecalho&id=".$idProcedimentoCabecalho;
   }
@@ -30,8 +28,6 @@ require_once('../../../variaveis.php');
     echo ($textoProcedimento);
     $fotoProcedimento = $conteudoResultado->fotoProcedimento;
     $textoProcedimento = $conteudoResultado->textoProcedimento;
-    echo "<script>alert('Dentro do if do conteudo!');
-          </script>";
 
     $action2 = "modo=editarconteudo&id=".$idPaginaProcedimento;
   }

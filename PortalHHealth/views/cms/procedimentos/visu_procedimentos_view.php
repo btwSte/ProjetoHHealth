@@ -83,7 +83,7 @@ require_once('../../../variaveis.php');
         <div id="segura">
          <div id="imagem_titulo">
            <h1><?php echo($list[$cont]->tituloFoto); ?></h1>
-           <img src="../../<?php echo($list[$cont]->fotoCabecalho); ?>" alt="background Informações">
+           <img src="<?php echo($voltaTres.$list[$cont]->fotoCabecalho); ?>" alt="background Informações">
          </div>
          <div id="texto_info">
            <h1><?php echo($list[$cont]->tituloCabecalho); ?></h1>
@@ -91,11 +91,11 @@ require_once('../../../variaveis.php');
          <div class="Crud_Opc">
 
              <div class="Deletar_crud">
-               <a href="../../router.php?controller=cmsProcedimentos&modo=excluircabecalho&id=<?php echo($list[$cont]->idProcedimentoCabecalho); ?>">DELETAR</a>
+               <a href="<?php echo $voltaTres; ?>router.php?controller=cmsProcedimentos&modo=excluircabecalho&id=<?php echo($list[$cont]->idProcedimentoCabecalho); ?>">DELETAR</a>
 
              </div>
              <div class="Editar_crud">
-               <a href="../../router.php?controller=cmsProcedimentos&modo=buscarcabecalho&id=<?php echo($list[$cont]->idProcedimentoCabecalho); ?>">EDITAR</a>
+               <a href="<?php echo $voltaTres; ?>router.php?controller=cmsProcedimentos&modo=buscarcabecalho&id=<?php echo($list[$cont]->idProcedimentoCabecalho); ?>">EDITAR</a>
              </div>
 
              </div>
@@ -106,8 +106,8 @@ require_once('../../../variaveis.php');
 
               ?>
                <div class="ativar_crud ">
-                 <a href="../../router.php?controller=cmsProcedimentos&modo=desativarcabecalho&id=<?php echo($list[$cont]->idProcedimentoCabecalho); ?>">
-                   <img src="../../imagens/check.png" alt="Desativar" title="Desativar">
+                 <a href="<?php echo $voltaTres; ?>router.php?controller=cmsProcedimentos&modo=desativarcabecalho&id=<?php echo($list[$cont]->idProcedimentoCabecalho); ?>">
+                   <img src="<?php echo $voltaTres; ?>imagens/check.png" alt="Desativar" title="Desativar">
                  </a>
                </div>
                <?php
@@ -116,8 +116,8 @@ require_once('../../../variaveis.php');
              } else {
                 ?>
                <div class="desativar_crud ">
-                 <a href="../../router.php?controller=cmsProcedimentos&modo=ativarcabecalho&id=<?php echo($list[$cont]->idProcedimentoCabecalho); ?>">
-                   <img src="../../imagens/no.png" alt="Ativar" title="Ativar">
+                 <a href="<?php echo $voltaTres; ?>router.php?controller=cmsProcedimentos&modo=ativarcabecalho&id=<?php echo($list[$cont]->idProcedimentoCabecalho); ?>">
+                   <img src="<?php echo $voltaTres; ?>imagens/no.png" alt="Ativar" title="Ativar">
                  </a>
                </div>
                <!-- FECHA O ELSE -->

@@ -1,5 +1,5 @@
 <?php
-require_once('../../../variaveis.php');
+require_once('variaveis.php');
 
   $action2 = "modo=novoconteudo";
   $action = "modo=novocabecalho";
@@ -150,7 +150,7 @@ require_once('../../../variaveis.php');
              </div>
 
              <div  class="text">
-              <input type="text" required placeholder="Texto_conteudo:" name="txtConteudo" value="<?php echo($textoSobre); ?>" maxlength="1000">
+               <textarea name="txtConteudo" placeholder="Conteudo/Historia" rows="8" cols="80" maxlength="1000"><?php echo($textoSobre); ?></textarea>
              </div>
 
            <div id="btn_tbc">

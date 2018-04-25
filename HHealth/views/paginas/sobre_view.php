@@ -1,13 +1,17 @@
+<?php
+  require_once('../../variaveis.php');
+?>
+
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Sobre - HHealth</title>
-    <link rel="stylesheet" href="../../css/style.css">
-    <link rel="stylesheet" href="../../css/normalize.css">
-    <script src="../../js/jquery.js"></script>
-    <script src="../../js/modernizr.min.js"></script>
+    <link rel="stylesheet" href="<?php echo $voltaDois; ?>css/style.css">
+    <link rel="stylesheet" href="<?php echo $voltaDois; ?>css/normalize.css">
+    <script src="<?php echo $voltaDois; ?>js/jquery.js"></script>
+    <script src="<?php echo $voltaDois; ?>js/modernizr.min.js"></script>
   </head>
   <body>
     <div id="principal_sobre">
@@ -20,23 +24,59 @@
         <div id="segura">
 
         </div>
+
+        <?php
+          require_once($entraPortal.'router.php');
+          require_once($entraPortal.'controllers/cmsSobre_controller.php');
+          require_once($entraPortal.'models/sobre_class.php');
+          require_once($entraPortal.'models/sobre_cabecalho_class.php');
+
+          $controller_sobre = new controllerCmsSobre();
+          //chama metodo para listar os registros
+          $list = $controller_sobre::SelecionarCabecalhoAtivo();
+
+          $cont = 0;
+
+          while ($cont < count($list)) {
+
+         ?>
+
         <div id="imagem_titulo">
-          <h1>Sobre</h1>
-          <img src="../../imagens/slide2.jpg" alt="background Informações">
+          <h1> <?php echo($list[$cont]->tituloFoto); ?> </h1>
+          <img src="<?php echo $entraPortal.$list[$cont]->fotoCabecalho; ?>" alt="background Informações">
         </div>
           <div id="titulo_sobre">
-            <h1>Aonde  você  for  a  rede  HHealth  estará cuidando de você.</h1>
+            <h1><?php echo($list[$cont]->tituloPagina); ?></h1>
           </div>
+
+          <?php
+              $cont += 1;
+            }
+          ?>
+
           <div id="segura_texto_imagem_sobre">
+          <?php
+            $controller_sobre = new controllerCmsSobre();
+            //chama metodo para listar os registros
+            $listConteudo = $controller_sobre::SelecionarConteudoAtivo();
+
+            $contConteudo = 0;
+
+            while ($contConteudo < count($listConteudo)) {
+          ?>
+
             <div id="texto_sobre">
-              <p> O Hospital HHealth nasceu do sonho de um grupo de médicos mineiros, que teve como objetivo oferecer assistência de qualidade, de forma integral, à mulher, à criança e à família. Este ideal pôde ser concretizado em 1999, com a inauguração de um dos mais modernos e avançados hospitais do País. </p>
-              <p> O Hospital HHealth nasceu do sonho de um grupo de médicos mineiros, que teve como objetivo oferecer assistência de qualidade, de forma integral, à mulher, à criança e à família. Este ideal pôde ser concretizado em 1999, com a inauguração de um dos mais modernos e avançados hospitais do País.</p>
-              <p> O Hospital HHealth nasceu do sonho de um grupo de médicos mineiros, que teve como objetivo oferecer assistência de qualidade, de forma integral, à mulher, à criança e à família. Este ideal pôde ser concretizado em 1999, com a inauguração de um dos mais modernos e avançados hospitais do País. </p>
-              <p> O Hospital HHealth nasceu do sonho de um grupo de médicos mineiros, que teve como objetivo oferecer assistência de qualidade, de forma integral, à mulher, à criança e à família. Este ideal pôde ser concretizado em 1999, com a inauguração de um dos mais modernos e avançados hospitais do País. </p>
+              <p> <?php echo($listConteudo[$contConteudo]->textoSobre); ?></p>
             </div>
             <div id="img_sobre">
-              <img src="../../imagens/3.jpg" alt="#">
+              <img src="<?php echo($entraPortal.$listConteudo[$contConteudo]->fotoSobre); ?>" alt="#">
             </div>
+
+            <?php
+                $contConteudo +=1;
+              }
+            ?>
+            
           </div>
       </main>
       <div id="container_footer">

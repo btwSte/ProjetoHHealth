@@ -414,26 +414,26 @@ if(isset($_GET['controller'])){
         }
         break;
 
-      case 'Curriculo':
-        require_once('controllers/admTrabalheConosco_controller.php');
-        require_once('models/trabalheconosco_class.php');
-        require_once('models/trabalheconosco_cabecalho_class.php');
-        switch ($modo) {
-          case 'Selecionar':
-            $controller_Curriculo = new controllerCurriculo();
-            $controller_Curriculo::selectCurriculo();
-            break;
+        case 'Curriculo':
+          require_once('controllers/admTrabalheConosco_controller.php');
+          require_once('models/trabalheconosco_class.php');
+          require_once('models/trabalheconosco_cabecalho_class.php');
+          switch ($modo) {
+            case 'Selecionar':
+              $controller_curriculo = new controllerCurriculo();
+              $controller_curriculo::selectCurriculo();
+              break;
 
-          case 'excluirCurriculo':
-            $controller_Curriculo = new controllerCurriculo();
-            $controller_Curriculo::ExcluirCurriculo();
-            break;
-          case 'SelecionarEspecifico':
-            $controller_Curriculo = new controllerCurriculo();
-            $controller_Curriculo::selectCurriculoByID();
-            break;
-        }
-        break;
+            case 'excluirCurriculo':
+              $controller_curriculo = new controllerCurriculo();
+              $controller_curriculo::ExcluirCurriculo();
+              break;
+            case 'SelecionarEspecifico':
+              $controller_curriculo = new controllerCurriculo();
+              $controller_curriculo::selectCurriculoByID();
+              break;
+          }
+          break;
   }
 
 }

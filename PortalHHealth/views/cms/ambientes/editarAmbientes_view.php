@@ -18,8 +18,7 @@
     $fotoCabecalho = $cabecalhoResultado->foto;
     $tituloFoto = $cabecalhoResultado->tituloFoto;
     $tituloCabecalho = $cabecalhoResultado->tituloPagina;
-    echo "<script>alert('Dentro do if!');
-          </script>";
+  
 
     $action = "modo=editarcabecalho&id=".$idAmbienteCabecalho;
   }
@@ -30,8 +29,6 @@
     echo ($textoConteudoAmbiente);
     $fotoConteudoAmbiente = $conteudoResultado->fotoConteudoAmbiente;
     $textoConteudoAmbiente = $conteudoResultado->textoConteudoAmbiente;
-    echo "<script>alert('Dentro do if do conteudo!');
-          </script>";
 
     $action2 = "modo=editarconteudo&id=".$idPaginaAmbiente;
   }

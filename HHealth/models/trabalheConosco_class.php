@@ -47,15 +47,15 @@ class TrabaConosco
 
     //executa script no banco
     if ($PDOconex->query($sql)){
-      echo "<script>alert('Logado Com Sucesso!');
+      echo "<script>alert('Enviado Com Sucesso!');
             top.location.href='views/paginas/trabalheConosco_view.php';
             </script>";
 
-      
+
     }
     else
     echo "<script>
-          alert('Erro no cadastro');
+          alert('Erro no envio.');
           </script>";
 
 

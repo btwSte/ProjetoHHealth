@@ -1,9 +1,11 @@
 <?php
-  /**
-   *
+  /*Autor: Stéphanie
+     Data de modificação: 24/04/18
+     Class: Cabecalho Ambientes
+     Obs: Controller para realizar CRUD do cabecalho da pagina Ambientes e verifica login
    */
 
-   require_once("../../../variaveis.php");
+
 
   class AmbienteCabecalho{
     public $idAmbienteCabecalho;
@@ -19,7 +21,13 @@
     //FUNÇÕES REFERENTE AO CABEÇALHO
       //Insere o registro no BD
       public function Insert($informacaoCabecalho) {
+        //deixa os outros cabecalhos desativados
+        $update = "UPDATE tbl_ambiente_cabecalho SET ativo='0' WHERE idAmbienteCabecalho > '0';";
+
+        //recebe valor para inserir cabecalho como ativo
         $ativo = '1';
+
+        //insert que vai para o banco
         $sql = "INSERT INTO tbl_ambiente_cabecalho (foto, tituloFoto, tituloPagina, ativo)
             VALUES ('".$informacaoCabecalho->foto."',
                     '".$informacaoCabecalho->tituloFoto."',
@@ -32,6 +40,9 @@
 
         //chama o metodo para conectar no BD e guarda o resultado da funcao em uma variavel local($PDOconex)
         $PDOconex = $conex->Conectar();
+
+        //executa o update
+        $PDOconex->query($update);
 
         //executa script no banco
         if ($PDOconex->query($sql))
@@ -60,7 +71,7 @@
 
         //guarda resultado
         while ($result = $select->fetch(PDO::FETCH_ASSOC)) {
-          $listCabecalho[] = new Ambientes();
+          $listCabecalho[] = new AmbienteCabecalho();
 
           $listCabecalho[$cont]->idAmbienteCabecalho = $result['idAmbienteCabecalho'];
           $listCabecalho[$cont]->fotoCabecalho = $result['foto'];
@@ -92,7 +103,7 @@
         $select = $PDOconex->query($sql);
 
         if($result = $select->fetch(PDO::FETCH_ASSOC)){
-        $cabecalhoResultado = new Ambientes();
+        $cabecalhoResultado = new AmbienteCabecalho();
 
         $cabecalhoResultado->idAmbienteCabecalho = $result['idAmbienteCabecalho'];
         $cabecalhoResultado->foto = $result['foto'];
@@ -208,7 +219,7 @@
 
         //guarda resultado
         while ($result = $select->fetch(PDO::FETCH_ASSOC)) {
-          $listCabecalho[] = new Ambientes();
+          $listCabecalho[] = new AmbienteCabecalho();
 
           $listCabecalho[$cont]->idAmbienteCabecalho = $result['idAmbienteCabecalho'];
           $listCabecalho[$cont]->fotoCabecalho = $result['foto'];

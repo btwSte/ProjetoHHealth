@@ -1,13 +1,17 @@
+<?php
+require_once('../../variaveis.php');
+?>
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Trabalhe Conosco - HHealth</title>
-    <link rel="stylesheet" href="../../css/style.css">
-    <link rel="stylesheet" href="../../css/normalize.css">
-    <script src="../../js/jquery.js"></script>
-    <script src="../../js/modernizr.min.js"></script>
+    <link rel="stylesheet" href="<?php echo $voltaDois; ?>css/style.css">
+    <link rel="stylesheet" href="<?php echo $voltaDois; ?>css/normalize.css">
+    <script src="<?php echo $voltaDois; ?>js/jquery.js"></script>
+    <script src="<?php echo $voltaDois; ?>js/modernizr.min.js"></script>
+    <script src="<?php echo $voltaDois; ?>js/mascara.min.js"></script>
 
   </head>
   <body>
@@ -34,19 +38,19 @@
             </div>
               <div class="text">
                 <input required onkeypress="return validar(event, 'number')" type="text" name="txtNome" value=""
-                 placeholder="Nome:" pattern="[a-z A-Z ã Ã õ Õ é É í Í ô Ô ó Ó ç Ç]*" title="Digite apenas letras" maxlength="100">
+                 placeholder="Nome:" pattern="[a-z A-Z ã Ã õ Õ é É í Í ô Ô ó Ó ç Ç]*" title="Digite apenas letras" maxlength="40" >
                </div>
               <div class="text">
-                <input id="tel" placeholder="Telefone:" type="text" name="txtTelefone" value=""  maxlength="15">
+                <input id="tel" placeholder="Telefone:" type="text" name="txtTelefone" value=""  maxlength="15"  onkeyup="mascara('(##) ####-####',this,event,true)">
               </div>
               <div class="text">
-                <input id="cel" required placeholder="Celular" type="text" name="txtCelular" value="" maxlength="16">
+                <input id="cel" required placeholder="Celular" type="text" name="txtCelular" value="" maxlength="15" onkeyup="mascara('(##) #####-####',this,event,true)">
               </div>
               <div class="text">
-                <input type="email" required placeholder="Email" name="txtEmail" value="" maxlength="100">
+                <input type="email" required placeholder="Email" name="txtEmail" value="" maxlength="40">
               </div>
               <div class="text">
-                <input type="text" required placeholder="Profissão:" name="txtProfissao" value="" maxlength="100">
+                <input type="text" required placeholder="Profissão:" name="txtProfissao" value="" maxlength="40">
               </div>
               <div id="arq_tbc">
                 <input type="file" name="Doc_curriculo"  size="16" />

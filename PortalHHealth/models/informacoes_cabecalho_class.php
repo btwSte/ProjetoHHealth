@@ -4,7 +4,7 @@
    Class: Informacoes
    Obs: Replica dos campos do BD com os metodos de ações do CRUD
  */
-require_once("../../../variaveis.php");
+
 
 class InformacoesCabecalho{
   public $idConteudoCabecalho;
@@ -21,11 +21,17 @@ class InformacoesCabecalho{
   //FUNÇÕES REFERENTE AO CABEÇALHO
     //Insere o registro no BD
     public function Insert($informacaoCabecalho) {
+      //deixa os outros cabecalhos desativados
+      $update = "UPDATE tbl_conteudo_cabecalho SET ativo='0' WHERE idConteudoCabecalho > '0';";
 
-      $sql = "INSERT INTO tbl_conteudo_cabecalho (foto, tituloFoto, tituloPagina)
+      //recebe valor para inserir cabecalho como ativo
+      $ativo = '1';
+
+      $sql = "INSERT INTO tbl_conteudo_cabecalho (foto, tituloFoto, tituloPagina, ativo)
           VALUES ('".$informacaoCabecalho->foto."',
                   '".$informacaoCabecalho->tituloFoto."',
-                  '".$informacaoCabecalho->tituloPagina."')";
+                  '".$informacaoCabecalho->tituloPagina."',
+                  '".$ativo."')";
 
 
       //instancia a classe do banco
@@ -34,9 +40,12 @@ class InformacoesCabecalho{
       //chama o metodo para conectar no BD e guarda o resultado da funcao em uma variavel local($PDOconex)
       $PDOconex = $conex->Conectar();
 
+      //executa o update
+      $PDOconex->query($update);
+
       //executa script no banco
       if ($PDOconex->query($sql))
-        header('location:../PortalHHealth/views/cms/cadastroInformacoes_view.php');
+        header('location:'.$voltaUm.'views/cms/informacoes/cadastroInformacoes_view.php');
       else
         echo "Erro no cadastro";
 
@@ -61,7 +70,7 @@ class InformacoesCabecalho{
 
       //guarda resultado
       while ($result = $select->fetch(PDO::FETCH_ASSOC)) {
-        $listCabecalho[] = new Informacoes();
+        $listCabecalho[] = new InformacoesCabecalho();
 
         $listCabecalho[$cont]->idConteudoCabecalho = $result['idConteudoCabecalho'];
         $listCabecalho[$cont]->foto = $result['foto'];
@@ -94,7 +103,7 @@ class InformacoesCabecalho{
       $select = $PDOconex->query($sql);
 
       if($result = $select->fetch(PDO::FETCH_ASSOC)){
-      $cabecalhoResultado = new Informacoes();
+      $cabecalhoResultado = new InformacoesCabecalho();
 
       $cabecalhoResultado->idConteudoCabecalho = $result['idConteudoCabecalho'];
       $cabecalhoResultado->foto = $result['foto'];
@@ -124,7 +133,7 @@ class InformacoesCabecalho{
       $PDOconex = $conex->Conectar();
 
       if ($PDOconex->query($sql)) {
-        header('location:../PortalHHealth/views/cms/visu_informacoes_view.php');
+        header('location:'.$voltaUm.'views/cms/informacoes/visu_informacoes_view.php');
       }else{
         echo "erro ao deletar";
       }
@@ -152,7 +161,7 @@ class InformacoesCabecalho{
       $PDOconex = $conex->Conectar();
 
       if ($PDOconex->query($sql)) {
-        header('location:../PortalHHealth/views/cms/cadastroInformacoes_view.php');
+        header('location:'.$voltaUm.'views/cms/informacoes/cadastroInformacoes_view.php');
       }else{
         echo "erro";
       }
@@ -161,14 +170,18 @@ class InformacoesCabecalho{
     }
 
     public function ActivateCabecalho($ativarCabecalho){
+      $update = "UPDATE tbl_conteudo_cabecalho SET ativo='0' WHERE idConteudoCabecalho > '0';";
+
       $sql = "UPDATE tbl_conteudo_cabecalho SET ativo= 1 WHERE idConteudoCabecalho=".$ativarCabecalho->id;
 
       $conex = new Mysql_db();
 
       $PDOconex = $conex->Conectar();
 
+      $PDOconex->query($update);
+
       if ($PDOconex->query($sql)) {
-        header('location:../PortalHHealth/views/cms/visu_informacoes_view.php');
+        header('location:'.$voltaUm.'views/cms/informacoes/visu_informacoes_view.php');
       }else{
         echo "erro";
       }
@@ -184,12 +197,48 @@ class InformacoesCabecalho{
       $PDOconex = $conex->Conectar();
 
       if ($PDOconex->query($sql)) {
-        header('location:../PortalHHealth/views/cms/visu_informacoes_view.php');
+        header('location:'.$voltaUm.'views/cms/informacoes/visu_informacoes_view.php');
       }else{
         echo "erro";
       }
 
       $conex->Desconectar();
+    }
+
+    public function SelectCabecalhoAtivo(){
+      // Select no banco
+      $sql = "SELECT * FROM tbl_conteudo_cabecalho WHERE ativo=1";
+
+      //instancia a classe do banco
+      $conex = new Mysql_db();
+
+      //chama o metodo para conectar no BD e guarda o resultado da funcao em uma variavel local($PDOconex)
+      $PDOconex = $conex->Conectar();
+
+      $select = $PDOconex->query($sql);
+
+      //inicia contador em 0
+      $cont = 0;
+
+      //guarda resultado
+      while ($result = $select->fetch(PDO::FETCH_ASSOC)) {
+        $listCabecalho[] = new InformacoesCabecalho();
+
+        $listCabecalho[$cont]->idConteudoCabecalho = $result['idConteudoCabecalho'];
+        $listCabecalho[$cont]->foto = $result['foto'];
+        $listCabecalho[$cont]->tituloFoto = $result['tituloFoto'];
+        $listCabecalho[$cont]->tituloPagina = $result['tituloPagina'];
+        $listCabecalho[$cont]->ativo = $result['ativo'];
+
+        //incrementa o contador
+        $cont += 1;
+      }
+
+       $conex->Desconectar();
+
+       if (isset($listCabecalho)) {
+          return $listCabecalho;
+       }
     }
 
 }
