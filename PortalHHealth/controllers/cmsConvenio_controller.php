@@ -52,9 +52,14 @@
           $convenioCabecalho::Insert($convenioCabecalho);
       }
 
-      public function SelecionarCabecalhoAtivo(){
+      public function ListarCabecalhoAtivo(){
         $cabecalho = new ConvenioCabecalho();
         return $cabecalho::SelectCabecalhoAtivo();
+      }
+
+      public function ListarCabecalho(){
+        $cabecalho = new ConvenioCabecalho();
+        return $cabecalho::SelectCabecalho();
       }
 
       //FUNÇÕES REFERENTE AO CONTEUDO DE CONVÊNIO
@@ -70,6 +75,11 @@
       public function SelecionarConteudoAtivo(){
         $conteudo = new Convenio();
         return $conteudo::SelectConteudoAtivo();
+      }
+
+      public function SelecionarConteudo(){
+        $conteudo = new Convenio();
+        return $conteudo::SelectConteudo();
       }
     }
 ?>

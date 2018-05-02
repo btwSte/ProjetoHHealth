@@ -11,7 +11,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Portal HHealth - Visualizar Convênios</title>
+    <title>Portal HHealth - Visualizar Convenios</title>
     <link rel="stylesheet" type="text/css" href="<?php echo $voltaTres; ?>css/Frajola.css">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<script src="<?php echo $voltaTres; ?>js/modernizr.min.js"></script>
@@ -62,29 +62,14 @@
       </script>
 
       <h1>Cabeçalhos</h1>
-      <?php
-        require_once($voltaTres.'router.php');
-        require_once($voltaTres.'controllers/cmsConvenio_controller.php');
-        require_once($voltaTres.'models/convenio_class.php');
-        require_once($voltaTres.'models/convenio_cabecalho_class.php');
 
-
-        $controller_informacoes = new controllerCmsConvenio();
-        //chama metodo para listar os registros
-        $list = $controller_informacoes::ListarCabecalho();
-
-        $cont = 0;
-
-        while ($cont < count($list)) {
-
-       ?>
         <div id="segura">
          <div id="imagem_titulo">
            <h1></h1>
-           <img src="<?php echo($voltaTres.$list[$cont]->fotoPrincipal); ?>" alt="Imagem">
+           <img src="" alt="">
          </div>
          <div id="texto_info">
-           <h1><?php echo($list[$cont]->tituloPagina); ?></h1>
+           <h1></h1>
          </div>
          <div class="Crud_Opc">
 
@@ -96,7 +81,7 @@
                <a href="">EDITAR</a>
              </div>
 
-        </div>
+             </div>
 
                <div class="ativar_crud ">
                  <a href="">
@@ -111,33 +96,19 @@
                </div>
 
          </div>
-        <?php
-            $cont += 1;
-          }
-        ?>
-
-         <h1>Convênios</h1>
-
-         <?php
-           require_once($voltaTres.'router.php');
-           require_once($voltaTres.'controllers/cmsConvenio_controller.php');
-           require_once($voltaTres.'models/convenio_class.php');
-           require_once($voltaTres.'models/convenio_cabecalho_class.php');
 
 
-           $controller_informacoes = new controllerCmsConvenio();
-           //chama metodo para listar os registros
-           $list = $controller_informacoes::SelecionarConteudo();
+         <h1>Conteúdos</h1>
 
-           $cont = 0;
-
-           while ($cont < count($list)) {
-
-          ?>
          <div id="segura">
            <div class="segura_img_info">
+             <div class="imgUniVisu">
+               <img src="" alt="">
+             </div>
              <div class="txtUniVisu">
-                <div class="txtUnidade">Convênio:<?php echo($list[$cont]->nome); ?></div>
+                <div class="txtUnidade">Endereço:<!--SelectAqui--></div>
+                 <div class="txtUnidade">Email:<!--SelectAqui--></div>
+                 <div class="txtUnidade">Numero:<!--SelectAqui--></div>
              </div>
            </div>
            <div class="Crud_Opc">
@@ -164,11 +135,9 @@
                  <img src="../../imagens/no.png" alt="Ativar" title="Ativar">
                </a>
              </div>
+
+
          </div>
-         <?php
-            $cont += 1;
-          }
-         ?>
 
     </main>
   </body>

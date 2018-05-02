@@ -536,9 +536,37 @@ if(isset($_GET['controller'])){
               $controller_sobre = new controllerCmsConvenio();
               $controller_sobre::DesativarConteudo();
               break;
-        }
+          }
           break;
-      case 'Paciente':
+
+      case 'Medicamento':
+        require_once('controllers/cmsMedicamento_controller.php');
+        require_once('models/medicamento_class.php');
+        switch ($modo){
+        //REFENTE AO CABEÇALHO DE PROCEDIMENTOS
+          case 'novomedicamento':
+            $controller_medicamento = new controllerCmsMedicamento();
+            $controller_medicamento::Novo();
+            break;
+          case 'excluirmedicamento':
+            $controller_medicamento = new controllerCmsMedicamento();
+            $controller_medicamento::Excluir();
+            break;
+
+          case 'editarmedicamento':
+            $controller_medicamento = new controllerCmsMedicamento();
+            $controller_medicamento::Editar();
+            break;
+
+          case 'buscarmedicamento':
+            $controller_medicamento = new controllerCmsMedicamento();
+            $controller_medicamento::Buscar();
+            break;
+
+        }
+        break;
+          
+    case 'Paciente':
         require_once('controllers/admPaciente_controller.php');
         require_once('models/Paciente_class.php');
 
@@ -548,14 +576,13 @@ if(isset($_GET['controller'])){
             $controller_curriculo::AtivarPaciente();
             break;
 
-          case 'desativar':
+        case 'desativar':
             $controller_curriculo = new controllerCadPaciente();
             $controller_curriculo::DesativarPaciente();
             break;
-
         }
-        break;
-  }
+    break;
+}
 
 }
 
