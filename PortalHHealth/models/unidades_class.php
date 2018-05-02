@@ -5,8 +5,6 @@
      Obs: Replica dos campos do BD com os metodos de ações do CRUD
    */
 
-   require_once("../../../variaveis.php");
-
   class Unidades{
     public $idUnidade;
     public $fotoUnidade;
@@ -17,17 +15,12 @@
     public $idEndereco;
     public $ativo;
 
-
     // Conexão com o banco
     public function __construct() {
       require_once('bd_class.php');
     }
 
-
-
-
     // REFERENTE AO CONTEUDO
-
     public function InsertConteudo($unidadeConteudo){
       $sql = "INSERT INTO tbl_unidade (fotoUnidade, nome, cnpj, idEndereco, email, telefone)
          VALUES ('".$unidadeConteudo->fotoUnidade."',
@@ -53,6 +46,36 @@
 
       //Chama função que encerra conexao no banco
       $conex->Desconectar();
+    }
+
+    public function SelectConteudo() {
+
+      // Select no banco
+      $sql = "SELECT * FROM tbl_unidade INNER JOIN tbl_endereco ON tbl_endereco.idEndereco = tbl_unidade.idEndereco;";
+
+      //instancia a classe do banco
+      $conex = new Mysql_db();
+
+      //chama o metodo para conectar no BD e guarda o resultado da funcao em uma variavel local($PDOconex)
+      $PDOconex = $conex->Conectar();
+
+      $select = $PDOconex->query($sql);
+
+      $listConteudo=array();
+
+      //guarda resultado
+      //$result = $select->fetch(PDO::FETCH_ASSOC);
+      while($result = $select->fetch(PDO::FETCH_ASSOC)){
+        $listConteudo[] = $result;
+      }
+
+
+     $conex->Desconectar();
+
+     if (count($listConteudo) > 0) {
+         return $listConteudo;
+     }
+
     }
 
     public function DeleteConteudo($excluirConteudo){
@@ -101,7 +124,7 @@
 
       if ($PDOconex->query($sql)) {
         // echo $sql;
-        header('location:'.$voltaUm.'views/cms/unidades/cadastroUnidades_view.php');
+        header('location:'.$voltaUm.'views/cms/unidades/visu_unidades_view.php');
         //
       }else{
         echo "erro";
@@ -119,7 +142,7 @@
       $PDOconex = $conex->Conectar();
 
       if ($PDOconex->query($sql)) {
-        header('location:'.$voltaUm.'PortalHHealth/views/cms/unidades/visu_unidades_view.php');
+        header('location:'.$voltaUm.'views/cms/unidades/visu_unidades_view.php');
       }else{
         echo "erro";
       }
@@ -135,7 +158,7 @@
       $PDOconex = $conex->Conectar();
 
       if ($PDOconex->query($sql)) {
-        header('location:'.$voltaUm.'PortalHHealth/views/cms/unidades/visu_unidades_view.php');
+        header('location:'.$voltaUm.'views/cms/unidades/visu_unidades_view.php');
       }else{
         echo "erro";
       }

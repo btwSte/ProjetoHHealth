@@ -7,15 +7,6 @@
 
   class controllerCmsEndereco{
 
-    function Logar(){
-      $Login = new Login();
-
-      $Login->cpf = $_POST['cpf'];
-      $Login->senha = $_POST['senha'];
-
-      Login::Logar($Login);
-    }
-
     public function Novo(){
       // novo objeto
       $enderecoConteudo = new Endereco();

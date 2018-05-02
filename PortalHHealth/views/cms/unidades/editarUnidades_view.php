@@ -1,8 +1,10 @@
 <?php
   require_once('variaveis.php');
 
-  $action2 = "modo=novoconteudo";
-  $action = "modo=novocabecalho";
+  $action2 = null;
+  $action = null;
+
+  // require_once('models/bd_class.php');
 
   $idUnidadeCabecalho = null;
   $fotoCabecalho = null;

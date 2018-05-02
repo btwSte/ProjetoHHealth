@@ -3,6 +3,7 @@
 if(isset($_GET['controller'])){
   $controller = $_GET['controller'];
   $modo = $_GET['modo'];
+  // $cms = $_GET['cms'];
 
   switch($controller){
       case 'cmsmochila':
@@ -310,6 +311,8 @@ if(isset($_GET['controller'])){
         require_once('controllers/cmsEndereco_controller.php');
         require_once('models/endereco_class.php');
         require_once('models/unidade_cabecalho_class.php');
+        require_once('models_views/unidade_e_endereco_class.php');
+        require_once('models/bd_class.php');
         switch ($modo) {
         //REFENTE AO CABEÇALHO DE UNIDADES
           case 'novocabecalho':
@@ -343,6 +346,7 @@ if(isset($_GET['controller'])){
             break;
 
         //REFENTE AO CONTEUDO DE UNIDADES
+
           case 'novoconteudo':
             $controller_endereco = new controllerCmsEndereco();
             $controller_endereco::Novo();
@@ -414,25 +418,125 @@ if(isset($_GET['controller'])){
         }
         break;
 
-        case 'Curriculo':
-          require_once('controllers/admTrabalheConosco_controller.php');
-          require_once('models/trabalheconosco_class.php');
-          require_once('models/trabalheconosco_cabecalho_class.php');
-          switch ($modo) {
-            case 'Selecionar':
-              $controller_curriculo = new controllerCurriculo();
-              $controller_curriculo::selectCurriculo();
+      case 'Curriculo':
+        require_once('controllers/admTrabalheConosco_controller.php');
+        require_once('models/trabalheconosco_class.php');
+        require_once('models/trabalheconosco_cabecalho_class.php');
+        switch ($modo) {
+          case 'Selecionar':
+            $controller_curriculo = new controllerCurriculo();
+            $controller_curriculo::selectCurriculo();
+            break;
+
+          case 'excluirCurriculo':
+            $controller_curriculo = new controllerCurriculo();
+            $controller_curriculo::ExcluirCurriculo();
+            break;
+          case 'SelecionarEspecifico':
+            $controller_curriculo = new controllerCurriculo();
+            $controller_curriculo::selectCurriculoByID();
+            break;
+        }
+        break;
+
+      case 'Convenio':
+        require_once('controllers/cmsConvenio_controller.php');
+        require_once('models/convenio_class.php');
+        require_once('models/convenio_cabecalho_class.php');
+        switch ($modo){
+          //REFENTE AO CABEÇALHO DE CONVÊNIO
+          case 'novocabecalho':
+            $controller_convenio = new controllerCmsConvenio();
+            $controller_convenio::NovoCabecalho();
+            break;
+
+          case 'excluircabecalho':
+            $controller_convenio = new controllerCmsConvenio();
+            $controller_convenio::ExcluirCabecalho();
+            break;
+
+          case 'editarcabecalho':
+            $controller_convenio = new controllerCmsConvenio();
+            $controller_convenio::EditarCabecalho();
+            break;
+
+          case 'buscarcabecalho':
+            $controller_convenio = new controllerCmsConvenio();
+            $controller_convenio::BuscarCabecalho();
+            break;
+
+          case 'ativarcabecalho':
+            $controller_convenio = new controllerCmsConvenio();
+            $controller_convenio::AtivarCabecalho();
+            break;
+
+          case 'desativarcabecalho':
+            $controller_convenio = new controllerCmsConvenio();
+            $controller_convenio::DesativarCabecalho();
+            break;
+
+          //REFENTE AO CONTEUDO DE CONVÊNIOS
+          case 'novoconteudo':
+            $controller_convenio = new controllerCmsConvenio();
+            $controller_convenio::NovoConteudo();
+            break;
+
+          case 'excluirconteudo':
+            $controller_convenio = new controllerCmsConvenio();
+            $controller_convenio::ExcluirConteudo();
+            break;
+
+          case 'editarconteudo':
+            $controller_convenio = new controllerCmsConvenio();
+            $controller_convenio::EditarConteudo();
+            break;
+
+          case 'buscarconteudo':
+            $controller_convenio = new controllerCmsConvenio();
+            $controller_convenio::BuscarConteudo();
+            break;
+
+          case 'ativarconteudo':
+            $controller_convenio = new controllerCmsConvenio();
+            $controller_convenio::AtivarConteudo();
+            break;
+
+          case 'desativarconteudo':
+            $controller_convenio = new controllerCmsConvenio();
+            $controller_convenio::DesativarConteudo();
+            break;
+
+          //REFENTE AO CONTEUDO DE CONVÊNIO
+            case 'novoconteudo':
+              $controller_sobre = new controllerCmsConvenio();
+              $controller_sobre::NovoConteudo();
               break;
 
-            case 'excluirCurriculo':
-              $controller_curriculo = new controllerCurriculo();
-              $controller_curriculo::ExcluirCurriculo();
+            case 'excluirconteudo':
+              $controller_sobre = new controllerCmsConvenio();
+              $controller_sobre::ExcluirConteudo();
               break;
-            case 'SelecionarEspecifico':
-              $controller_curriculo = new controllerCurriculo();
-              $controller_curriculo::selectCurriculoByID();
+
+            case 'editarconteudo':
+              $controller_sobre = new controllerCmsConvenio();
+              $controller_sobre::EditarConteudo();
               break;
-          }
+
+            case 'buscarconteudo':
+              $controller_sobre = new controllerCmsConvenio();
+              $controller_sobre::BuscarConteudo();
+              break;
+
+            case 'ativarconteudo':
+              $controller_sobre = new controllerCmsConvenio();
+              $controller_sobre::AtivarConteudo();
+              break;
+
+            case 'desativarconteudo':
+              $controller_sobre = new controllerCmsConvenio();
+              $controller_sobre::DesativarConteudo();
+              break;
+        }
           break;
   }
 

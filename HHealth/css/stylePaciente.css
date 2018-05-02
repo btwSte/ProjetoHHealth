@@ -221,7 +221,7 @@ main{
    color: #304f38;
     text-align: center;
     min-height: 50px;
-    
+
  }
  .tit p {
    font-size: 25px;
@@ -359,19 +359,19 @@ main{
 
 #containerConteudo{
     width: 100%;
-    height: 700px;   
+    height: 700px;
 }
 
 #containerRodape{
     width: 100%;
     height: 40px;
-    background-color: rgba(0,0,0, 0.1);    
+    background-color: rgba(0,0,0, 0.1);
     font-size: 15px;
     color: #304f38;
     text-align: center;
 	float: left;
 	margin-top: 50px;
-    
+
     font-family: "Avenir", 'Helvetica Neue', 'Lato', 'Segoe UI', Helvetica, Arial, sans-serif;
 }
 
@@ -398,7 +398,7 @@ main{
     height: 35px;
     font-size: 25px;
     color: #304f38;
-    text-align: center;     
+    text-align: center;
     margin-top: 10px;
     font-family: "Avenir", 'Helvetica Neue', 'Lato', 'Segoe UI', Helvetica, Arial, sans-serif;
 }
@@ -489,7 +489,7 @@ main{
 }
 
 
-#botaoForm{     
+#botaoForm{
     width: 200px;
     height: 30px;
     background-color: #fff;
@@ -504,7 +504,7 @@ main{
     height: 30px;
     margin-top: 15px;
     font-family: "Avenir", 'Helvetica Neue', 'Lato', 'Segoe UI', Helvetica, Arial, sans-serif;
-    text-align: center;    
+    text-align: center;
 }
 
 .seguraSelectDuplo{
@@ -512,7 +512,7 @@ main{
     height: 30px;
     margin-top: 15px;
     font-family: "Avenir", 'Helvetica Neue', 'Lato', 'Segoe UI', Helvetica, Arial, sans-serif;
-    text-align: center;  
+    text-align: center;
 	float: left;
 }
 
@@ -611,7 +611,7 @@ main{
 	margin-top: -0px;
 }
 
-.sidenav .linha_menuFirst {    
+.sidenav .linha_menuFirst {
     padding: 8px 8px 8px 32px;
     text-decoration: none;
     font-size: 25px;

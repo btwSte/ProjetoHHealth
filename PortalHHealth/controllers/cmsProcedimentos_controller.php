@@ -6,14 +6,6 @@
    */
 
   class controllerCmsProcedimentos{
-    function Logar(){
-      $Login = new Login();
-
-      $Login->cpf = $_POST['cpf'];
-      $Login->senha = $_POST['senha'];
-
-      Login::Logar($Login);
-    }
 
     // FUNÇÕES REFENTE AO CABEÇALHO
       public function NovoCabecalho(){
@@ -70,7 +62,7 @@
       public function BuscarCabecalho(){
         $idCabecalho = $_GET['id'];
 
-        $cabecalho= new ProcedimentoCabecalho();
+        $cabecalho = new ProcedimentoCabecalho();
 
         $cabecalho->id = $idCabecalho;
 
@@ -145,12 +137,18 @@
         return $desativarCabecalho::DisableCabecalho($desativarCabecalho);
       }
 
+      public function SelecionarCabecalhoAtivo(){
+        $cabecalho = new ProcedimentoCabecalho();
+        return $cabecalho::SelectCabecalhoAtivo();
+      }
+
     //FUNÇÕES REFERENTE AO CONTEUDO
       public function NovoConteudo(){
         require_once('modulo.php');
         $procedimentoConteudo = new Procedimentos();
 
         $procedimentoConteudo->textoProcedimento = $_POST['txtConteudo'];
+        $procedimentoConteudo->tituloProcedimento = $_POST['txtTitulo'];
 
         //inicia variaveis
         $diretorio_completo = null;
@@ -215,6 +213,7 @@
         // pega o conteudo
         $procedimentoConteudo->id = $idPaginaProcedimento;
         $procedimentoConteudo->textoProcedimento = $_POST['txtConteudo'];
+        $procedimentoConteudo->tituloProcedimento = $_POST['txtTitulo'];
 
         //inicia variaveis
         $diretorio_completo = null;
@@ -266,6 +265,11 @@
 
         $desativarConteudo->id = $idConteudo;
         return $desativarConteudo::DisableConteudo($desativarConteudo);
+      }
+
+      public function SelecionarConteudoAtivo(){
+        $conteudo = new Procedimentos();
+        return $conteudo::SelectConteudoAtivo();
       }
 
   }

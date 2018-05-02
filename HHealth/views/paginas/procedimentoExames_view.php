@@ -1,13 +1,16 @@
+<?php
+  require_once('../../variaveis.php');
+?>
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Procedimento de Exames - HHealth</title>
-    <link rel="stylesheet" href="../../css/style.css">
-    <link rel="stylesheet" href="../../css/normalize.css">
-    <script src="../../js/jquery.js"></script>
-    <script src="../../js/modernizr.min.js"></script>
+    <link rel="stylesheet" href="<?php echo $voltaDois; ?>css/style.css">
+    <link rel="stylesheet" href="<?php echo $voltaDois; ?>css/normalize.css">
+    <script src="<?php echo $voltaDois; ?>js/jquery.js"></script>
+    <script src="<?php echo $voltaDois; ?>js/modernizr.min.js"></script>
   </head>
   <body>
     <div id="principal_informacao">
@@ -20,48 +23,59 @@
         <div id="segura">
 
         </div>
+
+        <?php
+          require_once($entraPortal.'router.php');
+          require_once($entraPortal.'controllers/cmsProcedimentos_controller.php');
+          require_once($entraPortal.'models/procedimentos_class.php');
+          require_once($entraPortal.'models/procedimentos_cabecalho_class.php');
+
+          $controller_procedimentos = new controllerCmsProcedimentos();
+          //chama metodo para listar os registros
+          $list = $controller_procedimentos::SelecionarCabecalhoAtivo();
+
+          $cont = 0;
+
+          while ($cont < count($list)) {
+
+         ?>
+
         <div id="imagem_titulo">
-          <h1>Procedimento de Exames</h1>
-          <img src="../../imagens/slide2.jpg" alt="background Informações">
+          <h1><?php echo($list[$cont]->tituloFoto); ?></h1>
+          <img src="<?php echo $entraPortal.$list[$cont]->fotoCabecalho; ?>" alt="background Informações">
         </div>
           <div id="texto_info">
-            <h1>Procedimentos</h1>
+            <h1><?php echo($list[$cont]->tituloCabecalho); ?></h1>
           </div>
+          <?php
+              $cont += 1;
+            }
+          ?>
 
 
-        <div id="segura_img_info">
+
+          <?php
+            $controller_procedimentos = new controllerCmsProcedimentos();
+            //chama metodo para listar os registros
+            $listConteudo = $controller_procedimentos::SelecionarConteudoAtivo();
+
+            $contConteudo = 0;
+
+            while ($contConteudo < count($listConteudo)) {
+          ?>
+          <div id="segura_img_info">
           <div class="img_info">
-            <img src="../../imagens/info1.jpeg" alt="Informação">
+            <img src="<?php echo($entraPortal.$listConteudo[$contConteudo]->fotoProcedimento); ?>" alt="Informação">
           </div>
           <div class="info">
-            <h2>Exame 1</h2>
-            <p>Ainda assim, existem dúvidas a respeito de como a expansão dos mercados mundiais obstaculiza a apreciação da importância das posturas dos órgãos dirigentes com relação às suas atribuições.</p>
-
-            <p>A prática cotidiana prova que a adoção de políticas descentralizadoras pode nos levar a considerar a reestruturação de alternativas às soluções ortodoxas.</p>
+            <h2><?php echo($listConteudo[$contConteudo]->tituloProcedimento); ?></h2>
+            <p><?php echo($listConteudo[$contConteudo]->textoProcedimento); ?></p>
           </div>
         </div>
-        <div id="segura_img_info">
-          <div class="img_info">
-            <img src="../../imagens/pressao.jpeg" alt="Informação">
-          </div>
-          <div class="info">
-            <h2>Exame 2</h2>
-            <p>Nunca é demais lembrar o peso e o significado destes problemas, uma vez que a contínua expansão de nossa atividade cumpre um papel essencial na formulação do processo de comunicação como um todo.</p>
-
-            <p>A prática cotidiana prova que a adoção de políticas descentralizadoras pode nos levar a considerar a reestruturação de alternativas às soluções ortodoxas.</p>
-          </div>
-        </div>
-        <div id="segura_img_info">
-          <div class="img_info">
-            <img src="../../imagens/raio.jpeg" alt="Informação">
-          </div>
-          <div class="info">
-            <h2>Exame 3</h2>
-            <p>A prática cotidiana prova que a adoção de políticas descentralizadoras pode nos levar a considerar a reestruturação de alternativas às soluções ortodoxas.</p>
-
-            <p>Nunca é demais lembrar o peso e o significado destes problemas, uma vez que a contínua expansão de nossa atividade cumpre um papel essencial na formulação do processo de comunicação como um todo.</p>
-          </div>
-        </div>
+        <?php
+            $contConteudo +=1;
+          }
+        ?>
       </main>
       <!--  Exemplo de exibição de conteudo pego do banco-->
        <?php  //echo  $info->conteudo; ?>

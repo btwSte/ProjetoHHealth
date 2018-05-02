@@ -67,7 +67,7 @@ require_once('../../../variaveis.php');
       <h1>Cabeçalhos</h1>
       <?php
         require_once($voltaTres.'router.php');
-        require_once($voltaTres.'controllers/cmsSobre_controller.php');
+        require_once($voltaTres.'controllers/cmsProcedimentos_controller.php');
         require_once($voltaTres.'models/procedimentos_class.php');
         require_once($voltaTres.'models/procedimentos_cabecalho_class.php');
 
@@ -144,20 +144,24 @@ require_once('../../../variaveis.php');
          <div id="segura">
            <div class="segura_img_info">
              <div class="img_info">
-               <img src="../../<?php echo($listConteudo[$contConteudo]->fotoProcedimento); ?>" alt="Procedimentos">
+               <img src="<?php echo($voltaTres.$listConteudo[$contConteudo]->fotoProcedimento); ?>" alt="Procedimentos">
+             </div>
+             <div class="info">
+               <h2><?php echo($listConteudo[$contConteudo]->tituloProcedimento); ?></h2>
              </div>
              <div class="info">
                <p><?php echo($listConteudo[$contConteudo]->textoProcedimento); ?></p>
              </div>
+
            </div>
            <div class="Crud_Opc">
 
                <div class="Deletar_crud">
-                 <a href="../../router.php?controller=cmsProcedimentos&modo=excluirconteudo&id=<?php echo($listConteudo[$contConteudo]->idPaginaProcedimento); ?>">DELETAR</a>
+                 <a href="<?php echo $voltaTres; ?>router.php?controller=cmsProcedimentos&modo=excluirconteudo&id=<?php echo($listConteudo[$contConteudo]->idPaginaProcedimento); ?>">DELETAR</a>
 
                </div>
                <div class="Editar_crud">
-                 <a href="../../router.php?controller=cmsProcedimentos&modo=buscarconteudo&id=<?php echo($listConteudo[$contConteudo]->idPaginaProcedimento); ?>">EDITAR</a>
+                 <a href="<?php echo $voltaTres; ?>router.php?controller=cmsProcedimentos&modo=buscarconteudo&id=<?php echo($listConteudo[$contConteudo]->idPaginaProcedimento); ?>">EDITAR</a>
                </div>
            </div>
            <!-- ABRE O IF -->
@@ -167,8 +171,8 @@ require_once('../../../variaveis.php');
 
             ?>
              <div class="ativar_crud ">
-               <a href="../../router.php?controller=cmsProcedimentos&modo=desativarconteudo&id=<?php echo($listConteudo[$contConteudo]->idPaginaProcedimento); ?>">
-                 <img src="../../imagens/check.png" alt="Desativar" title="Desativar">
+               <a href="<?php echo $voltaTres; ?>router.php?controller=cmsProcedimentos&modo=desativarconteudo&id=<?php echo($listConteudo[$contConteudo]->idPaginaProcedimento); ?>">
+                 <img src="<?php echo $voltaTres; ?>imagens/check.png" alt="Desativar" title="Desativar">
                </a>
              </div>
              <?php
@@ -177,8 +181,8 @@ require_once('../../../variaveis.php');
            } else {
               ?>
              <div class="desativar_crud ">
-               <a href="../../router.php?controller=cmsProcedimentos&modo=ativarconteudo&id=<?php echo($listConteudo[$contConteudo]->idPaginaProcedimento); ?>">
-                 <img src="../../imagens/no.png" alt="Ativar" title="Ativar">
+               <a href="<?php echo $voltaTres; ?>router.php?controller=cmsProcedimentos&modo=ativarconteudo&id=<?php echo($listConteudo[$contConteudo]->idPaginaProcedimento); ?>">
+                 <img src="<?php echo $voltaTres; ?>imagens/no.png" alt="Ativar" title="Ativar">
                </a>
              </div>
              <!-- FECHA O ELSE -->

@@ -1,6 +1,5 @@
 <?php
-/*
-   Autor: Vinicius
+/* Autor: Vinicius
    Data de criação: 17/04/18
    Class: Ambientes
    Obs: Replica dos campos do BD com os metodos de ações do CRUD

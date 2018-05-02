@@ -11,6 +11,7 @@ require_once('variaveis.php');
   $idPaginaProcedimento = null;
   $fotoProcedimento = null;
   $textoProcedimento = null;
+  $tituloProcedimento = null;
 
   if (isset($cabecalhoResultado)) {
     $idProcedimentoCabecalho = $cabecalhoResultado->idProcedimentoCabecalho;
@@ -28,6 +29,7 @@ require_once('variaveis.php');
     echo ($textoProcedimento);
     $fotoProcedimento = $conteudoResultado->fotoProcedimento;
     $textoProcedimento = $conteudoResultado->textoProcedimento;
+    $tituloProcedimento = $conteudoResultado->tituloProcedimento;
 
     $action2 = "modo=editarconteudo&id=".$idPaginaProcedimento;
   }
@@ -121,10 +123,10 @@ require_once('variaveis.php');
              </div>
 
              <div class="text">
-               <input id="tel" placeholder="Texto da imagem:" type="text" name="txt1" value="<?php echo($tituloFoto); ?>"  maxlength="60">
+               <input placeholder="Texto da imagem:" type="text" name="txt1" value="<?php echo($tituloFoto); ?>"  maxlength="60">
              </div>
              <div class="text">
-               <input id="cel" required placeholder="Titulo do conteudo" type="text" name="txtTitulo_conteudo" value="<?php echo($tituloCabecalho); ?>" maxlength="60">
+               <input required placeholder="Titulo do conteudo" type="text" name="txtTitulo_conteudo" value="<?php echo($tituloCabecalho); ?>" maxlength="60">
              </div>
 
 
@@ -149,9 +151,15 @@ require_once('variaveis.php');
                <input type="file" name="imagem_conteudo"  size="16" />
              </div>
 
-             <div  class="text">
-              <input type="text" required placeholder="Texto_conteudo:" name="txtConteudo" value="<?php echo($textoProcedimento); ?>" maxlength="1000">
+             <div class="text">
+               <input required placeholder="Titulo do conteudo" type="text" name="txtTitulo" value="<?php echo($tituloProcedimento); ?>" maxlength="99">
              </div>
+             
+             <div  class="text">
+              <input type="text" required placeholder="Texto conteudo:" name="txtConteudo" value="<?php echo($textoProcedimento); ?>" maxlength="1000">
+             </div>
+
+
 
            <div id="btn_tbc">
              <input type="submit" name="btnEnviarConteudo" value="Enviar">

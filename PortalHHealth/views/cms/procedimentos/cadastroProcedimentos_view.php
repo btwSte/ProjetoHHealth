@@ -122,10 +122,16 @@ require_once('../../../variaveis.php');
              <div  class="text">
                <input type="file" name="imagem_conteudo"  size="16" />
              </div>
+             
+             <div class="text">
+               <input required placeholder="Titulo do procedimento" type="text" name="txtTitulo" value="" maxlength="99">
+             </div>
 
              <div  class="text">
               <input type="text" required placeholder="Texto conteudo:" name="txtConteudo" value="" maxlength="1000">
              </div>
+
+
 
            <div id="btn_tbc">
              <input type="submit" name="btnEnviarConteudo" value="Enviar">

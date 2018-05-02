@@ -1,13 +1,16 @@
+<?php
+require_once('../../variaveis.php');
+ ?>
 <!DOCTYPE html>
 <html>
     <head>
-        
+
         <meta charset="utf-8">
         <title>Login Paciente</title>
-        <link rel="stylesheet" type="text/css" href="../../css/style.css">
-        <link rel="stylesheet" type="text/css" href="../../css/Frajola.css">
-        <link rel="stylesheet" type="text/css" href="../../css/styleLogin.css">
-        <link rel="stylesheet" type="text/javascript"  href="js/script.js">
+        <link rel="stylesheet" type="text/css" href="<?php echo $voltaDois; ?>css/style.css">
+        <link rel="stylesheet" type="text/css" href="<?php echo $voltaDois; ?>css/Frajola.css">
+        <link rel="stylesheet" type="text/css" href="<?php echo $voltaDois; ?>css/styleLogin.css">
+        <link rel="stylesheet" type="text/javascript"  href="<?php echo $voltaDois; ?>js/script.js">
     </head>
     <body>
         <div id="back">
@@ -16,25 +19,25 @@
         </div>
 
         <div id="slideBox">
-          <div class="topLayer">            
+          <div class="topLayer">
             <div class="right">
                 <div class="containerLogo">
-                 <img src="../../imagens/hhealth.png" alt="Logo" width="100%" height="100%">   
+                 <img src="<?php echo $voltaDois; ?>imagens/hhealth.png" alt="Logo" width="100%" height="100%">
                 </div>
               <div class="content">
-                
-                <form class="" action="../../router.php?controller=cmsmochila&modo=logar" method="post">
+
+                <form class="" action="<?php echo $voltaDois; ?>router.php?controller=loginPaciente&modo=logar" method="post">
                   <div class="form-groupDir">
                         <input type="text" name="cpf" value="" placeholder="CPF">
                   </div>
                     <div class="form-group">
                         <input type="password" name="senha" value="" placeholder="Senha">
-                  </div>                      
+                  </div>
                     <button type="submit" name="entrar" value="ENTRAR">ENTRAR</button>
                 </form>
               </div>
             </div>
           </div>
-        </div>    
+        </div>
     </body>
-</html>                                                                     
+</html>

@@ -6,15 +6,6 @@
    */
   class controllerCmsUnidades{
 
-    function Logar(){
-      $Login = new Login();
-
-      $Login->cpf = $_POST['cpf'];
-      $Login->senha = $_POST['senha'];
-
-      Login::Logar($Login);
-    }
-
     // FUNÇÕES REFENTE AO CABEÇALHO
       public function NovoCabecalho(){
         // require da funcao modulo para envio das imagens
@@ -143,6 +134,11 @@
         return $desativarCabecalho::DisableCabecalho($desativarCabecalho);
       }
 
+      public function SelecionarCabecalhoAtivo(){
+        $cabecalho = new UnidadeCabecalho();
+        return $cabecalho::SelectCabecalhoAtivo();
+      }
+
       // REFERENTE AO CONTEUDO
       public function NovoConteudo($idEndereco){
         // require da funcao modulo para envio das imagens
@@ -202,7 +198,9 @@
       public function BuscarConteudo(){
         $idConteudo = $_GET['id'];
 
-        $conteudo = new Unidades();
+        require_once('models_views/unidade_e_endereco_class.php');
+
+        $conteudo = new UnidadeEndereco();
 
         $conteudo->id = $idConteudo;
 
@@ -216,7 +214,10 @@
         require_once('modulo.php');
         $idUnidade = $_GET['id'];
 
-        $unidadesConteudo = new Unidades();
+        require_once('models_views/unidade_e_endereco_class.php');
+
+
+        $unidadesConteudo = new UnidadeEndereco();
 
         // pega o conteudo
         $unidadesConteudo->id = $idUnidade;
@@ -260,6 +261,7 @@
       }
 
       public function AtivarConteudo(){
+
         $idConteudo = $_GET['id'];
 
         $ativarConteudo = new Unidades();
@@ -277,6 +279,11 @@
         return $desativarConteudo::DisableConteudo($desativarConteudo);
       }
 
+      public function SelecionarConteudoAtivo(){
+        $conteudo = new UnidadeEndereco();
+        return $conteudo->SelectConteudoAtivo();
+
+      }
   }
 
 

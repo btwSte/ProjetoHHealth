@@ -20,6 +20,8 @@
       //$this->user ="root";
     }
 
+    
+
     //Conectar no DB
     public function Conectar() {
 

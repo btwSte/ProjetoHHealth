@@ -662,10 +662,15 @@ padding: 5%;
     box-shadow: 2px 2px 2px 2px #6bb27d;
 
 }
+.imgUniVisu img {
+  max-width: 99%;
+  max-height: 200px;
+}
 
 .txtUniVisu{
     width: 60%;
-    height: 200px;
+    min-height: 200px;
+    height: auto;
     float: left;
     margin-left: auto;
     margin-right: auto;

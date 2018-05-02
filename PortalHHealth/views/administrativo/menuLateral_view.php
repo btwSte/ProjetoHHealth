@@ -7,40 +7,39 @@
 
     </div>
     <div  class="linha_menu" href="#">Medico
-		<div class="categorias_ocultas"><a href="../ambientes/cadastroAmbientes_view.php">  Cadastrar</a></div>
-		<div class="categorias_ocultas"><a href="../ambientes/visu_ambientes_view.php">  Visualizar</a></div>
+		<div class="categorias_ocultas"><a href="#">  Cadastrar</a></div>
+		<div class="categorias_ocultas"><a href="#">  Visualizar</a></div>
 
     </div>
 
     <div  class="linha_menu" href="#">Medicamento
-		<div class="categorias_ocultas"> <a href="../sobre/cadastroSobre_view.php"> Cadastrar </a></div>
-		<div class="categorias_ocultas"> <a href="../sobre/visu_sobre_view.php"> Visualizar </a></div>
+		<div class="categorias_ocultas"> <a href="#"> Cadastrar </a></div>
+		<div class="categorias_ocultas"> <a href="#"> Visualizar </a></div>
     </div>
 
 	<div  class="linha_menu" href="#">Unidades
-		<div class="categorias_ocultas"> <a href="../unidades/cadastroUnidades_view.php"> Cadastrar </a></div>
-		<div class="categorias_ocultas"> <a href="../unidades/visu_unidades_view.php"> Visualizar </a></div>
+		<div class="categorias_ocultas"> <a href="#"> Cadastrar </a></div>
+		<div class="categorias_ocultas"> <a href="#"> Visualizar </a></div>
     </div>
 
 
      <div class="linha_menu" href="#"> Enfermeiros
-        <div class="categorias_ocultas" > <a href="../informacoes/cadastroInformacoes_view.php">  Cadastrar </a></div>
-        <div class="categorias_ocultas"> <a href="../informacoes/visu_informacoes_view.php">  Visualizar </a></div>
+        <div class="categorias_ocultas" > <a href="#">  Cadastrar </a></div>
+        <div class="categorias_ocultas"> <a href="#">  Visualizar </a></div>
      </div >
 
      <div class="linha_menu" href="#"> Funcionarios
-        <div class="categorias_ocultas" > <a href="../procedimentos/cadastroProcedimentos_view.php">  Cadastrar </a></div>
-        <div class="categorias_ocultas"> <a href="../procedimentos/visu_procedimentos_view.php">  Visualizar </a></div>
+        <div class="categorias_ocultas" > <a href="#">  Cadastrar </a></div>
+        <div class="categorias_ocultas"> <a href="#">  Visualizar </a></div>
      </div >
 
-     <div  class="linha_menu" href="#">trabalhe Conosco
-      
-       <div class="categorias_ocultas"> <a href=""> Visualizar</a></div>
+     <div  class="linha_menu" href="#">Trabalhe Conosco
+       <div class="categorias_ocultas"> <a href="#"> Visualizar</a></div>
     </div>
 
     <div  class="linha_menu" href="#">Convenio
-      <div class="categorias_ocultas"><a href="">  Cadastrar</a></div>
-      <div class="categorias_ocultas"> <a href=""> Visualizar</a></div>
+      <div class="categorias_ocultas"><a href="<?php echo $voltaUm; ?>convenio/cadastroConvenio_view.php">  Cadastrar</a></div>
+      <div class="categorias_ocultas"> <a href="<?php echo $voltaUm; ?>convenio/visu_convenio_view.php"> Visualizar</a></div>
    </div>
 
   </div>

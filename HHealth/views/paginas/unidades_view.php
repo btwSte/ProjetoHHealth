@@ -1,13 +1,17 @@
+<?php
+  require_once('../../variaveis.php');
+?>
+
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Unidades - HHealth</title>
-    <link rel="stylesheet" href="../../css/style.css">
-    <link rel="stylesheet" href="../../css/normalize.css">
-    <script src="../../js/jquery.js"></script>
-    <script src="../../js/modernizr.min.js"></script>
+    <link rel="stylesheet" href="<?php echo $voltaDois; ?>css/style.css">
+    <link rel="stylesheet" href="<?php echo $voltaDois; ?>css/normalize.css">
+    <script src=".<?php echo $voltaDois; ?>js/jquery.js"></script>
+    <script src="<?php echo $voltaDois; ?>js/modernizr.min.js"></script>
   </head>
   <body>
     <div id="principal_unidades">
@@ -20,77 +24,59 @@
         <div id="segura">
 
         </div>
+        <?php
+          require_once($entraPortal.'router.php');
+          require_once($entraPortal.'controllers/cmsUnidades_controller.php');
+          require_once($entraPortal.'models/unidades_class.php');
+          require_once($entraPortal.'models/unidade_cabecalho_class.php');
+          require_once($entraPortal.'models_views/unidade_e_endereco_class.php');
+          require_once($entraPortal.'models/bd_class.php');
+
+          $controller_unidades = new controllerCmsUnidades();
+          //chama metodo para listar os registros
+          $list = $controller_unidades::SelecionarCabecalhoAtivo();
+
+          $cont = 0;
+
+          while ($cont < count($list)) {
+
+         ?>
 
         <div id="imagem_titulo">
-          <h1>Unidades</h1>
-          <img src="../../imagens/slide2.jpg" alt="background Informações">
+
+          <h1><?php echo($list[$cont]->tituloFoto); ?></h1>
+          <img src="<?php echo $entraPortal.$list[$cont]->fotoCabecalho; ?>" alt="background Informações">
         </div>
 
+        <?php
+            $cont += 1;
+          }
+        ?>
+
         <div class="segura_container_unidades">
+          <?php
+            $controller_unidades = new controllerCmsUnidades();
+            //chama metodo para listar os registros
+            $listConteudo = $controller_unidades::SelecionarConteudoAtivo();
+
+            $contConteudo = 0;
+
+            while ($contConteudo < count($listConteudo)) {
+          ?>
           <div class="container_item_unidades">
             <div class="item_unidade_imagem">
-              <img src="../../imagens/hospital-5.jpg" alt="Unidade de SP" title="Unidade de SP">
+              <img src="<?php echo($entraPortal.$listConteudo[$contConteudo]->fotoUnidade); ?>" alt="Unidade de SP" title="Unidade de SP">
             </div>
             <div class="item_unidade_texto">
-              <p>Rua Donatário João de Barros - Salto - SP</p>
-              <p>hhealth@hospital.com</p>
-              <p>(11) 2515-2270</p>
+              <p><?php echo($listConteudo[$contConteudo]->logradouro); ?> - <?php echo($listConteudo[$contConteudo]->bairro); ?> - SP</p>
+              <p><?php echo($listConteudo[$contConteudo]->email); ?></p>
+              <p><?php echo($listConteudo[$contConteudo]->telefone); ?></p>
             </div>
           </div>
-          <div class="container_item_unidades">
-            <div class="item_unidade_imagem">
-              <img src="../../imagens/hospital-1.jpg" alt="Unidade do RN" title="Unidade do RN"/>
-            </div>
-            <div class="item_unidade_texto">
-              <p>Rua Carlos Antônio da Silva Neto - Natal - RN</p>
-              <p>hhealth@hospital.com</p>
-              <p>(84) 2920-5529</p>
-            </div>
-          </div>
-        </div>
-        <div class="segura_container_unidades">
-          <div class="container_item_unidades">
-            <div class="item_unidade_imagem">
-              <img src="../../imagens/hospital-4.jpg" alt="Unidade de GO" title="Unidade de GO" >
-            </div>
-            <div class="item_unidade_texto">
-              <p>Quadra Quadra 20 - Águas Lindas de Goiás - GO</p>
-              <p>hhealth@hospital.com</p>
-              <p>(61) 2723-8593</p>
-            </div>
-          </div>
-          <div class="container_item_unidades">
-            <div class="item_unidade_imagem">
-              <img src="../../imagens/hospital-3.jpg" alt="Unidade de SC" title="Unidade de SC" >
-            </div>
-            <div class="item_unidade_texto">
-              <p>Servidão Bartolomeu Manoel Pereira - Araranguá - SC</p>
-              <p>hhealth@hospital.com</p>
-              <p>(48) 2897-8089</p>
-            </div>
-          </div>
-        </div>
-        <div class="segura_container_unidades">
-          <div class="container_item_unidades">
-            <div class="item_unidade_imagem">
-              <img src="../../imagens/hospital-2.jpg" title="Unidade de SE" alt="Unidade de SE">
-            </div>
-            <div class="item_unidade_texto">
-              <p>Rua Promotora Terezinha Santos- Aracaju - SE</p>
-              <p>hhealth@hospital.com</p>
-              <p>(79) 3542-2495</p>
-            </div>
-          </div>
-          <div class="container_item_unidades">
-            <div class="item_unidade_imagem">
-              <img src="../../imagens/hospital-5.jpg" alt="Unidade de SP" title="Unidade de SP">
-            </div>
-            <div class="item_unidade_texto">
-              <p>Rua Osvaldo Bacetti - Presidente Prudente - SP</p>
-              <p> hhealth@hospital.com </p>
-              <p> (18) 2836-4836 </p>
-            </div>
-          </div>
+          <?php
+              $contConteudo +=1;
+            }
+          ?>
         </div>
       </main>
       <!--  Exemplo de exibição de conteudo pego do banco-->

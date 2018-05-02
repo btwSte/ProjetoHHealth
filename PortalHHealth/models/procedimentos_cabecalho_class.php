@@ -134,7 +134,7 @@
        $PDOconex = $conex->Conectar();
 
        if ($PDOconex->query($sql)) {
-         header('location:'.$voltaUm.'views/cms/visu_procedimentos_view.php');
+         header('location:'.$voltaUm.'views/cms/procedimentos/visu_procedimentos_view.php');
        }else{
          echo "erro ao deletar";
        }
@@ -162,7 +162,7 @@
        $PDOconex = $conex->Conectar();
 
        if ($PDOconex->query($sql)) {
-         header('location:'.$voltaUm.'views/cms/cadastroProcedimentos_view.php');
+         header('location:'.$voltaUm.'views/cms/procedimentos/cadastroProcedimentos_view.php');
        }else{
          echo "erro";
        }
@@ -171,14 +171,19 @@
      }
 
      public function ActivateCabecalho($ativarCabecalho){
+       //deixa os outros cabecalhos desativados
+       $update = "UPDATE tbl_procedimento_cabecalho SET ativo='0' WHERE idProcedimentoCabecalho > '0';";
+
        $sql = "UPDATE tbl_procedimento_cabecalho SET ativo= 1 WHERE idProcedimentoCabecalho=".$ativarCabecalho->id;
 
        $conex = new Mysql_db();
 
        $PDOconex = $conex->Conectar();
+       //executa o update
+        $PDOconex->query($update);
 
        if ($PDOconex->query($sql)) {
-         header('location:'.$voltaUm.'views/cms/visu_procedimentos_view.php');
+         header('location:'.$voltaUm.'views/cms/procedimentos/visu_procedimentos_view.php');
        }else{
          echo "erro";
        }
@@ -194,12 +199,47 @@
        $PDOconex = $conex->Conectar();
 
        if ($PDOconex->query($sql)) {
-         header('location:'.$voltaUm.'views/cms/visu_procedimentos_view.php');
+         header('location:'.$voltaUm.'views/cms/procedimentos/visu_procedimentos_view.php');
        }else{
          echo "erro";
        }
 
        $conex->Desconectar();
+     }
+
+     public function SelectCabecalhoAtivo(){
+       // Select no banco
+       $sql = "SELECT * FROM tbl_procedimento_cabecalho WHERE ativo=1";
+
+       //instancia a classe do banco
+       $conex = new Mysql_db();
+
+       //chama o metodo para conectar no BD e guarda o resultado da funcao em uma variavel local($PDOconex)
+       $PDOconex = $conex->Conectar();
+
+       $select = $PDOconex->query($sql);
+
+       //inicia contador em 0
+       $cont = 0;
+
+       //guarda resultado
+       while ($result = $select->fetch(PDO::FETCH_ASSOC)) {
+         $listCabecalho[] = new ProcedimentoCabecalho();
+
+         $listCabecalho[$cont]->idProcedimentoCabecalho = $result['idProcedimentoCabecalho'];
+         $listCabecalho[$cont]->fotoCabecalho = $result['fotoCabecalho'];
+         $listCabecalho[$cont]->tituloFoto = $result['tituloFoto'];
+         $listCabecalho[$cont]->tituloCabecalho = $result['tituloCabecalho'];
+         $listCabecalho[$cont]->ativo = $result['ativo'];
+         //incrementa o contador
+         $cont += 1;
+       }
+
+        $conex->Desconectar();
+
+        if (isset($listCabecalho)) {
+           return $listCabecalho;
+        }
      }
 
 

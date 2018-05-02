@@ -5,7 +5,7 @@
      Obs: Replica dos campos do BD com os metodos de ações do CRUD
    */
 
-   require_once("../../../variaveis.php");
+
 
   class UnidadeCabecalho{
     public $idUnidadeCabecalho;
@@ -20,6 +20,8 @@
 
     //FUNÇÕES REFERENTE AO CABEÇALHO
     public function Insert($unidadeCabecalho){
+      $update = "UPDATE tbl_unidade_cabecalho2 SET ativo='0' WHERE idUnidadeCabecalho > '0';";
+
       $ativo = '1';
 
       $sql = "INSERT INTO tbl_unidade_cabecalho2 (fotoCabecalho, tituloFoto, ativo)
@@ -32,6 +34,8 @@
 
       //chama o metodo para conectar no BD e guarda o resultado da funcao em uma variavel local($PDOconex)
       $PDOconex = $conex->Conectar();
+
+      $PDOconex->query($update);
 
       //executa script no banco
       if ($PDOconex->query($sql))
@@ -146,7 +150,7 @@
       $PDOconex = $conex->Conectar();
 
       if ($PDOconex->query($sql)) {
-        header('location:'.$voltaUm.'views/cms/unidades/cadastroUnidades_view.php');
+        header('location:'.$voltaUm.'views/cms/unidades/visu_unidades_view.php');
       }else{
         echo "erro";
       }
@@ -162,6 +166,9 @@
       $conex = new Mysql_db();
 
       $PDOconex = $conex->Conectar();
+
+      $PDOconex->query($update);
+
 
       if ($PDOconex->query($sql)) {
         header('location:'.$voltaUm.'views/cms/unidades/visu_unidades_view.php');
@@ -186,6 +193,41 @@
       }
 
       $conex->Desconectar();
+    }
+
+    public function SelectCabecalhoAtivo(){
+      // Select no banco
+      $sql = "SELECT * FROM tbl_unidade_cabecalho2 WHERE ativo=1";
+
+      //instancia a classe do banco
+      $conex = new Mysql_db();
+
+      //chama o metodo para conectar no BD e guarda o resultado da funcao em uma variavel local($PDOconex)
+      $PDOconex = $conex->Conectar();
+
+      $select = $PDOconex->query($sql);
+
+      //inicia contador em 0
+      $cont = 0;
+
+      //guarda resultado
+      while ($result = $select->fetch(PDO::FETCH_ASSOC)) {
+        $listCabecalho[] = new UnidadeCabecalho();
+
+        $listCabecalho[$cont]->idUnidadeCabecalho = $result['idUnidadeCabecalho'];
+        $listCabecalho[$cont]->fotoCabecalho = $result['fotoCabecalho'];
+        $listCabecalho[$cont]->tituloFoto = $result['tituloFoto'];
+        $listCabecalho[$cont]->ativo = $result['ativo'];
+
+        //incrementa o contador
+        $cont += 1;
+      }
+
+       $conex->Desconectar();
+
+       if (isset($listCabecalho)) {
+          return $listCabecalho;
+       }
     }
 
   }

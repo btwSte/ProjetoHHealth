@@ -1,23 +1,27 @@
+<?php
+  require_once("../../../variaveis.php");
+
+  $action2 = "modo=novoconteudo";
+  $action = "modo=novocabecalho";
+ ?>
 
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
-    <title>CMS - Cadastrar Convenio</title>
-    <link rel="stylesheet" type="text/css" href="../../css/Frajola.css">
+    <title>CMS | Cadastrar Convênio</title>
+    <link rel="stylesheet" type="text/css" href="<?php echo($voltaTres); ?>css/Frajola.css">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<script src="../../js/modernizr.min.js"></script>
+		<script src="<?php echo($voltaTres); ?>js/modernizr.min.js"></script>
   </head>
   <body>
-    <?php include("../header.php"); ?>
+    <?php include($voltaUm."header.php"); ?>
 
 
       <div class="container">
 			<!-- Top Navigation -->
 
-
-
-
+      <?php include("../menuLateral_view.php"); ?>
 
   		</div><!-- /container -->
   		<script src="js/classie.js"></script>
@@ -62,9 +66,9 @@
         </script>
 
 
-
+        <!-- FORM CABEÇALHO -->
        <div class="segura_form_tbc">
-         <form class="frmCabecalhoUnidade" action="../../router.php?controller=cmsProcedimentos&<?php echo($action); ?>" method="post" enctype="multipart/form-data">
+         <form class="frmCabecalhoConvenio" action="<?php echo ($voltaTres); ?>router.php?controller=Convenio&<?php echo($action); ?>" method="post" enctype="multipart/form-data">
            <div class="tit">
              <p>Cadastro: Cabeçalho Convênios</p>
            </div>
@@ -74,8 +78,8 @@
              </div>
 
              <div class="text">
-               <input id="tel" placeholder="Texto da imagem:" type="text" name="txt1" value=""  maxlength="60">
-             </div> 
+               <input id="tel" placeholder="Texto da imagem:" type="text" name="txtTituloImagem" value=""  maxlength="60">
+             </div>
 
              <div id="btn_tbc">
                <input type="submit" name="btnEnviar" value="Enviar">
@@ -86,38 +90,14 @@
 
 
        <div class="segura_form_convenio">
-         <form class="frmConteudoConvenio" action="../../router.php?controller=cmsProcedimentos&<?php echo($action2); ?>" method="post" enctype="multipart/form-data">
+         <form class="frmConteudoConvenio" action="<?php echo ($voltaTres); ?>router.php?controller=Convenio&<?php echo($action2); ?>" method="post" enctype="multipart/form-data">
            <div class="tit">
              <p>Cadastro De Convênios:</p>
            </div>
-             
+
              <div  class="text">
-              <input id="tel" placeholder="Convenio" type="text" name="txt1" value=""  maxlength="255">
+              <input id="tel" placeholder="Convênio" type="text" name="txtNomeConvenio" value=""  maxlength="50">
              </div>
-             
-             <div  class="text">
-              <input id="tel" placeholder="Plano" type="text2" name="txt1" value=""  maxlength="255">
-             </div>
-             
-             <div class="containerOpcaoConvenioEsq">
-                <h2>Consulta/Exames</h2>
-                 <input type="radio" name="chkConsulta" value="1" class="alinhaRboPriv" required>Aceito<br>
-                 <input type="radio" name="chkConsulta" value="0" class="alinhaRboPriv" required>Não Aceito<br>                 
-             </div>
-             
-             <div class="containerOpcaoConvenio">
-                <h2>Pronto Socorro</h2>
-                 <input type="radio" name="chkPS" value="1" class="alinhaRboPriv" required>Aceito<br>
-                 <input type="radio" name="chkPS" value="0" class="alinhaRboPriv" required>Não Aceito<br>                 
-             </div>
-             
-             <div class="containerOpcaoConvenio">
-                <h2>Internação</h2>
-                 <input type="radio" name="chkInternacao" value="1" class="alinhaRboPriv" required>Aceito<br>
-                 <input type="radio" name="chkInternacao" value="0" class="alinhaRboPriv" required>Não Aceito<br>                 
-             </div>
-             
-             
 
            <div id="btn_tbc">
              <input type="submit" name="btnEnviarConteudo" value="Enviar">
