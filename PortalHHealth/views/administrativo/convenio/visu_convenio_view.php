@@ -89,7 +89,7 @@
          <div class="Crud_Opc">
 
              <div class="Deletar_crud">
-               <a href="">DELETAR</a>
+               <a href="<?php echo $voltaTres; ?>router.php?controller=Convenio&modo=excluircabecalho&id=<?php echo($list[$cont]->idPaginaConvenio); ?>">DELETAR</a>
 
              </div>
              <div class="Editar_crud">
@@ -97,19 +97,30 @@
              </div>
 
         </div>
+            <?php
+               // IF PARA DESATIVAR O CABEÇALHO
+                 if ($list[$cont]->ativo == 1){
 
+            ?>
                <div class="ativar_crud ">
-                 <a href="">
+                 <a href="<?php echo $voltaTres; ?>router.php?controller=Convenio&modo=desativarcabecalho&id=<?php echo($list[$cont]->idPaginaConvenio); ?>">
                    <img src="<?php echo $voltaTres; ?>imagens/check.png" alt="Desativar" title="Desativar">
                  </a>
                </div>
-
+                <?php
+                   // FECHA O IF E ABRE ELSE
+                   // ELSE PARA ATIVAR CABEÇALHO
+                   } else {
+                ?>
                <div class="desativar_crud ">
-                 <a href="">
+                 <a href="<?php echo $voltaTres; ?>router.php?controller=Convenio&modo=ativarcabecalho&id=<?php echo($list[$cont]->idPaginaConvenio); ?>">
                    <img src="<?php echo $voltaTres; ?>imagens/no.png" alt="Ativar" title="Ativar">
                  </a>
                </div>
-
+                <!-- FECHA O ELSE -->
+                  <?php
+                    }
+                ?>
          </div>
         <?php
             $cont += 1;
@@ -137,13 +148,13 @@
          <div id="segura">
            <div class="segura_img_info">
              <div class="txtUniVisu">
-                <div class="txtUnidade">Convênio:<?php echo($list[$cont]->nome); ?></div>
+                <div class="txtUnidade"><?php echo($list[$cont]->nome); ?></div>
              </div>
            </div>
            <div class="Crud_Opc">
 
                <div class="Deletar_crud">
-                 <a href="">DELETAR</a>
+                 <a href="<?php echo $voltaTres; ?>router.php?controller=Convenio&modo=excluirconteudo&id=<?php echo($list[$cont]->idConvenio ); ?>">DELETAR</a>
 
                </div>
                <div class="Editar_crud">
@@ -152,18 +163,30 @@
 
            </div>
            <!-- ABRE O IF -->
+             <?php
+               // IF PARA DESATIVAR O CONTEUDO
+                 if ($list[$cont]->ativo == 1){
 
+            ?>
              <div class="ativar_crud ">
-               <a href="">
-                 <img src="../../imagens/check.png" alt="Desativar" title="Desativar">
+               <a href="<?php echo $voltaTres; ?>router.php?controller=Convenio&modo=desativarconteudo&id=<?php echo($list[$cont]->idConvenio); ?>">
+                 <img src="<?php echo $voltaTres; ?>imagens/check.png" alt="Desativar" title="Desativar">
                </a>
              </div>
-
+             <?php
+               // FECHA O IF E ABRE ELSE
+               // ELSE PARA ATIVAR CONTEUDO
+               } else {
+            ?>
              <div class="desativar_crud ">
-               <a href="">
-                 <img src="../../imagens/no.png" alt="Ativar" title="Ativar">
+               <a href="<?php echo $voltaTres; ?>router.php?controller=Convenio&modo=ativarconteudo&id=<?php echo($list[$cont]->idConvenio); ?>">
+                 <img src="<?php echo $voltaTres; ?>imagens/no.png" alt="Ativar" title="Ativar">
                </a>
              </div>
+             <!-- FECHA O ELSE -->
+              <?php
+                }
+            ?>
          </div>
          <?php
             $cont += 1;

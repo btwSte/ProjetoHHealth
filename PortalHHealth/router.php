@@ -565,24 +565,61 @@ if(isset($_GET['controller'])){
 
         }
         break;
-          
-    case 'Paciente':
-        require_once('controllers/admPaciente_controller.php');
-        require_once('models/Paciente_class.php');
 
-        switch ($modo) {
-          case 'ativar':
-            $controller_curriculo = new controllerCadPaciente();
-            $controller_curriculo::AtivarPaciente();
+      case 'Medico':
+        require_once('controllers/AdmMedico_controller.php');
+        require_once('models/Medico_class.php');
+        require_once('controllers/cmsEndereco_controller.php');
+        require_once('models/endereco_class.php');
+        switch ($modo){
+        //REFENTE AO CABEÇALHO DE PROCEDIMENTOS
+          case 'novomedico':
+            $controller_endereco = new controllerCmsEndereco();
+            $controller_endereco::NovoEnderecoMedico();
+
+            $controller_Medico = new controllerCmsMedico();
+            $controller_Medico::Novo();
+            break;
+          case 'excluirmedico':
+            $controller_Medico = new controllerCmsMedico();
+            $controller_Medico::Excluir();
             break;
 
-        case 'desativar':
-            $controller_curriculo = new controllerCadPaciente();
-            $controller_curriculo::DesativarPaciente();
+          case 'editarmedico':
+            $controller_Medico = new controllerCmsMedico();
+            $controller_Medico::Editar();
             break;
+
+          case 'buscarmedico':
+            $controller_Medico = new controllerCmsMedico();
+            $controller_Medico::Buscar();
+            break;
+
         }
+        break;
+          
+      case 'cmsHome':
+        require_once('controllers/cmsHome_controller.php');
+        require_once('models/home_class.php');
+        switch ($modo) {
+
+          case 'novoconteudo':
+            $controller_home = new controllerCmsHome();
+            $controller_home::NovoConteudoHome();
+            break;
+
+            case 'buscarhome':
+            $controller_home = new controllerCmsHome();
+            $controller_home::BuscarConteudo();
+            break;
+
+            case 'excluirhome':
+            $controller_home = new controllerCmsHome();
+            $controller_home::ExcluirHome();
+            break;
+    }   
     break;
-}
+  }
 
 }
 

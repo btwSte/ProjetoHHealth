@@ -1,7 +1,7 @@
 <?php
   require_once("../../../variaveis.php");
 
-  $action2 = "modo=novoconteudo";
+  $action2 = "";
   $action = "modo=novocabecalho";
  ?>
 
@@ -52,40 +52,94 @@
 
         <!-- FORM CABEÇALHO -->
 
-         <form class="frmCabecalhoConvenio" action="<?php echo ($voltaTres); ?>router.php?controller=Convenio&<?php echo($action); ?>" method="post" enctype="multipart/form-data">
+         <form  action="<?php echo ($voltaTres); ?>router.php?controller=Medico&modo=novomedico" method="post" enctype="multipart/form-data">
             <div class="segura_form_tbc" >
                <div class="tit">
                  <p>Cadastro: Medico</p>
                </div>
 
+               <div class="text">
+                 <input id="Nome" required placeholder="Nome:" type="text" name="txtNome" value=""  maxlength="100">
+               </div>
+               <div class="text">
+                 <input id="Telefone" required placeholder="Telefone:" type="text" name="numTelefone" value=""  maxlength="20">
+               </div>
+               <div class="text">
+                 <input id="Celular" required placeholder="Celular:" type="text" name="numCelular" value=""  maxlength="20">
+               </div>
+               <div class="text">
+                 <input id="Email" required placeholder="Email:" type="text" name="txtEmail" value=""  maxlength="150">
+               </div>
+
                  <div class="text">
-                   <input id="tel" placeholder="Texto da imagem:" type="text" name="txtTituloImagem" value=""  maxlength="60">
+                   <input id="dtAdimicao" required placeholder="Data adimição:" type="text" name="dtAdimicao" value=""  maxlength="11">
                  </div>
                  <div class="text">
-                   <input id="tel" placeholder="Texto da imagem:" type="text" name="txtTituloImagem" value=""  maxlength="60">
+                   <input id="rg" required placeholder="Numero Rg:" type="text" name="numRg" value=""  maxlength="12">
                  </div>
                  <div class="text">
-                   <input id="tel" placeholder="Texto da imagem:" type="text" name="txtTituloImagem" value=""  maxlength="60">
+                   <input id="cpf"required placeholder="Numero Cpf:" type="text" name="numCpf" value=""  maxlength="12">
                  </div>
                  <div class="text">
-                   <input id="tel" placeholder="Texto da imagem:" type="text" name="txtTituloImagem" value=""  maxlength="60">
+                   <input id="crm" required placeholder="Numero CRM:" type="text" name="numCrm" value=""  maxlength="13">
                  </div>
                  <div class="text">
-                   <input id="tel" placeholder="Texto da imagem:" type="text" name="txtTituloImagem" value=""  maxlength="60">
+                   <input id="dtnasc"required placeholder="Data de nacimento:" type="text" name="numDtnasc" value=""  maxlength="11">
                  </div>
                  <div class="text">
-                   <input id="tel" placeholder="Texto da imagem:" type="text" name="txtTituloImagem" value=""  maxlength="60">
+                   <input type="file" required placeholder="fotoCRM" name="fotoCRM" value="" maxlength="255" class="">
                  </div>
                  <div class="text">
-                   <input id="tel" placeholder="Texto da imagem:" type="text" name="txtTituloImagem" value=""  maxlength="60">
+                   <input type="file" required placeholder="fotoMedico" name="fotoMedico" value="" maxlength="255" class="">
                  </div>
 
-                 <div id="btn_tbc">
-                   <input type="submit" name="btnEnviar" value="Enviar">
+                  <div class="text">Endereço</div>
+
+
+                 <div class="text">
+                     <input type="text"required  placeholder="CEP" name="txtCep" value="" maxlength="255" class="inputMax">
                  </div>
 
+
+                 <div class="text">
+                     <input type="text" required placeholder="Rua" name="txtLogradouro" value="" maxlength="255" class="inputMax">
+                 </div>
+
+                 <div class="text">
+                   <input id="numero" required placeholder="Numero" type="text" name="txtNum" value=""  maxlength="9">
+                 </div>
+                 <div class="text">
+                   <input id="bairro" required placeholder="Bairro:" type="text" name="txtBairro" value=""  maxlength="12">
+                 </div>
+
+                 <div class="text">
+                     <div class="text">
+                         <select name="sltCidade" required >
+                             <option value="*">Cidade</option>
+                             <option value="1">Barueri</option>
+                             <option value="2">Itapevi</option>
+                         </select>
+                     </div>
+                     <div class="text" required>
+                         <select name="sltEstado" >
+                             <option value="*">Estado</option>
+                             <option value="1">SP</option>
+                             <option value="2">RJ</option>
+                         </select>
+                     </div>
+                 </div>
+
+                 
+
+
+                 <div id="centralizarBtnHome">
+                     <button type="submit" name="entrar" value="ENTRAR">SALVAR</button>
+                 </div>
              </div>
          </form>
+
+
+
 
 
 

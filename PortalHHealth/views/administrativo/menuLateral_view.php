@@ -7,14 +7,14 @@
 
     </div>
     <div  class="linha_menu" href="#">Medico
-		<div class="categorias_ocultas"><a href="#">  Cadastrar</a></div>
-		<div class="categorias_ocultas"><a href="#">  Visualizar</a></div>
+		<div class="categorias_ocultas"><a href="cadastroMedico_view.php">   Cadastrar</a></div>
+		<div class="categorias_ocultas"><a href="visu_medico_view.php">   Visualizar</a></div>
 
     </div>
 
     <div  class="linha_menu" href="#">Medicamento
-		<div class="categorias_ocultas"> <a href="#"> Cadastrar </a></div>
-		<div class="categorias_ocultas"> <a href="#"> Visualizar </a></div>
+		<div class="categorias_ocultas"> Cadastrar </a></div>
+		<div class="categorias_ocultas">  Visualizar </a></div>
     </div>
 
 	<div  class="linha_menu" href="#">Unidades

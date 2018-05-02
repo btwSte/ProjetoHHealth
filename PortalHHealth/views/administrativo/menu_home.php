@@ -6,8 +6,8 @@
     </div>
 
     <div  class="linha_menu" href="#">Medico
-		<div class="categorias_ocultas"><a href="ambientes/cadastroAmbientes_view.php">  Cadastrar</a></div>
-		<div class="categorias_ocultas"><a href="ambientes/visu_ambientes_view.php">  Visualizar</a></div>
+		<div class="categorias_ocultas"><a href="medico/cadastroMedico_view.php">  Cadastrar</a></div>
+		<div class="categorias_ocultas"><a href="medico/visu_medico.php">  Visualizar</a></div>
 
     </div>
 
@@ -32,7 +32,7 @@
      </div >
 
      <div class="linha_menu" href="#"> trabalhe Conosco
-      
+
         <div class="categorias_ocultas"> <a href="trabalheConosco/visuTrabalhe_view.php">  Visualizar </a></div>
      </div >
 

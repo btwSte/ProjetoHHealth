@@ -52,6 +52,41 @@
        //Chama função que encerra conexao no banco
        $conex->Desconectar();
      }
+     
+      public function SelectCabecalho(){
+       // Select no banco
+       $sql = "SELECT * FROM pagina_convenio";
+
+       //instancia a classe do banco
+       $conex = new Mysql_db();
+
+       //chama o metodo para conectar no BD e guarda o resultado da funcao em uma variavel local($PDOconex)
+       $PDOconex = $conex->Conectar();
+
+       $select = $PDOconex->query($sql);
+
+       //inicia contador em 0
+       $cont = 0;
+
+       //guarda resultado
+       while ($result = $select->fetch(PDO::FETCH_ASSOC)) {
+         $listCabecalho[] = new ConvenioCabecalho();
+
+         $listCabecalho[$cont]->idPaginaConvenio = $result['idPaginaConvenio'];
+         $listCabecalho[$cont]->fotoPrincipal = $result['fotoPrincipal'];
+         $listCabecalho[$cont]->tituloPagina = $result['tituloPagina'];
+         $listCabecalho[$cont]->ativo = $result['ativo'];
+
+         //incrementa o contador
+         $cont += 1;
+       }
+
+        $conex->Desconectar();
+
+        if (isset($listCabecalho)) {
+           return $listCabecalho; 
+        }
+     }
 
      public function SelectCabecalhoAtivo(){
        // Select no banco
@@ -87,4 +122,61 @@
            return $listCabecalho;
         }
      }
+     
+    public function ActivateCabecalho($ativarCabecalho){
+        $update = "UPDATE pagina_convenio SET ativo='0' WHERE idPaginaConvenio > '0';";
+        $sql = "UPDATE pagina_convenio SET ativo= 1 WHERE idPaginaConvenio=".$ativarCabecalho->id;
+
+        $conex = new Mysql_db();
+
+        $PDOconex = $conex->Conectar();
+        $PDOconex->query($update);
+        if ($PDOconex->query($sql)) {
+          header('location:'.$voltaUm.'views/administrativo/convenio/visu_convenio_view.php');
+             
+        }else{
+          echo "erro";
+            
+        }
+
+        $conex->Desconectar();
+      }
+
+    public function DisableCabecalho($desativarCabecalho){
+        $sql = "UPDATE pagina_convenio SET ativo= 0 WHERE idPaginaConvenio=".$desativarCabecalho->id;
+
+        $conex = new Mysql_db();
+
+        $PDOconex = $conex->Conectar();
+
+        if ($PDOconex->query($sql)) {
+          header('location:'.$voltaUm.'views/administrativo/convenio/visu_convenio_view.php');
+        }else{
+          echo "erro";
+        }
+
+        $conex->Desconectar();
+      }
+     
+    public function DeleteCabecalho($excluirCabecalho){
+      // Select no banco
+      $sql = "DELETE FROM pagina_convenio WHERE idPaginaConvenio=".$excluirCabecalho->id;
+
+      //instancia a classe do banco
+      $conex = new Mysql_db();
+
+      //chama o metodo para conectar no BD e guarda o resultado da funcao em uma variavel local($PDOconex)
+      $PDOconex = $conex->Conectar();
+
+      if ($PDOconex->query($sql)) {
+        header('location:'.$voltaUm.'views/administrativo/convenio/visu_convenio_view.php');
+      }else{
+        echo "erro ao deletar";
+      }
+
+      $conex->Desconectar();
+
+    }
+
+     
    }

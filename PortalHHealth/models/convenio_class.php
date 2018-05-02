@@ -35,6 +35,40 @@
       //Chama função que encerra conexao no banco
       $conex->Desconectar();
     }
+      
+    public function SelectConteudo(){
+      // Select no banco
+      $sql = "SELECT * FROM tbl_convenio";
+
+      //instancia a classe do banco
+      $conex = new Mysql_db();
+
+      //chama o metodo para conectar no BD e guarda o resultado da funcao em uma variavel local($PDOconex)
+      $PDOconex = $conex->Conectar();
+
+      $select = $PDOconex->query($sql);
+
+      //inicia contador em 0
+      $cont = 0;
+
+      //guarda resultado
+      while ($result = $select->fetch(PDO::FETCH_ASSOC)) {
+        $listConteudo[] = new Convenio();
+
+        $listConteudo[$cont]->idConvenio = $result['idConvenio'];
+        $listConteudo[$cont]->nome = $result['nome'];
+        $listConteudo[$cont]->ativo = $result['ativo'];
+
+        //incrementa o contador
+        $cont += 1;
+      }
+
+      $conex->Desconectar();
+
+      if (isset($listConteudo)) {
+       return $listConteudo;
+      }
+    }
 
     public function SelectConteudoAtivo(){
       // Select no banco
@@ -69,5 +103,42 @@
        return $listConteudo;
       }
     }
+      
+      public function ActivateConteudo($ativarConteudo){
+        $sql = "UPDATE tbl_convenio SET ativo= 1 WHERE idConvenio=".$ativarConteudo->id;
+
+        $conex = new Mysql_db();
+
+        $PDOconex = $conex->Conectar();
+
+        if ($PDOconex->query($sql)) {
+          header('location:'.$voltaUm.'views/administrativo/convenio/visu_convenio_view.php');
+        }else{
+          echo "erro";
+        }
+
+        $conex->Desconectar();
+      }
+
+      public function DisableConteudo($desativarConteudo){
+        $sql = "UPDATE tbl_convenio SET ativo= 0 WHERE idConvenio=".$desativarConteudo->id;
+
+        $conex = new Mysql_db();
+
+        $PDOconex = $conex->Conectar();
+
+        if ($PDOconex->query($sql)) {
+          header('location:'.$voltaUm.'views/administrativo/convenio/visu_convenio_view.php');
+           
+        }else{
+          echo "erro";
+            echo $sql;
+        }
+
+        $conex->Desconectar();
+      }
+      
+      
+      
   }
 ?>

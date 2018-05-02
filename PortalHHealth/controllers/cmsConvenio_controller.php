@@ -51,6 +51,15 @@
           $convenioCabecalho->fotoPrincipal = $diretorio_completo;
           $convenioCabecalho::Insert($convenioCabecalho);
       }
+      
+      public function ExcluirCabecalho() {
+        $idCabecalho = $_GET['id'];
+
+        $excluirCabecalho = new ConvenioCabecalho();
+
+        $excluirCabecalho->id = $idCabecalho;
+        $excluirCabecalho::DeleteCabecalho($excluirCabecalho);
+      }
 
       public function ListarCabecalhoAtivo(){
         $cabecalho = new ConvenioCabecalho();
@@ -60,6 +69,24 @@
       public function ListarCabecalho(){
         $cabecalho = new ConvenioCabecalho();
         return $cabecalho::SelectCabecalho();
+      }
+      
+      public function AtivarCabecalho(){
+        $idCabecalho = $_GET['id'];
+
+        $ativarCabecalho = new ConvenioCabecalho();
+
+        $ativarCabecalho->id = $idCabecalho;
+        return $ativarCabecalho::ActivateCabecalho($ativarCabecalho);
+      }
+
+      public function DesativarCabecalho(){
+        $idCabecalho = $_GET['id'];
+
+        $desativarCabecalho = new ConvenioCabecalho();
+
+        $desativarCabecalho->id = $idCabecalho;
+        return $desativarCabecalho::DisableCabecalho($desativarCabecalho);
       }
 
       //FUNÇÕES REFERENTE AO CONTEUDO DE CONVÊNIO
@@ -80,6 +107,24 @@
       public function SelecionarConteudo(){
         $conteudo = new Convenio();
         return $conteudo::SelectConteudo();
+      }
+      
+       public function AtivarConteudo(){
+        $idConteudo = $_GET['id'];
+
+        $ativarConteudo = new Convenio();
+
+        $ativarConteudo->id = $idConteudo;
+        return $ativarConteudo::ActivateConteudo($ativarConteudo);
+      }
+
+      public function DesativarConteudo(){
+        $idConteudo = $_GET['id'];
+
+        $desativarConteudo = new Convenio();
+
+        $desativarConteudo->id = $idConteudo;
+        return $desativarConteudo::DisableConteudo($desativarConteudo);
       }
     }
 ?>

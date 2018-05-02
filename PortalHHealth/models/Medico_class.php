@@ -1,14 +1,23 @@
 <?php
-  /* Autor: Stéphanie
+  /* Autor: Bruno
      Data de modificação: 02/05/18
-     Class: medicamneto
+     Class: medico
      Obs: Replica dos campos do BD com os metodos de ações do CRUD
    */
 
-  class Medicamento {
-    public $idMedicamento;
+  class Medico {
     public $nome;
-    public $fabricante;
+    public $telefone;
+    public $celular;
+    public $datAdimicao;
+    public $rg;
+    public $cpf;
+    public $numCrm;
+    public $nacimento;
+    public $idEndereco;
+    public $fotoCrm;
+    public $fotomedico;
+    public $email;
 
     // Conexão com o banco
     public function __construct() {
@@ -16,21 +25,31 @@
     }
 
     //FUNÇÕES REFERENTE AO CONTEUDO
-      public function Insert($medicamento) {
+      public function Insert($medico) {
 
-        $sql = "INSERT INTO tbl_medicamento (nome, fabricante)
-            VALUES ('".$medicamento->nome."',
-                    '".$medicamento->fabricante."')";
+        $sql = "INSERT INTO tbl_medico (nome,telefone,celular,datAdimicao,rg,cpf,numCrm,nacimento,idEndereco,fotoCrm,fotomedico,email)
+            VALUES ('".$medico->nome."',
+                      '".$medico->telefone."',
+                      '".$medico->celular."',
+                      '".$medico->datAdimicao."',
+                      '".$medico->rg."',
+                      '".$medico->cpf."',
+                      '".$medico->numCrm."',
+                      '".$medico->nacimento."',
+                      '".$medico->idEndereco."',
+                      '".$medico->fotoCrm."',
+                      '".$medico->fotomedico."',
+                      '".$medico->email."')";
 
         //instancia a classe do banco
         $conex = new Mysql_db();
 
         //chama o metodo para conectar no BD e guarda o resultado da funcao em uma variavel local($PDOconex)
         $PDOconex = $conex->Conectar();
-
+        echo $sql;
         //executa script no banco
         if ($PDOconex->query($sql))
-          header('location:'.$voltaUm.'views/administrativo/medicamento/cadastroMedicamento_view.php');
+          header('location:'.$voltaUm.'views/administrativo/medico/cadastroMedico_view.php');
         else
           echo "Erro no cadastro";
 

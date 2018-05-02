@@ -1062,7 +1062,7 @@ CREATE TABLE `tbl_medicamento` (
   `nome` varchar(255) NOT NULL,
   `fabricante` varchar(255) NOT NULL,
   PRIMARY KEY (`idMedicamento`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1071,7 +1071,6 @@ CREATE TABLE `tbl_medicamento` (
 
 LOCK TABLES `tbl_medicamento` WRITE;
 /*!40000 ALTER TABLE `tbl_medicamento` DISABLE KEYS */;
-INSERT INTO `tbl_medicamento` VALUES (2,'teste 2','teste 2');
 /*!40000 ALTER TABLE `tbl_medicamento` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1084,23 +1083,24 @@ DROP TABLE IF EXISTS `tbl_medico`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tbl_medico` (
   `idMedico` int(11) NOT NULL AUTO_INCREMENT,
+  `idCargo` int(11) NOT NULL,
   `dtAdmissao` varchar(255) NOT NULL,
   `nome` varchar(255) NOT NULL,
   `rg` varchar(255) NOT NULL,
   `cpf` varchar(255) NOT NULL,
   `crm` varchar(255) NOT NULL,
   `dtNasc` date NOT NULL,
-  `fotoCRM` varchar(255) NOT NULL,
-  `fotoMedico` varchar(255) DEFAULT NULL,
-  `idEndereco` int(11) DEFAULT NULL,
-  `idEspecialidade` int(11) DEFAULT NULL,
-  `idNivelPortal` int(11) DEFAULT NULL,
+  `idEndereco` int(11) NOT NULL,
+  `idEspecialidade` int(11) NOT NULL,
+  `idNivelPortal` int(11) NOT NULL,
   `idEstadoCivil` int(11) NOT NULL,
   PRIMARY KEY (`idMedico`),
+  KEY `fk_carg_medico_idx` (`idCargo`),
   KEY `fk_end_medico_idx` (`idEndereco`),
   KEY `fk_esp_medico_idx` (`idEspecialidade`),
   KEY `fk_niv_medico_idx` (`idNivelPortal`),
   KEY `fk_estad_civ_medico_idx` (`idEstadoCivil`),
+  CONSTRAINT `fk_carg_medico` FOREIGN KEY (`idCargo`) REFERENCES `tbl_cargo` (`idcargo`),
   CONSTRAINT `fk_end_medico` FOREIGN KEY (`idEndereco`) REFERENCES `tbl_endereco` (`idendereco`),
   CONSTRAINT `fk_esp_medico` FOREIGN KEY (`idEspecialidade`) REFERENCES `tbl_especialidade` (`idespecialidade`),
   CONSTRAINT `fk_estad_civ_medico` FOREIGN KEY (`idEstadoCivil`) REFERENCES `tbl_estado_civil` (`idestadocivil`),
@@ -2008,4 +2008,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-05-02 13:29:29
+-- Dump completed on 2018-05-02  7:40:30

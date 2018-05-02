@@ -23,6 +23,25 @@
       $controller_unidades::NovoConteudo($idEndereco);
     }
 
+
+    public function NovoEnderecoMedico(){
+      // novo objeto
+      $enderecoConteudo = new Endereco();
+
+      //pega conteudo
+      $enderecoConteudo->logradouro = $_POST['txtLogradouro'];
+      $enderecoConteudo->numero = $_POST['txtNum'];
+      $enderecoConteudo->bairro = $_POST['txtBairro'];
+      $enderecoConteudo->cep = $_POST['txtCep'];
+
+      //envia para a class
+      $idEndereco = $enderecoConteudo::Insert($enderecoConteudo);
+
+      $controller_Medico = new controllerCmsMedico();
+      $controller_Medico::Novo($idEndereco);
+    }
+
+
     public function Excluir(){
       $idEndereco = $_GET['idEnd'];
 

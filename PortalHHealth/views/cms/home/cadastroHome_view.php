@@ -1,11 +1,29 @@
 <?php
-  /* Autor: Michel & Vinicius
-     Data de modificação: 05/04/18
-     View : Tela de Cadastro
-     Obs: Tela de cadastro de informaçoes para tela da Home
-   */
+    
+    require_once('../../../variaveis.php');
+    
 
-   require_once('../../../variaveis.php');
+    $action2 = "modo=novoconteudo";
+    
+        /*
+        $imgLogo = null;
+        $videoSlider = null;
+        $textoSlider = null;
+        $imgMissao = null;
+        $imgVisao = null;
+        $imgValores = null;
+        $textoMissao = null;
+        $textoVisao = null;
+        $textoValores = null;
+        $imgFundo = null;
+        $imgRedeSocialUm = null;
+        $imgRedeSocialDois = null;
+        $imgRedeSocialTres = null;
+        $textoRedeUm = null;
+        $textoRedeDois = null;
+        $textoRedeTres = null;
+        */
+   
 ?>
 
 <!DOCTYPE html>
@@ -78,55 +96,55 @@
                 </div>
                 <div class="textoHomePortal">Menu (Escolher a logo)</div>
                 <div class="inputHomePortal">
-                    <input type="file" required placeholder="Logo" name="imglogo" value="" maxlength="255" class="inputHome">
+                    <input type="file"  placeholder="Logo" name="imglogo" value="" maxlength="255" class="inputHome">
                 </div>
 
                 <!-- SLIDER -->
                 <div class="textoHomePortal">Slider</div>
                 <div class="inputHomePortal">
-                    <input type="file" required placeholder="Slide(Video ou Imagem)" name="imgSlide" value="" maxlength="255" class="inputHomeDuplo">
+                    <input type="file" placeholder="Slide(Video ou Imagem)" name="imgSlide" value="" maxlength="255" class="inputHomeDuplo">
                     <input type="text" required placeholder="Texto Slider" name="txtSlide" value="" maxlength="255" class="inputHomeDuploDir">
                 </div>
 
                 <!-- MISSÃO, VISÃO E VALORES -->
                 <div class="textoHomePortal">Missão, Visão e Valores</div>
                 <div class="inputHomePortal">
-                    <input type="file" required placeholder="Missao" name="txtNome" value="" maxlength="255" class="inputHomeDuplo">
-                    <input type="text" required placeholder="Texto Missão" name="txtNome" value="" maxlength="255" class="inputHomeDuploDir">
+                    <input type="file" placeholder="Missao" name="imgMissao" value="" maxlength="255" class="inputHomeDuplo">
+                    <input type="text" required placeholder="Texto Missão" name="txtMissao" value="" maxlength="255" class="inputHomeDuploDir">
                 </div>
                 <div class="inputHomePortal">
-                    <input type="file" required placeholder="Visao" name="txtNome" value="" maxlength="255" class="inputHomeDuplo">
-                    <input type="text" required placeholder="Texto Visão" name="txtNome" value="" maxlength="255" class="inputHomeDuploDir">
+                    <input type="file" placeholder="Visao" name="imgVisao" value="" maxlength="255" class="inputHomeDuplo">
+                    <input type="text" required placeholder="Texto Visão" name="txtVisao" value="" maxlength="255" class="inputHomeDuploDir">
                 </div>
                 <div class="inputHomePortal">
-                    <input type="file" required placeholder="Valores" name="txtNome" value="" maxlength="255" class="inputHomeDuplo">
-                    <input type="text" required placeholder="Texto Valores" name="txtNome" value="" maxlength="255" class="inputHomeDuploDir">
+                    <input type="file" placeholder="Valores" name="imgValores" value="" maxlength="255" class="inputHomeDuplo">
+                    <input type="text" required placeholder="Texto Valores" name="txtValores" value="" maxlength="255" class="inputHomeDuploDir">
                 </div>
 
                 <!-- Imagem Do Fundo -->
                 <div class="textoHomePortal">Imagem Do Fundo</div>
                 <div class="inputHomePortal">
-                    <input type="file" required placeholder="ImagemFundo" name="imgimagemFundo" value="" maxlength="255" class="inputHomeDuplo">
+                    <input type="file"  placeholder="ImagemFundo" name="imgFundo" value="" maxlength="255" class="inputHomeDuplo">
                 </div>
 
                 
                 <!-- Redes Sociais -->
                 <div class="textoHomePortal">Redes Sociais</div>
                 <div class="inputHomePortal">
-                    <input type="file" required placeholder="Redes Sociais" name="imgRedeSocial1" value="" maxlength="255" class="inputHomeDuplo">
-                    <input type="text" required placeholder="Link" name="txtlink1" value="" maxlength="255" class="inputHomeDuploDir">
+                    <input type="file" placeholder="Redes Sociais" name="imgRedeUm" value="" maxlength="255" class="inputHomeDuplo">
+                    <input type="text" required placeholder="Link" name="txtLinkUm" value="" maxlength="255" class="inputHomeDuploDir">
                 </div>
                 <div class="inputHomePortal">
-                    <input type="file" required placeholder="Redes Sociais" name="imgRedeSocial2" value="" maxlength="255" class="inputHomeDuplo">
-                    <input type="text" required placeholder="Link" name="txtlink2" value="" maxlength="255" class="inputHomeDuploDir">
+                    <input type="file" placeholder="Redes Sociais" name="imgRedeDois" value="" maxlength="255" class="inputHomeDuplo">
+                    <input type="text" required placeholder="Link" name="txtLinkDois" value="" maxlength="255" class="inputHomeDuploDir">
                 </div>
                 <div class="inputHomePortal">
-                    <input type="file" required placeholder="Redes Sociais" name="imgRedeSocial3" value="" maxlength="255" class="inputHomeDuplo">
-                    <input type="text" required placeholder="Link" name="txtlink3" value="" maxlength="255" class="inputHomeDuploDir">
+                    <input type="file" placeholder="Redes Sociais" name="imgRedeTres" value="" maxlength="255" class="inputHomeDuplo">
+                    <input type="text" required placeholder="Link" name="txtLinkTres" value="" maxlength="255" class="inputHomeDuploDir">
                 </div>
                 <!-- Botao Para Finalizar, Boa Sorte! -->
                 <div id="centralizarBtnHome">
-                    <button type="submit" name="entrar" value="ENTRAR">SALVAR</button>
+                    <button type="submit" name="btnEviarConteudo" value="ENTRAR">SALVAR</button>
                 </div>
             </form>
         </div>
