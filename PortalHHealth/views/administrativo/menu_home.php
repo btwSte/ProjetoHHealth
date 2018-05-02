@@ -2,7 +2,7 @@
   <div  href="javascript:void(0)" class="closebtn linha_menu" onclick="closeNav()"><a href="">&times;</a></div>
 
     <div  class="linha_menuFirst" href="#"> Conta de paciente
-          <div class="categorias_ocultas"><a href="">  Ativar</a></div>
+          <div class="categorias_ocultas"><a href="Ativar_Paciente.php">  Ativar</a></div>
     </div>
 
     <div  class="linha_menu" href="#">Medico
@@ -32,7 +32,7 @@
      </div >
 
      <div class="linha_menu" href="#"> trabalhe Conosco
-      
+
         <div class="categorias_ocultas"> <a href="trabalheConosco/visuTrabalhe_view.php">  Visualizar </a></div>
      </div >
 

@@ -538,6 +538,23 @@ if(isset($_GET['controller'])){
               break;
         }
           break;
+      case 'Paciente':
+        require_once('controllers/admPaciente_controller.php');
+        require_once('models/Paciente_class.php');
+
+        switch ($modo) {
+          case 'ativar':
+            $controller_curriculo = new controllerCadPaciente();
+            $controller_curriculo::AtivarPaciente();
+            break;
+
+          case 'desativar':
+            $controller_curriculo = new controllerCadPaciente();
+            $controller_curriculo::DesativarPaciente();
+            break;
+
+        }
+        break;
   }
 
 }
