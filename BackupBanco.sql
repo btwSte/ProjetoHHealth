@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 5.7.17, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 5.7.9, for Win64 (x86_64)
 --
 -- Host: localhost    Database: dbhhealth
 -- ------------------------------------------------------
--- Server version	8.0.2-dmr-log
+-- Server version	5.6.10-log
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -32,8 +32,8 @@ CREATE TABLE `pagina_ambiente` (
   PRIMARY KEY (`idPaginaAmbiente`),
   KEY `fk_amb_men_idx` (`idMenu`),
   KEY `fk_amb_rod_idx` (`idRodape`),
-  CONSTRAINT `fk_amb_men` FOREIGN KEY (`idMenu`) REFERENCES `tbl_menu` (`idmenu`),
-  CONSTRAINT `fk_amb_rod` FOREIGN KEY (`idRodape`) REFERENCES `tbl_rodape` (`idrodape`)
+  CONSTRAINT `fk_amb_men` FOREIGN KEY (`idMenu`) REFERENCES `tbl_menu` (`idMenu`),
+  CONSTRAINT `fk_amb_rod` FOREIGN KEY (`idRodape`) REFERENCES `tbl_rodape` (`idRodape`)
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -64,8 +64,8 @@ CREATE TABLE `pagina_contato` (
   PRIMARY KEY (`idPaginaContato`),
   KEY `fk_cont_men_idx` (`idMenu`),
   KEY `fk_cont_rod_idx` (`idRodape`),
-  CONSTRAINT `fk_cont_men` FOREIGN KEY (`idMenu`) REFERENCES `tbl_menu` (`idmenu`),
-  CONSTRAINT `fk_cont_rod` FOREIGN KEY (`idRodape`) REFERENCES `tbl_rodape` (`idrodape`)
+  CONSTRAINT `fk_cont_men` FOREIGN KEY (`idMenu`) REFERENCES `tbl_menu` (`idMenu`),
+  CONSTRAINT `fk_cont_rod` FOREIGN KEY (`idRodape`) REFERENCES `tbl_rodape` (`idRodape`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -95,8 +95,8 @@ CREATE TABLE `pagina_convenio` (
   PRIMARY KEY (`idPaginaConvenio`),
   KEY `fk_conv_men_idx` (`idMenu`),
   KEY `fk_conv_rod_idx` (`idRodape`),
-  CONSTRAINT `fk_conv_men` FOREIGN KEY (`idMenu`) REFERENCES `tbl_menu` (`idmenu`),
-  CONSTRAINT `fk_conv_rod` FOREIGN KEY (`idRodape`) REFERENCES `tbl_rodape` (`idrodape`)
+  CONSTRAINT `fk_conv_men` FOREIGN KEY (`idMenu`) REFERENCES `tbl_menu` (`idMenu`),
+  CONSTRAINT `fk_conv_rod` FOREIGN KEY (`idRodape`) REFERENCES `tbl_rodape` (`idRodape`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -127,7 +127,7 @@ CREATE TABLE `pagina_home` (
   `textoVisao` varchar(255) NOT NULL,
   `textoValores` varchar(255) NOT NULL,
   `fotoFundo` varchar(255) NOT NULL,
-  `idUnidade` int(11) NOT NULL,
+  `idUnidade` int(11) DEFAULT NULL,
   `idRodape` int(11) DEFAULT NULL,
   `fotoLogo` varchar(255) NOT NULL,
   `videoSlider` varchar(255) NOT NULL,
@@ -141,9 +141,9 @@ CREATE TABLE `pagina_home` (
   PRIMARY KEY (`idPaginaHome`),
   KEY `fk_home_menu_idx` (`idMenu`),
   KEY `fk_home_rodape_idx` (`idRodape`),
-  CONSTRAINT `fk_home_menu` FOREIGN KEY (`idMenu`) REFERENCES `tbl_menu` (`idmenu`),
-  CONSTRAINT `fk_home_rodape` FOREIGN KEY (`idRodape`) REFERENCES `tbl_rodape` (`idrodape`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  CONSTRAINT `fk_home_menu` FOREIGN KEY (`idMenu`) REFERENCES `tbl_menu` (`idMenu`),
+  CONSTRAINT `fk_home_rodape` FOREIGN KEY (`idRodape`) REFERENCES `tbl_rodape` (`idRodape`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -152,6 +152,7 @@ CREATE TABLE `pagina_home` (
 
 LOCK TABLES `pagina_home` WRITE;
 /*!40000 ALTER TABLE `pagina_home` DISABLE KEYS */;
+INSERT INTO `pagina_home` VALUES (1,NULL,'arquivos/08a98ea2725092ea3754e49597cc8c5b.jpg','arquivos/a7f33499e38442f683b02baf51db625d.jpg','arquivos/0195a01fdd88db3ecf6513b95b0b6d15.jpg','valores','missao','visao','arquivos/d2a57dc1d883fd21fb9951699df71cc7.png',NULL,NULL,'arquivos/e6ded2939371c754ebe2c38efa1d2553.jpeg','arquivos/2202b05ef5f68cbf91fb451f326b688c.png','video','arquivos/c81e728d9d4c2f636f067f89cc14862c.jpg','arquivos/c4ca4238a0b923820dcc509a6f75849b.jpg','arquivos/d187423c0dec26d9e1ffc5f27f85eeda.png','#','##','###');
 /*!40000 ALTER TABLE `pagina_home` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -172,8 +173,8 @@ CREATE TABLE `pagina_info_usuario` (
   PRIMARY KEY (`idPaginaInfoUsuario`),
   KEY `fk_info_user_menu_idx` (`idMenu`),
   KEY `fk_info_user_rodape_idx` (`idRodape`),
-  CONSTRAINT `fk_info_user_menu` FOREIGN KEY (`idMenu`) REFERENCES `tbl_menu` (`idmenu`),
-  CONSTRAINT `fk_info_user_rodape` FOREIGN KEY (`idRodape`) REFERENCES `tbl_rodape` (`idrodape`)
+  CONSTRAINT `fk_info_user_menu` FOREIGN KEY (`idMenu`) REFERENCES `tbl_menu` (`idMenu`),
+  CONSTRAINT `fk_info_user_rodape` FOREIGN KEY (`idRodape`) REFERENCES `tbl_rodape` (`idRodape`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -232,8 +233,8 @@ CREATE TABLE `pagina_procedimento_exame` (
   PRIMARY KEY (`idPaginaProcedimento`),
   KEY `fk_proc_men_idx` (`idMenu`),
   KEY `fk_proc_rod_idx` (`idRodape`),
-  CONSTRAINT `fk_proc_men` FOREIGN KEY (`idMenu`) REFERENCES `tbl_menu` (`idmenu`),
-  CONSTRAINT `fk_proc_rod` FOREIGN KEY (`idRodape`) REFERENCES `tbl_rodape` (`idrodape`)
+  CONSTRAINT `fk_proc_men` FOREIGN KEY (`idMenu`) REFERENCES `tbl_menu` (`idMenu`),
+  CONSTRAINT `fk_proc_rod` FOREIGN KEY (`idRodape`) REFERENCES `tbl_rodape` (`idRodape`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -264,8 +265,8 @@ CREATE TABLE `pagina_sobre` (
   PRIMARY KEY (`idPaginaSobre`),
   KEY `fk_sobre_menu_idx` (`idMenu`),
   KEY `fk_sobre_rodape_idx` (`idRodape`),
-  CONSTRAINT `fk_sobre_menu` FOREIGN KEY (`idMenu`) REFERENCES `tbl_menu` (`idmenu`),
-  CONSTRAINT `fk_sobre_rodape` FOREIGN KEY (`idRodape`) REFERENCES `tbl_rodape` (`idrodape`)
+  CONSTRAINT `fk_sobre_menu` FOREIGN KEY (`idMenu`) REFERENCES `tbl_menu` (`idMenu`),
+  CONSTRAINT `fk_sobre_rodape` FOREIGN KEY (`idRodape`) REFERENCES `tbl_rodape` (`idRodape`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -295,8 +296,8 @@ CREATE TABLE `pagina_trabalhe_conosco` (
   PRIMARY KEY (`idPaginaTrabalheConosco`),
   KEY `fk_trabalhe_men_idx` (`idMenu`),
   KEY `fk_trabalhe_rod_idx` (`idRodape`),
-  CONSTRAINT `fk_trabalhe_men` FOREIGN KEY (`idMenu`) REFERENCES `tbl_menu` (`idmenu`),
-  CONSTRAINT `fk_trabalhe_rod` FOREIGN KEY (`idRodape`) REFERENCES `tbl_rodape` (`idrodape`)
+  CONSTRAINT `fk_trabalhe_men` FOREIGN KEY (`idMenu`) REFERENCES `tbl_menu` (`idMenu`),
+  CONSTRAINT `fk_trabalhe_rod` FOREIGN KEY (`idRodape`) REFERENCES `tbl_rodape` (`idRodape`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -327,9 +328,9 @@ CREATE TABLE `pagina_unidade` (
   KEY `fk_nossa_unidad_idx` (`idUnidade`),
   KEY `fk_unid_menu_idx` (`idMenu`),
   KEY `fk_unid_rodape_idx` (`idRodape`),
-  CONSTRAINT `fk_nossa_unidad` FOREIGN KEY (`idUnidade`) REFERENCES `tbl_unidade` (`idunidade`),
-  CONSTRAINT `fk_unid_menu` FOREIGN KEY (`idMenu`) REFERENCES `tbl_menu` (`idmenu`),
-  CONSTRAINT `fk_unid_rodape` FOREIGN KEY (`idRodape`) REFERENCES `tbl_rodape` (`idrodape`)
+  CONSTRAINT `fk_nossa_unidad` FOREIGN KEY (`idUnidade`) REFERENCES `tbl_unidade` (`idUnidade`),
+  CONSTRAINT `fk_unid_menu` FOREIGN KEY (`idMenu`) REFERENCES `tbl_menu` (`idMenu`),
+  CONSTRAINT `fk_unid_rodape` FOREIGN KEY (`idRodape`) REFERENCES `tbl_rodape` (`idRodape`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -360,9 +361,9 @@ CREATE TABLE `tbl_agenda_consulta` (
   KEY `fk_paci_agend_consult_idx` (`idPaciente`),
   KEY `fk_medic_consult_idx` (`idMedico`),
   KEY `fk_form_pag_consult_idx` (`idPagamento`),
-  CONSTRAINT `fk_form_pag_consult` FOREIGN KEY (`idPagamento`) REFERENCES `tbl_pagamento` (`idpagamento`),
-  CONSTRAINT `fk_medic_consult` FOREIGN KEY (`idMedico`) REFERENCES `tbl_medico` (`idmedico`),
-  CONSTRAINT `fk_paci_agend_consult` FOREIGN KEY (`idPaciente`) REFERENCES `tbl_paciente` (`idpaciente`)
+  CONSTRAINT `fk_form_pag_consult` FOREIGN KEY (`idPagamento`) REFERENCES `tbl_pagamento` (`idPagamento`),
+  CONSTRAINT `fk_medic_consult` FOREIGN KEY (`idMedico`) REFERENCES `tbl_medico` (`idMedico`),
+  CONSTRAINT `fk_paci_agend_consult` FOREIGN KEY (`idPaciente`) REFERENCES `tbl_paciente` (`idPaciente`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -395,10 +396,10 @@ CREATE TABLE `tbl_agenda_exame` (
   KEY `fk_paci_agend_exam_idx` (`idPaciente`),
   KEY `fk_form_pag_exam_idx` (`idPagamento`),
   KEY `fk_medic_exam_paci_idx` (`idMedico`),
-  CONSTRAINT `fk_agend_exam` FOREIGN KEY (`idExame`) REFERENCES `tbl_exame` (`idexame`),
-  CONSTRAINT `fk_form_pag_exam` FOREIGN KEY (`idPagamento`) REFERENCES `tbl_pagamento` (`idpagamento`),
-  CONSTRAINT `fk_medic_exam_paci` FOREIGN KEY (`idMedico`) REFERENCES `tbl_medico` (`idmedico`),
-  CONSTRAINT `fk_paci_agend_exam` FOREIGN KEY (`idPaciente`) REFERENCES `tbl_paciente` (`idpaciente`)
+  CONSTRAINT `fk_agend_exam` FOREIGN KEY (`idExame`) REFERENCES `tbl_exame` (`idExame`),
+  CONSTRAINT `fk_form_pag_exam` FOREIGN KEY (`idPagamento`) REFERENCES `tbl_pagamento` (`idPagamento`),
+  CONSTRAINT `fk_medic_exam_paci` FOREIGN KEY (`idMedico`) REFERENCES `tbl_medico` (`idMedico`),
+  CONSTRAINT `fk_paci_agend_exam` FOREIGN KEY (`idPaciente`) REFERENCES `tbl_paciente` (`idPaciente`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -460,8 +461,8 @@ CREATE TABLE `tbl_ambulancia` (
   KEY `fk_amb_unid_idx` (`idUnidade`),
   KEY `fk_stat_amb_idx` (`idStatusAmbulancia`),
   CONSTRAINT `fk_amb_unid` FOREIGN KEY (`idUnidade`) REFERENCES `tbl_unidade_cabecalho` (`idunidade`),
-  CONSTRAINT `fk_stat_amb` FOREIGN KEY (`idStatusAmbulancia`) REFERENCES `tbl_status_ambulancia` (`idstatusambulancia`),
-  CONSTRAINT `fk_tip_amb` FOREIGN KEY (`idTipoAmbulancia`) REFERENCES `tbl_tipo_ambulancia` (`idtipoambulancia`)
+  CONSTRAINT `fk_stat_amb` FOREIGN KEY (`idStatusAmbulancia`) REFERENCES `tbl_status_ambulancia` (`idStatusAmbulancia`),
+  CONSTRAINT `fk_tip_amb` FOREIGN KEY (`idTipoAmbulancia`) REFERENCES `tbl_tipo_ambulancia` (`idTipoAmbulancia`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -513,9 +514,9 @@ CREATE TABLE `tbl_atendimento` (
   KEY `fk_atend_paci_idx` (`idPaciente`),
   KEY `fk_situa_paci_idx` (`idSituacao`),
   KEY `fk_setor_atend_paci_idx` (`idSetor`),
-  CONSTRAINT `fk_atend_paci` FOREIGN KEY (`idPaciente`) REFERENCES `tbl_paciente` (`idpaciente`),
-  CONSTRAINT `fk_setor_atend_paci` FOREIGN KEY (`idSetor`) REFERENCES `tbl_setor` (`idsetor`),
-  CONSTRAINT `fk_situa_paci` FOREIGN KEY (`idSituacao`) REFERENCES `tbl_situacao_paciente` (`idsituacao`)
+  CONSTRAINT `fk_atend_paci` FOREIGN KEY (`idPaciente`) REFERENCES `tbl_paciente` (`idPaciente`),
+  CONSTRAINT `fk_setor_atend_paci` FOREIGN KEY (`idSetor`) REFERENCES `tbl_setor` (`idSetor`),
+  CONSTRAINT `fk_situa_paci` FOREIGN KEY (`idSituacao`) REFERENCES `tbl_situacao_paciente` (`idSituacao`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -561,7 +562,9 @@ DROP TABLE IF EXISTS `tbl_cidade`;
 CREATE TABLE `tbl_cidade` (
   `idCidade` int(11) NOT NULL AUTO_INCREMENT,
   `nome` varchar(255) NOT NULL,
-  PRIMARY KEY (`idCidade`)
+  `idEstado` int(11) DEFAULT NULL,
+  PRIMARY KEY (`idCidade`),
+  KEY `fk_estado_idx` (`idEstado`)
 ) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -571,7 +574,7 @@ CREATE TABLE `tbl_cidade` (
 
 LOCK TABLES `tbl_cidade` WRITE;
 /*!40000 ALTER TABLE `tbl_cidade` DISABLE KEYS */;
-INSERT INTO `tbl_cidade` VALUES (1,'Alta Floresta D\'Oeste'),(2,'Ariquemes'),(3,'Cabixi'),(4,'Cacoal'),(5,'Embaúba'),(6,'Embu das Artes'),(7,'Embu-Guaçu'),(8,'Emilianópolis'),(9,'Engenheiro Coelho'),(10,'Espírito Santo do Pinhal'),(11,'Espírito Santo do Turvo'),(12,'Estrela D\'Oeste'),(13,'Estrela do Norte'),(14,'Euclides da Cunha Paulista');
+INSERT INTO `tbl_cidade` VALUES (1,'Alta Floresta D\'Oeste',NULL),(2,'Ariquemes',NULL),(3,'Cabixi',NULL),(4,'Cacoal',NULL),(5,'Embaúba',NULL),(6,'Embu das Artes',NULL),(7,'Embu-Guaçu',NULL),(8,'Emilianópolis',NULL),(9,'Engenheiro Coelho',NULL),(10,'Espírito Santo do Pinhal',NULL),(11,'Espírito Santo do Turvo',NULL),(12,'Estrela D\'Oeste',NULL),(13,'Estrela do Norte',NULL),(14,'Euclides da Cunha Paulista',NULL);
 /*!40000 ALTER TABLE `tbl_cidade` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -590,8 +593,8 @@ CREATE TABLE `tbl_consultorio` (
   PRIMARY KEY (`idConsultorio`),
   KEY `fk_consultorio_medic_idx` (`idMedico`),
   KEY `fk_consultorio_especi_idx` (`idEspecialidade`),
-  CONSTRAINT `fk_consultorio_especi` FOREIGN KEY (`idEspecialidade`) REFERENCES `tbl_especialidade` (`idespecialidade`),
-  CONSTRAINT `fk_consultorio_medic` FOREIGN KEY (`idMedico`) REFERENCES `tbl_medico` (`idmedico`)
+  CONSTRAINT `fk_consultorio_especi` FOREIGN KEY (`idEspecialidade`) REFERENCES `tbl_especialidade` (`idEspecialidade`),
+  CONSTRAINT `fk_consultorio_medic` FOREIGN KEY (`idMedico`) REFERENCES `tbl_medico` (`idMedico`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -622,8 +625,8 @@ CREATE TABLE `tbl_conta_pagar` (
   PRIMARY KEY (`idConta`),
   KEY `fk_tip_cont_idx` (`idTipoConta`),
   KEY `fk_fuc_pag_idx` (`idFuncionario`),
-  CONSTRAINT `fk_fuc_pag` FOREIGN KEY (`idFuncionario`) REFERENCES `tbl_funcionario` (`idfuncionario`),
-  CONSTRAINT `fk_tip_cont` FOREIGN KEY (`idTipoConta`) REFERENCES `tbl_tipo_conta` (`idtipoconta`)
+  CONSTRAINT `fk_fuc_pag` FOREIGN KEY (`idFuncionario`) REFERENCES `tbl_funcionario` (`idFuncionario`),
+  CONSTRAINT `fk_tip_cont` FOREIGN KEY (`idTipoConta`) REFERENCES `tbl_tipo_conta` (`idTipoConta`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -757,12 +760,9 @@ CREATE TABLE `tbl_endereco` (
   `bairro` varchar(255) NOT NULL,
   `cep` varchar(20) NOT NULL,
   `idCidade` int(11) DEFAULT NULL,
-  `idEstado` int(11) DEFAULT NULL,
   PRIMARY KEY (`idEndereco`),
   KEY `fk_end_city_idx` (`idCidade`),
-  KEY `fk_end_estad_idx` (`idEstado`),
-  CONSTRAINT `fk_end_city` FOREIGN KEY (`idCidade`) REFERENCES `tbl_cidade` (`idcidade`),
-  CONSTRAINT `fk_end_estad` FOREIGN KEY (`idEstado`) REFERENCES `tbl_estado` (`idestado`)
+  CONSTRAINT `fk_end_city` FOREIGN KEY (`idCidade`) REFERENCES `tbl_cidade` (`idCidade`)
 ) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -772,7 +772,7 @@ CREATE TABLE `tbl_endereco` (
 
 LOCK TABLES `tbl_endereco` WRITE;
 /*!40000 ALTER TABLE `tbl_endereco` DISABLE KEYS */;
-INSERT INTO `tbl_endereco` VALUES (1,'ru a888',88888,'8888','8888',NULL,NULL),(2,'ru a888',88888,'8888','8888',NULL,NULL),(5,'Rua Carlos Antônio da Silva Neto',177,'Natal','00221121',NULL,NULL),(6,'Quadra LA',20,'Águas Lindas de Goiás','45454454',NULL,NULL),(7,'rua lala teste',666,'yey','2002',NULL,NULL),(8,'rua maria',4752,'8888','00221121',NULL,NULL),(9,'rwwfff',3434,'343rreee','343545',NULL,NULL),(10,'g',5,'fg','g',NULL,NULL),(11,'g',5,'fg','g',NULL,NULL),(12,'12',12,'12','12',NULL,NULL);
+INSERT INTO `tbl_endereco` VALUES (1,'ru a888',88888,'8888','8888',NULL),(2,'ru a888',88888,'8888','8888',NULL),(5,'Rua Carlos Antônio da Silva Neto',177,'Natal','00221121',NULL),(6,'Quadra LA',20,'Águas Lindas de Goiás','45454454',NULL),(7,'rua lala teste',666,'yey','2002',NULL),(8,'rua maria',4752,'8888','00221121',NULL),(9,'rwwfff',3434,'343rreee','343545',NULL),(10,'g',5,'fg','g',NULL),(11,'g',5,'fg','g',NULL),(12,'12',12,'12','12',NULL);
 /*!40000 ALTER TABLE `tbl_endereco` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -861,7 +861,7 @@ CREATE TABLE `tbl_exame` (
   `idTipoExame` int(11) NOT NULL,
   PRIMARY KEY (`idExame`),
   KEY `fk_exa_tipo_idx` (`idTipoExame`),
-  CONSTRAINT `fk_exa_tipo` FOREIGN KEY (`idTipoExame`) REFERENCES `tbl_tipo_exame` (`idtipoexame`)
+  CONSTRAINT `fk_exa_tipo` FOREIGN KEY (`idTipoExame`) REFERENCES `tbl_tipo_exame` (`idTipoExame`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -903,11 +903,11 @@ CREATE TABLE `tbl_funcionario` (
   KEY `fk_estad_func_idx` (`idEstadoCivil`),
   KEY `fk_niv_port_idx` (`idNivelPortal`),
   KEY `fk_func_setor_idx` (`idSetor`),
-  CONSTRAINT `fk_carg_func` FOREIGN KEY (`idCargo`) REFERENCES `tbl_cargo` (`idcargo`),
-  CONSTRAINT `fk_end_func` FOREIGN KEY (`idEndereco`) REFERENCES `tbl_endereco` (`idendereco`),
-  CONSTRAINT `fk_estad_func` FOREIGN KEY (`idEstadoCivil`) REFERENCES `tbl_estado_civil` (`idestadocivil`),
-  CONSTRAINT `fk_func_setor` FOREIGN KEY (`idSetor`) REFERENCES `tbl_setor` (`idsetor`),
-  CONSTRAINT `fk_niv_port` FOREIGN KEY (`idNivelPortal`) REFERENCES `tbl_nivel_portal` (`idnivelportal`)
+  CONSTRAINT `fk_carg_func` FOREIGN KEY (`idCargo`) REFERENCES `tbl_cargo` (`idCargo`),
+  CONSTRAINT `fk_end_func` FOREIGN KEY (`idEndereco`) REFERENCES `tbl_endereco` (`idEndereco`),
+  CONSTRAINT `fk_estad_func` FOREIGN KEY (`idEstadoCivil`) REFERENCES `tbl_estado_civil` (`idEstadoCivil`),
+  CONSTRAINT `fk_func_setor` FOREIGN KEY (`idSetor`) REFERENCES `tbl_setor` (`idSetor`),
+  CONSTRAINT `fk_niv_port` FOREIGN KEY (`idNivelPortal`) REFERENCES `tbl_nivel_portal` (`idNivelPortal`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -947,13 +947,13 @@ CREATE TABLE `tbl_historico_paciente` (
   KEY `fk_hist_paci_idx` (`idPaciente`),
   KEY `fk_hist_medic_idx` (`idMedico`),
   KEY `fk_hist_medicamento_idx` (`idMedicamento`),
-  CONSTRAINT `fk_hist_medic` FOREIGN KEY (`idMedico`) REFERENCES `tbl_medico` (`idmedico`),
-  CONSTRAINT `fk_hist_medicamento` FOREIGN KEY (`idMedicamento`) REFERENCES `tbl_medicamento` (`idmedicamento`),
-  CONSTRAINT `fk_hist_paci` FOREIGN KEY (`idPaciente`) REFERENCES `tbl_paciente` (`idpaciente`),
-  CONSTRAINT `fk_hist_paci_consult` FOREIGN KEY (`idAgendaConsulta`) REFERENCES `tbl_agenda_consulta` (`idagendaconsulta`),
-  CONSTRAINT `fk_hist_paci_exam` FOREIGN KEY (`idAgendaExame`) REFERENCES `tbl_agenda_exame` (`idagendaexame`),
-  CONSTRAINT `fk_hist_paci_result_exam` FOREIGN KEY (`idResultadoExame`) REFERENCES `tbl_resultado_exame` (`idresultadoexame`),
-  CONSTRAINT `fk_hist_receita` FOREIGN KEY (`idReceita`) REFERENCES `tbl_receita` (`idreceita`)
+  CONSTRAINT `fk_hist_medic` FOREIGN KEY (`idMedico`) REFERENCES `tbl_medico` (`idMedico`),
+  CONSTRAINT `fk_hist_medicamento` FOREIGN KEY (`idMedicamento`) REFERENCES `tbl_medicamento` (`idMedicamento`),
+  CONSTRAINT `fk_hist_paci` FOREIGN KEY (`idPaciente`) REFERENCES `tbl_paciente` (`idPaciente`),
+  CONSTRAINT `fk_hist_paci_consult` FOREIGN KEY (`idAgendaConsulta`) REFERENCES `tbl_agenda_consulta` (`idAgendaConsulta`),
+  CONSTRAINT `fk_hist_paci_exam` FOREIGN KEY (`idAgendaExame`) REFERENCES `tbl_agenda_exame` (`idAgendaExame`),
+  CONSTRAINT `fk_hist_paci_result_exam` FOREIGN KEY (`idResultadoExame`) REFERENCES `tbl_resultado_exame` (`idResultadoExame`),
+  CONSTRAINT `fk_hist_receita` FOREIGN KEY (`idReceita`) REFERENCES `tbl_receita` (`idReceita`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -982,7 +982,7 @@ CREATE TABLE `tbl_localiza_ambulancia` (
   `idFuncionario` int(11) NOT NULL,
   PRIMARY KEY (`idLocalizaAmbulancia`),
   KEY `fk_func_motorist_idx` (`idFuncionario`),
-  CONSTRAINT `fk_func_motorist` FOREIGN KEY (`idFuncionario`) REFERENCES `tbl_funcionario` (`idfuncionario`)
+  CONSTRAINT `fk_func_motorist` FOREIGN KEY (`idFuncionario`) REFERENCES `tbl_funcionario` (`idFuncionario`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -1036,8 +1036,8 @@ CREATE TABLE `tbl_manutencao_ambulancia` (
   PRIMARY KEY (`idInformacao`),
   KEY `fk_man_amb_idx` (`idAmbulancia`),
   KEY `fk_tip_man_amb_idx` (`idTipoManutencao`),
-  CONSTRAINT `fk_man_amb` FOREIGN KEY (`idAmbulancia`) REFERENCES `tbl_ambulancia` (`idambulancia`),
-  CONSTRAINT `fk_tip_man_amb` FOREIGN KEY (`idTipoManutencao`) REFERENCES `tbl_tipo_manutencao` (`idtipomanutencao`)
+  CONSTRAINT `fk_man_amb` FOREIGN KEY (`idAmbulancia`) REFERENCES `tbl_ambulancia` (`idAmbulancia`),
+  CONSTRAINT `fk_tip_man_amb` FOREIGN KEY (`idTipoManutencao`) REFERENCES `tbl_tipo_manutencao` (`idTipoManutencao`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -1100,11 +1100,11 @@ CREATE TABLE `tbl_medico` (
   KEY `fk_esp_medico_idx` (`idEspecialidade`),
   KEY `fk_niv_medico_idx` (`idNivelPortal`),
   KEY `fk_estad_civ_medico_idx` (`idEstadoCivil`),
-  CONSTRAINT `fk_carg_medico` FOREIGN KEY (`idCargo`) REFERENCES `tbl_cargo` (`idcargo`),
-  CONSTRAINT `fk_end_medico` FOREIGN KEY (`idEndereco`) REFERENCES `tbl_endereco` (`idendereco`),
-  CONSTRAINT `fk_esp_medico` FOREIGN KEY (`idEspecialidade`) REFERENCES `tbl_especialidade` (`idespecialidade`),
-  CONSTRAINT `fk_estad_civ_medico` FOREIGN KEY (`idEstadoCivil`) REFERENCES `tbl_estado_civil` (`idestadocivil`),
-  CONSTRAINT `fk_niv_medico` FOREIGN KEY (`idNivelPortal`) REFERENCES `tbl_nivel_portal` (`idnivelportal`)
+  CONSTRAINT `fk_carg_medico` FOREIGN KEY (`idCargo`) REFERENCES `tbl_cargo` (`idCargo`),
+  CONSTRAINT `fk_end_medico` FOREIGN KEY (`idEndereco`) REFERENCES `tbl_endereco` (`idEndereco`),
+  CONSTRAINT `fk_esp_medico` FOREIGN KEY (`idEspecialidade`) REFERENCES `tbl_especialidade` (`idEspecialidade`),
+  CONSTRAINT `fk_estad_civ_medico` FOREIGN KEY (`idEstadoCivil`) REFERENCES `tbl_estado_civil` (`idEstadoCivil`),
+  CONSTRAINT `fk_niv_medico` FOREIGN KEY (`idNivelPortal`) REFERENCES `tbl_nivel_portal` (`idNivelPortal`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -1208,11 +1208,10 @@ CREATE TABLE `tbl_paciente` (
   `email` varchar(100) DEFAULT NULL,
   `telResidencial` varchar(20) DEFAULT NULL,
   `celular` varchar(20) DEFAULT NULL,
-  `nacionalidade` varchar(255) DEFAULT NULL,
+  `idNacionalidade` int(11) DEFAULT NULL,
   `fotoConvenio` varchar(255) DEFAULT NULL,
   `fotoPaciente` varchar(255) DEFAULT NULL,
   `fotoRg` varchar(255) DEFAULT NULL,
-  `fotoCpf` varchar(45) DEFAULT NULL,
   `valido` int(1) DEFAULT NULL,
   `idEndereco` int(11) DEFAULT NULL,
   `idEstadoCivil` int(11) DEFAULT NULL,
@@ -1225,11 +1224,13 @@ CREATE TABLE `tbl_paciente` (
   KEY `fk_paci_conv_idx` (`idPlano`),
   KEY `fk_paci_conv_idx1` (`idConvenio`),
   KEY `fk_end_paci_idx` (`idEndereco`),
-  CONSTRAINT `fk_end_paci` FOREIGN KEY (`idEndereco`) REFERENCES `tbl_endereco` (`idendereco`),
-  CONSTRAINT `fk_estad_civ` FOREIGN KEY (`idEstadoCivil`) REFERENCES `tbl_estado_civil` (`idestadocivil`),
-  CONSTRAINT `fk_paci_conv` FOREIGN KEY (`idConvenio`) REFERENCES `tbl_convenio` (`idconvenio`),
-  CONSTRAINT `fk_paci_plan_comv` FOREIGN KEY (`idPlano`) REFERENCES `tbl_plano_convenio` (`idplano`),
-  CONSTRAINT `fk_tipo_sangue` FOREIGN KEY (`idTipoSanguineo`) REFERENCES `tbl_tipo_sanguineo` (`idtiposanguineo`)
+  KEY `fk_nacionalidade_idx` (`idNacionalidade`),
+  CONSTRAINT `fk_end_paci` FOREIGN KEY (`idEndereco`) REFERENCES `tbl_endereco` (`idEndereco`),
+  CONSTRAINT `fk_estad_civ` FOREIGN KEY (`idEstadoCivil`) REFERENCES `tbl_estado_civil` (`idEstadoCivil`),
+  CONSTRAINT `fk_nacionalidade` FOREIGN KEY (`idNacionalidade`) REFERENCES `tbl_nacionalidade` (`idNacionalidade`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_paci_conv` FOREIGN KEY (`idConvenio`) REFERENCES `tbl_convenio` (`idConvenio`),
+  CONSTRAINT `fk_paci_plan_comv` FOREIGN KEY (`idPlano`) REFERENCES `tbl_plano_convenio` (`idPlano`),
+  CONSTRAINT `fk_tipo_sangue` FOREIGN KEY (`idTipoSanguineo`) REFERENCES `tbl_tipo_sanguineo` (`idTipoSanguineo`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -1239,7 +1240,7 @@ CREATE TABLE `tbl_paciente` (
 
 LOCK TABLES `tbl_paciente` WRITE;
 /*!40000 ALTER TABLE `tbl_paciente` DISABLE KEYS */;
-INSERT INTO `tbl_paciente` VALUES (1,'teste 1','2012-12-12','1',12,12,'12','12','12','12','1','arquivos/3ca79968fcf8649b03132e00706579a2.png','arquivos/3ca79968fcf8649b03132e00706579a2.png','arquivos/3ca79968fcf8649b03132e00706579a2.png','arquivos/3ca79968fcf8649b03132e00706579a2.png',1,12,1,1,12,NULL);
+INSERT INTO `tbl_paciente` VALUES (1,'teste 1','2012-12-12','1',12,12,'12','12','12','12',1,'arquivos/3ca79968fcf8649b03132e00706579a2.png','arquivos/3ca79968fcf8649b03132e00706579a2.png','arquivos/3ca79968fcf8649b03132e00706579a2.png',1,12,1,1,12,NULL);
 /*!40000 ALTER TABLE `tbl_paciente` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1300,9 +1301,14 @@ CREATE TABLE `tbl_plano_convenio` (
   `idPlano` int(11) NOT NULL AUTO_INCREMENT,
   `nome` varchar(255) NOT NULL,
   `idConvenio` int(11) NOT NULL,
+  `consulta` varchar(3) DEFAULT NULL,
+  `exame` varchar(3) DEFAULT NULL,
+  `prontoSocorro` varchar(3) DEFAULT NULL,
+  `internacao` varchar(3) DEFAULT NULL,
+  `ativo` char(1) DEFAULT NULL,
   PRIMARY KEY (`idPlano`),
   KEY `fk_plan_conv_idx` (`idConvenio`),
-  CONSTRAINT `fk_plan_conv` FOREIGN KEY (`idConvenio`) REFERENCES `tbl_convenio` (`idconvenio`)
+  CONSTRAINT `fk_plan_conv` FOREIGN KEY (`idConvenio`) REFERENCES `tbl_convenio` (`idConvenio`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -1328,7 +1334,7 @@ CREATE TABLE `tbl_preco_consulta` (
   `idAgendaConsulta` int(11) NOT NULL,
   PRIMARY KEY (`idPrecoConsulta`),
   KEY `fk_agend_prec_consult_idx` (`idAgendaConsulta`),
-  CONSTRAINT `fk_agend_prec_consult` FOREIGN KEY (`idAgendaConsulta`) REFERENCES `tbl_agenda_consulta` (`idagendaconsulta`)
+  CONSTRAINT `fk_agend_prec_consult` FOREIGN KEY (`idAgendaConsulta`) REFERENCES `tbl_agenda_consulta` (`idAgendaConsulta`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -1354,7 +1360,7 @@ CREATE TABLE `tbl_preco_exame` (
   `idExame` int(11) NOT NULL,
   PRIMARY KEY (`idPrecoExame`),
   KEY `fk_tip_exam_prec_idx` (`idExame`),
-  CONSTRAINT `fk_tip_exam_prec` FOREIGN KEY (`idExame`) REFERENCES `tbl_exame` (`idexame`)
+  CONSTRAINT `fk_tip_exam_prec` FOREIGN KEY (`idExame`) REFERENCES `tbl_exame` (`idExame`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -1411,8 +1417,8 @@ CREATE TABLE `tbl_prontuario` (
   PRIMARY KEY (`idProntuario`),
   KEY `fk_pront_paci_idx` (`idPaciente`),
   KEY `fk_pront_medic_idx` (`idMedico`),
-  CONSTRAINT `fk_pront_medic` FOREIGN KEY (`idMedico`) REFERENCES `tbl_medico` (`idmedico`),
-  CONSTRAINT `fk_pront_paci` FOREIGN KEY (`idPaciente`) REFERENCES `tbl_paciente` (`idpaciente`)
+  CONSTRAINT `fk_pront_medic` FOREIGN KEY (`idMedico`) REFERENCES `tbl_medico` (`idMedico`),
+  CONSTRAINT `fk_pront_paci` FOREIGN KEY (`idPaciente`) REFERENCES `tbl_paciente` (`idPaciente`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -1441,8 +1447,8 @@ CREATE TABLE `tbl_quarto` (
   PRIMARY KEY (`idQuarto`),
   KEY `fk_status_quarto_idx` (`idStatus`),
   KEY `fk_andar_quarto_idx` (`idAndar`),
-  CONSTRAINT `fk_andar_quarto` FOREIGN KEY (`idAndar`) REFERENCES `tbl_andar` (`idandar`),
-  CONSTRAINT `fk_status_quarto` FOREIGN KEY (`idStatus`) REFERENCES `tbl_status_quarto` (`idstatus`)
+  CONSTRAINT `fk_andar_quarto` FOREIGN KEY (`idAndar`) REFERENCES `tbl_andar` (`idAndar`),
+  CONSTRAINT `fk_status_quarto` FOREIGN KEY (`idStatus`) REFERENCES `tbl_status_quarto` (`idStatus`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -1471,7 +1477,7 @@ CREATE TABLE `tbl_receita` (
   `idMedico` int(11) NOT NULL,
   PRIMARY KEY (`idReceita`),
   KEY `fk_receit_medic_idx` (`idMedico`),
-  CONSTRAINT `fk_receit_medic` FOREIGN KEY (`idMedico`) REFERENCES `tbl_medico` (`idmedico`)
+  CONSTRAINT `fk_receit_medic` FOREIGN KEY (`idMedico`) REFERENCES `tbl_medico` (`idMedico`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -1497,7 +1503,7 @@ CREATE TABLE `tbl_resposta_chatbot` (
   `idPergunta` int(11) NOT NULL,
   PRIMARY KEY (`idResposta`),
   KEY `fk_per_respos_idx` (`idPergunta`),
-  CONSTRAINT `fk_per_respos` FOREIGN KEY (`idPergunta`) REFERENCES `tbl_pergunta_chatbot` (`idpergunta`)
+  CONSTRAINT `fk_per_respos` FOREIGN KEY (`idPergunta`) REFERENCES `tbl_pergunta_chatbot` (`idPergunta`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -1511,6 +1517,37 @@ LOCK TABLES `tbl_resposta_chatbot` WRITE;
 UNLOCK TABLES;
 
 --
+-- Table structure for table `tbl_resulado_consulta`
+--
+
+DROP TABLE IF EXISTS `tbl_resulado_consulta`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tbl_resulado_consulta` (
+  `idResConsulta` int(11) NOT NULL AUTO_INCREMENT,
+  `idPaciente` int(11) DEFAULT NULL,
+  `idMedico` int(11) DEFAULT NULL,
+  `Relatorio` text NOT NULL,
+  `idConsulta` int(11) DEFAULT NULL,
+  PRIMARY KEY (`idResConsulta`),
+  KEY `fi_Medico_Res_Consul_idx` (`idMedico`),
+  KEY `fk_Paciente_Res_Consul_idx` (`idPaciente`),
+  CONSTRAINT `fk_Medico_Res_Consul` FOREIGN KEY (`idMedico`) REFERENCES `tbl_medico` (`idMedico`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_Paciente_Res_Consul` FOREIGN KEY (`idPaciente`) REFERENCES `tbl_paciente` (`idPaciente`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tbl_resulado_consulta`
+--
+
+LOCK TABLES `tbl_resulado_consulta` WRITE;
+/*!40000 ALTER TABLE `tbl_resulado_consulta` DISABLE KEYS */;
+INSERT INTO `tbl_resulado_consulta` VALUES (1,NULL,NULL,'Consulta Positivo',1),(2,NULL,NULL,'Consulta Negativo',2);
+/*!40000 ALTER TABLE `tbl_resulado_consulta` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `tbl_resultado_exame`
 --
 
@@ -1519,17 +1556,17 @@ DROP TABLE IF EXISTS `tbl_resultado_exame`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tbl_resultado_exame` (
   `idResultadoExame` int(11) NOT NULL AUTO_INCREMENT,
-  `idPaciente` int(11) NOT NULL,
-  `idMedico` int(11) NOT NULL,
-  `idExame` int(11) NOT NULL,
-  `resultado` varchar(255) NOT NULL,
+  `idPaciente` int(11) DEFAULT NULL,
+  `idMedico` int(11) DEFAULT NULL,
+  `idExame` int(11) DEFAULT NULL,
+  `resultado` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`idResultadoExame`),
   KEY `fk_res_paci_idx` (`idPaciente`),
   KEY `fk_tip_exame_idx` (`idExame`),
   KEY `fk_res_medic_idx` (`idMedico`),
-  CONSTRAINT `fk_res_medic` FOREIGN KEY (`idMedico`) REFERENCES `tbl_medico` (`idmedico`),
-  CONSTRAINT `fk_res_paci` FOREIGN KEY (`idPaciente`) REFERENCES `tbl_paciente` (`idpaciente`),
-  CONSTRAINT `fk_tip_exame` FOREIGN KEY (`idExame`) REFERENCES `tbl_exame` (`idexame`)
+  CONSTRAINT `fk_res_medic` FOREIGN KEY (`idMedico`) REFERENCES `tbl_medico` (`idMedico`),
+  CONSTRAINT `fk_res_paci` FOREIGN KEY (`idPaciente`) REFERENCES `tbl_paciente` (`idPaciente`),
+  CONSTRAINT `fk_tip_exame` FOREIGN KEY (`idExame`) REFERENCES `tbl_exame` (`idExame`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -1753,8 +1790,8 @@ CREATE TABLE `tbl_telefone_medico` (
   PRIMARY KEY (`idTelefone`),
   KEY `fk_tel_medic_idx` (`idMedico`),
   KEY `fk_tip_tel_medic_idx` (`idTipoTelefone`),
-  CONSTRAINT `fk_tel_medic` FOREIGN KEY (`idMedico`) REFERENCES `tbl_medico` (`idmedico`),
-  CONSTRAINT `fk_tip_tel_medic` FOREIGN KEY (`idTipoTelefone`) REFERENCES `tbl_tipo_telefone` (`idtipotelefone`)
+  CONSTRAINT `fk_tel_medic` FOREIGN KEY (`idMedico`) REFERENCES `tbl_medico` (`idMedico`),
+  CONSTRAINT `fk_tip_tel_medic` FOREIGN KEY (`idTipoTelefone`) REFERENCES `tbl_tipo_telefone` (`idTipoTelefone`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -1959,7 +1996,7 @@ CREATE TABLE `tbl_unidade` (
   KEY `fk_unid_menu_idx` (`idMenu`),
   KEY `fk_unid_rodape_idx` (`idRodape`),
   KEY `fk_unidade_ender_idx` (`idEndereco`),
-  CONSTRAINT `fk_ender` FOREIGN KEY (`idEndereco`) REFERENCES `tbl_endereco` (`idendereco`)
+  CONSTRAINT `fk_ender` FOREIGN KEY (`idEndereco`) REFERENCES `tbl_endereco` (`idEndereco`)
 ) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -2008,4 +2045,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-05-02  7:40:30
+-- Dump completed on 2018-05-09 11:28:44
