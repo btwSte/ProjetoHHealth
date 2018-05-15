@@ -35,7 +35,7 @@
       //Chama função que encerra conexao no banco
       $conex->Desconectar();
     }
-      
+
     public function SelectConteudo(){
       // Select no banco
       $sql = "SELECT * FROM tbl_convenio";
@@ -58,7 +58,7 @@
         $listConteudo[$cont]->idConvenio = $result['idConvenio'];
         $listConteudo[$cont]->nome = $result['nome'];
         $listConteudo[$cont]->ativo = $result['ativo'];
-
+           
         //incrementa o contador
         $cont += 1;
       }
@@ -103,7 +103,7 @@
        return $listConteudo;
       }
     }
-      
+
       public function ActivateConteudo($ativarConteudo){
         $sql = "UPDATE tbl_convenio SET ativo= 1 WHERE idConvenio=".$ativarConteudo->id;
 
@@ -129,7 +129,7 @@
 
         if ($PDOconex->query($sql)) {
           header('location:'.$voltaUm.'views/administrativo/convenio/visu_convenio_view.php');
-           
+
         }else{
           echo "erro";
             echo $sql;
@@ -137,8 +137,26 @@
 
         $conex->Desconectar();
       }
-      
-      
-      
+
+      public function DeleteConteudo($excluirConteudo){
+        // Select no banco
+        $sql = "DELETE FROM tbl_convenio WHERE idConvenio=".$excluirConteudo->id;
+
+        //instancia a classe do banco
+        $conex = new Mysql_db();
+
+        //chama o metodo para conectar no BD e guarda o resultado da funcao em uma variavel local($PDOconex)
+        $PDOconex = $conex->Conectar();
+        if ($PDOconex->query($sql)) {
+          header('location:'.$voltaUm.'views/administrativo/convenio/visu_convenio_view.php');
+
+        }else{
+          echo "erro ao deletar";
+        }
+
+        $conex->Desconectar();
+
+      }
+
   }
 ?>

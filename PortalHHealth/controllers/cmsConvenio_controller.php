@@ -15,7 +15,7 @@
       Login::Logar($Login);
     }
 
-    // FUNÇÕES REFENTE AO CABEÇALHO
+    ////////////////////////// FUNÇÕES REFERENTE AO CABEÇALHO //////////////////////////
       public function NovoCabecalho(){
         // require da funcao modulo para envio das imagens
         require_once('modulo.php');
@@ -23,7 +23,7 @@
         // novo objeto
         $convenioCabecalho = new ConvenioCabecalho();
 
-        // pega o conteudo
+        // pega o conteúdo
         $convenioCabecalho->tituloPagina = $_POST['txtTituloImagem'];
 
         //inicia variaveis
@@ -51,7 +51,7 @@
           $convenioCabecalho->fotoPrincipal = $diretorio_completo;
           $convenioCabecalho::Insert($convenioCabecalho);
       }
-      
+
       public function ExcluirCabecalho() {
         $idCabecalho = $_GET['id'];
 
@@ -70,7 +70,7 @@
         $cabecalho = new ConvenioCabecalho();
         return $cabecalho::SelectCabecalho();
       }
-      
+
       public function AtivarCabecalho(){
         $idCabecalho = $_GET['id'];
 
@@ -88,8 +88,10 @@
         $desativarCabecalho->id = $idCabecalho;
         return $desativarCabecalho::DisableCabecalho($desativarCabecalho);
       }
+      
+      
 
-      //FUNÇÕES REFERENTE AO CONTEUDO DE CONVÊNIO
+      ////////////////////////// FUNÇÕES REFERENTE AO CONTEUDO DE CONVÊNIO //////////////////////////
       public function NovoConteudo(){
         require_once('modulo.php');
         $informacaoConteudo = new Convenio();
@@ -108,7 +110,7 @@
         $conteudo = new Convenio();
         return $conteudo::SelectConteudo();
       }
-      
+
        public function AtivarConteudo(){
         $idConteudo = $_GET['id'];
 
@@ -125,6 +127,15 @@
 
         $desativarConteudo->id = $idConteudo;
         return $desativarConteudo::DisableConteudo($desativarConteudo);
+      }
+
+      public function ExcluirConteudo() {
+        $idConteudo = $_GET['id'];
+
+        $excluirConteudo = new Convenio();
+
+        $excluirConteudo->id = $idConteudo;
+        $excluirConteudo::DeleteConteudo($excluirConteudo);
       }
     }
 ?>

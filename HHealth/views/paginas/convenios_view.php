@@ -31,7 +31,7 @@ require_once('../../variaveis.php');
 
           $controller_convenio = new controllerCmsConvenio();
           //chama metodo para listar os registros
-          $list = $controller_convenio::SelecionarCabecalhoAtivo();
+          $list = $controller_convenio::ListarCabecalhoAtivo();
 
           $cont = 0;
 

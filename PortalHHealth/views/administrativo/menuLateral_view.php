@@ -52,3 +52,4 @@
       <div class="categorias_ocultas"> <a href="<?php echo $voltaUm; ?>especialidade/visu_especialidade_view.php"> Visualizar</a></div>
 
   </div>
+</div>
