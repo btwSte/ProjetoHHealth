@@ -580,44 +580,101 @@ if(isset($_GET['controller'])){
             $controller_Medico = new controllerCmsMedico();
             $controller_Medico::Novo();
             break;
-          case 'excluirmedico':
-            $controller_Medico = new controllerCmsMedico();
-            $controller_Medico::Excluir();
-            break;
-
-          case 'editarmedico':
-            $controller_Medico = new controllerCmsMedico();
-            $controller_Medico::Editar();
-            break;
-
-          case 'buscarmedico':
-            $controller_Medico = new controllerCmsMedico();
-            $controller_Medico::Buscar();
-            break;
+          // case 'excluirmedico':
+          //   $controller_Medico = new controllerCmsMedico();
+          //   $controller_Medico::Excluir();
+          //   break;
+          //
+          // case 'editarmedico':
+          //   $controller_Medico = new controllerCmsMedico();
+          //   $controller_Medico::Editar();
+          //   break;
+          //
+          // case 'buscarmedico':
+          //   $controller_Medico = new controllerCmsMedico();
+          //   $controller_Medico::Buscar();
+          //   break;
 
         }
         break;
-          
+
       case 'cmsHome':
         require_once('controllers/cmsHome_controller.php');
         require_once('models/home_class.php');
         switch ($modo) {
-
           case 'novoconteudo':
             $controller_home = new controllerCmsHome();
             $controller_home::NovoConteudoHome();
             break;
 
-            case 'buscarhome':
+          case 'buscarhome':
             $controller_home = new controllerCmsHome();
             $controller_home::BuscarConteudo();
             break;
 
-            case 'excluirhome':
+          case 'excluirhome':
             $controller_home = new controllerCmsHome();
             $controller_home::ExcluirHome();
             break;
-    }   
+
+          case 'editarconteudo':
+            $controller_home = new controllerCmsHome();
+            $controller_home::Atualizar();
+            break;
+    }
+
+    case 'Plano':
+       require_once('controllers/cmsPlano_controller.php');
+       require_once('models/plano_class.php');
+       switch ($modo){
+       //REFENTE AO PLANO
+         case 'novoconteudo':
+           $controller_plano = new controllerCmsPlano();
+           $controller_plano::Novo();
+           break;
+         case 'excluirconteudo':
+           $controller_plano = new controllerCmsPlano();
+           $controller_plano::ExcluirConteudo();
+           break;
+
+         case 'editarconteudo':
+           $controller_plano = new controllerCmsPlano();
+           $controller_plano::Editar();
+           break;
+
+         case 'buscarconteudo':
+           $controller_plano = new controllerCmsPlano();
+           $controller_plano::Buscar();
+           break;
+       }
+
+    case 'Especialidade':
+     require_once('controllers/cmsEspecialidade_controller.php');
+     require_once('models/especialidade_class.php');
+     switch ($modo){
+     //REFENTE AO PLANO
+       case 'novaespecialidade':
+         $controller_especialidade = new controllerCmsEspecialidade();
+         $controller_especialidade::Novo();
+         break;
+       case 'excluirespecialidade':
+         $controller_especialidade = new controllerCmsEspecialidade();
+         $controller_especialidade::ExcluirConteudo();
+         break;
+
+       case 'editarespecialidade':
+         $controller_especialidade = new controllerCmsEspecialidade();
+         $controller_especialidade::Editar();
+         break;
+
+       case 'buscarespecialidade':
+         $controller_especialidade = new controllerCmsEspecialidade();
+         $controller_especialidade::Buscar();
+         break;
+
+       }
+
+
     break;
   }
 

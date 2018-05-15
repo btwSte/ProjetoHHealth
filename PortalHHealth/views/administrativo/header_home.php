@@ -12,7 +12,8 @@ if (isset($_POST['deslogar'])) {
  ?>
 <header>
     <div id="logo">
-      <img src="<?php echo $voltaDois; ?>imagens/hhealth.png" alt="logo">
+      <a href="cmsHome_view.php"><img src="<?php echo $voltaDois; ?>imagens/hhealth.png" alt="logo"></a>
+
     </div>
     <!--menu -->
     <div class="Titulo">

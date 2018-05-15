@@ -28,8 +28,8 @@
        $dadoPaciente->celular = $_POST['txtCelular'];
        $dadoPaciente->email = $_POST['txtEmail'];
        $dadoPaciente->senha = $_POST['txtSenha'];
-       $dadoPaciente->idEndereco = $idEndereco->idEndereco;
        $dadoPaciente->idConvenio = $_POST['sltConvenio'];
+       $dadoPaciente->idEndereco = $idEndereco->idEndereco;
 
        //inicia variaveis das imagens
        $diretorio_imagem_rg = null;

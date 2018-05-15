@@ -7,13 +7,13 @@
 
     <div  class="linha_menu" href="#">Medico
 		<div class="categorias_ocultas"><a href="medico/cadastroMedico_view.php">  Cadastrar</a></div>
-		<div class="categorias_ocultas"><a href="medico/visu_medico.php">  Visualizar</a></div>
+		<div class="categorias_ocultas"><a href="medico/visu_medico_view.php">  Visualizar</a></div>
 
     </div>
 
     <div  class="linha_menu" href="#">Medicamento
 		<div class="categorias_ocultas"> <a href="sobre/cadastroSobre_view.php"> Cadastrar </a></div>
-		<div class="categorias_ocultas"> <a href="sobre/visu_sobre.php"> Visualizar </a></div>
+		<div class="categorias_ocultas"> <a href="sobre/visu_sobre_view.php"> Visualizar </a></div>
     </div>
 
 	<div  class="linha_menu" href="#">Unidades
@@ -37,8 +37,8 @@
      </div >
 
      <div  class="linha_menu" href="#">Convenio
-       <div class="categorias_ocultas"><a href="">  Cadastrar</a></div>
-       <div class="categorias_ocultas"> <a href=""> Visualizar</a></div>
+       <div class="categorias_ocultas"><a href="convenio/cadastroConvenio_view.php">  Cadastrar</a></div>
+       <div class="categorias_ocultas"> <a href="convenio/visu_convenio_view.php"> Visualizar</a></div>
     </div>
 
 

@@ -72,7 +72,7 @@
                </div>
 
                  <div class="text">
-                   <input id="dtAdimicao" required placeholder="Data adimição:" type="text" name="dtAdimicao" value=""  maxlength="11">
+                   <input id="dtAdmissao" required placeholder="Data Admissão:" type="text" name="dtAdmissao" value=""  maxlength="11">
                  </div>
                  <div class="text">
                    <input id="rg" required placeholder="Numero Rg:" type="text" name="numRg" value=""  maxlength="12">
@@ -129,7 +129,7 @@
                      </div>
                  </div>
 
-                 
+
 
 
                  <div id="centralizarBtnHome">

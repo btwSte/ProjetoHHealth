@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 5.7.9, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 5.7.9, for Win32 (AMD64)
 --
 -- Host: localhost    Database: dbhhealth
 -- ------------------------------------------------------
--- Server version	5.6.10-log
+-- Server version	5.7.10-log
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -14,6 +14,33 @@
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `pagina _informacao`
+--
+
+DROP TABLE IF EXISTS `pagina _informacao`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `pagina _informacao` (
+  `idInformacao` int(11) NOT NULL,
+  `fotoPrincipal` varchar(255) NOT NULL,
+  `tituloPagina` varchar(255) NOT NULL,
+  `textoIntroducao` text NOT NULL,
+  `fotoAssunto` varchar(255) NOT NULL,
+  `textoAssunto` text NOT NULL,
+  PRIMARY KEY (`idInformacao`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `pagina _informacao`
+--
+
+LOCK TABLES `pagina _informacao` WRITE;
+/*!40000 ALTER TABLE `pagina _informacao` DISABLE KEYS */;
+/*!40000 ALTER TABLE `pagina _informacao` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `pagina_ambiente`
@@ -763,7 +790,7 @@ CREATE TABLE `tbl_endereco` (
   PRIMARY KEY (`idEndereco`),
   KEY `fk_end_city_idx` (`idCidade`),
   CONSTRAINT `fk_end_city` FOREIGN KEY (`idCidade`) REFERENCES `tbl_cidade` (`idCidade`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -772,7 +799,7 @@ CREATE TABLE `tbl_endereco` (
 
 LOCK TABLES `tbl_endereco` WRITE;
 /*!40000 ALTER TABLE `tbl_endereco` DISABLE KEYS */;
-INSERT INTO `tbl_endereco` VALUES (1,'ru a888',88888,'8888','8888',NULL),(2,'ru a888',88888,'8888','8888',NULL),(5,'Rua Carlos Antônio da Silva Neto',177,'Natal','00221121',NULL),(6,'Quadra LA',20,'Águas Lindas de Goiás','45454454',NULL),(7,'rua lala teste',666,'yey','2002',NULL),(8,'rua maria',4752,'8888','00221121',NULL),(9,'rwwfff',3434,'343rreee','343545',NULL),(10,'g',5,'fg','g',NULL),(11,'g',5,'fg','g',NULL),(12,'12',12,'12','12',NULL);
+INSERT INTO `tbl_endereco` VALUES (1,'ru a888',88888,'8888','8888',NULL),(2,'ru a888',88888,'8888','8888',NULL),(5,'Rua Carlos Antônio da Silva Neto',177,'Natal','00221121',NULL),(6,'Quadra LA',20,'Águas Lindas de Goiás','45454454',NULL),(7,'rua lala teste',666,'yey','2002',NULL),(8,'rua maria',4752,'8888','00221121',NULL),(9,'rwwfff',3434,'343rreee','343545',NULL),(10,'g',5,'fg','g',NULL),(11,'g',5,'fg','g',NULL),(12,'12',12,'12','12',NULL),(13,'hdhd',45,'sadf','9565',NULL),(14,'hdhd',45,'sadf','9565',NULL);
 /*!40000 ALTER TABLE `tbl_endereco` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -787,7 +814,7 @@ CREATE TABLE `tbl_especialidade` (
   `idEspecialidade` int(11) NOT NULL AUTO_INCREMENT,
   `nome` varchar(255) NOT NULL,
   PRIMARY KEY (`idEspecialidade`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -796,6 +823,7 @@ CREATE TABLE `tbl_especialidade` (
 
 LOCK TABLES `tbl_especialidade` WRITE;
 /*!40000 ALTER TABLE `tbl_especialidade` DISABLE KEYS */;
+INSERT INTO `tbl_especialidade` VALUES (1,'Pediatria'),(2,'Urologia');
 /*!40000 ALTER TABLE `tbl_especialidade` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1309,7 +1337,7 @@ CREATE TABLE `tbl_plano_convenio` (
   PRIMARY KEY (`idPlano`),
   KEY `fk_plan_conv_idx` (`idConvenio`),
   CONSTRAINT `fk_plan_conv` FOREIGN KEY (`idConvenio`) REFERENCES `tbl_convenio` (`idConvenio`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1318,7 +1346,33 @@ CREATE TABLE `tbl_plano_convenio` (
 
 LOCK TABLES `tbl_plano_convenio` WRITE;
 /*!40000 ALTER TABLE `tbl_plano_convenio` DISABLE KEYS */;
+INSERT INTO `tbl_plano_convenio` VALUES (3,'Plano clean',9,'sim','sim','sim','nao','1'),(4,'Plano ES',11,'sim','sim','nao','sim','1');
 /*!40000 ALTER TABLE `tbl_plano_convenio` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tbl_pre_atendimento`
+--
+
+DROP TABLE IF EXISTS `tbl_pre_atendimento`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tbl_pre_atendimento` (
+  `idPreAtendimento` int(11) NOT NULL AUTO_INCREMENT,
+  `idPaciente` varchar(255) DEFAULT NULL,
+  `situacao` varchar(255) DEFAULT NULL,
+  `sintomas` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`idPreAtendimento`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tbl_pre_atendimento`
+--
+
+LOCK TABLES `tbl_pre_atendimento` WRITE;
+/*!40000 ALTER TABLE `tbl_pre_atendimento` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tbl_pre_atendimento` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -2045,4 +2099,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-05-09 11:28:44
+-- Dump completed on 2018-05-15  9:29:19

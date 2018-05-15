@@ -70,6 +70,7 @@ logar($_SESSION['LogCod']);
 
 
          <div id="areaConteudo">
+            <a href="../administrativo/cmsHome_view.php">Adm</a>
 
         </div>
 

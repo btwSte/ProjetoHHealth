@@ -1,29 +1,7 @@
 <?php
-    
-    require_once('../../../variaveis.php');
-    
+  require_once('../../../variaveis.php');
 
-    $action2 = "modo=novoconteudo";
-    
-        /*
-        $imgLogo = null;
-        $videoSlider = null;
-        $textoSlider = null;
-        $imgMissao = null;
-        $imgVisao = null;
-        $imgValores = null;
-        $textoMissao = null;
-        $textoVisao = null;
-        $textoValores = null;
-        $imgFundo = null;
-        $imgRedeSocialUm = null;
-        $imgRedeSocialDois = null;
-        $imgRedeSocialTres = null;
-        $textoRedeUm = null;
-        $textoRedeDois = null;
-        $textoRedeTres = null;
-        */
-   
+  $action = "modo=novoconteudo";
 ?>
 
 <!DOCTYPE html>
@@ -41,10 +19,6 @@
 
       <div class="container">
 			<!-- Top Navigation -->
-
-
-
-
 
   		</div><!-- /container -->
   		<script src="js/classie.js"></script>
@@ -90,13 +64,13 @@
 
 
         <div class="seguraFormHome">
-            <form class="frmConteudoHome" action="<?php echo $voltaTres; ?>router.php?controller=cmsHome&<?php echo($action2); ?>" method="post" enctype="multipart/form-data">
+            <form class="frmConteudoHome" action="<?php echo $voltaTres; ?>router.php?controller=cmsHome&<?php echo($action); ?>" method="post" enctype="multipart/form-data">
                 <div class="tit">
                     <p>CADASTRO DA TELA HOME</p>
                 </div>
                 <div class="textoHomePortal">Menu (Escolher a logo)</div>
                 <div class="inputHomePortal">
-                    <input type="file"  placeholder="Logo" name="imglogo" value="" maxlength="255" class="inputHome">
+                    <input type="file"  placeholder="Logo" name="imgLogo" value="" maxlength="255" class="inputHome">
                 </div>
 
                 <!-- SLIDER -->
@@ -127,7 +101,7 @@
                     <input type="file"  placeholder="ImagemFundo" name="imgFundo" value="" maxlength="255" class="inputHomeDuplo">
                 </div>
 
-                
+
                 <!-- Redes Sociais -->
                 <div class="textoHomePortal">Redes Sociais</div>
                 <div class="inputHomePortal">

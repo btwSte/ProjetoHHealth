@@ -46,6 +46,16 @@
        <div class="categorias_ocultas">  Visualizar</div>
     </div>
 
+    <div  class="menu_segura" href="#">Plano
+       <div class="categorias_ocultas">  Cadastrar</div>
+       <div class="categorias_ocultas">  Visualizar</div>
+    </div>
+
+    <div  class="menu_segura" href="#">Especialidade
+       <div class="categorias_ocultas">  Cadastrar</div>
+       <div class="categorias_ocultas">  Visualizar</div>
+    </div>
+
   </div>
 
 

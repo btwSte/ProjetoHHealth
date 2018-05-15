@@ -63,9 +63,9 @@
           document.getElementById("mySidenav").style.width = "0";
         }
       </script>
-        
+
         <?php
-        
+
         require_once($voltaTres.'router.php');
         require_once($voltaTres.'controllers/cmsHome_controller.php');
         require_once($voltaTres.'models/home_class.php');
@@ -79,7 +79,7 @@
         while ($contConteudo < count($listConteudo)) {
 
        ?>
-        
+
         <div class="seguraFormVisuHome">
             <div class="barraTextoInfoHome">
                 <div class="textoInfoHome">Logo</div>
@@ -88,10 +88,10 @@
             </div>
             <div class="barraConteudoInfoHome">
                 <div class="contInfoHome">
-                    <img src="<?php echo($voltaTres.$listConteudo[$contConteudo]->fotoLogo); ?>" alt="Home">
+                    <img src="<?php echo($voltaTres.$listConteudo[$contConteudo]->fotoLogo); ?>" alt="Home" width="190px" height="150px">
                 </div>
                 <div class="contInfoHome">
-                    <img src="<?php echo($voltaTres.$listConteudo[$contConteudo]->videoSlider); ?>" alt="Home">
+                    <img src="<?php echo($voltaTres.$listConteudo[$contConteudo]->videoSlider); ?>" alt="Home" width="190px" height="150px">
                 </div>
                 <div class="contSliderHome">
                     <?php echo($listConteudo[$contConteudo]->textoSlider); ?>
@@ -103,16 +103,16 @@
                 <div class="textoInfoHome">Visão</div>
                 <div class="textoSliderHome">Valores</div>
             </div>
-            
+
             <div class="barraConteudoInfoHome">
                 <div class="contInfoHome">
-                    <img src="<?php echo($voltaTres.$listConteudo[$contConteudo]->fotoMissao); ?>" alt="Home">
+                    <img src="<?php echo($voltaTres.$listConteudo[$contConteudo]->fotoMissao); ?>" alt="Home" width="190px" height="150px">
                 </div>
                 <div class="contInfoHome">
-                    <img src="<?php echo($voltaTres.$listConteudo[$contConteudo]->fotoVisao); ?>" alt="Home">
+                    <img src="<?php echo($voltaTres.$listConteudo[$contConteudo]->fotoVisao); ?>" alt="Home" width="190px" height="150px">
                 </div>
                 <div class="contInfoHome">
-                    <img src="<?php echo($voltaTres.$listConteudo[$contConteudo]->fotoValores); ?>" alt="Home">
+                    <img src="<?php echo($voltaTres.$listConteudo[$contConteudo]->fotoValores); ?>" alt="Home" width="190px" height="150px">
                 </div>
             </div>
             <div class="barraConteudoValoresHome">
@@ -126,20 +126,20 @@
                     <?php echo($listConteudo[$contConteudo]->textoValores); ?>
                 </div>
             </div>
-            
+
             <div class="barraTextoInfoHome">
                 <div class="textoInfoHome">Imagem Fundo</div>
-            </div>            
+            </div>
             <div class="barraConteudoInfoHome">
                 <div class="contImgFundoHome">
-                    <img src="<?php echo($voltaTres.$listConteudo[$contConteudo]->fotoFundo); ?>" alt="Home">
+                    <img src="<?php echo($voltaTres.$listConteudo[$contConteudo]->fotoFundo); ?>" alt="Home" width="190px" height="150px">
                 </div>
             </div>
-                        
+
             <div class="barraTextoInfoHome">
                 <div class="textoInfoHome">Rodapé do Site</div>
-            </div>            
-            
+            </div>
+
             <div class="barraTextoInfoHome">
                 <div class="textoInfoHome">Redes Socias (Icones)</div>
             </div>
@@ -167,28 +167,28 @@
                     <?php echo($listConteudo[$contConteudo]->textoLinkTres); ?>
                 </div>
             </div>
-            
-            
+
+
             <div class="">
-                
+
                 <!-- Botao Para Deletar Essa Configuração do Banco-->
                 <a href="<?php echo $voltaTres; ?>router.php?controller=cmsHome&modo=excluirhome&id=<?php echo($listConteudo[$contConteudo]->idPaginaHome); ?>">DELETAR</a>
-                
-                <div class="alinhaBtnRight">  
+
+                <div class="alinhaBtnRight">
                     <!-- Div Disponivel Para o Icone Indicador de Ativo/Desativado -->
                     <div class="iconeAtivo"></div>
                     <!-- Botao Para Enviar Essa Configuração para o Banco-->
-                    <a href="<?php echo $voltaTres; ?>router.php?controller=cmsHome&modo=buscarhome&id=<?php echo($listConteudo[$contConteudo]->idPaginaHome); ?>">EDITAR</a>         
-                </div>  
-                  
+                    <a href="<?php echo $voltaTres; ?>router.php?controller=cmsHome&modo=buscarhome&id=<?php echo($listConteudo[$contConteudo]->idPaginaHome); ?>">EDITAR</a>
+                </div>
+
             </div>
-             
+
         </div>
         <?php
             $contConteudo += 1;
             }
-            ?> 
-        
+            ?>
+
     </main>
   </body>
 </html>

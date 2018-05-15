@@ -42,112 +42,211 @@
         </script>
         <div id="containerConteudo">
 			<div id="segura_form_perfil">
-				<form name="frmEditarPerfil"></form>
-				<div class="barraTexto">
-					EDITAR PERFIL
-				</div> 
-				<div class="seguraSelect">
-					<div class="linhaBorderPerfil"></div>
-					<div class="linhaTextPerfil">Dados Pessoais</div>
-				</div>	
-				<div class="seguraSelect">
-					<div class="barraTxt">
-                        <input type="text" name="txtNome" placeholder="Nome" maxlength="255" class="input">
-                   </div>
-				</div>
-				<div class="seguraSelect">
-					<div class="barraTxt">
-                        <input type="date" name="txtDt_nasc" placeholder="Data de Nascimento" maxlength="255" class="inputDuplo">
-						<select name="sltopcaoUm" class="select">
-                            <option value="1">Estado Civil</option>
-                            <option value="2"></option>                          
-                        </select>
-                   </div>
-				</div>
-				<div class="seguraSelect">
-					<div class="barraTxt">
-                        <input type="text" name="txtNacionalidade" placeholder="Nacionalidade" maxlength="255" class="inputDuplo">
-						<select name="sltopcaoUm" class="select">
-                            <option value="1">Sexo</option>
-                            <option value="2"></option>                          
-                        </select>
-                   </div>
-				</div>
-				<div class="seguraSelect">
-					<div class="barraTxt">
-                        <input type="text" name="txtRg" placeholder="RG" maxlength="255" class="inputDuplo">
-						<input type="text" name="txtCpf" placeholder="CPF" maxlength="255" class="inputDuploML">
-                   </div>
-				</div>
-				<div class="seguraSelect">
-					<div class="barraTxt">
-                        <input type="text" name="txtTelefone" placeholder="Telefone" maxlength="255" class="inputDuplo">
-						<input type="text" name="txtCelular" placeholder="Celular" maxlength="255" class="inputDuploML">
-                   </div>
-				</div>
-				<div class="seguraSelect">
-					<div class="barraTxt">
-                        <input type="email" name="txtEmail" placeholder="Email" maxlength="255" class="input">
-                   </div>
-				</div>
-				<!-- Endereço -->
-				<div class="seguraSelect">
-					<div class="linhaBorderPerfil"></div>
-					<div class="linhaTextPerfil">Endereço</div>
-				</div>	
-				<div class="seguraSelect">
-					<div class="barraTxt">
-                        <input type="text" name="txtSituacao" placeholder="Insira" maxlength="255" class="input">
-                   </div>
-				</div>
-				<div class="seguraSelect">
-					<div class="barraTxt">
-                        <input type="text" name="txtSituacao" placeholder="Insira" maxlength="255" class="inputDuplo">
-						<select name="sltopcaoUm" class="select">
-                            <option value="1">Preencher</option>
-                            <option value="1"></option>
-                            <option value="1"></option>                            
-                        </select>
-                   </div>
-				</div>
-				<div class="seguraSelect">
-					<div class="barraTxt">
-                        <input type="text" name="txtNacionalidade" placeholder="Nacionalidade" maxlength="255" class="inputDuplo">
-						<select name="sltopcaoUm" class="select">
-                            <option value="1">Sexo</option>
-                            <option value="2"></option>                          
-                        </select>
-                   </div>
-				</div>
-				<div class="seguraSelect">
-					<div class="barraTxt">
-                        <input type="text" name="txtSituacao" placeholder="Insira" maxlength="255" class="input">
-                   </div>
-				</div>	
-				<div class="seguraSelect">
-					<input type="text" name="txtBairro" placeholder="Bairro" maxlength="255" class="inputTrio">
-					
-					<input type="text" name="txtNumero" placeholder="Numero" maxlength="255" class="inputTrioML">
-					
-					<input type="text" name="txtComplemento" placeholder="Complemento" maxlength="255" class="inputTrioML">
+				<form name="frmEditarPerfil">
+                    <div class="barraTexto">
+                        EDITAR PERFIL
+                    </div> 
+                    <div class="seguraSelect">
+                        <div class="linhaBorderPerfil"></div>
+                        <div class="linhaTextPerfil">Dados Pessoais</div>
+                    </div>	
+                    <div class="barraTextoPaciente">
+                        <div class="textoPaciente">Nome</div>
+                    </div>
+                    <div class="seguraSelect">                    
+                        <div class="barraTxt">                        
+                            <input type="text" name="txtNome" placeholder="Nome" maxlength="255" class="input">
+                       </div>
+                    </div>
 
-				</div>
-				<div class="seguraSelect">
-					<div class="linhaBorderPerfil"></div>
-					<div class="linhaTextPerfil">Documentação</div>
-				</div>
-				<div class="seguraSelect">
-					<input type="file" name="curriculo"  size="16" id="file_upload" />
-				</div>
-				<div class="seguraSelect">
-					<input type="file" name="curriculo"  size="16" />
-				</div>
-				<div class="seguraSelect">
-					<input type="file" name="curriculo"  size="16" />
-				</div>
-				<div class="Editar_crud">
-        			<input type="submit" value="SALVAR" id="logout" >
-				</div>
+                    <div class="barraTextoPaciente">
+                        <div class="textoPaciente">Data de Nascimento</div>
+                        <div class="textoPacienteDuo">Estado Civil</div>
+                    </div>
+                    <div class="seguraSelect">
+                        <div class="barraTxt">
+                            <input type="date" name="txtDt_nasc" placeholder="Data de Nascimento" maxlength="255" class="inputDuplo">
+                            <select name="sltopcaoUm" class="select">
+                                <option value="1">Estado Civil</option>
+                                <option value="2"></option>                          
+                            </select>
+                       </div>
+                    </div>
+
+                    <div class="barraTextoPaciente">
+                        <div class="textoPaciente">Nacionalidade</div>
+                        <div class="textoPacienteDuo">Sexo</div>
+                    </div>
+                    <div class="seguraSelect">
+                        <div class="barraTxt">
+                            <input type="text" name="txtNacionalidade" placeholder="Nacionalidade" maxlength="255" class="inputDuplo">
+                            <select name="sltopcaoUm" class="select">
+                                <option value="1">Sexo</option>
+                                <option value="2"></option>                          
+                            </select>
+                       </div>
+                    </div>
+
+                    <div class="barraTextoPaciente">
+                        <div class="textoPaciente">RG</div>
+                        <div class="textoPacienteDuo">CPF</div>
+                    </div>
+                    <div class="seguraSelect">
+                        <div class="barraTxt">
+                            <input type="text" name="txtRg" placeholder="RG" maxlength="255" class="inputDuplo">
+                            <input type="text" name="txtCpf" placeholder="CPF" maxlength="255" class="inputDuploML">
+                       </div>
+                    </div>
+
+                    <div class="barraTextoPaciente">
+                        <div class="textoPaciente">Telefone</div>
+                        <div class="textoPacienteDuo">Celular</div>
+                    </div>
+                    <div class="seguraSelect">
+                        <div class="barraTxt">
+                            <input type="text" name="txtTelefone" placeholder="Telefone" maxlength="255" class="inputDuplo">
+                            <input type="text" name="txtCelular" placeholder="Celular" maxlength="255" class="inputDuploML">
+                       </div>
+                    </div>
+
+                    <div class="barraTextoPaciente">
+                        <div class="textoPaciente">Email</div>
+                        <div class="textoPacienteDuo">Senha</div>
+                    </div>
+                    <div class="seguraSelect">
+                        <div class="barraTxt">
+                            <input type="text" name="txtEmail" placeholder="Email" maxlength="255" class="inputDuplo">
+                            <input type="text" name="txtSenha" placeholder="Senha" maxlength="255" class="inputDuploML">
+                       </div>
+                    </div>
+                    
+                    <div class="barraTextoPaciente">
+                        <div class="textoPaciente">Tipo Sanguineo</div>
+                        <div class="textoPacienteDuo">Convenio</div>
+                    </div>
+                    <div class="seguraSelect">
+                        <div class="barraTxt">
+                            <input type="text" name="txtTipoSanguineo" placeholder="Sanguineo" maxlength="255" class="inputDuplo">
+                            <input type="text" name="txtConvenio" placeholder="Convenio" maxlength="255" class="inputDuploML">
+                       </div>
+                    </div>
+                    
+                    <div class="barraTextoPaciente">
+                        <div class="textoPaciente">Tipo Plano</div>
+                    </div>
+                    <div class="seguraSelect">
+                        <div class="barraTxt">
+                            <input type="text" name="txtEmail" placeholder="Email" maxlength="255" class="inputDuplo">
+                       </div>
+                    </div>
+
+                    <!-- Endereço -->
+
+                    <div class="seguraSelect">
+                        <div class="linhaBorderPerfil"></div>
+                        <div class="linhaTextPerfil">Endereço</div>
+                    </div>	
+
+                    <div class="barraTextoPaciente">
+                        <div class="textoPaciente">CEP</div>
+                        <div class="textoPacienteDuo">Logradouro</div>
+                    </div>
+                    <div class="seguraSelect">
+                        <div class="barraTxt">
+                            <input type="text" name="txtNacionalidade" placeholder="Nacionalidade" maxlength="255" class="inputDuplo">
+                            <input type="text" name="txtNacionalidade" placeholder="Nacionalidade" maxlength="255" class="inputDuplo">
+                       </div>
+                    </div>
+                    <!--
+                    <div class="barraTextoPaciente">
+                        <div class="textoPaciente">Telefone</div>
+                        <div class="textoPacienteDuo">Celular</div>
+                    </div>
+                    <div class="seguraSelect">
+                        <div class="barraTxt">
+                            <input type="text" name="txtSituacao" placeholder="Insira" maxlength="255" class="inputDuplo">
+                            <select name="sltopcaoUm" class="select">
+                                <option value="1">Preencher</option>
+                                <option value="1"></option>
+                                <option value="1"></option>                            
+                            </select>
+                       </div>
+                    </div>
+
+                    <div class="barraTextoPaciente">
+                        <div class="textoPaciente">Telefone</div>
+                        <div class="textoPacienteDuo">Celular</div>
+                    </div>
+                    <div class="seguraSelect">
+                        <div class="barraTxt">
+                            <input type="text" name="txtNacionalidade" placeholder="Nacionalidade" maxlength="255" class="inputDuplo">
+                            <select name="sltopcaoUm" class="select">
+                                <option value="1">Sexo</option>
+                                <option value="2"></option>                          
+                            </select>
+                       </div>
+                    </div>
+                    -->
+                    <div class="barraTextoPaciente">
+                        <div class="textoPaciente">Estado</div>
+                        <div class="textoPacienteDuo">Cidade</div>
+                    </div>
+                    <div class="seguraSelect">
+                        <div class="barraTxt">
+                            <select name="sltopcaoUm" class="select">
+                                <option value="1">Estado</option>
+                                <option value="2"></option>                          
+                            </select>
+                            <select name="sltopcaoUm" class="select">
+                                <option value="1">Cidade</option>
+                                <option value="2"></option>                          
+                            </select>
+                       </div>
+                    </div>
+
+                    <div class="barraTextoPaciente">
+
+                    </div>
+                   <div class="barraTextoPaciente">
+                        <div class="textoPaciente">Bairro</div>
+                        <div class="textoPacienteDuo">Numero</div>
+                    </div>
+                    <div class="seguraSelect">
+                        <div class="barraTxt">
+                            <input type="text" name="txtBairro" placeholder="Bairro" maxlength="255" class="inputDuplo">
+                            <input type="text" name="txtNumero" placeholder="Numero" maxlength="255" class="inputDuploML">
+                       </div>
+                    </div>
+                    
+                    <div class="seguraSelect">
+                        <div class="linhaBorderPerfil"></div>
+                        <div class="linhaTextPerfil">Documentação</div>
+                    </div>
+                    <div class="barraTextoPaciente">
+                        <div class="textoPacienteCenter">Foto do Paciente</div>
+                    </div>
+                    <div class="seguraSelect">
+                        <input type="file" name="curriculo"  size="16" id="file_upload" />
+                    </div>
+
+                    <div class="barraTextoPaciente">
+                        <div class="textoPacienteCenter">Foto do Convenio</div>
+                    </div>
+                    <div class="seguraSelect">
+                        <input type="file" name="curriculo"  size="16" />
+                    </div>
+                    
+                    <div class="barraTextoPaciente">
+                        <div class="textoPacienteCenter">Foto do CPF</div>
+                    </div>
+                    <div class="seguraSelect">
+                        <input type="file" name="curriculo"  size="16" id="file_upload" />
+                    </div>
+
+                    <div class="seguraBtnEditPaciente">
+                        <input type="submit" class="botaoEditar">
+                    </div>
+                </form>
 			</div>
         </div>
     </main>

@@ -7,8 +7,8 @@
 
     </div>
     <div  class="linha_menu" href="#">Medico
-		<div class="categorias_ocultas"><a href="cadastroMedico_view.php">   Cadastrar</a></div>
-		<div class="categorias_ocultas"><a href="visu_medico_view.php">   Visualizar</a></div>
+		<div class="categorias_ocultas"><a href="<?php echo $voltaUm; ?>/medico/cadastroMedico_view.php">   Cadastrar</a></div>
+		<div class="categorias_ocultas"><a href="<?php echo $voltaUm; ?>/medico/visu_medico_view.php">   Visualizar</a></div>
 
     </div>
 
@@ -41,5 +41,14 @@
       <div class="categorias_ocultas"><a href="<?php echo $voltaUm; ?>convenio/cadastroConvenio_view.php">  Cadastrar</a></div>
       <div class="categorias_ocultas"> <a href="<?php echo $voltaUm; ?>convenio/visu_convenio_view.php"> Visualizar</a></div>
    </div>
+
+   <div  class="linha_menu" href="#">Plano
+      <div class="categorias_ocultas"><a href="<?php echo $voltaUm; ?>plano/cadastroPlano_view.php">  Cadastrar</a></div>
+      <div class="categorias_ocultas"> <a href="<?php echo $voltaUm; ?>plano/visu_plano_view.php"> Visualizar</a></div>
+    </div>
+
+    <div  class="linha_menu" href="#">Especialidade
+      <div class="categorias_ocultas"><a href="<?php echo $voltaUm; ?>especialidade/cadastroEspecialidade_view.php">  Cadastrar</a></div>
+      <div class="categorias_ocultas"> <a href="<?php echo $voltaUm; ?>especialidade/visu_especialidade_view.php"> Visualizar</a></div>
 
   </div>
