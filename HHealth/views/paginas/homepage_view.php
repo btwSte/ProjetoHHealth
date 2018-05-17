@@ -9,12 +9,15 @@
     <link rel="stylesheet" href="css/animate.css">
     <script src="js/jquery.js"></script>
     <script src="js/modernizr.min.js"></script>
+    <!--
+      LIK SLIDER https://www.w3schools.com/bootstrap/bootstrap_carousel.asp
+
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap.min.css"></script> -->
+    
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Archivo+Narrow|Catamaran" rel="stylesheet">
-    <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
-		<script src="js/jquery.transform-0.9.3.min_.js"></script>
-		<script src="js/jquery.mousewheel.js"></script>
-		<script src="js/jquery.RotateImageMenu.js"></script> -->
+
 
   </head>
   <body>
@@ -92,7 +95,39 @@
           <h1>Nossas Unidades</h1>
         </div>
         <div id="container_unidades">
+          <!-- <div id="myCarousel" class="carousel slide" data-ride="carousel"> -->
+            <!-- Indicators -->
+            <!-- <ol class="carousel-indicators">
+              <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+              <li data-target="#myCarousel" data-slide-to="1"></li>
+              <li data-target="#myCarousel" data-slide-to="2"></li>
+            </ol> -->
 
+            <!-- Wrapper for slides -->
+            <!-- <div class="carousel-inner">
+              <div class="item active">
+                <img src="1.jpg" alt="Los Angeles" style="width:100%;">
+              </div>
+
+              <div class="item">
+                <img src="1.jpg" alt="Los Angeles" style="width:100%;">
+              </div>
+
+              <div class="item">
+                <img src="1.jpg" alt="Los Angeles" style="width:100%;">
+              </div>
+            </div> -->
+
+            <!-- Left and right controls -->
+            <!-- <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+              <span class="glyphicon glyphicon-chevron-left"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#myCarousel" data-slide="next">
+              <span class="glyphicon glyphicon-chevron-right"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div> -->
         </div>
       </main>
       <div id="container_footer">

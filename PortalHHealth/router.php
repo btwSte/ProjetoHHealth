@@ -675,6 +675,61 @@ if(isset($_GET['controller'])){
        }
 
 
+       case 'Cargo':
+        require_once('controllers/cmsCargo_controller.php');
+        require_once('models/cargo_class.php');
+        switch ($modo){
+        //REFENTE AO PLANO
+          case 'novocargo':
+            $controller_especialidade = new controllerCmsCargo();
+            $controller_especialidade::Novo();
+            break;
+          case 'excluircargo':
+            $controller_especialidade = new controllerCmsCargo();
+            $controller_especialidade::ExcluirConteudo();
+            break;
+
+          case 'editarcargo':
+            $controller_especialidade = new controllerCmsCargo();
+            $controller_especialidade::Editar();
+            break;
+
+          case 'buscarcargo':
+            $controller_especialidade = new controllerCmsCargo();
+            $controller_especialidade::Buscar();
+            break;
+
+          }
+          
+           case 'Nivel':
+      require_once('controllers/cmsNivel_controller.php');
+      require_once('models/nivel_class.php');
+      switch ($modo) {
+
+        case 'novoNivel':
+          $controller_nivel = new controllerCmsNivel();
+          $controller_nivel::Novo();
+          break;
+
+        case 'Selecionar':
+          $controller_nivel = new controllerNivel();
+          $controller_nivel::selectNivel();
+          break;
+
+          case 'excluirNivel':
+            $controller_nivel = new controllerCmsNivel();
+            $controller_nivel::Excluir();
+            break;
+
+          case 'editarnivel':
+            $controller_nivel = new controllerCmsEspecialidade();
+            $controller_nivel::Editar();
+            break;
+      }
+      
+
+
+
     break;
   }
 

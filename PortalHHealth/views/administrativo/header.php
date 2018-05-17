@@ -16,7 +16,7 @@ if (isset($_POST['deslogar'])) {
     </div>
     <!--menu -->
     <div class="Titulo">
-        Adiministrativo
+        Administrativo
     </div>
     <div class="Editar_crud">
       <form class="" method="post">

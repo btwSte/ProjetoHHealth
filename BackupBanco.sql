@@ -589,7 +589,7 @@ DROP TABLE IF EXISTS `tbl_cidade`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tbl_cidade` (
   `idCidade` int(11) NOT NULL AUTO_INCREMENT,
-  `nome` varchar(255) NOT NULL,
+  `nomeCidade` varchar(255) NOT NULL,
   `idEstado` int(11) DEFAULT NULL,
   PRIMARY KEY (`idCidade`),
   KEY `fk_estado_idx` (`idEstado`)
@@ -602,7 +602,7 @@ CREATE TABLE `tbl_cidade` (
 
 LOCK TABLES `tbl_cidade` WRITE;
 /*!40000 ALTER TABLE `tbl_cidade` DISABLE KEYS */;
-INSERT INTO `tbl_cidade` VALUES (1,'Alta Floresta D\'Oeste',NULL),(2,'Ariquemes',NULL),(3,'Cabixi',NULL),(4,'Cacoal',NULL),(5,'Embaúba',NULL),(6,'Embu das Artes',NULL),(7,'Embu-Guaçu',NULL),(8,'Emilianópolis',NULL),(9,'Engenheiro Coelho',NULL),(10,'Espírito Santo do Pinhal',NULL),(11,'Espírito Santo do Turvo',NULL),(12,'Estrela D\'Oeste',NULL),(13,'Estrela do Norte',NULL),(14,'Euclides da Cunha Paulista',NULL);
+INSERT INTO `tbl_cidade` VALUES (1,'Alta Floresta D\'Oeste',1),(2,'Ariquemes',2),(3,'Cabixi',2),(4,'Cacoal',5),(5,'Embaúba',5),(6,'Embu das Artes',1),(7,'Embu-Guaçu',6),(8,'Emilianópolis',9),(9,'Engenheiro Coelho',6),(10,'Espírito Santo do Pinhal',6),(11,'Espírito Santo do Turvo',1),(12,'Estrela D\'Oeste',2),(13,'Estrela do Norte',2),(14,'Euclides da Cunha Paulista',2);
 /*!40000 ALTER TABLE `tbl_cidade` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -2105,4 +2105,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-05-17  9:32:17
+-- Dump completed on 2018-05-17 11:28:35

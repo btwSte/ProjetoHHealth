@@ -1,8 +1,7 @@
 <?php
   require_once("../../../variaveis.php");
 
-  $action2 = "";
-  $action = "modo=novocabecalho";
+  require_once($voltaTres.'models/cidade_class.php');
  ?>
 
 <!DOCTYPE html>
@@ -52,7 +51,7 @@
 
         <!-- FORM CABEÇALHO -->
 
-         <form  action="<?php echo ($voltaTres); ?>router.php?controller=Medico&modo=novomedico" method="post" enctype="multipart/form-data">
+         <form  name="frmCadMedico" action="<?php echo ($voltaTres); ?>router.php?controller=Medico&modo=novomedico" method="post" enctype="multipart/form-data">
             <div class="segura_form_tbc" >
                <div class="tit">
                  <p>Cadastro: Medico</p>
@@ -86,9 +85,11 @@
                  <div class="text">
                    <input id="dtnasc"required placeholder="Data de nacimento:" type="text" name="numDtnasc" value=""  maxlength="11">
                  </div>
+                 <div class="text">Foto CRM</div>
                  <div class="text">
                    <input type="file" required placeholder="fotoCRM" name="fotoCRM" value="" maxlength="255" class="">
                  </div>
+                 <div class="text">Foto do Médico</div>
                  <div class="text">
                    <input type="file" required placeholder="fotoMedico" name="fotoMedico" value="" maxlength="255" class="">
                  </div>
@@ -111,38 +112,40 @@
                  <div class="text">
                    <input id="bairro" required placeholder="Bairro:" type="text" name="txtBairro" value=""  maxlength="12">
                  </div>
-
                  <div class="text">
-                     <div class="text">
-                         <select name="sltCidade" required >
-                             <option value="*">Cidade</option>
-                             <option value="1">Barueri</option>
-                             <option value="2">Itapevi</option>
-                         </select>
-                     </div>
-                     <div class="text" required>
-                         <select name="sltEstado" >
-                             <option value="*">Estado</option>
-                             <option value="1">SP</option>
-                             <option value="2">RJ</option>
-                         </select>
-                     </div>
-                 </div>
+                   <select name="sltCidade" class="select" required>
+                       <option value="*" required>Cidade</option>
+
+                    <?php
+                       require_once($voltaTres.'controllers/admCidade_controller.php');
+                       //
+
+                       $controller_cidade = new controllerCidade();
+                       //chama metodo para listar os registros
+                       $list = $controller_cidade->Selecionar();
 
 
+                       $cont = 0;
+                       while ($cont < count($list)) {
 
+                     ?>
 
-                 <div id="centralizarBtnHome">
-                     <button type="submit" name="entrar" value="ENTRAR">SALVAR</button>
-                 </div>
+                     <option value="<?php echo($list[$cont]->idCidade); ?>">
+                       <?php echo($list[$cont]->nomeCidade); ?>
+                     </option>
+
+                       <?php
+                         $cont += 1;
+                       }
+                     ?>
+
+                   </select>
+               </div>
+               <div id="centralizarBtnHome">
+                   <button type="submit" name="entrar" value="ENTRAR">SALVAR</button>
+               </div>
              </div>
          </form>
-
-
-
-
-
-
 
 	  </main>
   </body>

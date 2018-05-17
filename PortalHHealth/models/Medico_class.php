@@ -27,20 +27,23 @@
     //FUNÇÕES REFERENTE AO CONTEUDO
       public function Insert($medico) {
 
-        $sql = "INSERT INTO tbl_medico (dtAdmissao, nome, rg, cpf, crm, dtNasc, telefone, celular, email, fotoCrm, fotoMedico, idEndereco)
+        $sql = "INSERT INTO tbl_medico (dtAdmissao, nome, rg, cpf, crm, dtNasc, idEndereco)
             VALUES ('".$medico->dtAdmissao."',
                     '".$medico->nome."',
                     '".$medico->rg."',
                     '".$medico->cpf."',
                     '".$medico->crm."',
                     '".$medico->dtNasc."',
-                    '".$medico->telefone."',
-                    '".$medico->celular."',
-                    '".$medico->email."',
-                    '".$medico->fotoCrm."',
-                    '".$medico->fotoMedico."',
+
                     '".$medico->idEndereco."')";
 
+
+                    // telefone, celular, email, fotoCrm, fotoMedico, '".$medico->telefone."',
+                    // '".$medico->celular."',
+                    // '".$medico->email."',
+                    // '".$medico->fotoCrm."',
+                    // '".$medico->fotoMedico."',
+                    //
         //instancia a classe do banco
         $conex = new Mysql_db();
 
