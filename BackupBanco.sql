@@ -1,4 +1,4 @@
--- MySQL dump 10.13  Distrib 5.7.9, for Win32 (AMD64)
+-- MySQL dump 10.13  Distrib 5.7.12, for Win64 (x86_64)
 --
 -- Host: localhost    Database: dbhhealth
 -- ------------------------------------------------------
@@ -564,10 +564,10 @@ DROP TABLE IF EXISTS `tbl_cargo`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tbl_cargo` (
-  `idCargo` int(11) NOT NULL,
+  `idCargo` int(11) NOT NULL AUTO_INCREMENT,
   `cargo` varchar(255) NOT NULL,
   PRIMARY KEY (`idCargo`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -576,6 +576,7 @@ CREATE TABLE `tbl_cargo` (
 
 LOCK TABLES `tbl_cargo` WRITE;
 /*!40000 ALTER TABLE `tbl_cargo` DISABLE KEYS */;
+INSERT INTO `tbl_cargo` VALUES (1,'Médico'),(2,'Motorista');
 /*!40000 ALTER TABLE `tbl_cargo` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -705,7 +706,7 @@ CREATE TABLE `tbl_convenio` (
   `nome` varchar(255) NOT NULL,
   `ativo` char(1) NOT NULL,
   PRIMARY KEY (`idConvenio`)
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -714,7 +715,7 @@ CREATE TABLE `tbl_convenio` (
 
 LOCK TABLES `tbl_convenio` WRITE;
 /*!40000 ALTER TABLE `tbl_convenio` DISABLE KEYS */;
-INSERT INTO `tbl_convenio` VALUES (7,'Amil','1'),(8,'Bradesco','1'),(9,'Intermédica','1'),(10,'Allianz','1'),(11,'Sul América','1'),(12,'Porto Seguro','1'),(14,'teste','0');
+INSERT INTO `tbl_convenio` VALUES (7,'Amil','1'),(8,'Bradesco','1'),(9,'Intermédica','1'),(10,'Allianz','1'),(11,'Sul América','1'),(12,'Porto Seguro','1'),(14,'teste','0'),(15,'','1');
 /*!40000 ALTER TABLE `tbl_convenio` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -911,7 +912,6 @@ DROP TABLE IF EXISTS `tbl_funcionario`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tbl_funcionario` (
   `idFuncionario` int(11) NOT NULL AUTO_INCREMENT,
-  `idCargo` int(11) NOT NULL,
   `nome` varchar(255) NOT NULL,
   `rg` varchar(255) NOT NULL,
   `cpf` varchar(255) NOT NULL,
@@ -925,13 +925,14 @@ CREATE TABLE `tbl_funcionario` (
   `idSetor` int(11) NOT NULL,
   `senha` varchar(40) NOT NULL,
   `status` char(1) NOT NULL,
+  `idCargo` int(11) DEFAULT NULL,
   PRIMARY KEY (`idFuncionario`),
-  KEY `fk_carg_func_idx` (`idCargo`),
   KEY `fk_end_func_idx` (`idEndereco`),
   KEY `fk_estad_func_idx` (`idEstadoCivil`),
   KEY `fk_niv_port_idx` (`idNivelPortal`),
   KEY `fk_func_setor_idx` (`idSetor`),
-  CONSTRAINT `fk_carg_func` FOREIGN KEY (`idCargo`) REFERENCES `tbl_cargo` (`idCargo`),
+  KEY `fk_carg_999_idx` (`idCargo`),
+  CONSTRAINT `fk_carg_999` FOREIGN KEY (`idCargo`) REFERENCES `tbl_cargo` (`idCargo`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_end_func` FOREIGN KEY (`idEndereco`) REFERENCES `tbl_endereco` (`idEndereco`),
   CONSTRAINT `fk_estad_func` FOREIGN KEY (`idEstadoCivil`) REFERENCES `tbl_estado_civil` (`idEstadoCivil`),
   CONSTRAINT `fk_func_setor` FOREIGN KEY (`idSetor`) REFERENCES `tbl_setor` (`idSetor`),
@@ -1111,24 +1112,29 @@ DROP TABLE IF EXISTS `tbl_medico`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tbl_medico` (
   `idMedico` int(11) NOT NULL AUTO_INCREMENT,
-  `idCargo` int(11) NOT NULL,
-  `dtAdmissao` varchar(255) NOT NULL,
-  `nome` varchar(255) NOT NULL,
-  `rg` varchar(255) NOT NULL,
-  `cpf` varchar(255) NOT NULL,
-  `crm` varchar(255) NOT NULL,
-  `dtNasc` date NOT NULL,
-  `idEndereco` int(11) NOT NULL,
-  `idEspecialidade` int(11) NOT NULL,
-  `idNivelPortal` int(11) NOT NULL,
-  `idEstadoCivil` int(11) NOT NULL,
+  `dtAdmissao` varchar(255) DEFAULT NULL,
+  `nome` varchar(255) DEFAULT NULL,
+  `rg` varchar(255) DEFAULT NULL,
+  `cpf` varchar(255) DEFAULT NULL,
+  `crm` varchar(255) DEFAULT NULL,
+  `dtNasc` date DEFAULT NULL,
+  `idEndereco` int(11) DEFAULT NULL,
+  `idEspecialidade` int(11) DEFAULT NULL,
+  `idNivelPortal` int(11) DEFAULT NULL,
+  `idEstadoCivil` int(11) DEFAULT NULL,
+  `idCargo` int(11) DEFAULT NULL,
+  `telefone` varchar(20) DEFAULT NULL,
+  `celular` varchar(20) DEFAULT NULL,
+  `email` varchar(100) DEFAULT NULL,
+  `fotoCRM` varchar(255) DEFAULT NULL,
+  `fotoMedico` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`idMedico`),
-  KEY `fk_carg_medico_idx` (`idCargo`),
   KEY `fk_end_medico_idx` (`idEndereco`),
   KEY `fk_esp_medico_idx` (`idEspecialidade`),
   KEY `fk_niv_medico_idx` (`idNivelPortal`),
   KEY `fk_estad_civ_medico_idx` (`idEstadoCivil`),
-  CONSTRAINT `fk_carg_medico` FOREIGN KEY (`idCargo`) REFERENCES `tbl_cargo` (`idCargo`),
+  KEY `fk_carg_8888_idx` (`idCargo`),
+  CONSTRAINT `fk_carg_8888` FOREIGN KEY (`idCargo`) REFERENCES `tbl_cargo` (`idCargo`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_end_medico` FOREIGN KEY (`idEndereco`) REFERENCES `tbl_endereco` (`idEndereco`),
   CONSTRAINT `fk_esp_medico` FOREIGN KEY (`idEspecialidade`) REFERENCES `tbl_especialidade` (`idEspecialidade`),
   CONSTRAINT `fk_estad_civ_medico` FOREIGN KEY (`idEstadoCivil`) REFERENCES `tbl_estado_civil` (`idEstadoCivil`),
@@ -2099,4 +2105,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-05-15  9:29:19
+-- Dump completed on 2018-05-17  9:32:17
