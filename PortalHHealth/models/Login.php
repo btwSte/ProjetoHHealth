@@ -35,7 +35,7 @@ class Login
         }else {
             echo "erro ao Logar";
         }*/
-        echo "SELECT * FROM tbl_login where cpf='$Login->cpf' and senha='$Login->senha';";
+        // echo "SELECT * FROM tbl_login where cpf='$Login->cpf' and senha='$Login->senha';";
 
         $validarlogin = $PDOconex->query("SELECT * FROM tbl_login where cpf='$Login->cpf' and senha='$Login->senha';");
         $validarlogin = $PDOconex->prepare("SELECT * FROM tbl_login where cpf='$Login->cpf' and senha='$Login->senha';");
@@ -48,7 +48,7 @@ class Login
             while($ln = $validarlogin->fetch(PDO::FETCH_ASSOC))
             {
                $_SESSION['LogCod'] = $ln['idLogin'];
-              echo($_SESSION['LogCod']);
+              // echo($_SESSION['LogCod']);
               echo "<script>alert('Logado Com Sucesso!');
                     top.location.href='views/cms/cmsHome_view.php';
                     </script>";

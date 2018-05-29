@@ -89,7 +89,7 @@ a:hover {
 }
 
 #tblmenu td:hover {
-	
+
 	background-color:#FFFFCC;
 	font-size:18px;
 
@@ -118,7 +118,7 @@ a:vlink {
 	background-color:#CCCCCC;
 	/*position:absolute;*/
 	float:left;
-	
+
 
 }
 #conteudo2 {
@@ -129,7 +129,7 @@ a:vlink {
 	/*position:absolute;
 	margin-left:294px;*/
 	float:right;
-	
+
 	padding:2px;
 	overflow:auto;
 
@@ -185,7 +185,7 @@ a:vlink {
 	margin-top:10px;
 	border:solid 2px;
 	border-color:#C0C0C0;
-	
+
 }
 
 .tblcadastro_td{
@@ -214,7 +214,7 @@ a:vlink {
 }
 
 #consulta {
-	
+
 	width:100%;
 	height:300px;
 	background-color:#FFFFFF;
@@ -271,7 +271,7 @@ a:vlink {
     box-shadow: 3px 5px 5px 3px #6bb27d;
     min-height: 250px;
     min-width: 50px;
-    
+
 }
 
 .modalContainer{
@@ -280,7 +280,7 @@ a:vlink {
 	background: #6bb27d82;
 	position:fixed;
 	display:none;
-	
+
 
 }
 
@@ -298,7 +298,7 @@ a:vlink {
     /*background-color: aqua;*/
     float: right;
     margin-right: 20px;
-    
+
 }
 
 #txtTitulo{
@@ -319,7 +319,7 @@ a:vlink {
     height: 25px;
     margin: auto;
     margin-top: 10px;
-    border: solid 2px #6bb27d;   
+    border: solid 2px #6bb27d;
     border-radius: 10px;
 }
 
@@ -327,7 +327,7 @@ a:vlink {
     width: 120px;
     height: 23px;
     border-radius: 7px 0px 0px 7px;
-    border: solid 2px #6bb27d; 
+    border: solid 2px #6bb27d;
     background-color: #6bb27d;
     left: auto;
     font-family: "Avenir", 'Helvetica Neue', 'Lato', 'Segoe UI', Helvetica, Arial, sans-serif;
@@ -339,7 +339,7 @@ a:vlink {
 
 .campoDirTexto{
     width: 523px;
-    height: 23px; 
+    height: 23px;
     font-family: "Avenir", 'Helvetica Neue', 'Lato', 'Segoe UI', Helvetica, Arial, sans-serif;
     text-align: center;
     color: #000;
@@ -347,7 +347,7 @@ a:vlink {
     background-color: #fff;
     float: left;
     border-radius: 0px 7px 7px 0px;
-    word-wrap: break-word;    
+    word-wrap: break-word;
     overflow:auto;
 }
 
@@ -357,10 +357,10 @@ a:vlink {
     margin: auto;
     margin-top: 10px;
     border: solid 2px #6bb27d;
-    padding: 5px;    
+    padding: 5px;
     border-radius: 10px;
     text-align: justify;
-    font-family: "Avenir", 'Helvetica Neue', 'Lato', 'Segoe UI', Helvetica, Arial, sans-serif;    
+    font-family: "Avenir", 'Helvetica Neue', 'Lato', 'Segoe UI', Helvetica, Arial, sans-serif;
     color: #000;
     font-size: 15px;
     overflow:auto;
@@ -373,11 +373,11 @@ a:vlink {
     border-radius: 7px 0px 0px 7px;
     left: auto;
     font-family: "Avenir", 'Helvetica Neue', 'Lato', 'Segoe UI', Helvetica, Arial, sans-serif;
-    text-align: center;    
+    text-align: center;
     font-size: 15px;
     float: left;
     border-width: 2px 0px 0px 2px;
-    /* 
+    /*
     color: #000;
     background-color: #fff;
     */
@@ -386,15 +386,20 @@ a:vlink {
 .campoDirContato{/* Se a mensagem for uma CRITICA */
      width: 325px;
     height: 25px;
-    border-radius: 0px 7px 7px 0px; 
+    border-radius: 0px 7px 7px 0px;
     right: auto;
     font-family: "Avenir", 'Helvetica Neue', 'Lato', 'Segoe UI', Helvetica, Arial, sans-serif;
-    text-align: center;    
+    text-align: center;
     font-size: 15px;
     float: right;
     border-width: 0px 2px 2px 0px;
-    /* 
+    /*
     color: #000;
     background-color: #fff;
     */
+}
+
+
+#invi{
+	color: #fff;
 }

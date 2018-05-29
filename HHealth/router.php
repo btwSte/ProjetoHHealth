@@ -2,7 +2,8 @@
 <?php
 if(isset($_GET['controller'])){
     $controller = $_GET['controller'];
-    $modo = $_GET['modo'];
+   $modo = $_GET['modo'];
+
 
     switch($controller){
       case 'loginPaciente':
@@ -47,6 +48,50 @@ if(isset($_GET['controller'])){
           $controller_paciente::InserirPaciente();
           break;
 
+        case 'agendamentoConsulta':
+          require_once('controllers/agendamentoConsulta_controller.php');
+          require_once('models/agendamentoConsulta_class.php');
+//          require_once('controllers/pagamento_controller.php');
+//          require_once('models/pagamento_class.php');
+//
+//          $controller_pagamento = new controllerCmsPagamento();
+//          $controller_pagamento::Novo();
+
+            $controller_agendamentoConsulta = new controllerAgendamentoConsulta();
+            $controller_agendamentoConsulta::selectConsulta();
+
+            switch ($modo) {
+              case 'excluirConsulta':
+                $controller_agendamentoConsulta = new controllerAgendamentoConsulta();
+                $controller_agendamentoConsulta::ExcluirConsulta();
+                break;
+
+              case 'NovaConsulta':
+                $controller_agendamentoConsulta = new controllerAgendamentoConsulta();
+                $controller_agendamentoConsulta::InserirAgendamentoConsulta();
+                break;
+              break;
+            }
+
+
+            case 'preatendimento':
+            require_once('controllers/preAtendimento_controller.php');
+            require_once('models/preAtendimento_class.php');
+            switch ($modo) {
+              case 'novo':
+                $controller = new controllerPreAtendimento();
+                $controller::Inserir();
+                break;
+
+
+              break;
+              }
+              break;
+
+
+
+
+          break;
       }
 }
 

@@ -700,7 +700,7 @@ if(isset($_GET['controller'])){
             break;
 
           }
-          
+
            case 'Nivel':
       require_once('controllers/cmsNivel_controller.php');
       require_once('models/nivel_class.php');
@@ -726,7 +726,25 @@ if(isset($_GET['controller'])){
             $controller_nivel::Editar();
             break;
       }
-      
+
+      case 'Paciente':
+          require_once('controllers/admPaciente_controller.php');
+          require_once('models/Paciente_class.php');
+
+          switch ($modo) {
+            case 'desativar':
+              $paciente = new controllerCadPaciente();
+              $paciente::DesativarPaciente();
+              break;
+
+            case 'ativar':
+            $paciente = new controllerCadPaciente();
+            $paciente::AtivarPaciente();
+              break;
+          }
+
+          break;
+
 
 
 

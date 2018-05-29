@@ -21,10 +21,10 @@
 
       <?php include("header.php"); ?>
 
-      
+
   		<script src="../../js/classie.js"></script>
   		<script src="../../js/photostack.js"></script>
-  		
+
       <div  id="opcao" class="button shrink">
           <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;Menu
           </span>
@@ -41,7 +41,7 @@
             }
         </script>
         <div id="containerConteudo">
-            <form name="frmPreAtendimento">
+            <form name="frmPreAtendimento" action="../../router.php?controller=preatendimento&modo=novo" method="post">
                <div id="segura_form_preAtend">
 
                    <div class="barraTexto">
@@ -59,11 +59,11 @@
                    <div class="barraTxt">
                         <input type="submit" name="btnSalvar" value="Concluir" id="botaoForm">
                    </div>
-               </div> 
+               </div>
             </form>
         </div>
     </main>
-        
+
     <?php include("footer.php"); ?>
 
   </body>

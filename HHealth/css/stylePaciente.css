@@ -700,3 +700,96 @@ main{
     font-family: "Avenir", 'Helvetica Neue', 'Lato', 'Segoe UI', Helvetica, Arial, sans-serif;
 
  }
+
+
+/************ consultas marcadas************/
+
+
+#segura_select{
+  height: auto;
+  width: auto;
+  margin-right: auto;
+  margin-left: auto;
+  float: left;
+  margin-top: 40px;
+  box-shadow: 2px 2px 2px 2px #6bb27d;
+  padding: 25px;
+}
+
+
+
+.campoId {
+    width: 100px;
+    height: 23px;
+    background-color: #fff;
+    float: left;
+    border: solid 2px #6bb27d;
+    border-radius: 45px 0px 0px 0px;
+    font-size: 15px;
+    font-family: "Avenir", 'Helvetica Neue', 'Lato', 'Segoe UI', Helvetica, Arial, sans-serif;
+    text-align: center;
+    color: #6bb27d;
+    margin-left: 50px;
+      margin-top: 15px;
+      margin-top: 10px;
+}
+.campoNeutro {
+    width: 155px;
+    height: 23px;
+    background-color: #fff;
+    float: left;
+    border: solid 2px #6bb27d;
+    font-size: 15px;
+    font-family: "Avenir", 'Helvetica Neue', 'Lato', 'Segoe UI', Helvetica, Arial, sans-serif;
+    text-align: center;
+    color: #6bb27d;
+    margin-top: 15px;
+    margin-top: 10px;
+}
+.campoNeutroDir {
+    width: 155px;
+    height: 23px;
+    background-color: #fff;
+    float: left;
+    border: solid 2px #6bb27d;
+    font-size: 15px;
+    font-family: "Avenir", 'Helvetica Neue', 'Lato', 'Segoe UI', Helvetica, Arial, sans-serif;
+    text-align: center;
+    color: #6bb27d;
+    border-radius: 0px 45px 0px 0px;
+    margin-top: 15px;
+    margin-top: 10px;
+}
+.campoIdSelect {
+    width: 100px;
+    height: 25px;
+    background-color: #fff;
+    float: left;
+    border: solid 2px #6bb27d;
+    font-size: 15px;
+    font-family: "Avenir", 'Helvetica Neue', 'Lato', 'Segoe UI', Helvetica, Arial, sans-serif;
+    text-align: center;
+    color: #6bb27d;
+    margin-left: 50px;
+}
+.campoNeutroSelect {
+    width: 155px;
+    height: 25px;
+    background-color: #fff;
+    float: left;
+    border: solid 2px #6bb27d;
+    font-size: 15px;
+    font-family: "Avenir", 'Helvetica Neue', 'Lato', 'Segoe UI', Helvetica, Arial, sans-serif;
+    text-align: center;
+    color: #6bb27d;
+}
+.finalSelect {
+    width: 895px;
+    height: 20px;
+    background-color: #fff;
+    border-radius: 0px 0px 45px 45px;
+    border: solid 2px #6bb27d;
+    float: left;
+      margin-left: 49px;
+
+}

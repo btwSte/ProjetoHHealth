@@ -32,7 +32,7 @@ class Login {
 
         if($validarlogin->rowCount() == 1){
             while($ln = $validarlogin->fetch(PDO::FETCH_ASSOC)){
-               $_SESSION['LogCod'] = $ln['idLogin'];
+               // $_SESSION['LogCod'] = $ln['idLogin'];
               echo($_SESSION['LogCod']);
               echo "<script>alert('Logado Com Sucesso!');
                     top.location.href='views/paginas_paciente/homePaciente_views.php';
