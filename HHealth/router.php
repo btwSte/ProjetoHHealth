@@ -70,6 +70,7 @@ if(isset($_GET['controller'])){
                 $controller_agendamentoConsulta = new controllerAgendamentoConsulta();
                 $controller_agendamentoConsulta::InserirAgendamentoConsulta();
                 break;
+
               break;
             }
 
