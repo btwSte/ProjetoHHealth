@@ -13,14 +13,20 @@
 
     //metodo mágico ou construtor
     public function __construct(){
+      //Servidor
+      // $this->server = "192.168.1.1";
+      // $this->user = "health";
+      // $this->password = "devsystem123";
+      // $this->dataBaseName = "dbhhealth";
+
+      //Local
       $this->server = "localhost";
       $this->user = "root";
       $this->password = "bcd127";
       $this->dataBaseName = "dbhhealth";
-      //$this->user ="root";
     }
 
-    
+
 
     //Conectar no DB
     public function Conectar() {

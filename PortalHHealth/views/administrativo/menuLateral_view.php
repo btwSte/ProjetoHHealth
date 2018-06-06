@@ -7,8 +7,9 @@
 
     </div>
     <div  class="linha_menu" href="#">Medico
-		<div class="categorias_ocultas"><a href="<?php echo $voltaUm; ?>/medico/cadastroMedico_view.php">   Cadastrar</a></div>
-		<div class="categorias_ocultas"><a href="<?php echo $voltaUm; ?>/medico/visu_medico_view.php">   Visualizar</a></div>
+		<div class="categorias_ocultas"><a href="<?php echo $voltaUm; ?>medico/cadastroMedico_view.php">   Cadastrar</a></div>
+		<div class="categorias_ocultas"><a href="<?php echo $voltaUm; ?>medico/visu_medico_view.php">   Visualizar</a></div>
+    <div class="categorias_ocultas"><a href="<?php echo $voltaUm; ?>medico/atendimento_view.php">   Atendimento</a></div>
 
     </div>
 

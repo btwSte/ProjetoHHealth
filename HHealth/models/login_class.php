@@ -14,6 +14,7 @@ class Login {
   }
 
     function VerificaLogin($verifica){
+        session_start();
 
         // Instancia a classe do DB
         $dbConnection = new Mysql_db();
@@ -32,8 +33,8 @@ class Login {
 
         if($validarlogin->rowCount() == 1){
             while($ln = $validarlogin->fetch(PDO::FETCH_ASSOC)){
-               // $_SESSION['LogCod'] = $ln['idLogin'];
-              echo($_SESSION['LogCod']);
+               $_SESSION['Login'] = $ln['idPaciente'];
+              echo($_SESSION['Login']);
               echo "<script>alert('Logado Com Sucesso!');
                     top.location.href='views/paginas_paciente/homePaciente_views.php';
                     </script>";

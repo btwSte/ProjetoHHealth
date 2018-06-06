@@ -7,7 +7,7 @@
     </a>
   </div>
 
-   <button class="btn_menu"> <img src="../imagens/menu.png" alt="Menu"> </button>
+   <button class="btn_menu"> <img src="../../imagens/menu.png" alt="Menu"> </button>
 
   <nav class="menu">
     <a class="btn_close"><i class="fa fa-times">X</i></a>
@@ -18,18 +18,18 @@
       <li><a href="../../views/paginas/informacoes_view.php">Informações</a></li>
       <li><a href="../../views/paginas/procedimentoExames_view.php">Procedimento de Exames</a></li>
       <li><a href="../../views/paginas/sobre_view.php">Sobre</a></li>
-      <li><a href="../../views/paginas/trabalheConosco_view.php">Trabalhe Conosco</a></li>
+      <li><a href="../../views/paginas/trabalheconosco_view.php">Trabalhe Conosco</a></li>
       <li><a href="../../views/paginas/unidades_view.php">Unidades</a></li>
     </ul>
-    <ul id="login_menu">
+    <!-- <ul id="login_menu">
       <li> <a href="views/login_paciente/login_view.php">Login</a></li>
       <li> <a href="#c">Cadastro</a></li>
-    </ul>
+    </ul> -->
   </nav>
 
   <div class="login_cadastro">
     <div id="login">
-      <a href="views/paginas/login"> <img src="../../imagens/login.png" alt="Login"> </a>
+      <a href="views/login_paciente/login_view.php"> <img src="../../imagens/login.png" alt="Login"> </a>
     </div>
     <div id="borda">
     </div>

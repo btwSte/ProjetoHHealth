@@ -9,35 +9,30 @@
 }
 
 class controllerAgendamentoConsulta{
-    // $id =  ($_SESSION['LogCod']);
-
 
     function InserirAgendamentoConsulta(){
+      $dadoAgendamento = new AgendamentoConsulta();
 
+      $dadoAgendamento->idPaciente = $_SESSION['Login'];
+      $dadoAgendamento->data = $_POST['sltData'];
+      $dadoAgendamento->hora = $_POST['sltHora'];
+      $dadoAgendamento->idEspecialidade = $_POST['sltEspecialida'];
 
-       $dadoAgendamento = new AgendamentoConsulta();
-
-       $dadoAgendamento->idPaciente = $_SESSION['LogCod'];
-       $dadoAgendamento->data = $_POST['sltData'];
-       $dadoAgendamento->hora = $_POST['sltHora'];
-       $dadoAgendamento->idEspecialidade = $_POST['sltEspecialida'];
-
-       $dadoAgendamento::Insert($dadoAgendamento);
-
-     }
+      $dadoAgendamento::Insert($dadoAgendamento);
+    }
 
 
      public function selectConsulta(){
-       $info_Consulta = new agendamentoConsulta();
-       return $info_Consulta::Select();
+      $info_Consulta = new agendamentoConsulta();
+      return $info_Consulta::Select();
      }
 
      public function ExcluirConsulta(){
-       $info_Consulta = new agendamentoConsulta();
+      $info_Consulta = new agendamentoConsulta();
 
-       $info_Consulta->idAgendaConsulta = $_GET['id'];
+      $info_Consulta->idAgendaConsulta = $_GET['id'];
 
-       return $info_Consulta::Excluir($info_Consulta);
+      return $info_Consulta::Excluir($info_Consulta);
 
      }
 

@@ -1,5 +1,6 @@
 <?php
 #require_once("cms/conexao.php");
+session_start();
 
 
 
@@ -21,10 +22,10 @@
 
       <?php include("header.php"); ?>
 
-      
+
   		<script src="../../js/classie.js"></script>
   		<script src="../../js/photostack.js"></script>
-  		
+
       <div  id="opcao" class="button shrink">
           <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;Menu
           </span>
@@ -55,7 +56,7 @@
                </div>
 
            </div>
-            
+
         </div>
     </main>
         <?php include("footer.php"); ?>

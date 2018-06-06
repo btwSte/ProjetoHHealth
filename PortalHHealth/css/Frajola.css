@@ -10,9 +10,9 @@ header{
   box-shadow: 0px 2px 2px #ccc;
 }
 
-p{
-    font-family: "Avenir", 'Helvetica Neue', 'Lato', 'Segoe UI', Helvetica, Arial, sans-serif;
-    font-size: 15px;
+p {
+  font-family: "Avenir", 'Helvetica Neue', 'Lato', 'Segoe UI', Helvetica, Arial, sans-serif;
+  font-size: 15px;
 }
 
 main{
@@ -1310,3 +1310,285 @@ input{
       transition: all 0.25s;
         margin-left: 5px;
 }
+
+ /* ATENDIMENTO  */
+  #areaConteudoMedico{
+    width: 1200px;
+    padding:0px 0px;
+    min-height:1000px;
+    /*background-color: coral;*/
+    font-family: "Avenir", 'Helvetica Neue', 'Lato', 'Segoe UI', Helvetica, Arial, sans-serif;
+    font-size: 90px;
+    color: #cccccc;
+    font-weight: bold;
+    margin: auto;
+   }
+
+ .barraIdenti{
+     width: 100%;
+     height: 50px;
+    /*background-color: coral;*/
+     margin-top: 10px;
+ }
+
+ .containerIndetificacao{
+     width: 500px;
+     height: 25px;
+     float: right;
+     box-shadow: 2px 2px 2px 2px #6bb27d;
+     padding: 5px;
+     z-index: 2;
+     /* ItensDeEstilizaçãoDeFonte */
+     font-family: "Avenir", 'Helvetica Neue', 'Lato', 'Segoe UI', Helvetica, Arial, sans-serif;
+     text-align: justify;
+     color: #000;
+     font-size: 15px;
+ }
+
+ .listaPacienteEsq{
+     width: 500px;
+     height: 1000px;
+     margin-top: 100px;
+     float: left;
+     /* background-color: #43704e; */
+     box-shadow: 0 2px 6px rgba(0,0,0,0.1), 0 3px 6px rgba(0,0,0,0.1);
+     border: 5;
+     /* ItensDeEstilizaçãoDeFonte */
+     font-family: "Avenir", 'Helvetica Neue', 'Lato', 'Segoe UI', Helvetica, Arial, sans-serif;
+     text-align: justify;
+     color: #fff;
+     font-size: 15px;
+ }
+
+ .listaPacienteDir{
+     width: 500px;
+     height: 1000px;
+     margin-top: 100px;
+     float: right;
+     background-color: #43704e;
+     box-shadow: 0 2px 6px rgba(0,0,0,0.1), 0 3px 6px rgba(0,0,0,0.1);
+     border: 5;
+     /* ItensDeEstilizaçãoDeFonte */
+     font-family: "Avenir", 'Helvetica Neue', 'Lato', 'Segoe UI', Helvetica, Arial, sans-serif;
+     text-align: justify;
+     color: #000;
+     font-size: 15px;
+ }
+
+ .containerEscritaPaciente{
+     width: 100%;
+     height: 50px;
+     float: left;
+     background-color: #6bb27d;
+     /* Itens De Estilização De Fonte */
+     font-family: "Avenir", 'Helvetica Neue', 'Lato', 'Segoe UI', Helvetica, Arial, sans-serif;
+     text-align: center;
+     color: #fff;
+     font-size: 20px;
+     display: -webkit-flex;
+       display: flex;
+       -webkit-align-items: center;
+       align-items: center;
+       -webkit-justify-content: center;
+       justify-content: center;
+ }
+
+ .containerListaPaciente{
+     width: 100%;
+     height: 100%;
+     float: left;
+     background-color: #fff;
+     /* ItensDeEstilizaçãoDeFonte */
+     font-family: "Avenir", 'Helvetica Neue', 'Lato', 'Segoe UI', Helvetica, Arial, sans-serif;
+     text-align: justify;
+     color: #000;
+     font-size: 15px;
+     /* overflow: auto; */
+
+ }
+
+ .barraNomePaciente{
+     width: 100%;
+     height: 35px;
+     float: left;
+     background-color: #fff;
+     margin-top: 3px;
+     /* overflow: auto; */
+     /* ItensDeEstilizaçãoDeFonte */
+     font-family: "Avenir", 'Helvetica Neue', 'Lato', 'Segoe UI', Helvetica, Arial, sans-serif;
+     text-align: left;
+     color: #6bb27d;
+     font-size: 15px;
+     border-bottom: solid 2px #ccc;
+     display: -webkit-flex;
+       display: flex;
+       -webkit-align-items: center;
+       align-items: center;
+       -webkit-justify-content: center;
+       justify-content: center;
+ }
+
+ .barraNomePaciente:hover{
+     /* background-color: #6bb27d;
+     color: #ffffff; */
+     border-bottom: solid 2px #6bb27d;
+     /* cursor: pointer; */
+ }
+
+ .opcao{
+   margin-left: 20px;
+   cursor: pointer;
+   text-align: right;
+   text-decoration: none;
+ }
+
+ .opcaob{
+   margin-left: 20px;
+   cursor: pointer;
+   text-align: right;
+   text-decoration: none;
+ }
+
+ .opcaob img {
+   margin-top: 0px;
+ }
+
+ .nomePa{
+   float: left;
+   width: auto;
+   height: auto;
+   /* margin-left: 0px; */
+   width: 70%;
+   margin-bottom: 5px;
+ }
+.opçNome{
+  float: left;
+  width: auto;
+  height: auto;
+  text-decoration: none;
+  /* margin-left: 170px; */
+  width: 30%;
+  margin-bottom: 5px;
+}
+
+
+ /*************************** HOME ATENDIMENTO DO PACINTE *****************************/
+
+ /* #campo_pesquisa {
+   width: 850px;
+   min-width: 800px;
+   height: auto;
+   overflow: hidden;
+   background-color: black;
+   font-size: 30px;
+   box-shadow: 2px 2px 2px 2px #6bb27d;
+ }
+ */
+ .tituloPesqui{
+   margin: 0px;
+   font-size: 20px;
+   color: #304f38;
+
+ }
+
+ .decore_pesquisa {
+   margin: 0px;
+   font-size: 20px;
+   background-color: #6db47f;
+   color: #ffffff;
+   padding: 2px;
+ }
+
+ #content_pacientes {
+   width: 900px;
+   min-height: 600px;
+   height: auto;
+   /* background-color: black; */
+   margin-left: auto;
+   margin-right: auto;
+   margin-top: 5px;
+ }
+
+ #content_pacientes_cadastrados {
+   width: 900px;
+   min-height: 300px;
+   height: auto;
+   background-color:#fff;
+
+ }
+
+ .segura_list_opcao {
+   width: 900px;
+   height: 30px;
+
+
+
+ }
+
+ .dados_pacientes_cadastrados{
+   width:77%;
+   min-height: 30px;
+   height: auto;
+   /* background-color: grey; */
+   float: left;
+   margin-right: 3px;
+   margin-top: 5px;
+     border-bottom: solid 1px #6db47f;
+ }
+
+ .opcao_paciente {
+   width: auto;
+   height: 95%;
+   background-color: #6db47f;
+   color: #fff;
+   float: left;
+   line-height: 10%;
+   border-radius: 4px;
+   cursor: pointer;
+   margin-top: 2px;
+   padding-left: 5px;
+   padding-right: 5px;
+
+ }
+ .opcao_paciente p{
+   margin-top: 10px;
+   padding-top: -5px;
+ }
+
+ .decore_list_paciente {
+   margin-top: 5px;
+   text-decoration: none;
+     color: #6db47f;
+   margin: 0px;
+   font-size: 17px;
+   float: left;
+   margin-left: 10px;
+ }
+ .decore_list_pacienteSpç{
+   margin-top: 5px;
+   text-decoration: none;
+     color: #6db47f;
+   margin: 0px;
+   font-size: 17px;
+   float: left;
+   margin-left: 70px;
+ }
+ .epaç{
+
+   width: 500px;
+   float: left;
+ }
+
+ #content_pacientes_sem_cadastro {
+   width: 900px;
+   min-height: 300px;
+   height: auto;
+   background-color: red;
+ }
+
+ #dados_pacientes_sem_cadastrado {
+   width: 335px;
+   min-height: 25px;
+   height: auto;
+   background-color: grey;
+ }

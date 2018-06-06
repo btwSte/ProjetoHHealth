@@ -746,9 +746,42 @@ if(isset($_GET['controller'])){
           break;
 
 
+    case 'consulta':
+      require_once('controllers/consulta_controller.php');
+      require_once('models/consulta_class.php');
+      require_once('controllers/fila_controller.php');
+      require_once('models/fila_class.php');
+      switch ($modo) {
+        case 'ativa':
+          $consulta = new controllerConsulta();
+          $consulta::AtivarConsulta();
 
+          // $controller_fila = new controllerFila();
+          // $controller_fila::InsereFila();
+          break;
 
-    break;
+        case 'iniciar':
+          $consulta = new controllerFila();
+          $consulta::IniciaFila();
+          break;
+
+        case 'finalizar':
+          $consulta = new controllerFila();
+          $consulta::FinalizaFila();
+          break;
+
+        case 'andamento':
+          $consulta = new controllerFila();
+          $consulta::IniciaFila();
+          break;
+
+        case 'espera':
+          $consulta = new controllerFila();
+          $consulta::RetornoFila();
+          break;
+      }
+      break;
+
   }
 
 }

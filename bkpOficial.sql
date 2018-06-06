@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 5.7.17, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 5.7.12, for Win64 (x86_64)
 --
--- Host: localhost    Database: dbhhealth
+-- Host: 192.168.1.1    Database: dbhhealth
 -- ------------------------------------------------------
--- Server version	8.0.2-dmr-log
+-- Server version	5.5.35-0+wheezy1
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -34,7 +34,7 @@ CREATE TABLE `pagina_ambiente` (
   KEY `fk_amb_rod_idx` (`idRodape`),
   CONSTRAINT `fk_amb_men` FOREIGN KEY (`idMenu`) REFERENCES `tbl_menu` (`idmenu`),
   CONSTRAINT `fk_amb_rod` FOREIGN KEY (`idRodape`) REFERENCES `tbl_rodape` (`idrodape`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -43,7 +43,7 @@ CREATE TABLE `pagina_ambiente` (
 
 LOCK TABLES `pagina_ambiente` WRITE;
 /*!40000 ALTER TABLE `pagina_ambiente` DISABLE KEYS */;
-INSERT INTO `pagina_ambiente` VALUES (2,NULL,'arquivos/a7f33499e38442f683b02baf51db625d.jpg','Hospital Teste Ambiente',NULL,'1'),(3,NULL,'arquivos/08a98ea2725092ea3754e49597cc8c5b.jpg','hospital 2',NULL,'1'),(4,NULL,'arquivos/0195a01fdd88db3ecf6513b95b0b6d15.jpg','Unidade 9',NULL,'1');
+INSERT INTO `pagina_ambiente` VALUES (2,NULL,'arquivos/a7f33499e38442f683b02baf51db625d.jpg','Hospital Teste Ambiente',NULL,'1'),(3,NULL,'arquivos/08a98ea2725092ea3754e49597cc8c5b.jpg','hospital 2',NULL,'1'),(4,NULL,'arquivos/0195a01fdd88db3ecf6513b95b0b6d15.jpg','Unidade 9',NULL,'1'),(5,NULL,'Erro','teste kaka',NULL,'1'),(6,NULL,'Erro','tese jaja 22',NULL,'1'),(7,NULL,'arquivos/0ba4439ee9a46d9d9f14c60f88f45f87.png','tet',NULL,'1'),(8,NULL,'Erro','teste 33333',NULL,'1'),(9,NULL,'arquivos/737c895cc6f3ac2574f0750f26836e25.jpeg','0007 teste',NULL,'1');
 /*!40000 ALTER TABLE `pagina_ambiente` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -143,7 +143,7 @@ CREATE TABLE `pagina_home` (
   KEY `fk_home_rodape_idx` (`idRodape`),
   CONSTRAINT `fk_home_menu` FOREIGN KEY (`idMenu`) REFERENCES `tbl_menu` (`idmenu`),
   CONSTRAINT `fk_home_rodape` FOREIGN KEY (`idRodape`) REFERENCES `tbl_rodape` (`idrodape`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -152,6 +152,7 @@ CREATE TABLE `pagina_home` (
 
 LOCK TABLES `pagina_home` WRITE;
 /*!40000 ALTER TABLE `pagina_home` DISABLE KEYS */;
+INSERT INTO `pagina_home` VALUES (1,NULL,'','','','','','','',0,NULL,'','','','','','','','','');
 /*!40000 ALTER TABLE `pagina_home` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -174,7 +175,7 @@ CREATE TABLE `pagina_info_usuario` (
   KEY `fk_info_user_rodape_idx` (`idRodape`),
   CONSTRAINT `fk_info_user_menu` FOREIGN KEY (`idMenu`) REFERENCES `tbl_menu` (`idmenu`),
   CONSTRAINT `fk_info_user_rodape` FOREIGN KEY (`idRodape`) REFERENCES `tbl_rodape` (`idrodape`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -234,7 +235,7 @@ CREATE TABLE `pagina_procedimento_exame` (
   KEY `fk_proc_rod_idx` (`idRodape`),
   CONSTRAINT `fk_proc_men` FOREIGN KEY (`idMenu`) REFERENCES `tbl_menu` (`idmenu`),
   CONSTRAINT `fk_proc_rod` FOREIGN KEY (`idRodape`) REFERENCES `tbl_rodape` (`idrodape`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -266,7 +267,7 @@ CREATE TABLE `pagina_sobre` (
   KEY `fk_sobre_rodape_idx` (`idRodape`),
   CONSTRAINT `fk_sobre_menu` FOREIGN KEY (`idMenu`) REFERENCES `tbl_menu` (`idmenu`),
   CONSTRAINT `fk_sobre_rodape` FOREIGN KEY (`idRodape`) REFERENCES `tbl_rodape` (`idrodape`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -423,7 +424,7 @@ CREATE TABLE `tbl_ambiente_cabecalho` (
   `tituloPagina` varchar(255) NOT NULL,
   `ativo` char(1) NOT NULL,
   PRIMARY KEY (`idAmbienteCabecalho`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -432,7 +433,7 @@ CREATE TABLE `tbl_ambiente_cabecalho` (
 
 LOCK TABLES `tbl_ambiente_cabecalho` WRITE;
 /*!40000 ALTER TABLE `tbl_ambiente_cabecalho` DISABLE KEYS */;
-INSERT INTO `tbl_ambiente_cabecalho` VALUES (1,'arquivos/491a4a800025e423fbf1781c2c8ebce7.jpg','Ambientes','','1');
+INSERT INTO `tbl_ambiente_cabecalho` VALUES (1,'arquivos/491a4a800025e423fbf1781c2c8ebce7.jpg','Ambientes','','0'),(2,'Erro','teste','','0'),(3,'Erro','teste jajaj','','1');
 /*!40000 ALTER TABLE `tbl_ambiente_cabecalho` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -648,7 +649,7 @@ CREATE TABLE `tbl_conteudo_cabecalho` (
   `tituloPagina` varchar(100) NOT NULL,
   `ativo` int(1) DEFAULT NULL,
   PRIMARY KEY (`idConteudoCabecalho`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -702,7 +703,7 @@ CREATE TABLE `tbl_dado_contato` (
   `sugestao_critica` char(1) NOT NULL,
   `texto` text NOT NULL,
   PRIMARY KEY (`idDadoContato`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -711,7 +712,7 @@ CREATE TABLE `tbl_dado_contato` (
 
 LOCK TABLES `tbl_dado_contato` WRITE;
 /*!40000 ALTER TABLE `tbl_dado_contato` DISABLE KEYS */;
-INSERT INTO `tbl_dado_contato` VALUES (1,'bruno','40028922','11970707070','bruno@gamil.com','S','teste lalala sugestao');
+INSERT INTO `tbl_dado_contato` VALUES (1,'bruno','40028922','11970707070','bruno@gamil.com','S','teste lalala sugestao'),(2,'Marcel Neves Teixeira','(11) 1111-1111','(11) 11111-1111','marcel.nt@gmail.com','S','Teste marcel'),(3,'LetÃ­cia Santos','1147478965','11945875698','leticia@gmail.com','S','Lindo Site, Ã“timo atendimento, Tank you\r\n');
 /*!40000 ALTER TABLE `tbl_dado_contato` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -760,9 +761,9 @@ CREATE TABLE `tbl_endereco` (
   PRIMARY KEY (`idEndereco`),
   KEY `fk_end_city_idx` (`idCidade`),
   KEY `fk_end_estad_idx` (`idEstado`),
-  CONSTRAINT `fk_end_city` FOREIGN KEY (`idCidade`) REFERENCES `tbl_cidade` (`idcidade`),
+  CONSTRAINT `fk_end_city` FOREIGN KEY (`idCidade`) REFERENCES `tbl_cidade` (`idCidade`),
   CONSTRAINT `fk_end_estad` FOREIGN KEY (`idEstado`) REFERENCES `tbl_estado` (`idestado`)
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -771,7 +772,7 @@ CREATE TABLE `tbl_endereco` (
 
 LOCK TABLES `tbl_endereco` WRITE;
 /*!40000 ALTER TABLE `tbl_endereco` DISABLE KEYS */;
-INSERT INTO `tbl_endereco` VALUES (1,'ru a888',88888,'8888','8888',NULL,NULL),(2,'ru a888',88888,'8888','8888',NULL,NULL),(5,'Rua Carlos Antônio da Silva Neto',177,'Natal','00221121',NULL,NULL),(6,'Quadra LA',20,'Águas Lindas de Goiás','45454454',NULL,NULL),(7,'rua lala teste',666,'yey','2002',NULL,NULL),(8,'rua maria',4752,'8888','00221121',NULL,NULL),(9,'rwwfff',3434,'343rreee','343545',NULL,NULL),(10,'g',5,'fg','g',NULL,NULL),(11,'g',5,'fg','g',NULL,NULL),(12,'12',12,'12','12',NULL,NULL),(13,'rua adolfo rubens abreu',15,'abreu','06655570',NULL,NULL),(15,'rua adolfo rubens abreu',15,'abreu','06655570',NULL,NULL);
+INSERT INTO `tbl_endereco` VALUES (1,'ru a888',88888,'8888','8888',NULL,NULL),(2,'ru a888',88888,'8888','8888',NULL,NULL),(5,'Rua Carlos Antônio da Silva Neto',177,'Natal','00221121',NULL,NULL),(6,'Quadra LA',20,'Águas Lindas de Goiás','45454454',NULL,NULL),(7,'rua lala teste',666,'yey','2002',NULL,NULL),(8,'rua maria',4752,'8888','00221121',NULL,NULL),(9,'rwwfff',3434,'343rreee','343545',NULL,NULL),(10,'g',5,'fg','g',NULL,NULL),(11,'g',5,'fg','g',NULL,NULL),(12,'12',12,'12','12',NULL,NULL),(13,'rua adolfo rubens abreu',15,'abreu','06655570',NULL,NULL),(15,'rua adolfo rubens abreu',15,'abreu','06655570',NULL,NULL),(16,'estrada da granja ',444,'centro','055555584',NULL,NULL);
 /*!40000 ALTER TABLE `tbl_endereco` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -903,9 +904,9 @@ CREATE TABLE `tbl_funcionario` (
   KEY `fk_estad_func_idx` (`idEstadoCivil`),
   KEY `fk_niv_port_idx` (`idNivelPortal`),
   KEY `fk_func_setor_idx` (`idSetor`),
-  CONSTRAINT `fk_carg_func` FOREIGN KEY (`idCargo`) REFERENCES `tbl_cargo` (`idcargo`),
-  CONSTRAINT `fk_end_func` FOREIGN KEY (`idEndereco`) REFERENCES `tbl_endereco` (`idendereco`),
-  CONSTRAINT `fk_estad_func` FOREIGN KEY (`idEstadoCivil`) REFERENCES `tbl_estado_civil` (`idestadocivil`),
+  CONSTRAINT `fk_carg_func` FOREIGN KEY (`idCargo`) REFERENCES `tbl_cargo` (`idCargo`),
+  CONSTRAINT `fk_end_func` FOREIGN KEY (`idEndereco`) REFERENCES `tbl_endereco` (`idEndereco`),
+  CONSTRAINT `fk_estad_func` FOREIGN KEY (`idEstadoCivil`) REFERENCES `tbl_estado_civil` (`idEstadoCivil`),
   CONSTRAINT `fk_func_setor` FOREIGN KEY (`idSetor`) REFERENCES `tbl_setor` (`idsetor`),
   CONSTRAINT `fk_niv_port` FOREIGN KEY (`idNivelPortal`) REFERENCES `tbl_nivel_portal` (`idnivelportal`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -950,8 +951,8 @@ CREATE TABLE `tbl_historico_paciente` (
   CONSTRAINT `fk_hist_medic` FOREIGN KEY (`idMedico`) REFERENCES `tbl_medico` (`idmedico`),
   CONSTRAINT `fk_hist_medicamento` FOREIGN KEY (`idMedicamento`) REFERENCES `tbl_medicamento` (`idmedicamento`),
   CONSTRAINT `fk_hist_paci` FOREIGN KEY (`idPaciente`) REFERENCES `tbl_paciente` (`idpaciente`),
-  CONSTRAINT `fk_hist_paci_consult` FOREIGN KEY (`idAgendaConsulta`) REFERENCES `tbl_agenda_consulta` (`idagendaconsulta`),
-  CONSTRAINT `fk_hist_paci_exam` FOREIGN KEY (`idAgendaExame`) REFERENCES `tbl_agenda_exame` (`idagendaexame`),
+  CONSTRAINT `fk_hist_paci_consult` FOREIGN KEY (`idAgendaConsulta`) REFERENCES `tbl_agenda_consulta` (`idAgendaConsulta`),
+  CONSTRAINT `fk_hist_paci_exam` FOREIGN KEY (`idAgendaExame`) REFERENCES `tbl_agenda_exame` (`idAgendaExame`),
   CONSTRAINT `fk_hist_paci_result_exam` FOREIGN KEY (`idResultadoExame`) REFERENCES `tbl_resultado_exame` (`idresultadoexame`),
   CONSTRAINT `fk_hist_receita` FOREIGN KEY (`idReceita`) REFERENCES `tbl_receita` (`idreceita`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -1006,7 +1007,7 @@ CREATE TABLE `tbl_localiza_ambulancia` (
   `idFuncionario` int(11) NOT NULL,
   PRIMARY KEY (`idLocalizaAmbulancia`),
   KEY `fk_func_motorist_idx` (`idFuncionario`),
-  CONSTRAINT `fk_func_motorist` FOREIGN KEY (`idFuncionario`) REFERENCES `tbl_funcionario` (`idfuncionario`)
+  CONSTRAINT `fk_func_motorist` FOREIGN KEY (`idFuncionario`) REFERENCES `tbl_funcionario` (`idFuncionario`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -1060,7 +1061,7 @@ CREATE TABLE `tbl_manutencao_ambulancia` (
   PRIMARY KEY (`idInformacao`),
   KEY `fk_man_amb_idx` (`idAmbulancia`),
   KEY `fk_tip_man_amb_idx` (`idTipoManutencao`),
-  CONSTRAINT `fk_man_amb` FOREIGN KEY (`idAmbulancia`) REFERENCES `tbl_ambulancia` (`idambulancia`),
+  CONSTRAINT `fk_man_amb` FOREIGN KEY (`idAmbulancia`) REFERENCES `tbl_ambulancia` (`idAmbulancia`),
   CONSTRAINT `fk_tip_man_amb` FOREIGN KEY (`idTipoManutencao`) REFERENCES `tbl_tipo_manutencao` (`idtipomanutencao`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -1124,10 +1125,10 @@ CREATE TABLE `tbl_medico` (
   KEY `fk_esp_medico_idx` (`idEspecialidade`),
   KEY `fk_niv_medico_idx` (`idNivelPortal`),
   KEY `fk_estad_civ_medico_idx` (`idEstadoCivil`),
-  CONSTRAINT `fk_carg_medico` FOREIGN KEY (`idCargo`) REFERENCES `tbl_cargo` (`idcargo`),
-  CONSTRAINT `fk_end_medico` FOREIGN KEY (`idEndereco`) REFERENCES `tbl_endereco` (`idendereco`),
-  CONSTRAINT `fk_esp_medico` FOREIGN KEY (`idEspecialidade`) REFERENCES `tbl_especialidade` (`idespecialidade`),
-  CONSTRAINT `fk_estad_civ_medico` FOREIGN KEY (`idEstadoCivil`) REFERENCES `tbl_estado_civil` (`idestadocivil`),
+  CONSTRAINT `fk_carg_medico` FOREIGN KEY (`idCargo`) REFERENCES `tbl_cargo` (`idCargo`),
+  CONSTRAINT `fk_end_medico` FOREIGN KEY (`idEndereco`) REFERENCES `tbl_endereco` (`idEndereco`),
+  CONSTRAINT `fk_esp_medico` FOREIGN KEY (`idEspecialidade`) REFERENCES `tbl_especialidade` (`idEspecialidade`),
+  CONSTRAINT `fk_estad_civ_medico` FOREIGN KEY (`idEstadoCivil`) REFERENCES `tbl_estado_civil` (`idEstadoCivil`),
   CONSTRAINT `fk_niv_medico` FOREIGN KEY (`idNivelPortal`) REFERENCES `tbl_nivel_portal` (`idnivelportal`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -1249,12 +1250,12 @@ CREATE TABLE `tbl_paciente` (
   KEY `fk_paci_conv_idx` (`idPlano`),
   KEY `fk_paci_conv_idx1` (`idConvenio`),
   KEY `fk_end_paci_idx` (`idEndereco`),
-  CONSTRAINT `fk_end_paci` FOREIGN KEY (`idEndereco`) REFERENCES `tbl_endereco` (`idendereco`),
-  CONSTRAINT `fk_estad_civ` FOREIGN KEY (`idEstadoCivil`) REFERENCES `tbl_estado_civil` (`idestadocivil`),
-  CONSTRAINT `fk_paci_conv` FOREIGN KEY (`idConvenio`) REFERENCES `tbl_convenio` (`idconvenio`),
+  CONSTRAINT `fk_end_paci` FOREIGN KEY (`idEndereco`) REFERENCES `tbl_endereco` (`idEndereco`),
+  CONSTRAINT `fk_estad_civ` FOREIGN KEY (`idEstadoCivil`) REFERENCES `tbl_estado_civil` (`idEstadoCivil`),
+  CONSTRAINT `fk_paci_conv` FOREIGN KEY (`idConvenio`) REFERENCES `tbl_convenio` (`idConvenio`),
   CONSTRAINT `fk_paci_plan_comv` FOREIGN KEY (`idPlano`) REFERENCES `tbl_plano_convenio` (`idplano`),
   CONSTRAINT `fk_tipo_sangue` FOREIGN KEY (`idTipoSanguineo`) REFERENCES `tbl_tipo_sanguineo` (`idtiposanguineo`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1263,7 +1264,7 @@ CREATE TABLE `tbl_paciente` (
 
 LOCK TABLES `tbl_paciente` WRITE;
 /*!40000 ALTER TABLE `tbl_paciente` DISABLE KEYS */;
-INSERT INTO `tbl_paciente` VALUES (1,'Bruno correia','2012-12-12','1',12,'12','12','12','12','12','1','arquivos/3ca79968fcf8649b03132e00706579a2.png','arquivos/3ca79968fcf8649b03132e00706579a2.png','arquivos/3ca79968fcf8649b03132e00706579a2.png','arquivos/3ca79968fcf8649b03132e00706579a2.png',1,12,1,1,12,NULL),(2,'Vinicius Ribeiro','1998-10-12','1',5665,'48149429824','15','vinir@gmali.com','40028956','1198923295','1','arquivos/3ca79968fcf8649b03132e00706579a2.png','arquivos/3ca79968fcf8649b03132e00706579a2.png','arquivos/3ca79968fcf8649b03132e00706579a2.png','arquivos/3ca79968fcf8649b03132e00706579a2.png',1,12,1,1,12,NULL);
+INSERT INTO `tbl_paciente` VALUES (1,'Bruno correia','2012-12-12','1',12,'12','12','12','12','12','1','arquivos/3ca79968fcf8649b03132e00706579a2.png','arquivos/3ca79968fcf8649b03132e00706579a2.png','arquivos/3ca79968fcf8649b03132e00706579a2.png','arquivos/3ca79968fcf8649b03132e00706579a2.png',1,12,1,1,12,NULL),(2,'Vinicius Ribeiro','1998-10-12','1',5665,'48149429824','15','vinir@gmali.com','40028956','1198923295','1','arquivos/3ca79968fcf8649b03132e00706579a2.png','arquivos/3ca79968fcf8649b03132e00706579a2.png','arquivos/3ca79968fcf8649b03132e00706579a2.png','arquivos/3ca79968fcf8649b03132e00706579a2.png',1,12,1,1,12,NULL),(3,'marcel ','0000-00-00','1',544541515,'48149429824','maecel123','marcel@gmail.com','989828156','11982982819','1','arquivos/000c016d34ff41e245b69c67f22c83ff.jpg','arquivos/79958cabcbd8ab4afe3279374677ede2.jpg','arquivos/c4cf192ff255dddf4cc2018dc622f834.jpg','arquivos/bcb3798d312ed46335afe6b1c0ebd398.jpg',1,16,1,1,8,NULL);
 /*!40000 ALTER TABLE `tbl_paciente` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1326,7 +1327,7 @@ CREATE TABLE `tbl_plano_convenio` (
   `idConvenio` int(11) NOT NULL,
   PRIMARY KEY (`idPlano`),
   KEY `fk_plan_conv_idx` (`idConvenio`),
-  CONSTRAINT `fk_plan_conv` FOREIGN KEY (`idConvenio`) REFERENCES `tbl_convenio` (`idconvenio`)
+  CONSTRAINT `fk_plan_conv` FOREIGN KEY (`idConvenio`) REFERENCES `tbl_convenio` (`idConvenio`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -1352,7 +1353,7 @@ CREATE TABLE `tbl_pre_atendimento` (
   `situacao` varchar(255) DEFAULT NULL,
   `sintomas` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`idPreAtendimento`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1361,7 +1362,7 @@ CREATE TABLE `tbl_pre_atendimento` (
 
 LOCK TABLES `tbl_pre_atendimento` WRITE;
 /*!40000 ALTER TABLE `tbl_pre_atendimento` DISABLE KEYS */;
-INSERT INTO `tbl_pre_atendimento` VALUES (1,NULL,'qwq','qwqw');
+INSERT INTO `tbl_pre_atendimento` VALUES (1,NULL,'qwq','qwqw'),(2,NULL,'yyy','hhh');
 /*!40000 ALTER TABLE `tbl_pre_atendimento` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1378,7 +1379,7 @@ CREATE TABLE `tbl_preco_consulta` (
   `idAgendaConsulta` int(11) NOT NULL,
   PRIMARY KEY (`idPrecoConsulta`),
   KEY `fk_agend_prec_consult_idx` (`idAgendaConsulta`),
-  CONSTRAINT `fk_agend_prec_consult` FOREIGN KEY (`idAgendaConsulta`) REFERENCES `tbl_agenda_consulta` (`idagendaconsulta`)
+  CONSTRAINT `fk_agend_prec_consult` FOREIGN KEY (`idAgendaConsulta`) REFERENCES `tbl_agenda_consulta` (`idAgendaConsulta`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -1404,7 +1405,7 @@ CREATE TABLE `tbl_preco_exame` (
   `idExame` int(11) NOT NULL,
   PRIMARY KEY (`idPrecoExame`),
   KEY `fk_tip_exam_prec_idx` (`idExame`),
-  CONSTRAINT `fk_tip_exam_prec` FOREIGN KEY (`idExame`) REFERENCES `tbl_exame` (`idexame`)
+  CONSTRAINT `fk_tip_exam_prec` FOREIGN KEY (`idExame`) REFERENCES `tbl_exame` (`idExame`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -1431,7 +1432,7 @@ CREATE TABLE `tbl_procedimento_cabecalho` (
   `tituloCabecalho` varchar(255) DEFAULT NULL,
   `ativo` int(1) DEFAULT NULL,
   PRIMARY KEY (`idProcedimentoCabecalho`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1461,8 +1462,8 @@ CREATE TABLE `tbl_prontuario` (
   PRIMARY KEY (`idProntuario`),
   KEY `fk_pront_paci_idx` (`idPaciente`),
   KEY `fk_pront_medic_idx` (`idMedico`),
-  CONSTRAINT `fk_pront_medic` FOREIGN KEY (`idMedico`) REFERENCES `tbl_medico` (`idmedico`),
-  CONSTRAINT `fk_pront_paci` FOREIGN KEY (`idPaciente`) REFERENCES `tbl_paciente` (`idpaciente`)
+  CONSTRAINT `fk_pront_medic` FOREIGN KEY (`idMedico`) REFERENCES `tbl_medico` (`idMedico`),
+  CONSTRAINT `fk_pront_paci` FOREIGN KEY (`idPaciente`) REFERENCES `tbl_paciente` (`idPaciente`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -1491,7 +1492,7 @@ CREATE TABLE `tbl_quarto` (
   PRIMARY KEY (`idQuarto`),
   KEY `fk_status_quarto_idx` (`idStatus`),
   KEY `fk_andar_quarto_idx` (`idAndar`),
-  CONSTRAINT `fk_andar_quarto` FOREIGN KEY (`idAndar`) REFERENCES `tbl_andar` (`idandar`),
+  CONSTRAINT `fk_andar_quarto` FOREIGN KEY (`idAndar`) REFERENCES `tbl_andar` (`idAndar`),
   CONSTRAINT `fk_status_quarto` FOREIGN KEY (`idStatus`) REFERENCES `tbl_status_quarto` (`idstatus`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -1521,7 +1522,7 @@ CREATE TABLE `tbl_receita` (
   `idMedico` int(11) NOT NULL,
   PRIMARY KEY (`idReceita`),
   KEY `fk_receit_medic_idx` (`idMedico`),
-  CONSTRAINT `fk_receit_medic` FOREIGN KEY (`idMedico`) REFERENCES `tbl_medico` (`idmedico`)
+  CONSTRAINT `fk_receit_medic` FOREIGN KEY (`idMedico`) REFERENCES `tbl_medico` (`idMedico`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -1547,7 +1548,7 @@ CREATE TABLE `tbl_resposta_chatbot` (
   `idPergunta` int(11) NOT NULL,
   PRIMARY KEY (`idResposta`),
   KEY `fk_per_respos_idx` (`idPergunta`),
-  CONSTRAINT `fk_per_respos` FOREIGN KEY (`idPergunta`) REFERENCES `tbl_pergunta_chatbot` (`idpergunta`)
+  CONSTRAINT `fk_per_respos` FOREIGN KEY (`idPergunta`) REFERENCES `tbl_pergunta_chatbot` (`idPergunta`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -1576,8 +1577,8 @@ CREATE TABLE `tbl_resulado_consulta` (
   PRIMARY KEY (`idResConsulta`),
   KEY `fi_Medico_Res_Consul_idx` (`idMedico`),
   KEY `fk_Paciente_Res_Consul_idx` (`idPaciente`),
-  CONSTRAINT `fk_Medico_Res_Consul` FOREIGN KEY (`idMedico`) REFERENCES `tbl_medico` (`idmedico`),
-  CONSTRAINT `fk_Paciente_Res_Consul` FOREIGN KEY (`idPaciente`) REFERENCES `tbl_paciente` (`idpaciente`)
+  CONSTRAINT `fk_Medico_Res_Consul` FOREIGN KEY (`idMedico`) REFERENCES `tbl_medico` (`idMedico`),
+  CONSTRAINT `fk_Paciente_Res_Consul` FOREIGN KEY (`idPaciente`) REFERENCES `tbl_paciente` (`idPaciente`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -1608,9 +1609,9 @@ CREATE TABLE `tbl_resultado_exame` (
   KEY `fk_res_paci_idx` (`idPaciente`),
   KEY `fk_tip_exame_idx` (`idExame`),
   KEY `fk_res_medic_idx` (`idMedico`),
-  CONSTRAINT `fk_res_medic` FOREIGN KEY (`idMedico`) REFERENCES `tbl_medico` (`idmedico`),
-  CONSTRAINT `fk_res_paci` FOREIGN KEY (`idPaciente`) REFERENCES `tbl_paciente` (`idpaciente`),
-  CONSTRAINT `fk_tip_exame` FOREIGN KEY (`idExame`) REFERENCES `tbl_exame` (`idexame`)
+  CONSTRAINT `fk_res_medic` FOREIGN KEY (`idMedico`) REFERENCES `tbl_medico` (`idMedico`),
+  CONSTRAINT `fk_res_paci` FOREIGN KEY (`idPaciente`) REFERENCES `tbl_paciente` (`idPaciente`),
+  CONSTRAINT `fk_tip_exame` FOREIGN KEY (`idExame`) REFERENCES `tbl_exame` (`idExame`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -1760,7 +1761,7 @@ CREATE TABLE `tbl_sobre_cabecalho` (
   `tituloPagina` varchar(100) NOT NULL,
   `ativo` int(1) DEFAULT NULL,
   PRIMARY KEY (`idSobreCabecalho`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1834,7 +1835,7 @@ CREATE TABLE `tbl_telefone_medico` (
   PRIMARY KEY (`idTelefone`),
   KEY `fk_tel_medic_idx` (`idMedico`),
   KEY `fk_tip_tel_medic_idx` (`idTipoTelefone`),
-  CONSTRAINT `fk_tel_medic` FOREIGN KEY (`idMedico`) REFERENCES `tbl_medico` (`idmedico`),
+  CONSTRAINT `fk_tel_medic` FOREIGN KEY (`idMedico`) REFERENCES `tbl_medico` (`idMedico`),
   CONSTRAINT `fk_tip_tel_medic` FOREIGN KEY (`idTipoTelefone`) REFERENCES `tbl_tipo_telefone` (`idtipotelefone`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -2005,7 +2006,7 @@ CREATE TABLE `tbl_trabalheconosco` (
   `profissao` varchar(45) NOT NULL,
   `curriculo` varchar(255) NOT NULL,
   PRIMARY KEY (`idCurriculo`)
-) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -2014,7 +2015,7 @@ CREATE TABLE `tbl_trabalheconosco` (
 
 LOCK TABLES `tbl_trabalheconosco` WRITE;
 /*!40000 ALTER TABLE `tbl_trabalheconosco` DISABLE KEYS */;
-INSERT INTO `tbl_trabalheconosco` VALUES (7,'brunoCorreia','11987928392','11987928392','brunoramoscorreia15@gmail.com','Ti','arquivos/c298752391dc2eefb22fa93bb69a8f19.doc'),(8,'TESTEdois','11987928392','11987928392','brunoramoscorreia15@gmail.com','Ti','arquivos/c298752391dc2eefb22fa93bb69a8f19.doc'),(9,'xdjhsf','11987928392','11987928392','brunoramoscorreia15@gmail.com','Ti','arquivos/bd6d5514777f6e469fed3bdec8e5f7ce.docx'),(12,'xdjhsf','11987928392','11987928392','brunoramoscorreia15@gmail.com','Ti','arquivos/bd6d5514777f6e469fed3bdec8e5f7ce.docx'),(13,'xdjhsf','11987928392','11987928392','brunoramoscorreia15@gmail.com','Ti','arquivos/bd6d5514777f6e469fed3bdec8e5f7ce.docx'),(14,'xdjhsf','11987928392','11987928392','brunoramoscorreia15@gmail.com','Ti','arquivos/bd6d5514777f6e469fed3bdec8e5f7ce.docx'),(15,'xdjhsf','11987928392','11987928392','brunoramoscorreia15@gmail.com','Ti','arquivos/bd6d5514777f6e469fed3bdec8e5f7ce.docx'),(16,'xdjhsf','11987928392','11987928392','brunoramoscorreia15@gmail.com','Ti','arquivos/bd6d5514777f6e469fed3bdec8e5f7ce.docx'),(17,'xdjhsf','11987928392','11987928392','brunoramoscorreia15@gmail.com','Ti','arquivos/bd6d5514777f6e469fed3bdec8e5f7ce.docx'),(18,'xdjhsf','11987928392','11987928392','brunoramoscorreia15@gmail.com','Ti','arquivos/bd6d5514777f6e469fed3bdec8e5f7ce.docx'),(19,'xdjhsf','11987928392','11987928392','brunoramoscorreia15@gmail.com','Ti','arquivos/bd6d5514777f6e469fed3bdec8e5f7ce.docx'),(22,'xdjhsf','11987928392','11987928392','brunoramoscorreia15@gmail.com','Ti','arquivos/bd6d5514777f6e469fed3bdec8e5f7ce.docx'),(23,'xdjhsf','11987928392','11987928392','brunoramoscorreia15@gmail.com','Ti','arquivos/bd6d5514777f6e469fed3bdec8e5f7ce.docx'),(24,'xdjhsf','11987928392','11987928392','brunoramoscorreia15@gmail.com','Ti','arquivos/bd6d5514777f6e469fed3bdec8e5f7ce.docx'),(25,'xdjhsf','11987928392','11987928392','brunoramoscorreia15@gmail.com','Ti','arquivos/bd6d5514777f6e469fed3bdec8e5f7ce.docx'),(27,'xdjhsf','11987928392','11987928392','brunoramoscorreia15@gmail.com','Ti','arquivos/bd6d5514777f6e469fed3bdec8e5f7ce.docx'),(28,'xdjhsf','11987928392','11987928392','brunoramoscorreia15@gmail.com','Ti','arquivos/bd6d5514777f6e469fed3bdec8e5f7ce.docx'),(29,'xdjhsf','11987928392','11987928392','brunoramoscorreia15@gmail.com','Ti','arquivos/bd6d5514777f6e469fed3bdec8e5f7ce.docx');
+INSERT INTO `tbl_trabalheconosco` VALUES (7,'brunoCorreia','11987928392','11987928392','brunoramoscorreia15@gmail.com','Ti','arquivos/c298752391dc2eefb22fa93bb69a8f19.doc'),(8,'TESTEdois','11987928392','11987928392','brunoramoscorreia15@gmail.com','Ti','arquivos/c298752391dc2eefb22fa93bb69a8f19.doc'),(9,'xdjhsf','11987928392','11987928392','brunoramoscorreia15@gmail.com','Ti','arquivos/bd6d5514777f6e469fed3bdec8e5f7ce.docx'),(12,'xdjhsf','11987928392','11987928392','brunoramoscorreia15@gmail.com','Ti','arquivos/bd6d5514777f6e469fed3bdec8e5f7ce.docx'),(13,'xdjhsf','11987928392','11987928392','brunoramoscorreia15@gmail.com','Ti','arquivos/bd6d5514777f6e469fed3bdec8e5f7ce.docx'),(14,'xdjhsf','11987928392','11987928392','brunoramoscorreia15@gmail.com','Ti','arquivos/bd6d5514777f6e469fed3bdec8e5f7ce.docx'),(15,'xdjhsf','11987928392','11987928392','brunoramoscorreia15@gmail.com','Ti','arquivos/bd6d5514777f6e469fed3bdec8e5f7ce.docx'),(16,'xdjhsf','11987928392','11987928392','brunoramoscorreia15@gmail.com','Ti','arquivos/bd6d5514777f6e469fed3bdec8e5f7ce.docx'),(17,'xdjhsf','11987928392','11987928392','brunoramoscorreia15@gmail.com','Ti','arquivos/bd6d5514777f6e469fed3bdec8e5f7ce.docx'),(18,'xdjhsf','11987928392','11987928392','brunoramoscorreia15@gmail.com','Ti','arquivos/bd6d5514777f6e469fed3bdec8e5f7ce.docx'),(19,'xdjhsf','11987928392','11987928392','brunoramoscorreia15@gmail.com','Ti','arquivos/bd6d5514777f6e469fed3bdec8e5f7ce.docx'),(22,'xdjhsf','11987928392','11987928392','brunoramoscorreia15@gmail.com','Ti','arquivos/bd6d5514777f6e469fed3bdec8e5f7ce.docx'),(23,'xdjhsf','11987928392','11987928392','brunoramoscorreia15@gmail.com','Ti','arquivos/bd6d5514777f6e469fed3bdec8e5f7ce.docx'),(24,'xdjhsf','11987928392','11987928392','brunoramoscorreia15@gmail.com','Ti','arquivos/bd6d5514777f6e469fed3bdec8e5f7ce.docx'),(25,'xdjhsf','11987928392','11987928392','brunoramoscorreia15@gmail.com','Ti','arquivos/bd6d5514777f6e469fed3bdec8e5f7ce.docx'),(27,'xdjhsf','11987928392','11987928392','brunoramoscorreia15@gmail.com','Ti','arquivos/bd6d5514777f6e469fed3bdec8e5f7ce.docx'),(28,'xdjhsf','11987928392','11987928392','brunoramoscorreia15@gmail.com','Ti','arquivos/bd6d5514777f6e469fed3bdec8e5f7ce.docx'),(29,'xdjhsf','11987928392','11987928392','brunoramoscorreia15@gmail.com','Ti','arquivos/bd6d5514777f6e469fed3bdec8e5f7ce.docx'),(30,'Marcel Neves Teixeira','(11) 1111-1111','(11) 11111-1111','marcel.nt@gmail.com','Teste','Erro');
 /*!40000 ALTER TABLE `tbl_trabalheconosco` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -2040,8 +2041,8 @@ CREATE TABLE `tbl_unidade` (
   KEY `fk_unid_menu_idx` (`idMenu`),
   KEY `fk_unid_rodape_idx` (`idRodape`),
   KEY `fk_unidade_ender_idx` (`idEndereco`),
-  CONSTRAINT `fk_ender` FOREIGN KEY (`idEndereco`) REFERENCES `tbl_endereco` (`idendereco`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
+  CONSTRAINT `fk_ender` FOREIGN KEY (`idEndereco`) REFERENCES `tbl_endereco` (`idEndereco`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -2067,7 +2068,7 @@ CREATE TABLE `tbl_unidade_cabecalho2` (
   `tituloFoto` varchar(255) DEFAULT NULL,
   `ativo` int(11) DEFAULT NULL,
   PRIMARY KEY (`idUnidadeCabecalho`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -2089,4 +2090,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-05-29 18:57:18
+-- Dump completed on 2018-06-05  9:34:34

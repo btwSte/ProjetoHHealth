@@ -7,7 +7,7 @@ session_start();
 /* Chama o arquivo que contem os funçoes*/
 require_once ("../../func.php");
 /*Chama a função para verificar se o usuario esta logado*/
-logar($_SESSION['LogCod']);
+// logar($_SESSION['LogCod']);
 
  ?>
 <!DOCTYPE html>

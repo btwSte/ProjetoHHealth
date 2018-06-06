@@ -183,7 +183,7 @@ class controllerCmsAmbientes{
         $imagem_file = false;
       }
 
-      $informacaoConteudo->fotoAssunto = $diretorio_completo;
+      $informacaoConteudo->fotoPrincipal = $diretorio_completo;
       $informacaoConteudo::InsertConteudo($informacaoConteudo);
     }
 
@@ -228,7 +228,7 @@ class controllerCmsAmbientes{
       $diretorio_completo = null;
       $movUpload = false;
       $imagem_file = null;
-      $fotoAssunto = "a";
+      $fotoPrincipal = "a";
 
       //Pega foto
       if (!empty($_FILES['imagem_conteudo']['name'])){
@@ -249,12 +249,12 @@ class controllerCmsAmbientes{
       }
 
       if ($imagem_file == true && $MovUpload == true) {
-        $fotoAssunto = $diretorio_completo;
+        $fotoPrincipal = $diretorio_completo;
       } else {
-        $fotoAssunto = "vazio";
+        $fotoPrincipal = "vazio";
       }
 
-      $informacaoConteudo->fotoAssunto = $fotoAssunto;
+      $informacaoConteudo->fotoPrincipal = $fotoPrincipal;
       Ambientes::UpdateConteudo($informacaoConteudo);
     }
 

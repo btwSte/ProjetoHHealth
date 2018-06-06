@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-  <head>
+  <head lang="pt-br">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Contato - HHealth</title>
@@ -54,6 +54,7 @@
             </div>
             <div id="btn_sc">
               <input type="submit" name="btnEnviar" value="Enviar">
+            </div>
           </form>
 
         </div>

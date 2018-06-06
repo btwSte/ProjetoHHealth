@@ -47,19 +47,19 @@ class Login
         {
             while($ln = $validarlogin->fetch(PDO::FETCH_ASSOC))
             {
-               $_SESSION['LogCod'] = $ln['idLogin'];
-              // echo($_SESSION['LogCod']);
+               // $_SESSION['LogCod'] = $ln['idPaciente'];
+              echo($_SESSION['LogCod']);
               echo "<script>alert('Logado Com Sucesso!');
                     top.location.href='views/cms/cmsHome_view.php';
                     </script>";
-
+              // header('location:views/cms/cmsHome_view.php');
             };
         }
         else
         {
-          echo "<script>alert('Login Incorreto');
-              top.location.href='index.php';
-              </script>";
+          // echo "<script>alert('Login Incorreto');
+          //     top.location.href='index.php';
+          //     </script>";
 
         }
     }

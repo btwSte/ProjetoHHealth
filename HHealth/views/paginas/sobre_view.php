@@ -3,7 +3,7 @@
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -43,7 +43,7 @@
 
         <div id="imagem_titulo">
           <h1> <?php echo($list[$cont]->tituloFoto); ?> </h1>
-          <img src="<?php echo $entraPortal.$list[$cont]->fotoCabecalho; ?>" alt="background Informações">
+          <img src="http://www.portalhealth.local.br/<?php echo $list[$cont]->fotoCabecalho; ?>" alt="background Informações">
         </div>
           <div id="titulo_sobre">
             <h1><?php echo($list[$cont]->tituloPagina); ?></h1>
@@ -69,14 +69,14 @@
               <p> <?php echo($listConteudo[$contConteudo]->textoSobre); ?></p>
             </div>
             <div id="img_sobre">
-              <img src="<?php echo($entraPortal.$listConteudo[$contConteudo]->fotoSobre); ?>" alt="#">
+              <img src="http://www.portalhealth.local.br/<?php echo($listConteudo[$contConteudo]->fotoSobre); ?>" alt="#">
             </div>
 
             <?php
                 $contConteudo +=1;
               }
             ?>
-            
+
           </div>
       </main>
       <div id="container_footer">

@@ -3,14 +3,14 @@
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Unidades - HHealth</title>
     <link rel="stylesheet" href="<?php echo $voltaDois; ?>css/style.css">
     <link rel="stylesheet" href="<?php echo $voltaDois; ?>css/normalize.css">
-    <script src=".<?php echo $voltaDois; ?>js/jquery.js"></script>
+    <script src="<?php echo $voltaDois; ?>js/jquery.js"></script>
     <script src="<?php echo $voltaDois; ?>js/modernizr.min.js"></script>
   </head>
   <body>
@@ -45,7 +45,7 @@
         <div id="imagem_titulo">
 
           <h1><?php echo($list[$cont]->tituloFoto); ?></h1>
-          <img src="<?php echo $entraPortal.$list[$cont]->fotoCabecalho; ?>" alt="background Informações">
+          <img src="http://www.portalhealth.local.br/<?php echo $list[$cont]->fotoCabecalho; ?>" alt="background Informações">
         </div>
 
         <?php
@@ -65,7 +65,7 @@
           ?>
           <div class="container_item_unidades">
             <div class="item_unidade_imagem">
-              <img src="<?php echo($entraPortal.$listConteudo[$contConteudo]->fotoUnidade); ?>" alt="Unidade de SP" title="Unidade de SP">
+              <img src="http://www.portalhealth.local.br/<?php echo($listConteudo[$contConteudo]->fotoUnidade); ?>" alt="Unidade de SP" title="Unidade de SP">
             </div>
             <div class="item_unidade_texto">
               <p><?php echo($listConteudo[$contConteudo]->logradouro); ?> - <?php echo($listConteudo[$contConteudo]->bairro); ?> - SP</p>

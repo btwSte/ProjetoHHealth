@@ -4,6 +4,7 @@
   $voltaDois = "../../";
   $voltaUm = "../";
 
-  $entraPortal = "../../../PortalHHealth/"
+  $entraPortal = "../../../local/"
 
+  
  ?>

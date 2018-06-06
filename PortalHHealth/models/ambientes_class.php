@@ -11,8 +11,8 @@ class Ambientes {
 
   public $ativo;
   public $idPaginaAmbiente;
-  public $fotoConteudoAmbiente;
-  public $textoConteudoAmbiente;
+  public $fotoPrincipal;
+  public $textoAssunto;
 
   function __construct(){
     require_once('bd_class.php');
@@ -25,7 +25,7 @@ class Ambientes {
       $ativo = 1;
 
       $sql = "INSERT INTO pagina_ambiente (fotoPrincipal, textoFoto, ativo)
-          VALUES ('".$informacaoConteudo->fotoAssunto."',
+          VALUES ('".$informacaoConteudo->fotoPrincipal."',
                   '".$informacaoConteudo->textoAssunto."',
                   '".$ativo."')";
 
@@ -67,8 +67,8 @@ class Ambientes {
         $listConteudo[] = new Ambientes();
 
         $listConteudo[$cont]->idPaginaAmbiente = $result['idPaginaAmbiente'];
-        $listConteudo[$cont]->fotoConteudoAmbiente = $result['fotoPrincipal'];
-        $listConteudo[$cont]->textoConteudoAmbiente = $result['textoFoto'];
+        $listConteudo[$cont]->fotoPrincipal = $result['fotoPrincipal'];
+        $listConteudo[$cont]->textoAssunto = $result['textoFoto'];
         $listConteudo[$cont]->ativo = $result['ativo'];
 
         //incrementa o contador
@@ -97,8 +97,8 @@ class Ambientes {
       $conteudoResultado = new Ambientes();
 
       $conteudoResultado->idPaginaAmbiente = $result['idPaginaAmbiente'];
-      $conteudoResultado->fotoConteudoAmbiente = $result['fotoPrincipal'];
-      $conteudoResultado->textoConteudoAmbiente = $result['textoFoto'];
+      $conteudoResultado->fotoPrincipal = $result['fotoPrincipal'];
+      $conteudoResultado->textoAssunto = $result['textoFoto'];
       $conteudoResultado->ativo = $result['ativo'];
 
       }else{
@@ -133,13 +133,13 @@ class Ambientes {
     }
 
     public function UpdateConteudo($conteudo){
-      if ($conteudo->fotoAssunto == "vazio") {
+      if ($conteudo->fotoPrincipal == "vazio") {
         $sql = "UPDATE pagina_ambiente SET
             textoFoto='".$conteudo->textoAssunto."'
             WHERE idPaginaAmbiente=".$conteudo->id;
       } else {
         $sql = "UPDATE pagina_ambiente SET
-          fotoPrincipal='".$conteudo->fotoAssunto."',
+          fotoPrincipal='".$conteudo->fotoPrincipal."',
           textoFoto='".$conteudo->textoAssunto."'
           WHERE idPaginaAmbiente=".$conteudo->id;
       }
@@ -209,8 +209,8 @@ class Ambientes {
         $listConteudo[] = new Ambientes();
 
         $listConteudo[$cont]->idPaginaAmbiente = $result['idPaginaAmbiente'];
-        $listConteudo[$cont]->fotoConteudoAmbiente = $result['fotoPrincipal'];
-        $listConteudo[$cont]->textoConteudoAmbiente = $result['textoFoto'];
+        $listConteudo[$cont]->fotoPrincipal = $result['fotoPrincipal'];
+        $listConteudo[$cont]->textoAssunto = $result['textoFoto'];
         $listConteudo[$cont]->ativo = $result['ativo'];
 
         //incrementa o contador

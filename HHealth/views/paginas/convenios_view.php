@@ -2,7 +2,7 @@
 require_once('../../variaveis.php');
  ?>
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -39,7 +39,7 @@ require_once('../../variaveis.php');
         ?>
         <div id="imagem_titulo">
           <h1><?php echo($list[$cont]->tituloPagina); ?></h1>
-          <img src="<?php echo $entraPortal.$list[$cont]->fotoPrincipal; ?>" alt="background Informações">
+          <img src="http://www.portalhealth.local.br/<?php echo $list[$cont]->fotoPrincipal; ?>" alt="background Informações">
         </div>
 
         <?php
@@ -78,10 +78,10 @@ require_once('../../variaveis.php');
             ?>
             <div class="div_linha_<?php echo $cor; ?>">
               <div class="item_convenio"> <?php echo($listConteudo[$contConteudo]->nome); ?></div>
-              <div class="item_convenio"> Teste </div>
-              <div class="item_convenio"> Teste </div>
-              <div class="item_convenio"> Teste </div>
-              <div class="item_convenio"> Teste </div>
+              <div class="item_convenio"> Sim </div>
+              <div class="item_convenio"> Sim </div>
+              <div class="item_convenio"> Sim </div>
+              <div class="item_convenio"> Sim </div>
             </div>
 
             <?php

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -7,14 +7,9 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/animate.css">
+      <link rel="stylesheet" href="css/flexslider.css">
     <script src="js/jquery.js"></script>
     <script src="js/modernizr.min.js"></script>
-    <!--
-      LIK SLIDER https://www.w3schools.com/bootstrap/bootstrap_carousel.asp
-
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/bootstrap.min.css"></script> -->
-    
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Archivo+Narrow|Catamaran" rel="stylesheet">
 
@@ -94,41 +89,28 @@
         <div id="text_unid">
           <h1>Nossas Unidades</h1>
         </div>
+
         <div id="container_unidades">
-          <!-- <div id="myCarousel" class="carousel slide" data-ride="carousel"> -->
-            <!-- Indicators -->
-            <!-- <ol class="carousel-indicators">
-              <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-              <li data-target="#myCarousel" data-slide-to="1"></li>
-              <li data-target="#myCarousel" data-slide-to="2"></li>
-            </ol> -->
+			<div id="container">
+			<div class="slider-holder">
+				<span id="slider-image-1"></span>
+				<span id="slider-image-2"></span>
+				<div class="image-holder">
+					<img src="imagens/hospital-1.jpg" class="slider-image" />
+					<img src="imagens/hospital-2.jpg" class="slider-image" />
+					<img src="imagens/hospital-3.jpg" class="slider-image" />
+					<img src="imagens/hospital-4.jpg" class="slider-image" />
+					<img src="imagens/hospital-5.jpg" class="slider-image" />
+				</div>
 
-            <!-- Wrapper for slides -->
-            <!-- <div class="carousel-inner">
-              <div class="item active">
-                <img src="1.jpg" alt="Los Angeles" style="width:100%;">
-              </div>
-
-              <div class="item">
-                <img src="1.jpg" alt="Los Angeles" style="width:100%;">
-              </div>
-
-              <div class="item">
-                <img src="1.jpg" alt="Los Angeles" style="width:100%;">
-              </div>
-            </div> -->
-
-            <!-- Left and right controls -->
-            <!-- <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-              <span class="glyphicon glyphicon-chevron-left"></span>
-              <span class="sr-only">Previous</span>
-            </a>
-            <a class="right carousel-control" href="#myCarousel" data-slide="next">
-              <span class="glyphicon glyphicon-chevron-right"></span>
-              <span class="sr-only">Next</span>
-            </a>
-          </div> -->
+				<div class="button-holder">
+					<a href="#slider-image-1" class="slider-change"></a>
+					<a href="#slider-image-2" class="slider-change"></a>
+				</div>
+			</div>
+		  </div>
         </div>
+
       </main>
       <div id="container_footer">
           <?php require_once('views/footer.php'); ?>

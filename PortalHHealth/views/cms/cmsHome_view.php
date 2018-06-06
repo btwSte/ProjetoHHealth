@@ -7,7 +7,7 @@ session_start();
 /* Chama o arquivo que contem os funçoes*/
 require_once ("../../func.php");
 /*Chama a função para verificar se o usuario esta logado*/
-logar($_SESSION['LogCod']);
+// logar($_SESSION['LogCod']);
 
  ?>
 <!DOCTYPE html>
@@ -70,7 +70,9 @@ logar($_SESSION['LogCod']);
 
 
          <div id="areaConteudo">
-            <a href="../administrativo/cmsHome_view.php">Adm</a>
+            <h6><a href="../administrativo/cmsHome_view.php">Adm</a></h6>
+            <h6><a href="../atendimento/atendimento_view.php">Atendimento</a></h6>
+            <h6><a href="../administrativo/medico/atendimento_view.php">Medico</a></h6>
 
         </div>
 

@@ -3,7 +3,7 @@
   $voltaTres = "../../../";
   $voltaDois = "../../";
   $voltaUm = "../";
-  $entraHHealth = "../../../HHealth/";
+  $entraHHealth = "http://www.health.com.br";
 
 
 

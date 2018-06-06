@@ -1,15 +1,6 @@
 <?php
-#require_once("cms/conexao.php");
-
-    require_once('../../variaveis.php');
-    session_start();
-    // if((!isset ($_SESSION['cpf']) == true) and (!isset ($_SESSION['senha']) == true)){
-    // unset($_SESSION['cpf']);
-    // unset($_SESSION['senha']);
-    // header('location:../login_paciente/login_view.php');
-    // }
-
-    // $_SESSION['idPaciente'];
+  session_start();
+  require_once('../../variaveis.php');
 ?>
 <!DOCTYPE html>
 <html>
@@ -64,45 +55,12 @@
 
                    <div class="barraTexto">
                      AGENDAR CONSULTA
-                     <?php ($_SESSION['LogCod']); ?>
+                     <?php $_SESSION['Login']; ?>
                    </div>
 
                     <div class="seguraSelect">
                       Data:
                       <input type="text" name="sltData" value="">
-
-                        <!-- <select required name="sltData" class="select" >
-                            <option value="">Data</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                        </select> -->
-                    </div>
-
-                    <div class="seguraSelect">
-                        <select required name="sltHora" class="select" >
-                            <option value="">Hora</option>
-                            <?php
-                            require_once($voltaDois.'controllers/hora_controller.php');
-                            require_once($voltaDois.'models/hora_class.php');
-
-                            $controller_hora = new controllerHora();
-                            //chama metodo para listar os registros
-                            $listHora = $controller_hora->SelecionarHora();
-
-                             $contHora = 0;
-
-                            while ($contHora < count($listHora)) {
-                          ?>
-                          <!-- option -->
-                          <option value="<?php echo($listHora[$contHora]->hora); ?>">
-                            <?php echo($listHora[$contHora]->hora); ?>
-                          </option>
-                          <!-- fecha while -->
-                           <?php
-                            $contHora += 1;
-                          }
-                        ?>
-                        </select>
                     </div>
 
                    <div class="seguraSelect">
@@ -130,6 +88,33 @@
                             $contEsp += 1;
                           }
                         ?>
+                      </select>
+                  </div>
+                  
+                  <div class="seguraSelect">
+                      <select required name="sltHora" class="select" >
+                          <option value="">Hora</option>
+                          <?php
+                          require_once($voltaDois.'controllers/hora_controller.php');
+                          require_once($voltaDois.'models/hora_class.php');
+
+                          $controller_hora = new controllerHora();
+                          //chama metodo para listar os registros
+                          $listHora = $controller_hora->SelecionarHora();
+
+                           $contHora = 0;
+
+                          while ($contHora < count($listHora)) {
+                        ?>
+                        <!-- option -->
+                        <option value="<?php echo($listHora[$contHora]->hora); ?>">
+                          <?php echo($listHora[$contHora]->hora); ?>
+                        </option>
+                        <!-- fecha while -->
+                         <?php
+                          $contHora += 1;
+                        }
+                      ?>
                       </select>
                   </div>
 

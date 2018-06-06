@@ -16,6 +16,7 @@ class AgendamentoConsulta
   public $hora;
   public $idEspecialidade;
   public $nome;
+  public $ativo;
 
   function __construct()
   {
@@ -23,11 +24,13 @@ class AgendamentoConsulta
   }
 
   public function Insert($dadoAgendamento) {
-    $sql = "INSERT INTO tbl_agenda_consulta (data , hora ,idPaciente, idEspecialidade)
+    $ativo = 0;
+    $sql = "INSERT INTO tbl_agenda_consulta (data , hora ,idPaciente, idEspecialidade, ativo)
     VALUES ('".$dadoAgendamento->data."',
             '".$dadoAgendamento->hora."',
-              '".$dadoAgendamento->idPaciente."',
-            '".$dadoAgendamento->idEspecialidade."');";
+            '".$dadoAgendamento->idPaciente."',
+            '".$dadoAgendamento->idEspecialidade."',
+            '".$ativo."');";
 
       //instancia a classe do banco
      $conex = new Mysql_db();
@@ -53,14 +56,14 @@ class AgendamentoConsulta
 
   public function Select(){
     $sql ="SELECT tbl_agenda_consulta.*,
-	tbl_paciente.nome,
-    tbl_especialidade.especialidade
-    FROM tbl_agenda_consulta
-	INNER JOIN tbl_paciente
-    ON tbl_paciente.idPaciente = tbl_agenda_consulta.idPaciente
-    INNER JOIN tbl_especialidade
-    ON tbl_especialidade.idEspecialidade = tbl_agenda_consulta.idEspecialidade
-    WHERE tbl_agenda_consulta.idPaciente =".$_SESSION['LogCod'];
+	   tbl_paciente.nome,
+     tbl_especialidade.especialidade
+     FROM tbl_agenda_consulta
+	   INNER JOIN tbl_paciente
+     ON tbl_paciente.idPaciente = tbl_agenda_consulta.idPaciente
+     INNER JOIN tbl_especialidade
+     ON tbl_especialidade.idEspecialidade = tbl_agenda_consulta.idEspecialidade
+     WHERE tbl_agenda_consulta.idPaciente =".$_SESSION['Login'];
 
     //instancia a classe do banco
     $conex = new Mysql_db();
@@ -75,23 +78,18 @@ class AgendamentoConsulta
 
     //Guarda resultado
     while ($result = $select->fetch(PDO::FETCH_ASSOC)) {
-      # code...
-       $info_Consulta[] = new agendamentoConsulta();
+      $info_Consulta[] = new agendamentoConsulta();
 
+      $info_Consulta[$cont]->idAgendaConsulta = $result['idAgendaConsulta'];
+      $info_Consulta[$cont]->data  = $result['data'];
+      $info_Consulta[$cont]->hora = $result['hora'];
+      $info_Consulta[$cont]->idPaciente = $result['idPaciente'];
+      $info_Consulta[$cont]->idEspecialidade = $result['idEspecialidade'];
+      $info_Consulta[$cont]->nome = $result['nome'];
+      $info_Consulta[$cont]->especialidade = $result['especialidade'];
 
-       $info_Consulta[$cont]->idAgendaConsulta = $result['idAgendaConsulta'];
-       $info_Consulta[$cont]->data  = $result['data'];
-       $info_Consulta[$cont]->hora = $result['hora'];
-       $info_Consulta[$cont]->idPaciente = $result['idPaciente'];
-       $info_Consulta[$cont]->idEspecialidade = $result['idEspecialidade'];
-       $info_Consulta[$cont]->nome = $result['nome'];
-       $info_Consulta[$cont]->especialidade = $result['especialidade'];
-
-
-
-       //incrementa o contador
-       $cont += 1;
-
+      //incrementa o contador
+      $cont += 1;
     }
     //Chama função que encerra conexao no banco
     $conex->Desconectar();

@@ -1,5 +1,6 @@
 <?php
 require_once('../../variaveis.php');
+session_start();
  ?>
 <!DOCTYPE html>
 <html>

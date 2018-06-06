@@ -31,7 +31,9 @@
     display: flex;
     justify-content: space-around;
     z-index: 1000;
+
   }
+
 
 
   #segura{
@@ -49,36 +51,43 @@
     background: #ccc;
     /* background: absolute; */
 
-    /* display: flex;
-    flex-direction: column;
-    */
-    /* background-attachment: fixed;
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: center;
+    align-items: center;
+
+    background-attachment: fixed;
     background-image: url('../imagens/hh.gif');
     background-repeat: no-repeat;
-    background-size: cover; */
+    background-size: cover;
     }
+
     #container_video::before{
       position: absolute;
-      top: 80px;
+      /* top: 60px; */
+      /* flex-direction: column; */
+
       left: 0;
       height: 100vh;
       width: 100%;
       z-index: 990;
       content: '';
       /* background-color:  rgba(255, 255, 255, 0.3); */
-        background-color: #304f3894;
-
+      background-color: #304f3894;
     }
+
     .text_video{
         color: #fff;
         z-index: 999;
-        font-size: 5em;
+        font-size: 2.5em;
         position: relative;
-        text-align: left  ;
-
+        text-align: left;
+        flex: wrap;
+        align-self: center;
         font-family: sans-serif;
-        padding-top: 200px;
-        padding-left: 100px;
+        /* padding-top: 100px; */
+        padding-left: 50px;
+        padding-right: 10px;
         font-family: 'Catamaran', sans-serif;
 
     }
@@ -88,22 +97,7 @@
       height: 1.5px;
       width:  40%;
     }
-    /* #container_video_Efeito{
-      height: 100vh;
-      width: 100%;
-      background-color: #6bb27d87;
-      z-index: 999;
 
-      background-size: cover;
-
-    } */
-  /* .bg_video {
-    width: 100%;
-     height: 100vh;
-    z-index: 998;
-    background: url(images/torre.jpg) no-repeat;
-    background-size: cover;
-  } */
 
   /* Segura missao, visao e valores */
     #segura_mvv{
@@ -113,8 +107,6 @@
       margin-right: auto;
       min-height: 400px;
       height: auto;
-
-      /* background-color:  #404040; */
     }
 
   /* itens de missao, visao e valores */
@@ -209,7 +201,7 @@
 
       .menu{
         height: 100%;
-        width: 50%;
+        width: 70%;
         position: fixed;
         background-color:  #6bb27d;
         top: 0;
@@ -217,6 +209,7 @@
         display: none;
         z-index: 100;
         opacity: 0.8;
+        overflow: auto;
       }
 
       .btn_close {
@@ -407,7 +400,7 @@
         padding: 0;
       }
 
-      #segura_img_info {
+      .segura_img_info {
         display: flex;
         width: auto;
         max-width: 1200px;
@@ -419,14 +412,20 @@
         margin-bottom: 20px;
       }
 
-      .img_info, .img_info img {
-        margin-left: auto;
-        margin-right: auto;
-        max-width: 390px;
-        max-height: 390px;
+      .img_info{
+        width: 100%;
         height: auto;
-        width: auto;
+        min-height: 50px;
       }
+
+      .img_info img {
+      margin-left: 10px;
+      margin-right: 10px;
+      max-width: 390px;
+      max-height: 390px;
+      width: 95%;
+    }
+
 
       .info {
         width: auto;
@@ -439,24 +438,23 @@
         text-align: justify;
         }
 
+      /* Convênio RESPONSIVO */
 
 
 
     /* TRABALHE CONOSCO RESPONSIVO */
       /* segura formulario */
       #segura_form_tbc {
-        min-height: 415px;
-        height: auto;
+        display: flex;
         width: auto;
         max-width: 1200px;
         margin-left: auto;
         margin-right: auto;
-        /* border: solid 1px #6bb27d; */
-        /* margin-top: 5px; */
-        margin-top: 70px;
-        margin-bottom: 60px;
-
+        min-height: 415px;
+        height: auto;
+        margin-top: 20px;
       }
+
 
       /* Titulo do formulario */
         #tit {
@@ -507,7 +505,7 @@
           float: right;
           margin-right: 100px;
           margin-top: 20px;
-          /* margin-bottom: 20px; */
+          margin-bottom: 50px;
         }
 
         #btn_tbc input {
@@ -527,9 +525,11 @@
 
       /* botao de escolher arquivo */
         #arq_tbc {
-          float: left;
+          /* float: left; */
           margin-top: 20px;
           margin-left: 10px;
+          margin-right: 10px;
+          width: 90%;
         }
 
         #arq_tbc input {
@@ -538,9 +538,35 @@
           border-radius: 10px;
           width: 100%;
           padding: 5px;
+
         }
 
+    /*  SOBRE RESPONSIVO*/
+      #texto_sobre{
+        margin-left: 10px;
+        margin-right: 10px;
+        text-align: justify;
+      }
 
+      #img_sobre  {
+        width: 100%;
+        height: auto;
+        min-height: 50px;
+
+      }
+
+      #img_sobre img {
+        max-height: 300px;
+        width: 95%;
+        max-width: 600px;
+        margin-left: 10px;
+        margin-right: 10px;
+      }
+
+      #titulo_sobre h1{
+        margin-left: 10px;
+        margin-right: 10px;
+      }
 
 
     /* UNIDADES RESPONSIVO */
@@ -603,9 +629,35 @@
           margin-left: auto;
           margin-right: auto;
           text-align: left;
-          /* background: #555; */
         }
 
+
+        /*  AMBIENTES RESPONSIVO*/
+        .container_item_amb{
+          margin-top: 30px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .item_amb {
+          float: left;
+          max-width: 390px;
+          width: auto;
+          text-align: center;
+          /* margin-right: auto;
+          margin-left: auto; */
+        }
+
+        .item_amb img {
+          max-width: 390px;
+          height: auto;
+          max-height: 390px;
+        }
+
+        .item_zoom{
+          margin-bottom: 40px;
+        }
 
 
     /*  CONTATO RESPONSIVO*/
@@ -744,6 +796,27 @@
       width: 100%;
     }
 
+    #container_video{
+     height: 100vh;
+     width: 100%;
+     z-index: 990;
+     background: #ccc;
+     display: block;
+    }
+
+    .text_video{
+      color: #fff;
+      z-index: 999;
+      font-size: 5em;
+      position: relative;
+      text-align: left;
+      font-family: sans-serif;
+      padding-top: 200px;
+      padding-left: 100px;
+      padding-right: 10px;
+      font-family: 'Catamaran', sans-serif;
+    }
+
     /* segura missao, visao e valores DESKTOP */
     #segura_mvv {
       display: flex;
@@ -816,6 +889,18 @@
         margin-bottom: 50px;
       }
 
+      .text_video{
+          color: #fff;
+          z-index: 999;
+          font-size: 5em;
+          position: relative;
+          text-align: left;
+          font-family: sans-serif;
+          padding-top: 200px;
+          padding-left: 100px;
+          font-family: 'Catamaran', sans-serif;
+      }
+
       #text_unid {
         width: 300px;
         margin-left: auto;
@@ -879,6 +964,7 @@
         display: block !important ;
         position: static;
         z-index: 5;
+        overflow: hidden;
       }
 
       .menu ul {
@@ -968,7 +1054,7 @@
 
 
     /* INFORMAÇÃO DESKTOP */
-      #segura_img_info{
+      .segura_img_info{
         margin-left: auto;
         margin-right: auto;
         flex-direction: row;
@@ -1028,6 +1114,8 @@
 
 
 
+
+
     /* UNIDADES DESKTOP */
       .segura_container_unidades {
         display: flex;
@@ -1075,6 +1163,7 @@
       /* background-color: #555; */
       margin-left: auto;
       margin-right: auto;
+      flex-direction: row;
       display: flex;
       flex-wrap: wrap;
       justify-content: space-around;
@@ -1371,8 +1460,9 @@ button {
 }
 
 #segura_form_tbc {
-    height: 480px;
-    width: 800px;
+    min-height: 480px;
+    height: auto;
+    display: block;
     margin: auto;
     margin-top: 70px;
     margin-bottom: 50px;
@@ -1398,7 +1488,6 @@ button {
 
 .inputMax{
     border-radius: 10px;
-
     border: solid 2px #6bb27d;
     outline: none;
     width: 790px;
@@ -1578,4 +1667,93 @@ button {
         color: #fff;
         border: solid 1px #6bb27d;
         cursor: pointer;
+      }
+
+      /*Slider*/
+      .slider-holder
+      {
+      	width: 100%;
+      	height: 400px;
+      	margin-left: auto;
+      	margin-right: auto;
+      	margin-top: 0px;
+      	text-align: center;
+      	overflow: hidden;
+      }
+
+      .image-holder
+      {
+      	width: 2025px;
+      	height: 400px;
+      	clear: both;
+      	position: relative;
+
+      	-webkit-transition: left 2s;
+      	-moz-transition: left 2s;
+      	-o-transition: left 2s;
+      	transition: left 2s;
+      }
+
+      .slider-image
+      {
+      	float: left;
+      	margin: 0px;
+      	padding: 0px;
+      	position: relative;
+      	height: 100%;
+      	width: 400px;
+      	margin-left: 5px;
+      }
+
+      #slider-image-1:target ~ .image-holder
+      {
+      	left: 0px;
+      }
+
+      #slider-image-2:target ~ .image-holder
+      {
+      	left: -800px;
+      }
+
+      #slider-image-3:target ~ .image-holder
+      {
+      	left: -1600px;
+      }
+
+      .button-holder
+      {
+      	position: relative;
+      	top: -20px;
+      }
+
+      .slider-change
+      {
+      	display: inline-block;
+      	height: 15px;
+      	width: 15px;
+      	border-radius: 8px;
+      	background-color: #fff;
+      }
+
+      #container{
+
+      	margin: 0 auto;
+      	width:2025px;
+      	height:400px;
+      	overflow:hidden;
+
+      	animation:one 35s;
+      	position:relative;
+      	background-size:500px 400px;
+      	transtion:2s ease;
+      	transtion-delay:2s;
+
+      	}
+      	@keyframes one{
+      	0%{background-image:url("hospital-1.jpg");}
+      	20%{background-image:url("hospital-2.jpg");}
+      	40%{background-image:url("hospital-3.jpg");}
+      	60%{background-image:url("hospital-4.jpg");}
+      	80%{background-image:url("hospital-5.jpg");}
+      	100%{background-image:url("hospital-6.jpg");}
       }
