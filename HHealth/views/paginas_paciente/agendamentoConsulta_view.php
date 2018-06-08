@@ -58,11 +58,6 @@
                      <?php $_SESSION['Login']; ?>
                    </div>
 
-                    <div class="seguraSelect">
-                      Data:
-                      <input type="text" name="sltData" value="">
-                    </div>
-
                    <div class="seguraSelect">
                       <select required name="sltEspecialida" class="select" >
                           <option value="*">Especialidade</option>
@@ -90,7 +85,17 @@
                         ?>
                       </select>
                   </div>
-                  
+
+                  <div class="seguraSelect">
+                     <select required name="sltData" class="select" >
+                         <option value="*">Data</option>
+                         <option value="02/08/2018">02/08/2018</option>
+                         <option value="02/09/2018">02/09/2018</option>
+                         <option value="02/11/2018">02/11/2018</option>
+                         <option value="02/12/2018">02/12/2018</option>
+                     </select>
+                 </div>
+
                   <div class="seguraSelect">
                       <select required name="sltHora" class="select" >
                           <option value="">Hora</option>
@@ -168,6 +173,7 @@
                                       onClick="return confirm('Deseja realmente exluir a sua consulta?')";>
      		                                excluir
      		                            </a>
+                                    <a href="cartao.php?id=<?php echo($list[$cont]->idAgendaConsulta); ?>">Pagar</a>
      		                        </div>
          		                    </div>
          		                </div>

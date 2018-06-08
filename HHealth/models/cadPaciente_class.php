@@ -86,6 +86,58 @@
    }
 
 
+
+   public function Selecionar(){
+     $sql = "SELECT tbl_paciente.*,
+	      tbl_endereco.*
+     FROM tbl_paciente
+	    INNER JOIN tbl_endereco
+       ON tbl_paciente.idEndereco = tbl_endereco.idEndereco
+        WHERE tbl_paciente.idPaciente =".$_SESSION['Login'];
+        // echo $sql;
+     //instancia a classe do banco
+     $conex = new Mysql_db();
+
+     //chama o metodo para conectar no BD e guarda o resultado da funcao em uma variavel local($PDOconex)
+     $PDOconex = $conex->Conectar();
+
+     $select = $PDOconex->query($sql);
+
+     //guarda resultado
+     $listContato = new Paciente();
+     if ($result = $select->fetch(PDO::FETCH_ASSOC)) {
+       $listContato->idPaciente = $result['idPaciente'];
+       $listContato->nome = $result['nome'];
+       $listContato->dtNasc = $result['dtNasc'];
+       $listContato->idEstadoCivil = $result['idEstadoCivil'];
+       $listContato->sexo = $result['sexo'];
+       $listContato->nacionalidade = $result['nacionalidade'];
+       $listContato->idTipoSanguineo = $result['idTipoSanguineo'];
+       $listContato->rg = $result['rg'];
+       $listContato->cpf = $result['cpf'];
+       $listContato->telResidencial = $result['telResidencial'];
+       $listContato->celular = $result['celular'];
+       $listContato->email = $result['email'];
+       $listContato->senha = $result['senha'];
+       $listContato->idEndereco = $result['idEndereco'];
+       $listContato->idConvenio = $result['idConvenio'];
+       $listContato->fotoRg = $result['fotoRg'];
+       $listContato->fotoCpf = $result['fotoCpf'];
+       $listContato->valido = $result['valido'];
+       $listContato->fotoConvenio = $result['fotoConvenio'];
+       $listContato->fotoPaciente = $result['fotoPaciente'];
+       //incrementa o contador
+    }
+
+     //Chama função que encerra conexao no banco
+     $conex->Desconectar();
+
+     if (isset($listContato)) {
+         return $listContato;
+     }
+   }
+
+
  }
 
 ?>

@@ -120,7 +120,13 @@
 
      }
 
-      
+     public function selectPaciente(){
+       // echo 'teste';;
+       $info_Contato = new Paciente();
+       return $info_Contato::Selecionar();
+     }
+
+
 
 
      }

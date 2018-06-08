@@ -71,24 +71,46 @@ if(isset($_GET['controller'])){
                 $controller_agendamentoConsulta::InserirAgendamentoConsulta();
                 break;
 
+              case 'cartao':
+                if(isset($_SESSION['Login'])){
+
+                    require_once('models/transacao_class.php');
+                    require_once('controllers/transacao_controller.php');
+
+                  // echo('aaaaee');
+                    $transacao = new TransacaoController();
+                    $transacao::cartaoDeCredito();
+
+                  }
+
               break;
             }
 
 
             case 'preatendimento':
-            require_once('controllers/preAtendimento_controller.php');
-            require_once('models/preAtendimento_class.php');
-            switch ($modo) {
-              case 'novo':
-                $controller = new controllerPreAtendimento();
-                $controller::Inserir();
+              require_once('controllers/preAtendimento_controller.php');
+              require_once('models/preAtendimento_class.php');
+              switch ($modo) {
+                case 'novo':
+                  $controller = new controllerPreAtendimento();
+                  $controller::Inserir();
+                  break;
+                }
                 break;
 
+            case 'pagamento':
+              session_start();
+                switch ($modo) {
+                  case 'salvar':
+                  if (isset($_SESSION['idConsulta'])) {
+                    require_once('controllers/pagamento_controller.php');
+                    require_once('models/pagamento_class.php');
 
-              break;
-              }
-              break;
-
+                    $transacao = new controllerPagamento();
+                    $transacao::InserirPagamento();
+                  }
+                  break;
+                }
 
 
 

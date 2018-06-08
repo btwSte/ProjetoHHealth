@@ -46,25 +46,42 @@
 						HISTORICO
                    </div>                   
                </div>
+                
+                <!-- faz require e abre while -->
+                <?php
+                    require_once('../../controllers/historico_controller.php');
+                    require_once('../../models/historico_class.php');
+
+                    $controller_historico = new controllerHistorico();
+                    //chama metodo para listar os registros
+                    $listHistorico = $controller_historico::SelecionarHistorico();
+
+                    $contHistorico = 0;
+
+                    while ($contHistorico < count($listHistorico)) {
+                ?>
             
                 <div id="segura_form_exames">
-                    <div class="barraCampos">
-                        <div class="camposBarra"></div>                        
-                        
-                    </div>
 					<div class="barraCampos">
-                        <div class="camposBarra"></div>                        
-                        <div class="camposBarra"></div>
+                        <div class="camposBarra"><?php echo($listHistorico[$contHistorico]->idPaciente); ?></div>                        
+                        <div class="camposBarra"><?php echo($listHistorico[$contHistorico]->idMedico); ?></div>
 					</div>
 						<div class="barraCampos">
-                        <div class="camposBarra"></div>                        
-                        <div class="camposBarra"></div>
+                        <div class="camposBarra"><?php echo($listHistorico[$contHistorico]->idConsulta); ?></div>         
 					</div>
                     <div class="barraTextExame">
-                    	<div class="campoTextoExame"></div>
+                    	<div class="campoTextoExame"><?php echo($listHistorico[$contHistorico]->Relatorio); ?></div>
                     </div>
                 </div>
         </div>
+        
+        <?php
+            $contHistorico += 1;
+          }
+        ?>
+        
+        
+        
     </main>
         
     <?php include("footer.php"); ?>

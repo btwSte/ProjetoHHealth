@@ -12,6 +12,7 @@ class Login
 
     public $cpf;
     public $senha;
+    public $idCargo;
 
 
     public function __construct()
@@ -47,21 +48,52 @@ class Login
         {
             while($ln = $validarlogin->fetch(PDO::FETCH_ASSOC))
             {
-               // $_SESSION['LogCod'] = $ln['idPaciente'];
-              echo($_SESSION['LogCod']);
-              echo "<script>alert('Logado Com Sucesso!');
-                    top.location.href='views/cms/cmsHome_view.php';
-                    </script>";
+               $_SESSION['LogCod'] = $ln['idLogin'];
+               $_SESSION['LogCarg'] = $ln['idCargo'];
+               $_SESSION['LogCpf'] = $ln['cpf'];
+
+               $select_id = $PDOconex->query("SELECT * FROM tbl_medico where cpf='$Login->cpf';");
+               while( $rs  = $select_id->fetch(PDO::FETCH_ASSOC) ){
+                 $_SESSION['idMedico'] = $rs['idMedico'];
+               }
+
+               $idCargo = $_SESSION['LogCarg'];
+              // echo($_SESSION['LogCarg']);
+              // echo $validarlogin;
+              if ($idCargo == 1) {
+                //redireciona para pagina do medico
+                echo "<script>alert('Logado Com Sucesso!');
+                       top.location.href='views/administrativo/medico/atendimento_view.php';
+                      </script>";
+
+              } else if ($idCargo == 2){
+                echo "<script>alert('Logado Com Sucesso!');
+                       top.location.href='views/administrativo/cmsHome_view.php';
+                      </script>";
+              } else if ($idCargo == 3){
+                echo "<script>alert('Logado Com Sucesso!');
+                       top.location.href='views/cms/cmsHome_view.php';
+                      </script>";
+              } else if ($idCargo == 4){
+                echo "<script>alert('Logado Com Sucesso!');
+                       top.location.href='views/atendimento/atendimento_view.php';
+                      </script>";
+              }
+              // echo "<script>alert('Logado Com Sucesso!');
+              //       top.location.href='views/cms/cmsHome_view.php';
+              //       </script>";
               // header('location:views/cms/cmsHome_view.php');
             };
         }
         else
         {
-          // echo "<script>alert('Login Incorreto');
-          //     top.location.href='index.php';
-          //     </script>";
+          echo "<script>alert('Login Incorreto');
+              top.location.href='index.php';
+              </script>";
 
         }
     }
+
+
 
 }

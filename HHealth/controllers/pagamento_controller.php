@@ -5,11 +5,11 @@
    Obs: Controller para realizar cotrole da class da forma de pagamento
  */
 
- class controllerFormaPagamento{
+ class controllerPagamento{
 
-   public function Selecionar(){
-    $pagamento = new FormaPagamento();
-    return $pagamento::SelectFormaPagamento();
+   public function InserirPagamento(){
+    $pagamento = new Pagamento();
+    return $pagamento::InsertPagamento();
    }
  }
 

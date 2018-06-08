@@ -6,7 +6,6 @@
    */
 
 
-
   class AmbienteCabecalho{
     public $idAmbienteCabecalho;
     public $foto;

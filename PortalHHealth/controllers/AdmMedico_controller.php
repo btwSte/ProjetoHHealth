@@ -75,7 +75,10 @@
         $medico::Insert($medico);
       }
 
-
+      public function SelecionaMedico(){
+        $info_medico = new Medico();
+        return $info_medico::SelectMedico();
+      }
 
   }
  ?>

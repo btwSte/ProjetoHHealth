@@ -10,13 +10,13 @@ require_once("../../func.php");
 // logar($_SESSION['LogCod']);
 
 //Conexão com o banco de dados
-// $conn = @mysql_connect("localhost", "root", "bcd127") or die("Não foi possível a conexão com o Banco");
-// // Selecionando banco
-// $db = @mysql_select_db("dbhhealth", $conn) or die("Não foi possível selecionar o Banco");
-
-$conn = @mysql_connect("192.168.1.1", "health", "devsystem123") or die("Não foi possível a conexão com o Banco");
-// // Selecionando banco
+$conn = @mysql_connect("localhost", "root", "bcd127") or die("Não foi possível a conexão com o Banco");
+// Selecionando banco
 $db = @mysql_select_db("dbhhealth", $conn) or die("Não foi possível selecionar o Banco");
+//
+// $conn = @mysql_connect("192.168.1.1", "health", "devsystem123") or die("Não foi possível a conexão com o Banco");
+// // // Selecionando banco
+// $db = @mysql_select_db("dbhhealth", $conn) or die("Não foi possível selecionar o Banco");
 
 $cont = 0;
 // Recuperamos a ação enviada pelo formulário

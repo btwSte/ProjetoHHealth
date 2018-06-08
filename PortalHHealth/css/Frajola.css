@@ -864,7 +864,7 @@ input{
 	height:500px;
 	background-color:#ffffff;
 	margin:auto;
-	margin-top:250px;
+	margin-top:50px;
     box-shadow: 3px 5px 5px 3px #6bb27d;
     min-height: 250px;
     min-width: 50px;
@@ -933,7 +933,17 @@ input{
     font-size: 15px;
     float: left;
 }
-
+.textarea textarea {
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 5px;
+    width: 90%;
+    border: solid 2px #6bb27d;
+    outline: none;
+    border-radius: 10px;
+    height: 150px;
+    margin-top: 20px;
+}
 .campoDirTexto{
     width: 523px;
     height: 23px;
@@ -1458,7 +1468,7 @@ input{
    width: auto;
    height: auto;
    /* margin-left: 0px; */
-   width: 70%;
+   width: 60%;
    margin-bottom: 5px;
  }
 .opçNome{
@@ -1467,7 +1477,7 @@ input{
   height: auto;
   text-decoration: none;
   /* margin-left: 170px; */
-  width: 30%;
+  width: 40%;
   margin-bottom: 5px;
 }
 

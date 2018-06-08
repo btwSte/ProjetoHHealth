@@ -63,7 +63,7 @@
               ON tbl_paciente.idPaciente = tbl_fila.idPaciente
               INNER JOIN tbl_especialidade
               ON tbl_especialidade.idEspecialidade = tbl_fila.idEspecialidade
-              WHERE tbl_fila.status = 0;";
+              WHERE tbl_fila.status = 0 AND tbl_especialidade.idEspecialidade =".$_SESSION['LogEspe'];
 
       //instancia a classe do banco
       $conex = new Mysql_db();
@@ -131,7 +131,7 @@
               ON tbl_especialidade.idEspecialidade = tbl_fila.idEspecialidade
               INNER JOIN tbl_status
               ON tbl_status.idStatus = tbl_fila.status
-              WHERE tbl_fila.status > 0";
+              WHERE tbl_fila.status > 0 AND tbl_especialidade.idEspecialidade =".$_SESSION['LogEspe'];
 
       $conex = new Mysql_db();
 

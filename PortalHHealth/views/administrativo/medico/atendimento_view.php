@@ -1,3 +1,7 @@
+<?php
+session_start();
+require_once('../../../variaveis.php');
+?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -5,8 +9,42 @@
     <title>Fila de Espera</title>
     <link rel="stylesheet" type="text/css" href="../../../css/Frajola.css">
     <script src="../../../js/modernizr.min.js"></script>
+    <script type="text/javascript" src="../../../js/jquery.js"></script>
+
+    <script>
+			$(document).ready(function() {
+
+				$(".ver").click(function() {
+					$(".modalContainer").slideToggle(1000);
+				//slideToggle
+				//toggle
+				//FadeIn
+				});
+			});
+
+
+
+
+        function Modal2(idIten){
+					$.ajax({
+						type: "POST",
+						url: "modal2.php",
+						data: {id:idIten},
+						success: function(dados){
+							$('.modal').html(dados);
+						}
+					});
+				}
+		</script>
   </head>
   <body>
+
+    <div class="modalContainer">
+      <div class="modal">
+
+      </div>
+    </div>
+
 
     <?php include("../header.php"); ?>
 
@@ -32,15 +70,29 @@
       <div id="areaConteudoMedico">
           <div class="barraIdenti">
               <div class="containerIndetificacao">
-                  SEJA BEM VINDO,
+                <?php
+                $_SESSION['LogCpf'];
+                require_once($voltaTres."controllers/AdmMedico_controller.php");
+                require_once($voltaTres."models/Medico_class.php");
+
+                $controller_medico = new controllerCmsMedico();
+                 //chama metodo para listar os registros
+                $listm = $controller_medico::SelecionaMedico();
+
+                $contm = 0;
+
+                  while ($contm < count($listm)) {
+                 ?>
+                  Seja bem vindo(a), <?php echo($listm[$contm]->nome);
+                    $contm +=1;
+                  }
+                  ?>
               </div>
           </div>
           <div class="listaPacienteEsq">
               <div class="containerEscritaPaciente">FILA DE ESPERA | PACIENTES</div>
               <div class="containerListaPaciente">
                 <?php
-                require_once('../../../variaveis.php');
-
                 require_once($voltaTres."controllers/fila_controller.php");
                 require_once($voltaTres."models/fila_class.php");
 
@@ -106,6 +158,11 @@
                       <a class="opcao" onclick="return confirm('Deseja finalizar?');"
                       href="../../../router.php?controller=consulta&modo=finalizar&id=<?php echo($listIni[$contIni]->idFila); ?>">
                         <img src="../../../imagens/stop.png" alt="Finalizar Consulta" title="Finalizar Consulta">
+                      </a>
+
+                      <a href="#" class="opcao ver"
+                       onclick="Modal2(<?php echo($listIni[$contIni]->idPaciente); ?>)">
+                        <img src="../../../imagens/receita.png" alt="Escrever Receita" title="Escrever Receita">
                       </a>
 
                     </div>

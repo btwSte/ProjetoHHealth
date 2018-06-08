@@ -15,9 +15,10 @@
     public $crm;
     public $dtNasc;
     public $idEndereco;
-    public $fotoCrm;
-    public $fotoMedico;
-    public $email;
+    // public $fotoCrm;
+    // public $fotoMedico;
+    // public $email;
+    public $senha;
 
     // Conexão com o banco
     public function __construct() {
@@ -34,7 +35,6 @@
                     '".$medico->cpf."',
                     '".$medico->crm."',
                     '".$medico->dtNasc."',
-
                     '".$medico->idEndereco."')";
 
 
@@ -60,79 +60,51 @@
         $conex->Desconectar();
       }
 
-      // public function Select() {
-      //   // Select no banco
-      //   $sql = "SELECT * FROM tbl_medicamento ORDER BY idMedico DESC";
-      //
-      //   //instancia a classe do banco
-      //   $conex = new Mysql_db();
-      //
-      //   //chama o metodo para conectar no BD e guarda o resultado da funcao em uma variavel local($PDOconex)
-      //   $PDOconex = $conex->Conectar();
-      //
-      //   $select = $PDOconex->query($sql);
-      //
-      //   //inicia contador em 0
-      //   $cont = 0;
-      //
-      //   //guarda resultado
-      //   while ($result = $select->fetch(PDO::FETCH_ASSOC)) {
-      //     $list[] = new Medicamento();
-      //
-      //     $list[$cont]->idMedicamento = $result['idMedicamento'];
-      //     $list[$cont]->nome = $result['nome'];
-      //     $list[$cont]->fabricante = $result['fabricante'];
-      //
-      //     //incrementa o contador
-      //     $cont += 1;
-      //   }
-      //
-      //   $conex->Desconectar();
-      //
-      //   if (isset($list)) {
-      //     return $list;
-      //   }
-      //
-      // }
+
+      public function SelectMedico(){
+        $sql="SELECT * FROM tbl_medico where cpf=".$_SESSION['LogCpf'];
+
+        //instancia a classe do banco
+        $conex = new Mysql_db();
+
+        //chama o metodo para conectar no BD e guarda o resultado da funcao em uma variavel local($PDOconex)
+        $PDOconex = $conex->Conectar();
+
+        $select = $PDOconex->query($sql);
+
+        //inicia contador em 0
+        $cont = 0;
+
+        //Guarda resultado
+        while ($result = $select->fetch(PDO::FETCH_ASSOC)) {
+          $info_medico[] = new Medico();
+
+          $info_medico[$cont]->idMedico = $result['idMedico'];
+          $info_medico[$cont]->idCargo = $result['idCargo'];
+          $info_medico[$cont]->dtAdmissao = $result['dtAdmissao'];
+          $info_medico[$cont]->nome = $result['nome'];
+          $info_medico[$cont]->rg = $result['rg'];
+          $info_medico[$cont]->cpf  = $result['cpf'];
+          $info_medico[$cont]->crm = $result['crm'];
+          $info_medico[$cont]->dtNasc = $result['dtNasc'];
+          $info_medico[$cont]->idEndereco = $result['idEndereco'];
+          $info_medico[$cont]->idEspecialidade = $result['idEspecialidade'];
+          $info_medico[$cont]->senha = $result['senha'];
 
 
-      // public function Delete($excluir){
-      //   // Select no banco
-      //   $sql = "DELETE FROM tbl_medicamento WHERE idMedicamento=".$excluir->id;
-      //
-      //   //instancia a classe do banco
-      //   $conex = new Mysql_db();
-      //
-      //   //chama o metodo para conectar no BD e guarda o resultado da funcao em uma variavel local($PDOconex)
-      //   $PDOconex = $conex->Conectar();
-      //
-      //   if ($PDOconex->query($sql)) {
-      //     header('location:'.$voltaUm.'views/administrativo/medicamento/visu_medicamento_view.php');
-      //   }else{
-      //     echo "erro ao deletar";
-      //   }
-      //
-      //   $conex->Desconectar();
-      // }
-      //
-      // public function Update($conteudo){
-      //     $sql = "UPDATE tbl_medicamento SET
-      //       nome='".$conteudo->nome."',
-      //       fabricante='".$conteudo->fabricante."'
-      //       WHERE idMedicamento=".$conteudo->id;
-      //
-      //   $conex = new Mysql_db();
-      //
-      //   $PDOconex = $conex->Conectar();
-      //
-      //   if ($PDOconex->query($sql)) {
-      //     header('location:'.$voltaUm.'views/administrativo/medicamento/visu_medicamento_view.php');
-      //   }else{
-      //     echo "erro";
-      //   }
-      //
-      //   $conex->Desconectar();
-      // }
+          $_SESSION['LogEspe'] = $result['idEspecialidade'];
+
+          //incrementa o contador
+          $cont += 1;
+        }
+        //Chama função que encerra conexao no banco
+        $conex->Desconectar();
+
+        if (isset($info_medico)) {
+            return $info_medico;
+        }
+      }
+
 
   }
 ?>
